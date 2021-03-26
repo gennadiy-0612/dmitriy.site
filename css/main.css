@@ -1,25 +1,4 @@
-@font-face {
-    font-family: 'Druk Cyr';
-    src: url('/css/font/css/font/DrukTextWide-BoldItalic-Reduced.woff.ttf');
-    src: local('/css/font/Druk Cyr Heavy'), local('DrukCyr-Heavy'),
-    url('/css/font/DrukCyr-Heavy.eot?#iefix') format('embedded-opentype'),
-    url('/css/font/DrukCyr-Heavy.woff2') format('woff2'),
-    url('/css/font/DrukCyr-Heavy.woff') format('woff'),
-    url('/css/font/DrukCyr-Heavy.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Druk Cyr';
-    src: url('/css/font/DrukCyr-Medium.eot');
-    src: local('/css/font/Druk Cyr Medium'), local('DrukCyr-Medium'),
-    url('/css/font/DrukCyr-Medium.eot?#iefix') format('embedded-opentype'),
-    url('/css/font/DrukCyr-Medium.woff2') format('woff2'),
-    url('/css/font/DrukCyr-Medium.woff') format('woff'),
-    url('/css/font/DrukCyr-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
+
 body {
     background-color: #1F1F1F;
 }
@@ -28,6 +7,14 @@ body {
     color: #cccccc;
 }
 
+.s1__p2__p1 {
+    list-style-type: none;
+}
+
+.s1__p2__p1__p1-fontwhite {
+    text-decoration: none;
+}
+
 .s1__p2__p1__p1-fonthavy {
-    font: normal normal bold 28px/38px "Druk Cyr", sans-serif;
+    font: normal normal bold 28px/38px "Arial", sans-serif;
 }

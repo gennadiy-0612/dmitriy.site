@@ -138,13 +138,25 @@ body {
     margin-left: -1px;
 }
 
-.vl1::after, .vl2::after, .vl3::after, .vl4::after {
+.vl1::after {
+    animation: 15s linear 10s infinite alternate move_bottom;
+}
+
+.vl2::after {
+    animation: 15s linear 20s infinite alternate move_bottom;
+}
+
+.vl3::after {
+    animation: 15s linear 30s infinite alternate move_bottom;
+}
+
+.vl4::after {
     animation: 15s linear 0s infinite alternate move_bottom;
 }
 
 @-webkit-keyframes move_bottom {
     from {
-        top: -20%;
+        top: -10%;
     }
     to {
         top: 110%;

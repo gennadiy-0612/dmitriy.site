@@ -110,4 +110,43 @@ body {
     .s1__p2__p1__p1-fonthavy {
         font: normal normal bold 28px/38px "Arial", sans-serif;
     }
+
+    /*.back-site*/
+    .back-site {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        display: flex;
+    }
+}
+
+.vl1, .vl2, .vl3, .vl4 {
+    background-color: #fff;
+    width: 25%;
+    box-shadow: 0 0 1px #000 inset;
+}
+
+.vl1::after, .vl2::after, .vl3::after, .vl4::after {
+    width: 2px;
+    height: 10px;
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: black;
+    margin-left: -1px;
+}
+
+.vl1::after, .vl2::after, .vl3::after, .vl4::after {
+    animation: 15s linear 0s infinite alternate move_bottom;
+}
+
+@-webkit-keyframes move_bottom {
+    from {
+        top: -20%;
+    }
+    to {
+        top: 110%;
+    }
 }

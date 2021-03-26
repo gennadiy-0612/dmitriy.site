@@ -113,7 +113,7 @@ body {
 
     /*.back-site*/
     .back-site {
-        position: absolute;
+        position: fixed;
         top: 0;
         height: 100%;
         width: 100%;
@@ -134,24 +134,25 @@ body {
     content: '';
     display: block;
     position: absolute;
-    background-color: black;
+    background-color: #7d7d7d;
     margin-left: -1px;
+    top: -10%;
 }
 
 .vl1::after {
-    animation: 15s linear 10s infinite alternate move_bottom;
+    animation: 5s linear 35s infinite normal move_bottom;
 }
 
 .vl2::after {
-    animation: 15s linear 20s infinite alternate move_bottom;
+    animation: 15s linear 25s infinite normal move_bottom;
 }
 
 .vl3::after {
-    animation: 15s linear 30s infinite alternate move_bottom;
+    animation: 25s linear 15s infinite normal move_bottom;
 }
 
 .vl4::after {
-    animation: 15s linear 0s infinite alternate move_bottom;
+    animation: 35s linear 5s infinite normal move_bottom;
 }
 
 @-webkit-keyframes move_bottom {
@@ -161,4 +162,24 @@ body {
     to {
         top: 110%;
     }
+}
+
+.back__round-out, .back__round-in {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    display: block;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #7d7d7d87;
+}
+
+.back__round-out {
+}
+
+.back__round-in {
 }

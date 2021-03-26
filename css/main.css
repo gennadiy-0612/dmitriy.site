@@ -3,123 +3,121 @@ body {
     margin: 0;
 }
 
-@media (max-width: 640px) {
-    .s1 {
-        overflow-x: hidden;
-    }
+.s1 {
+    overflow-x: hidden;
+}
 
-    .s1__p1 {
-        width: 80px;
-        margin: 20px auto 0 10px;
-        display: block;
-        text-decoration: none;
-    }
+.s1__p1 {
+    width: 80px;
+    margin: 20px auto 0 10px;
+    display: block;
+    text-decoration: none;
+}
 
-    .burger {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        margin: -50px 7px 0 auto;
-        z-index: 1;
-    }
+.burger {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: -50px 7px 0 auto;
+    z-index: 1;
+}
 
-    .s1__p2 {
-        background-color: #232426;
-        margin: -58px 0 0;
-        position: relative;
-        padding: 105px 0 0;
-        height: 100vh;
+.s1__p2 {
+    background-color: #232426;
+    margin: -58px 0 0;
+    position: relative;
+    padding: 105px 0 0;
+    height: 100vh;
 
-    }
+}
 
-    .hide + .s1__p2 {
-        visibility: collapse;
-        opacity: 0;
-        left: 100%;
-        transition: all .2s ease-out;
-    }
+.hide + .s1__p2 {
+    visibility: collapse;
+    opacity: 0;
+    left: 100%;
+    transition: all .2s ease-out;
+}
 
-    .show + .s1__p2 {
-        visibility: visible;
-        opacity: 1;
-        left: 0;
-        transition: all .5s ease-out;
-    }
+.show + .s1__p2 {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+    transition: all .5s ease-out;
+}
 
-    .burger__lines {
-        width: 49px;
-        height: 49px;
-        background-color: #232426;
-        border-radius: 25px;
-    }
+.burger__lines {
+    width: 49px;
+    height: 49px;
+    background-color: #232426;
+    border-radius: 25px;
+}
 
-    .burger__lines::before,
-    .burger__lines::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        width: 26px;
-        height: 3px;
-        background-color: #fff;
-        display: block;
-    }
+.burger__lines::before,
+.burger__lines::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 26px;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+}
 
-    .show .burger__lines::before, .show .burger__lines::after {
-        top: 15px;
-    }
+.show .burger__lines::before, .show .burger__lines::after {
+    top: 15px;
+}
 
-    .show .burger__lines::before {
-        transform: rotate(45deg);
-        top: 21px;
-    }
+.show .burger__lines::before {
+    transform: rotate(45deg);
+    top: 21px;
+}
 
-    .show .burger__lines::after {
-        transform: rotate(-45deg);
-    }
+.show .burger__lines::after {
+    transform: rotate(-45deg);
+}
 
-    .burger__lines::before {
-        top: 18px;
-    }
+.burger__lines::before {
+    top: 18px;
+}
 
-    .burger__lines::after {
-        bottom: 18px;
-    }
+.burger__lines::after {
+    bottom: 18px;
+}
 
-    .s1__p1__p2 {
-        list-style-type: none;
-        font: normal normal bold 8px/12px 'Open Sans', sans-serif;
-        color: #FFFFFF;
-    }
+.s1__p1__p2 {
+    list-style-type: none;
+    font: normal normal bold 8px/12px 'Open Sans', sans-serif;
+    color: #FFFFFF;
+}
 
-    .s1__p2__p1__p1-fontwhite {
-        color: #cccccc;
-    }
+.s1__p2__p1__p1-fontwhite {
+    color: #cccccc;
+}
 
-    .s1__p2__p1 {
-        list-style-type: none;
-        text-align: center;
-        padding: 20px 0;
-    }
+.s1__p2__p1 {
+    list-style-type: none;
+    text-align: center;
+    padding: 20px 0;
+}
 
-    .s1__p2__p1__p1-fontwhite {
-        text-decoration: none;
-    }
+.s1__p2__p1__p1-fontwhite {
+    text-decoration: none;
+}
 
-    .s1__p2__p1__p1-fonthavy {
-        font: normal normal bold 28px/38px "Arial", sans-serif;
-    }
+.s1__p2__p1__p1-fonthavy {
+    font: normal normal bold 28px/38px "Arial", sans-serif;
+}
 
-    /*.back-site*/
-    .back-site {
-        position: fixed;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        display: flex;
-    }
+/*.back-site*/
+.back-site {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    display: flex;
 }
 
 .vl1, .vl2, .vl3, .vl4 {

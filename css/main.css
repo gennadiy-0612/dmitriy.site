@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
     background-color: #1F1F1F;
     margin: 0;
+}
+
+.overno {
+    overflow: auto;
+}
+
+.overyes {
+    overflow: hidden;
 }
 
 .s1 {
@@ -94,20 +103,23 @@ body {
 }
 
 .s1__p2__p1__p1-fontwhite {
+
+}
+
+.fontwhite {
     color: #cccccc;
+}
+
+.s1__p2__p1__p1 {
+    text-decoration: none;
+    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
+    text-align: left;
 }
 
 .s1__p2__p1 {
     list-style-type: none;
     text-align: center;
     padding: 24px 0 7px;
-}
-
-.s1__p2__p1__p1-fontwhite {
-    text-decoration: none;
-    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
-    text-align: left;
-
 }
 
 .s1__p2__p1__p1-fonthavy {

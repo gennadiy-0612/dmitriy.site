@@ -9,7 +9,7 @@ body {
 
 .s1__p1 {
     width: 80px;
-    margin: 20px auto 0 10px;
+    margin: 0;
     display: block;
     text-decoration: none;
 }
@@ -185,7 +185,7 @@ body {
     height: 75%;
     border-radius: 50%;
     top: 12.5%;
-    background-color: #7d7d7d87;
+    background-color: #030370a8;
     transform: rotate(0);
     animation: 70s linear 0s infinite normal move_around;
 }
@@ -197,7 +197,7 @@ body {
     height: 10%;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 0 0 1px #1F1F1F;
+    box-shadow: 0 0 1px #0c0c0c;
 }
 
 .back-site__round-in::before {

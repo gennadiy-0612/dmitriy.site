@@ -78,6 +78,7 @@ a {
     opacity: 0;
     left: 100%;
     transition: all .2s ease-out;
+    z-index: 0;
 }
 
 .overyes .s1__p2 {
@@ -187,6 +188,10 @@ a {
 
 .agh2mob {
     font: normal normal 700 22px/33px "Druk Text Wide", sans-serif;
+}
+
+.agh3mob {
+    font: normal normal 700 19px/28px "Druk Text Wide", sans-serif;
 }
 
 /*.back-site*/

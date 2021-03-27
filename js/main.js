@@ -9,7 +9,7 @@ let shch = {
         }
     },
     burger: function () {
-        let visible = document.querySelector('body');
+        let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
     }
 }

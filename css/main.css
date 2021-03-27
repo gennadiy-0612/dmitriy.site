@@ -7,6 +7,24 @@ url('./css/font/DrukTextWide-Bold.ttf') format('truetype');
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Druk Text Wide';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Druk Text Wide'), local('Druk Text Wide'),
+    url('/css/font/DrukTextWide-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Druk Text Medium';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Druk Text Wide'), local('Druk Text Wide'),
+    url('/css/font/DrukTextWide-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+
 body {
     background-color: #1F1F1F;
     margin: 0;
@@ -103,14 +121,14 @@ body {
     bottom: 18px;
 }
 
+.s1__p1__p1 {
+    font: normal normal 500 23px/35px 'Open Sans', sans-serif;
+}
+
 .s1__p1__p2 {
     list-style-type: none;
     font: normal normal bold 8px/12px 'Open Sans', sans-serif;
     color: #FFFFFF;
-}
-
-.s1__p2__p1__p1-fontwhite {
-
 }
 
 .fontwhite {
@@ -131,6 +149,22 @@ body {
 
 .s1__p2__p1__p1-fonthavy {
     font: normal normal bold 28px/38px "Druk Text Wide", sans-serif;
+}
+
+.s3__p1 {
+    font: normal normal 400 16px/27px "Montserrat", sans-serif;
+    text-align: left;
+    position: relative;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    background-color: #FFFFFF;
 }
 
 /*.back-site*/

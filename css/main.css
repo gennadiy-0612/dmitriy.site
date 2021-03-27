@@ -60,7 +60,7 @@ a {
     width: 50px;
     height: 50px;
     margin: 0 7px 0 auto;
-    z-index: 1;
+    z-index: 2;
 }
 
 .s1__p2 {
@@ -106,16 +106,16 @@ a {
     display: block;
 }
 
-.show .burger__lines::before, .show .burger__lines::after {
+.overyes .burger__lines::before, .overyes .burger__lines::after {
     top: 15px;
 }
 
-.show .burger__lines::before {
+.overyes .burger__lines::before {
     transform: rotate(45deg);
     top: 21px;
 }
 
-.show .burger__lines::after {
+.overyes .burger__lines::after {
     transform: rotate(-45deg);
 }
 

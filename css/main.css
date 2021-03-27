@@ -201,7 +201,7 @@ body {
     height: 10%;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 0 0 1px #0c0c0c;
+    box-shadow: 0 0 1px #1F1F1F;
 }
 
 .back-site__round-in::before {

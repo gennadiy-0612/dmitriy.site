@@ -173,18 +173,18 @@ body {
 
 .back-site__round-out {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    width: 50vmin;
+    height: 50vmin;
+    border-radius: 49vmin;
     box-shadow: 0 0 1px #1F1F1F;
 }
 
 .back-site__round-in {
     position: relative;
-    width: 170px;
-    height: 170px;
-    border-radius: 85px;
-    top: 15px;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    top: 12.5%;
     background-color: #7d7d7d87;
     transform: rotate(0);
     animation: 70s linear 0s infinite normal move_around;
@@ -193,21 +193,21 @@ body {
 .back-site__round-in::before,
 .back-site__round-in::after {
     content: '';
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
     position: absolute;
     box-shadow: 0 0 1px #1F1F1F;
 }
 
 .back-site__round-in::before {
-    top: 10px;
+    top: -5%;
     left: 0;
 }
 
 .back-site__round-in::after {
     right: 0;
-    bottom: 10px;
+    bottom: -5%;
 }
 
 @-webkit-keyframes move_around {

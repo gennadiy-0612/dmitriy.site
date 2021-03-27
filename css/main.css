@@ -244,7 +244,7 @@ a {
     width: 50vmin;
     height: 50vmin;
     border-radius: 49vmin;
-    box-shadow: 0 0 1px #1F1F1F;
+    box-shadow: 0 0 1px #FFFFFF75;
 }
 
 .back-site__round-in {
@@ -253,7 +253,7 @@ a {
     height: 75%;
     border-radius: 50%;
     top: 12.5%;
-    background-color: #030370a8;
+    background-color: #03037026;
     transform: rotate(0);
     animation: 70s linear 0s infinite normal move_around;
 }
@@ -265,7 +265,7 @@ a {
     height: 10%;
     border-radius: 50%;
     position: absolute;
-    box-shadow: 0 0 1px #1F1F1F;
+    box-shadow: 0 0 1px #FFFFFF75;
 }
 
 .back-site__round-in::before {

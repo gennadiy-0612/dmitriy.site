@@ -30,6 +30,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .overno {
     overflow: auto;
 }
@@ -46,7 +50,6 @@ body {
     width: 80px;
     margin: 0;
     display: block;
-    text-decoration: none;
     position: absolute;
 }
 
@@ -136,7 +139,6 @@ body {
 }
 
 .s1__p2__p1__p1 {
-    text-decoration: none;
     font: normal normal 400 16px/27px 'Montserrat', sans-serif;
     text-align: left;
 }
@@ -151,12 +153,18 @@ body {
     font: normal normal bold 28px/38px "Druk Text Wide", sans-serif;
 }
 
-.s3__p1 {
+.agtext {
     font: normal normal 400 16px/27px "Montserrat", sans-serif;
-    text-align: left;
     position: relative;
 }
 
+.connect {
+    font: normal normal 400 16px/24px "Montserrat", sans-serif;
+}
+.rawdirect{
+    display: flex;
+    justify-content: space-around;
+}
 .underline::after {
     content: '';
     position: absolute;
@@ -165,6 +173,10 @@ body {
     height: 1px;
     bottom: 0;
     background-color: #FFFFFF;
+}
+
+.agh2mob {
+    font: normal normal 700 22px/33px "Druk Text Wide", sans-serif;
 }
 
 /*.back-site*/

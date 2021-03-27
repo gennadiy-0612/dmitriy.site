@@ -1,19 +1,15 @@
 let shch = {
     show: function () {
         let bodyMain = document.querySelector('body');
-        let burgerMenu = document.querySelector('.burger');
-        let burgerClass = burgerMenu.getAttribute('class');
-        if (burgerClass === 'burger show') {
-            burgerMenu.setAttribute('class', 'burger hide');
-            bodyMain.setAttribute('class', 'overno');
-        } else {
-            burgerMenu.setAttribute('class', 'burger show');
+        let bodyMainClass = bodyMain.getAttribute('class');
+        if (bodyMainClass === 'overno') {
             bodyMain.setAttribute('class', 'overyes');
+        } else {
+            bodyMain.setAttribute('class', 'overno');
         }
-        console.log(burgerClass);
     },
     burger: function () {
-        let visible = document.querySelector('.burger');
+        let visible = document.querySelector('body');
         visible.addEventListener('click', shch.show);
     }
 }

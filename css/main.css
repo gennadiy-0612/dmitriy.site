@@ -44,6 +44,8 @@ a {
 
 .s1 {
     overflow-x: hidden;
+    position: absolute;
+    width: 100%;
 }
 
 .s1__p1 {
@@ -67,16 +69,17 @@ a {
     position: relative;
     padding: 105px 0 0;
     height: 100vh;
+    z-index: 1;
 }
 
-.hide + .s1__p2 {
+.overno .s1__p2 {
     visibility: collapse;
     opacity: 0;
     left: 100%;
     transition: all .2s ease-out;
 }
 
-.show + .s1__p2 {
+.overyes .s1__p2 {
     visibility: visible;
     opacity: 1;
     left: 0;

@@ -161,6 +161,14 @@ a {
     position: relative;
 }
 
+.year__historydate {
+    font: normal normal 700 20px/30px "Montserrat", sans-serif;
+    margin: 5px 10px;
+}
+.year {
+    display: flex;
+    flex-wrap: wrap;
+}
 .rawdirect {
     display: flex;
     justify-content: space-around;
@@ -199,11 +207,17 @@ a {
 .topics {
     display: flex;
     flex-wrap: wrap;
+    width: 95%;
+    padding: 0;
+    margin: auto;
 }
 
 .bluebutton {
     background: #1378EF;
     border-radius: 64px;
+    padding: 0 15px;
+    list-style-type: none;
+    margin: 5px;
 }
 
 .blueround {

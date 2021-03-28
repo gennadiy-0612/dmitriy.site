@@ -243,17 +243,7 @@ a {
     background: #1378EF;
 }
 
-.switcher + .maindirrection dd {
-    height: 0;
-    overflow: hidden;
-}
-
-.switcher:checked + .maindirrection dd {
-    height: 100%;
-}
-.switcher{
-}
-    /*Buttons finish here*/
+/*Buttons finish here*/
 .topics {
     display: flex;
     flex-wrap: wrap;
@@ -270,6 +260,31 @@ a {
     margin: 5px;
 }
 
+.switcher .extender {
+    display: none;
+}
+
+.show .extender {
+    display: block;
+}
+
+.switcher {
+    position: relative;
+}
+
+.switcher::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 17px;
+    background: url("../img/index/arrowdown.svg") center center no-repeat;
+    border-radius: 5px;
+}
+.switcher.show::after{
+    background: url("../img/index/arrowup.svg") center center no-repeat;
+}
 /*.back-site*/
 .back-site {
     position: fixed;

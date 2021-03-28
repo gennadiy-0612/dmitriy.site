@@ -51,9 +51,11 @@ a {
 
 .s1 {
     overflow: hidden;
-    position: absolute;
     width: 100%;
     top: 0;
+    position: fixed;
+    background-color: #1F1F1FB3;
+    z-index: 1;
 }
 
 .s1__p1 {
@@ -241,7 +243,17 @@ a {
     background: #1378EF;
 }
 
-/*Buttons finish here*/
+.switcher + .maindirrection dd {
+    height: 0;
+    overflow: hidden;
+}
+
+.switcher:checked + .maindirrection dd {
+    height: 100%;
+}
+.switcher{
+}
+    /*Buttons finish here*/
 .topics {
     display: flex;
     flex-wrap: wrap;

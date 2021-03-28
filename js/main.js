@@ -11,6 +11,7 @@ let shch = {
     burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
+        let switcher = document.querySelector('.switcher');
     }
 }
 window.addEventListener('load', shch.burger);

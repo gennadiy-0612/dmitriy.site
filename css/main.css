@@ -173,6 +173,7 @@ a {
 
 .year__event {
     flex: 1 0 70%;
+    margin: 5px 10px;
 }
 
 .rawdirect {

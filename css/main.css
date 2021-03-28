@@ -161,6 +161,11 @@ a {
     position: relative;
 }
 
+.centertext {
+    text-align: center;
+    line-height: 204px;
+}
+
 .year {
     display: flex;
     flex-wrap: wrap;
@@ -199,18 +204,36 @@ a {
     font: normal normal 700 19px/28px "Druk Text Wide", sans-serif;
 }
 
-.connect-button {
-    display: flex;
-    justify-content: right;
-    align-items: center;
+/*Buttons start here*/
+
+.buttonmiddle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    position: relative;
 }
 
 .connect {
     font: normal normal 400 16px/24px "Montserrat", sans-serif;
-    position: relative;
-    left: -50px;
+    display: block;
+    width: 150px;
+    line-height: 100px;
+    position: absolute;
+    left: 50px;
 }
 
+.bigbutton {
+    height: 204px;
+    width: 204px;
+    border-radius: 102px;
+    margin: auto;
+}
+
+.blueback {
+    background: #1378EF;
+}
+
+/*Buttons finish here*/
 .topics {
     display: flex;
     flex-wrap: wrap;
@@ -225,13 +248,6 @@ a {
     padding: 0 15px;
     list-style-type: none;
     margin: 5px;
-}
-
-.blueround {
-    background: #1378EF;
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
 }
 
 /*.back-site*/

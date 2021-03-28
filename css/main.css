@@ -211,6 +211,7 @@ a {
     width: 100px;
     border-radius: 50px;
     position: relative;
+    margin: auto;
 }
 
 .connect {

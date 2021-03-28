@@ -8,6 +8,13 @@ url('./css/font/DrukTextWide-Bold.ttf') format('truetype');
 }
 
 @font-face {
+    font-family: 'Montserrat SemiBold';
+url('./css/font/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Druk Text Wide';
     font-style: normal;
     font-weight: bold;
@@ -172,7 +179,7 @@ a {
 }
 
 .year__historydate {
-    font: normal normal 700 20px/30px "Montserrat", sans-serif;
+    font: normal normal 700 20px/30px "Montserrat SemiBold", sans-serif;
     margin: 5px 10px;
 }
 

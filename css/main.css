@@ -161,14 +161,20 @@ a {
     position: relative;
 }
 
-.year__historydate {
-    font: normal normal 700 20px/30px "Montserrat", sans-serif;
-    margin: 5px 10px;
-}
 .year {
     display: flex;
     flex-wrap: wrap;
 }
+
+.year__historydate {
+    font: normal normal 700 20px/30px "Montserrat", sans-serif;
+    margin: 5px 10px;
+}
+
+.year__event {
+    flex: 1 0 70%;
+}
+
 .rawdirect {
     display: flex;
     justify-content: space-around;

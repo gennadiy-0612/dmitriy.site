@@ -508,9 +508,8 @@ li {
         z-index: -1;
     }
 
-    .listworks__a {
-        margin: 10px 10px;
-        display: block;
+    .listworks__li {
+        margin: 10px;
     }
 
     /*video emotions*/

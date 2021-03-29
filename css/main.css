@@ -192,6 +192,7 @@ li {
     .centertext {
         text-align: center;
         line-height: 204px;
+        position: relative;
     }
 
     .year {
@@ -403,11 +404,11 @@ li {
 
     .back-site__round-out {
         position: absolute;
-        width: 80vmin;
-        height: 80vmin;
-        border-radius: 40vmin;
-        box-shadow: 0 0 1px #FFF;
-        opacity: .3;
+        width: 250px;
+        height: 250px;
+        border-radius: 125px;
+        border: 1px solid #FFF;
+        opacity: .1;
         z-index: -1;
     }
 
@@ -430,7 +431,7 @@ li {
         height: 10%;
         border-radius: 50%;
         position: absolute;
-        box-shadow: 0 0 1px #fff;
+        border: 1px solid #FFF;
     }
 
     .back-site__round-in::before {

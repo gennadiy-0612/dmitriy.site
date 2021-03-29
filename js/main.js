@@ -21,6 +21,22 @@ let shch = {
         console.log(this)
     },
     burger: function () {
+        var m = document.querySelector('.listworks');
+        m.addEventListener('mousedown', mouseDown, false);
+        window.addEventListener('mouseup', mouseUp, false);
+
+        function mouseUp() {
+            window.removeEventListener('mousemove', move, true);
+        }
+
+        function mouseDown(e) {
+            window.addEventListener('mousemove', move, true);
+        }
+
+        function move(e) {
+            // m.style.top = e.clientY + 'px';
+            m.style.left = e.clientX + 'px';
+        };
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
         let switchers = document.querySelectorAll('.switcher');
@@ -28,7 +44,7 @@ let shch = {
         for (i; i < switchers.length; i++) {
             document.querySelectorAll('.switcher')[i].addEventListener('click', shch.extender);
         }
-        document.querySelector('.listworks').addEventListener('mousedown', shch.listWorksMove)
+        // document.querySelector('.listworks').addEventListener('mousedown', shch.listWorksMove)
     }
 }
 window.addEventListener('load', shch.burger);

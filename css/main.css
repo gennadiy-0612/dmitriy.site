@@ -59,9 +59,7 @@ li {
         width: 100%;
         top: 0;
         position: fixed;
-        background-color: #1F1F1FB3;
         z-index: 1;
-        /*! height: 100px; */
     }
 
     .s1__p1 {
@@ -495,7 +493,7 @@ li {
     /*index page*/
     .listworks {
         display: flex;
-        width: 100%;
+        width: 1000px;
         margin: 0;
         overflow: hidden;
         position: relative;

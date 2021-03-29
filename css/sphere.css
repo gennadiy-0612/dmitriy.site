@@ -10,18 +10,18 @@ body {
 }
 
 .mommy {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     position: absolute;
     perspective: 800px;
     right: 0;
-    top: 200px;
+    top: 1%;
     z-index: -1;
 }
 
 .daddy {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
     animation: rotate 25s infinite linear;
 }

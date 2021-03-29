@@ -9,15 +9,14 @@ let shch = {
         if (this.getAttribute('class') === 'maindirrection switcher') this.setAttribute('class', 'maindirrection switcher show')
         else this.setAttribute('class', 'maindirrection switcher')
     },
-    listWorksMove: function (e) {
+    activeLight: function (e) {
         e.stopPropagation();
-        let actLink = document.querySelector('.listworks__blueball');
-        let screenLog = document.querySelectorAll('h3')[1];
-        actLink.setAttribute('style', 'left:' +`${e.screenX}` +'px;');
-        screenLog.innerText = `Screen X/Y: ${e.screenX}, ${e.screenY} Client X/Y: ${e.clientX}, ${e.clientY}`;
-        document.querySelector('.listworks');
+        let currentPosition = this.offsetLeft;
+        let activeBack = document.querySelector('.listworks__blueball');
+        activeBack.setAttribute('style', 'left:' + currentPosition + 'px;');
+        document.querySelectorAll('.listworks__li')[3].offsetLeft
         let posit = window.screenX;
-        console.log(posit)
+        console.log(posit);
     },
     burger: function () {
         let visible = document.querySelector('.burger');
@@ -27,7 +26,10 @@ let shch = {
         for (i; i < switchers.length; i++) {
             document.querySelectorAll('.switcher')[i].addEventListener('click', shch.extender);
         }
-        document.querySelector('.listworks').addEventListener('mousedown', shch.listWorksMove)
+        let n = 0;
+        for (n; n < switchers.length; n++) {
+            document.querySelectorAll('.listworks__li')[n].addEventListener('click', shch.activeLight);
+        }
     }
 }
 window.addEventListener('load', shch.burger);

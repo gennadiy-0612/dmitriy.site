@@ -41,6 +41,10 @@ li {
     list-style-type: none;
 }
 
+.center {
+    text-align: center;
+}
+
 @media (max-width: 1070px) {
     .overno {
         overflow: auto;
@@ -242,6 +246,10 @@ li {
     }
 
     /*Buttons start here*/
+    .video__button {
+        font: normal normal 400 14px/23px 'Montserrat', sans-serif;
+    }
+
     .buttonmiddle {
         height: 100px;
         width: 100px;
@@ -494,6 +502,41 @@ li {
 
     .listworks__a {
         margin: 5px 10px;
+    }
+
+    /*video emotions*/
+    .s6{
+        position: relative;;
+    }
+    .imotions__rounded {
+        width: 82px;
+        height: 82px;
+        border-radius: 41px;
+        margin: auto;
+        display: block;
+    }
+
+    .emotions__ag {
+        font: normal normal 700 20px/34px 'Montserrat', sans-serif;
+    }
+
+    .backgray {
+        background-color: hsl(0deg 0% 9% / 59%);
+        background-color: rgb(24 24 24 / 59%);
+        background-color: #181818;
+    }
+
+    .video__nav {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        right: 0;
+    }
+
+    .video__go {
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
     }
 }
 

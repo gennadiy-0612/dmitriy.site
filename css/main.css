@@ -522,9 +522,22 @@ li {
     }
 
     .backgray {
-        background-color: hsl(0deg 0% 9% / 59%);
-        background-color: rgb(24 24 24 / 59%);
+        /*background-color: hsl(0deg 0% 9% / 59%);*/
+        /*background-color: rgb(24 24 24 / 59%);*/
         background-color: #181818;
+    }
+
+    .emotions {
+        overflow-x: hidden;
+    }
+
+    .emotions__item {
+        flex: 300px 1 35%;
+    }
+
+    .video {
+        display: flex;
+        width: 130%;
     }
 
     .video__nav {
@@ -532,6 +545,7 @@ li {
         display: flex;
         bottom: 0;
         right: 30px;
+        flex-direction: column;
     }
 
     .video__go, .video__a {
@@ -548,13 +562,13 @@ li {
     .video__prev {
         position: absolute;
         background: url("../img/index/prev.svg") center center no-repeat;
-        right: 30px;
+        right: -30px;
     }
 
     .video__next {
         background: url("../img/index/next.svg") center center no-repeat;
         position: absolute;
-        left: 30px;
+        left: -30px;
     }
 }
 

@@ -505,9 +505,10 @@ li {
     }
 
     /*video emotions*/
-    .s6{
+    .s6 {
         position: relative;;
     }
+
     .imotions__rounded {
         width: 82px;
         height: 82px;
@@ -530,13 +531,30 @@ li {
         position: absolute;
         display: flex;
         bottom: 0;
-        right: 0;
+        right: 30px;
     }
 
-    .video__go {
+    .video__go, .video__a {
         width: 70px;
         height: 70px;
         border-radius: 35px;
+        display: block;
+    }
+
+    .video__go {
+        position: relative;
+    }
+
+    .video__prev {
+        position: absolute;
+        background: url("../img/index/prev.svg") center center no-repeat;
+        right: 30px;
+    }
+
+    .video__next {
+        background: url("../img/index/next.svg") center center no-repeat;
+        position: absolute;
+        left: 30px;
     }
 }
 

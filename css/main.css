@@ -493,7 +493,7 @@ li {
     /*index page*/
     .listworks {
         display: flex;
-        width: 1000px;
+        width: 100%;
         margin: 0;
         overflow: hidden;
         position: relative;

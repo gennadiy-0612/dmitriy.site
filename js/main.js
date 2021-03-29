@@ -9,6 +9,17 @@ let shch = {
         if (this.getAttribute('class') === 'maindirrection switcher') this.setAttribute('class', 'maindirrection switcher show')
         else this.setAttribute('class', 'maindirrection switcher')
     },
+    changeX: function () {
+    },
+    listWorksMove: function (e) {
+        e.stopPropagation();
+        let screenLog = document.querySelectorAll('h3')[1];
+        screenLog.innerText = `Screen X/Y: ${e.screenX}, ${e.screenY} Client X/Y: ${e.clientX}, ${e.clientY}`;
+        document.querySelector('.listworks');
+        let posit = window.screenX;
+        this.addEventListener()
+        console.log(this)
+    },
     burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
@@ -17,6 +28,7 @@ let shch = {
         for (i; i < switchers.length; i++) {
             document.querySelectorAll('.switcher')[i].addEventListener('click', shch.extender);
         }
+        document.querySelector('.listworks').addEventListener('mousedown', shch.listWorksMove)
     }
 }
 window.addEventListener('load', shch.burger);

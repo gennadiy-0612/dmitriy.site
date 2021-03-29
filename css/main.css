@@ -395,18 +395,17 @@ a {
 
 .back-site__round-out, .back-site__round-in {
     display: block;
-    bottom: 0;
-    top: 0;
+    top: 10%;
     left: 0;
+    margin: auto 0 auto 12%;
     right: 0;
-    margin: auto;
 }
 
 .back-site__round-out {
     position: absolute;
-    width: 50vmin;
-    height: 50vmin;
-    border-radius: 49vmin;
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 40vmin;
     box-shadow: 0 0 1px #FFF;
 }
 

@@ -1,16 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 @font-face {
-    font-family: 'Druk Text Wide';
-url('./css/font/DrukTextWide-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat SemiBold';
-url('./css/font/Montserrat-SemiBold.ttf') format('truetype');
-    font-weight: bold;
+    font-family: 'Montserrat';
+    src: local('Montserrat SemiBold'), local('Montserrat SemiBold'),
+    url('/css/font/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -39,6 +31,14 @@ body {
 
 a {
     text-decoration: none;
+}
+
+ol, ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
 }
 
 @media (max-width: 1070px) {
@@ -142,10 +142,8 @@ a {
     }
 
     .s1__p1__p2 {
-        list-style-type: none;
         font: normal normal bold 8px/8px 'Open Sans', sans-serif;
         display: block;
-        /*! margin-top: -10px; */
     }
 
     .fontwhite {
@@ -157,7 +155,6 @@ a {
     }
 
     .s1__p2__p1 {
-        list-style-type: none;
         text-align: center;
         padding: 24px 0 7px;
     }
@@ -203,7 +200,7 @@ a {
     }
 
     .year__historydate {
-        font: normal normal 700 20px/30px "Montserrat SemiBold", sans-serif;
+        font: normal normal 700 20px/30px "Montserrat", sans-serif;
         margin: 5px 10px;
     }
 
@@ -233,6 +230,10 @@ a {
 
     .agh2mob {
         font: normal normal 700 22px/33px "Druk Text Wide", sans-serif;
+    }
+
+    .agh2mob__min {
+        font: normal normal 700 16px/27px "Montserrat", sans-serif;
     }
 
     .agh3mob {
@@ -299,7 +300,6 @@ a {
         background: #1378EF;
         border-radius: 64px;
         padding: 0 15px;
-        list-style-type: none;
         margin: 5px;
     }
 
@@ -344,7 +344,7 @@ a {
         position: fixed;
         top: 0;
         height: 100%;
-        z-index: -1;
+        z-index: -3;
         display: flex;
         justify-content: center;
         width: 125%;
@@ -407,6 +407,8 @@ a {
         height: 80vmin;
         border-radius: 40vmin;
         box-shadow: 0 0 1px #FFF;
+        opacity: .3;
+        z-index: -1;
     }
 
     .back-site__round-in {
@@ -456,7 +458,6 @@ a {
     }
 
     .footer__p1 {
-        list-style-type: none;
         margin: 15px 0;
     }
 
@@ -481,7 +482,20 @@ a {
     .footer__p6 {
         margin: 8px 0 48px;
     }
+
+    /*index page*/
+    .listworks {
+        display: flex;
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .listworks__a {
+        margin: 5px 10px;
+    }
 }
+
 @media (min-width: 1071px) {
-    
+
 }

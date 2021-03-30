@@ -576,6 +576,24 @@ li {
     }
 }
 
+/*.sphere*/
+.sphere {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sphere canvas {
+    width: 120px !important;
+    height: 180px !important;
+    border-radius: 100px;
+}
+
+/*.sphere*/
 @media (min-width: 1071px) {
 
 }

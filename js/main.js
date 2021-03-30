@@ -15,32 +15,23 @@ let shch = {
         let currentPosition = this.offsetLeft;
         let activeBack = document.querySelector('.listworks__blueball');
         shch.currPos = currentPosition - 10;
-        activeBack.setAttribute('style', 'left:' + (currentPosition - 10) + 'px;');
+        shch.distance = shch.currPos - shch.initPoint;
+        // activeBack.setAttribute('style', 'left:' + (currentPosition - 10) + 'px;');
         shch.initPoint = currentPosition - 10;
-        console.log(shch.initPoint + " " + currentPosition);
+        shch.ainmated();
     },
     ainmated: function () {
-        var o = 1.0; // start opacity
-        var d = false; // direction. false = decrease, true = increase
-        var s = 0.02; // step
-        function anim() {
-            if (d == false) {
-                o -= s;
-                if (o < 0.0) {
-                    o = 0.0;
-                    d = true;
-                }
-            } else {
-                o += s;
-                if (o > 1.0) {
-                    o = 1.0;
-                    d = false;
-                }
+        shch.distanceAbs = Math.abs(shch.distance)
+        shch.anim = function () {
+            shch.distanceAbs = shch.distanceAbs + 1;
+            if (!shch.distance) {
+                console.log(shch.distanceAbs);
+                shch.distanceAbs = 0;
+                return false;
             }
-            document.querySelector('.listworks__blueball').style.opacity = o;
+            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.distanceAbs + 'px;');
         }
-
-        setInterval(anim, 1000 / 60); // 60 FPS.
+        setInterval(shch.anim, 1000 / 60); // 60 FPS.}
     },
     burger: function () {
         let visible = document.querySelector('.burger');
@@ -54,7 +45,6 @@ let shch = {
         for (n; n < switchers.length; n++) {
             document.querySelectorAll('.listworks__li')[n].addEventListener('click', shch.activeLight);
         }
-        shch.ainmated();
     }
 }
 window.addEventListener('load', shch.burger);

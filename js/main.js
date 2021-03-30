@@ -10,28 +10,29 @@ let shch = {
         else this.setAttribute('class', 'maindirrection switcher')
     },
     initPoint: 0,
+    count: 0,
+    curr: 0,
     activeLight: function (e) {
         e.stopPropagation();
-        let currentPosition = this.offsetLeft;
         let activeBack = document.querySelector('.listworks__blueball');
-        shch.currPos = currentPosition - 10;
-        shch.distance = shch.currPos - shch.initPoint;
-        // activeBack.setAttribute('style', 'left:' + (currentPosition - 10) + 'px;');
-        shch.initPoint = currentPosition - 10;
+        shch.curr = this.offsetLeft - 10;
+        shch.distance = shch.curr - shch.initPoint;
         shch.ainmated();
     },
     ainmated: function () {
-        shch.distanceAbs = Math.abs(shch.distance)
+        if (shch.distance < 0) shch.count = -1;
         shch.anim = function () {
-            shch.distanceAbs = shch.distanceAbs + 1;
-            if (!shch.distance) {
-                console.log(shch.distanceAbs);
-                shch.distanceAbs = 0;
+            shch.initPoint += shch.count;
+            console.log(shch.initPoint + ' ' + shch.distance + ' ' + shch.curr + ' ' + shch.count);
+            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.initPoint + 'px;');
+            if (shch.initPoint > shch.curr) {
+                shch.initPoint = shch.curr;
+                clearInterval(shch.go)
                 return false;
             }
-            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.distanceAbs + 'px;');
         }
-        setInterval(shch.anim, 1000 / 60); // 60 FPS.}
+        if (shch.distance > 0) shch.count = 1;
+        shch.go = setInterval(shch.anim, 1000 / 60); // 60 FPS.}
     },
     burger: function () {
         let visible = document.querySelector('.burger');

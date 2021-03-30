@@ -578,19 +578,22 @@ li {
 
 /*.sphere*/
 .sphere {
-    width: 90px;
-    height: 90px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    /*! margin: auto; */
+    /*! display: flex; */
+    /*! justify-content: center; */
+    /*! align-items: center; */
+    /*! overflow: hidden; */
+    box-shadow: 0 0 1px black;
+    position: absolute;
+    top: -200px;
+    right: 0;
+    left: 0;
 }
 
 .sphere canvas {
-    width: 120px !important;
-    height: 180px !important;
-    border-radius: 100px;
+    /*! width: 120px !important; */
+    /*! height: 180px !important; */
+    /*! border-radius: 100px; */
 }
 
 /*.sphere*/

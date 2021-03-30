@@ -279,7 +279,7 @@ li {
         z-index: 1;
     }
 
-    .overno .s1__p2 {
+    .overno .s1__p2, .mobillehide {
         height: 0;
         display: none;
         z-index: 0;
@@ -724,5 +724,24 @@ li {
 
     .compactdesktop {
         max-width: 25%;
+    }
+
+    .halfdesktop {
+        max-width: 50%;
+        margin: 50px 0 0;
+    }
+
+    /*footer*/
+    .footer_box {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer__desktop {
+        flex: 1 0 30%;
+    }
+
+    .footback {
+        background-color: #121212;
     }
 }

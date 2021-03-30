@@ -41,6 +41,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin: 0;
+}
+
 ol, ul {
     padding: 0;
 }
@@ -238,6 +242,7 @@ li {
 
 /*.back-site finish*/
 @media (max-width: 1070px) {
+
     .overno {
         overflow: auto;
     }
@@ -731,10 +736,30 @@ li {
         margin: 50px 0 0;
     }
 
+    /*forms start*/
+    .footer__form__part {
+        padding: 10px 0 0;
+    }
+
+    .formh1 {
+        font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
+    }
+
+    .footer__form__input {
+        background-color: transparent;
+        border-width: 0;
+        border-bottom: 1px solid #E5E5E5;;
+        display: block;
+        width: 100%;
+    }
+
+    /*forms finish*/
     /*footer*/
-    .footer_box {
+    .footer__box {
         display: flex;
         flex-wrap: wrap;
+        margin-left: 0;
+        flex: 0 0 70%;
     }
 
     .footer__desktop {
@@ -743,5 +768,10 @@ li {
 
     .footback {
         background-color: #121212;
+    }
+
+    .footer__setboxes {
+        display: flex;
+        flex-wrap: nowrap;
     }
 }

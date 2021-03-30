@@ -20,7 +20,7 @@
     font-style: normal;
     font-weight: 500;
     src: local('Druk Text Wide'), local('Druk Text Wide'),
-    url('/css/font/DrukTextWide-Medium.ttf') format('truetype');
+    url('./css/font/DrukTextWide-Medium.ttf') format('truetype');
     font-display: swap;
 }
 

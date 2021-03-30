@@ -76,6 +76,30 @@ li {
     background-color: #FFFFFF;
 }
 
+.pulseback {
+    position: relative;
+}
+
+.pulseback::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #1378EF;
+    animation: pulse 1.2s ease infinite;
+}
+
+
+.connect {
+    font: normal normal 400 16px/24px "Montserrat", sans-serif;
+    display: block;
+    width: 150px;
+    line-height: 100px;
+    position: absolute;
+    left: 50px;
+}
+
 @media (max-width: 1070px) {
     .overno {
         overflow: auto;
@@ -264,20 +288,6 @@ li {
         margin: 32px auto 0 5px;
     }
 
-    .pulseback {
-        position: relative;
-    }
-
-    .pulseback::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-color: #1378EF;
-        animation: pulse 1.2s ease infinite;
-    }
-
     @keyframes pulse {
         0% {
             transform: scale(1, 1);
@@ -289,15 +299,6 @@ li {
             transform: scale(1.5);
             opacity: 0;
         }
-    }
-
-    .connect {
-        font: normal normal 400 16px/24px "Montserrat", sans-serif;
-        display: block;
-        width: 150px;
-        line-height: 100px;
-        position: absolute;
-        left: 50px;
     }
 
     .bigbutton {
@@ -612,10 +613,11 @@ li {
         font: normal normal 400 20px/34px "Montserrat", sans-serif;
 
     }
-    .agh2mob {
-        font: normal normal 700 30px/45px "Druk Text Wide", sans-serif;\
 
+    .agh2mob {
+        font: normal normal 700 30px/45px "Druk Text Wide", sans-serif;
     }
+
     /*Top menu nav started*/
     .burger, .hidedesktop {
         display: none;
@@ -635,7 +637,7 @@ li {
         display: flex;
         width: 158px;
         height: 78px;
-        margin: 35px 0% 0;
+        margin: 35px 0 0;
         flex: 1 0 auto;
         flex-direction: column;
         justify-content: center;

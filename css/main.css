@@ -73,6 +73,7 @@ li {
     width: 100%;
     height: 1px;
     background-color: #FFFFFF;
+    top: -20px;
 }
 
 .pulseback {

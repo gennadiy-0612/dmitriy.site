@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat SemiBold'), local('Montserrat SemiBold'),
-    url('http://p.cx.ua/pf/dmitriy.site/css/css/font/Montserrat-SemiBold.ttf') format('truetype');
+    url('http://p.cx.ua/pf/dmitriy.site/css/font/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: bold;
     src: local('Druk Text Wide'), local('Druk Text Wide'),
-    url('http://p.cx.ua/pf/dmitriy.site/css/css/font/DrukTextWide-Bold.ttf') format('truetype');
+    url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -20,7 +20,7 @@
     font-style: normal;
     font-weight: 500;
     src: local('Druk Text Wide'), local('Druk Text Wide'),
-    url('http://p.cx.ua/pf/dmitriy.site/css/css/font/DrukTextWide-Medium.ttf') format('truetype');
+    url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Medium.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -43,6 +43,14 @@ li {
 
 .center {
     text-align: center;
+}
+
+.fontwhite {
+    color: #cccccc;
+}
+
+.link {
+    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
 }
 
 @media (max-width: 1070px) {
@@ -146,14 +154,6 @@ li {
     .s1__p1__p2 {
         font: normal normal bold 8px/8px 'Open Sans', sans-serif;
         display: block;
-    }
-
-    .fontwhite {
-        color: #cccccc;
-    }
-
-    .link {
-        font: normal normal 400 16px/27px 'Montserrat', sans-serif;
     }
 
     .s1__p2__p1 {
@@ -588,6 +588,7 @@ li {
     top: -200px;
     right: 0;
     left: 0;
+    z-index: -1;
 }
 
 .sphere canvas {
@@ -598,5 +599,29 @@ li {
 
 /*.sphere*/
 @media (min-width: 1071px) {
+    .burger {
+        display: none;
+    }
 
+    .s1 {
+        display: block;
+        width: 150px;
+        height: 78px;
+    }
+
+    .s1__p2 {
+        display: flex;
+    }
+
+    .s1__p1__p1 {
+        font: normal normal 700 45px/68px 'Open Sans', sans-serif;
+    }
+
+    .s1__p1__p2 {
+        font: normal normal 400 16px/24px 'Open Sans', sans-serif;
+    }
+
+    .link {
+        line-height: 24px;
+    }
 }

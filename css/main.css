@@ -1,7 +1,12 @@
 @font-face {
     font-family: 'Montserrat';
+    src: local('Montserrat Regular'), local('Montserrat Regular'),
+    url('./font/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}@font-face {
+    font-family: 'Montserrat';
     src: local('Montserrat SemiBold'), local('Montserrat SemiBold'),
-    /*url('http://p.cx.ua/pf/dmitriy.site/css/font/Montserrat-SemiBold.ttf') format('truetype');*/
     url('./font/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
@@ -12,8 +17,7 @@
     font-style: normal;
     font-weight: bold;
     src: local('Druk Text Wide'), local('Druk Text Wide'),
-    /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');*/
-    url('./font/DrukTextWide-Bold.ttf') format('truetype');
+        /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');*/ url('./font/DrukTextWide-Bold.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -22,8 +26,7 @@
     font-style: normal;
     font-weight: 500;
     src: local('Druk Text Wide'), local('Druk Text Wide'),
-    /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Medium.ttf') format('truetype');*/
-    url('./font/DrukTextWide-Medium.ttf') format('truetype');
+        /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Medium.ttf') format('truetype');*/ url('./font/DrukTextWide-Medium.ttf') format('truetype');
     font-display: swap;
 }
 
@@ -602,26 +605,44 @@ li {
 
 /*.sphere*/
 @media (min-width: 1071px) {
-    .burger {
+    .burger, .hidedesktop {
         display: none;
     }
-
+    .s1, .s2{
+        max-width: 1300px;
+        margin: auto;
+    }
     .s1 {
-        display: block;
-        width: 150px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .s1__p1 {
+        display: flex;
+        width: 158px;
         height: 78px;
+        margin: 35px 0% 0;
+        flex: 1 0 auto;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .s1__p2 {
         display: flex;
+        margin: 22px 0 0;
+        flex: 2 0 auto;
+        justify-content: flex-end;
+        align-items: center;
     }
-
     .s1__p1__p1 {
-        font: normal normal 700 45px/68px 'Open Sans', sans-serif;
+        font: normal normal 700 45px/45px 'Open Sans', sans-serif;
+
     }
+    .s1__p2__p1{margin: 5px 0 0 5.4%;}
 
     .s1__p1__p2 {
-        font: normal normal 400 16px/24px 'Open Sans', sans-serif;
+        font: normal normal 400 16px/16px 'Open Sans', sans-serif;
+        letter-spacing: 0.7px;
     }
 
     .link {

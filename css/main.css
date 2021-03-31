@@ -250,6 +250,9 @@ li {
 
 /*.back-site finish*/
 @media (max-width: 1070px) {
+    .year {
+        font: normal normal 400 27px/40px 'Druk Text Wide', sans-serif;
+    }
 
     .overno {
         overflow: auto;
@@ -610,13 +613,30 @@ li {
 
 /*.sphere*/
 @media (min-width: 1071px) {
-    .agtext {
-        font: normal normal 400 20px/34px "Montserrat", sans-serif;
-
+    .year__historydate, .agh3mob, .agh2mob__min {
+        font: normal normal 400 27px/40px "Druk Text Wide", sans-serif;
     }
 
+    .agtext {
+        font: normal normal 400 16px/27px "Montserrat", sans-serif;
+    }
+
+    .agh2mob__min {
+        font: normal normal 700 16px/27px "Montserrat", sans-serif;
+    }
+
+    .agh2support {
+        font: normal normal 700 30px/45px "Montserrat", sans-serif;
+    }
     .agh2mob {
         font: normal normal 700 30px/45px "Druk Text Wide", sans-serif;
+    }
+    .agh1desk {
+        font: normal normal 700 37px/55px "Druk Text Wide", sans-serif;
+    }
+
+    .emotions__ag {
+        font: normal normal 700 20px/34px 'Montserrat', sans-serif;
     }
 
     /*Top menu nav started*/
@@ -698,7 +718,7 @@ li {
     }
 
     .s3__p1 {
-        margin: 0 0 0;
+        margin: 10px 0 0;
         flex: 1 0 20%;
     }
 
@@ -715,7 +735,7 @@ li {
     .s3__p4 {
         display: flex;
         flex-wrap: wrap;
-        padding: 20px 2% 40px 0;
+        padding: 20px 2% 65px 0;
     }
 
     .s3__p5 {
@@ -761,7 +781,6 @@ li {
 
     /*forms finish*/
     /*footer*/
-
     .footer__box {
         max-width: 905px;
         display: flex;

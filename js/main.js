@@ -1,5 +1,5 @@
 let shch = {
-    show: function() {
+    show: function () {
         let bodyMain = document.querySelector('body');
         let bodyMainClass = bodyMain.getAttribute('class');
         if (bodyMainClass === 'overno')
@@ -7,7 +7,7 @@ let shch = {
         else
             bodyMain.setAttribute('class', 'overno');
     },
-    extender: function() {
+    extender: function () {
         if (this.getAttribute('class') === 'maindirrection switcher')
             this.setAttribute('class', 'maindirrection switcher show')
         else
@@ -17,48 +17,49 @@ let shch = {
     count: 0,
     curr: 0,
     animBall: document.querySelector('.listworks__blueball'),
-    activeLight: function(e) {
+    activeLight: function (e) {
+        this.removeEventListener('click', shch.activeLight);
         e.stopPropagation();
-        let activeBack = document.querySelector('.listworks__blueball');
         shch.curr = this.offsetLeft - 10;
         shch.distance = shch.initPoint - shch.curr;
         if (shch.distance < 0) shch.animated();
-        if (shch.distance > 0) shch.animatedLeft();
+        // if (shch.distance > 0) {
+        //     shch.curr = this.offsetLeft + 10;
+        //     shch.distance = shch.initPoint - shch.curr;
+        //     shch.animatedLeft();
+        // }
+        this.addEventListener('click', shch.activeLight)
     },
-    animated: function() {
+    animated: function () {
         shch.count = 1;
-        shch.anim = function() {
+        shch.anim = function () {
             shch.initPoint += shch.count;
             shch.animBall.setAttribute('style', 'left:' + shch.initPoint + 'px;');
-            if (shch.initPoint === shch.curr) {
+            if (shch.initPoint > shch.curr) {
                 shch.initPoint = shch.curr;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        if (shch.distance > 0)
-            shch.count = 1;
-        shch.go = setInterval(shch.anim, 1000 / 60);
-        // 60 FPS.}
+        shch.go = setInterval(shch.anim, 1000 / 60);// 60 FPS.}
     },
-    animatedLeft: function() {
-        shch.anim = function() {
+    animatedLeft: function () {
+        shch.anim = function () {
             shch.count = 1;
             shch.distance -= shch.count;
             shch.curr -= shch.count;
-            console.log(shch.initPoint + ' ' + shch.curr + ' ' + shch.distance + ' ' + shch.count);
+            console.log('init:' + shch.initPoint + ' curr:' + shch.curr + ' distance:' + shch.distance + ' count' + shch.count);
             shch.animBall.setAttribute('style', 'left:' + shch.curr + 'px;');
-            if (shch.distance == 0) {
+            if (shch.distance < 0) {
                 shch.initPoint = shch.curr;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        if (shch.distance > 0)
-            shch.count = 1;
-        shch.go = setInterval(shch.anim, 1000 / 60);// 60 FPS.}
+        shch.go = setInterval(shch.anim, 1000 / 60);
+        // 60 FPS.}
     },
-    burger: function() {
+    burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
         let switchers = document.querySelectorAll('.switcher');

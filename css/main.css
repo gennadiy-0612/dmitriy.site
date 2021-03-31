@@ -422,6 +422,7 @@ li {
     .agh3mob {
         font: normal normal 700 19px/28px "Druk Text Wide", sans-serif;
     }
+
     /*support*/
     .s3__p2-support {
         margin: 50px 0 15px;
@@ -484,9 +485,11 @@ li {
         padding: 0;
         margin: 40px 0 0;
     }
-    .allinfo-footermob{
+
+    .allinfo-footermob {
         margin: 80px 0 0;
     }
+
     .footer__p1 {
         margin: 15px 0;
     }
@@ -715,6 +718,10 @@ li {
         max-width: 50%;
     }
 
+    .s2__p1-vacancies {
+        margin: 190px 0 90px;
+    }
+
     .uperlinedesktop::after {
         top: 3px;
         left: 0;
@@ -779,9 +786,13 @@ li {
         margin: 0 0 0 auto;
     }
 
+    .buttonmiddle-vacancies {
+        margin-right: 6.5%;
+    }
+
     /*forms start*/
     .footer__boxes {
-        margin: -7px 0 0;
+        margin: -7px 0 30px;
     }
 
     .footer__form__part {
@@ -792,7 +803,9 @@ li {
     .formh1 {
         font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
     }
-
+    .formh1-vacancies{
+        margin: 50px 0 40px;
+    }
     .link-foot {
         margin: 28px 10% 40px 0;
     }

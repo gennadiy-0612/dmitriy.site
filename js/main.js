@@ -17,12 +17,29 @@ let shch = {
         let activeBack = document.querySelector('.listworks__blueball');
         shch.curr = this.offsetLeft - 10;
         shch.distance = shch.curr - shch.initPoint;
-        shch.ainmated();
-    },
-    ainmated: function () {
+        if (shch.distance > 0) {
+            shch.count = 1;
+            shch.animated();
+        }
         if (shch.distance < 0) shch.count = -1;
+    },
+    animated: function () {
         shch.anim = function () {
             shch.initPoint += shch.count;
+            console.log(shch.initPoint + ' ' + shch.distance + ' ' + shch.curr + ' ' + shch.count);
+            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.initPoint + 'px;');
+            if (shch.initPoint > shch.curr) {
+                shch.initPoint = shch.curr;
+                clearInterval(shch.go)
+                return false;
+            }
+        }
+        if (shch.distance > 0) shch.count = 1;
+        shch.go = setInterval(shch.anim, 1000 / 60); // 60 FPS.}
+    },
+    animatedL: function () {
+        shch.anim = function () {
+            shch.curr -= 1;
             console.log(shch.initPoint + ' ' + shch.distance + ' ' + shch.curr + ' ' + shch.count);
             document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.initPoint + 'px;');
             if (shch.initPoint > shch.curr) {

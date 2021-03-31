@@ -626,7 +626,7 @@ li {
         content: none;
     }
 
-    .s1, .s2, .s3, .s4, .s5, .footer {
+    .s1, .s2, .s3, .s4, .s5 {
         max-width: 1300px;
         margin-left: auto;
         margin-right: auto;
@@ -701,19 +701,21 @@ li {
     }
 
     .s3__p2 {
-        flex: 1 0 31.5%;
+        width: 38%;
         margin: 0;
+        float: left;
     }
 
     .s3__p3 {
-        flex: 2 1 10%;
-        margin: 0;
+        width: 57%;
+        margin: 0 0 0 3%;
+        display: inline-block;
     }
 
     .s3__p4 {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
+        /*! display: flex; */
+        /*! flex-wrap: wrap; */
+        /*! flex-direction: row; */
         padding: 20px 2% 40px 0;
     }
 
@@ -727,12 +729,13 @@ li {
 
     .halfdesktop {
         max-width: 50%;
-        margin: 50px 0 0;
+        margin: 0;
     }
 
     /*forms start*/
     .footer__form__part {
         padding: 10px 0 0;
+        max-width: 300px;
     }
 
     .formh1 {
@@ -749,47 +752,53 @@ li {
 
     /*forms finish*/
     /*footer*/
+    .footer {
+        /*! max-width: 1300px; */
+        /*! margin: auto; */
+    }
+
     .footer__box {
+        max-width: 800px;
         display: flex;
         flex-wrap: wrap;
-        margin-left: 0;
         flex: 0 0 70%;
+        margin: 0 0 0 auto;
     }
 
     .footer__desktop {
         flex: 1 0 30%;
     }
 
-    .footback, .footer_form {
+    .footback {
         position: relative;
+        width: 60%;
+        display: inline-block;
     }
 
-    .footback::before, .footer_form::before {
+    .footer_form {
+        width: 40%;
+        display: inline-block;
+    }
+
+    .footback::before {
         content: '';
         position: absolute;
         width: 100%;
         height: 100%;
     }
 
-    .footback::before, .footer_form::before {
+    .footback::before {
         background-color: #121212;
         z-index: -3;
     }
 
-    .footer_form::before {
-        background-color: #1F1F1F;
-    }
-
     .footer__setboxes {
         display: flex;
-        flex-wrap: nowrap;
     }
 
     .footer__p5 {
-        display: flex;
-        width: 400px;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: inline-block;
+        width: 30%;
     }
 }
 

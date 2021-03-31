@@ -111,6 +111,14 @@ li {
     background: #1378EF;
 }
 
+.bigbutton {
+    position: relative;
+    height: 204px;
+    width: 204px;
+    border-radius: 102px;
+    margin: auto;
+}
+
 .buttonmiddle {
     height: 100px;
     width: 100px;
@@ -421,14 +429,6 @@ li {
     /*Buttons start here*/
     .video__button {
         font: normal normal 400 14px/23px 'Montserrat', sans-serif;
-    }
-
-    .bigbutton {
-        position: relative;
-        height: 204px;
-        width: 204px;
-        border-radius: 102px;
-        margin: auto;
     }
 
     .bluebutton {

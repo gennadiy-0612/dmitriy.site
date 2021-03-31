@@ -761,13 +761,9 @@ li {
 
     /*forms finish*/
     /*footer*/
-    .footer {
-        /*! max-width: 1300px; */
-        /*! margin: auto; */
-    }
 
     .footer__box {
-        max-width: 870px;
+        max-width: 905px;
         display: flex;
         flex-wrap: wrap;
         margin: 0 0 0 auto;

@@ -16,30 +16,27 @@ let shch = {
     initPoint: 0,
     count: 0,
     curr: 0,
+    animBall: document.querySelector('.listworks__blueball'),
     activeLight: function (e) {
         e.stopPropagation();
         let activeBack = document.querySelector('.listworks__blueball');
         shch.curr = this.offsetLeft - 10;
         shch.distance = shch.initPoint - shch.curr;
-        if (shch.distance < 0)
-            shch.animated();
-        if (shch.distance > 0) {
-            shch.animatedLeft();
-        }
+        if (shch.distance < 0) shch.animated();
+        if (shch.distance > 0) shch.animatedLeft();
     },
     animated: function () {
         shch.count = 1;
         shch.anim = function () {
             shch.initPoint += shch.count;
-            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.initPoint + 'px;');
+            shch.animBall.setAttribute('style', 'left:' + shch.initPoint + 'px;');
             if (shch.initPoint === shch.curr) {
                 shch.initPoint = shch.curr;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        if (shch.distance > 0)
-            shch.count = 1;
+        if (shch.distance > 0) shch.count = 1;
         shch.go = setInterval(shch.anim, 1000 / 60);// 60 FPS.}
     },
     animatedLeft: function () {
@@ -47,17 +44,15 @@ let shch = {
             shch.count = 1;
             shch.distance -= shch.count;
             console.log(shch.initPoint + ' ' + shch.distance + ' ' + shch.curr + ' ' + shch.count);
-            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.distance + 'px;');
+            shch.animBall.setAttribute('style', 'left:' + shch.distance + 'px;');
             if (shch.distance < 0) {
                 shch.initPoint = shch.curr;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        if (shch.distance > 0)
-            shch.count = 1;
-        shch.go = setInterval(shch.anim, 1000 / 60);
-        // 60 FPS.}
+        if (shch.distance > 0) shch.count = 1;
+        shch.go = setInterval(shch.anim, 1000 / 60);// 60 FPS.}
     },
     burger: function () {
         let visible = document.querySelector('.burger');

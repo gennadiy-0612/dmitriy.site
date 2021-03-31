@@ -510,6 +510,8 @@ li {
 
     .listworks__blueball {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 50px;
         height: 50px;
         border-radius: 25px;
@@ -666,7 +668,7 @@ li {
 
     .s1__p1__p2 {
         font: normal normal 400 16px/16px 'Open Sans', sans-serif;
-        letter-spacing: 0.7px;
+        letter-spacing: .7px;
     }
 
     .link {
@@ -682,6 +684,7 @@ li {
 
     .uperlinedesktop::after {
         top: 3px;
+        left: 0;
         content: '';
         position: absolute;
         display: block;
@@ -696,45 +699,51 @@ li {
 
     .s3__p1 {
         margin: 0 0 0;
-
         flex: 1 0 20%;
     }
 
     .s3__p2 {
-        width: 38%;
+        width: 50%;
         margin: 0;
-        float: left;
     }
 
     .s3__p3 {
-        width: 57%;
-        margin: 0 0 0 3%;
-        display: inline-block;
+        width: 48%;
+        margin: 0 1%;
     }
 
     .s3__p4 {
-        /*! display: flex; */
-        /*! flex-wrap: wrap; */
-        /*! flex-direction: row; */
+        display: flex;
+        flex-wrap: wrap;
         padding: 20px 2% 40px 0;
     }
 
     .s3__p5 {
         padding: 0 0 0 13.3%;
+        width: 100%;
+    }
+
+    .footer__p1 {
+        margin: 10px 0 0;
+    }
+
+    .s4__supportpage {
+        margin-top: 140px;
+        margin-bottom: 140px;
     }
 
     .compactdesktop {
         max-width: 25%;
     }
 
-    .halfdesktop {
-        max-width: 50%;
-        margin: 0;
+    .desktop65 {
+        max-width: 65%;
+        margin: 55px 0 0;
     }
 
     /*forms start*/
     .footer__form__part {
-        padding: 10px 0 0;
+        padding: 10px 0 0 9%;
         max-width: 300px;
     }
 
@@ -758,25 +767,38 @@ li {
     }
 
     .footer__box {
-        max-width: 800px;
+        max-width: 870px;
         display: flex;
         flex-wrap: wrap;
-        flex: 0 0 70%;
         margin: 0 0 0 auto;
-    }
-
-    .footer__desktop {
-        flex: 1 0 30%;
     }
 
     .footback {
         position: relative;
-        width: 60%;
+        width: 65%;
         display: inline-block;
     }
 
+    .footer__desktop {
+        flex: 0 0 32%;
+        margin: 65px 0;
+    }
+
+    .footer__narrow {
+        flex: 0 0 30%;
+    }
+
+    .footer__wide {
+        flex: 0 0 40%;
+
+    }
+
+    .footer__nohead {
+        padding: 45px 0 0;
+    }
+
     .footer_form {
-        width: 40%;
+        width: 35%;
         display: inline-block;
     }
 

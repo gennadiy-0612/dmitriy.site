@@ -116,7 +116,7 @@ li {
     height: 204px;
     width: 204px;
     border-radius: 102px;
-    margin: auto;
+    margin: 50px auto;
 }
 
 .buttonmiddle {
@@ -386,12 +386,6 @@ li {
 
     .agtext {
         font: normal normal 400 16px/27px "Montserrat", sans-serif;
-    }
-
-    .centertext {
-        text-align: center;
-        line-height: 204px;
-        position: relative;
     }
 
     .year {
@@ -797,4 +791,11 @@ li {
         flex-wrap: wrap;
         justify-content: space-between;
     }
+}
+
+
+.centertext {
+    text-align: center;
+    line-height: 204px;
+    position: relative;
 }

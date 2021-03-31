@@ -628,9 +628,12 @@ li {
     .agh2support {
         font: normal normal 700 30px/45px "Montserrat", sans-serif;
     }
-    .agh2mob {
-        font: normal normal 700 30px/45px "Druk Text Wide", sans-serif;
+
+    .agh2desk {
+        font: normal normal 700 24px/41px "Montserrat", sans-serif;
     }
+
+
     .agh1desk {
         font: normal normal 700 37px/55px "Druk Text Wide", sans-serif;
     }
@@ -744,12 +747,12 @@ li {
     }
 
     .footer__p1 {
-        margin: 10px 0 0;
+        margin: 18px 0 0;
     }
 
     .s4__supportpage {
-        margin-top: 140px;
-        margin-bottom: 140px;
+        margin-top: 115px;
+        margin-bottom: 180px;
     }
 
     .compactdesktop {
@@ -758,13 +761,18 @@ li {
 
     .desktop65 {
         max-width: 65%;
-        margin: 55px 0 0;
+        margin: 43px 0 0;
+    }
+
+    /*buttons*/
+    .buttonmiddle {
+        margin: 0 0 0 auto;
     }
 
     /*forms start*/
     .footer__form__part {
-        padding: 10px 0 0 9%;
-        max-width: 300px;
+        padding: 0 0 0 7.5%;
+        max-width: 380px;
     }
 
     .formh1 {
@@ -782,7 +790,7 @@ li {
     /*forms finish*/
     /*footer*/
     .footer__box {
-        max-width: 905px;
+        max-width: 863px;
         display: flex;
         flex-wrap: wrap;
         margin: 0 0 0 auto;
@@ -790,28 +798,32 @@ li {
 
     .footback {
         position: relative;
-        width: 65%;
-        display: inline-block;
+        width: 61%;
     }
 
     .footer__desktop {
         flex: 0 0 32%;
-        margin: 65px 0;
+        margin: 71px 0;
     }
 
     .footer__narrow {
-        flex: 0 0 30%;
+        flex: 0 0 32%;
     }
 
     .footer__wide {
-        flex: 0 0 40%;
-
+        flex: 0 0 36%;
     }
 
     .footer__nohead {
-        padding: 45px 0 0;
+        padding: 42px 0 0;
+        position: relative;
+        left: -3%;
     }
-
+    .footer__p4{
+        margin: 16px 0 0;
+        line-height: 16px;
+    }
+    /* form */
     .footer_form {
         width: 35%;
         display: inline-block;
@@ -838,7 +850,6 @@ li {
         width: 30%;
     }
 }
-
 
 .centertext {
     text-align: center;

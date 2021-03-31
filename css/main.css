@@ -375,7 +375,7 @@ li {
     }
 
     .s3__p2 {
-        margin: 70px 0 0;
+        margin: 76px 0 22px;
     }
 
     .s3 {
@@ -424,7 +424,7 @@ li {
     }
     /*support*/
     .s3__p2-support {
-        margin-bottom: 133px;
+        margin: 50px 0 15px;
     }
 
     /*support*/
@@ -482,9 +482,11 @@ li {
 
     .allinfo {
         padding: 0;
-        margin: 82px 0 0;
+        margin: 40px 0 0;
     }
-
+    .allinfo-footermob{
+        margin: 80px 0 0;
+    }
     .footer__p1 {
         margin: 15px 0;
     }

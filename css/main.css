@@ -769,6 +769,10 @@ li {
     }
 
     /*forms start*/
+    .footer__boxes {
+        margin: -7px 0 0;
+    }
+
     .footer__form__part {
         padding: 0 0 0 7.5%;
         max-width: 380px;
@@ -778,12 +782,24 @@ li {
         font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
     }
 
+    .link-foot {
+        margin: 28px 10% 40px 0;
+    }
+
+    #msg {
+        min-height: 75px;
+    }
+
     .footer__form__input {
         background-color: transparent;
         border-width: 0;
         border-bottom: 1px solid #E5E5E5;;
         display: block;
         width: 100%;
+    }
+
+    .buttonmiddle-footer {
+        margin: 31px 0 0 36%;
     }
 
     /*forms finish*/
@@ -801,8 +817,8 @@ li {
     }
 
     .footer__desktop {
-        flex: 0 0 32%;
-        margin: 71px 0;
+        flex: 0 0 34%;
+        margin: 77px 0;
     }
 
     .footer__narrow {
@@ -815,13 +831,22 @@ li {
 
     .footer__nohead {
         padding: 42px 0 0;
+    }
+
+    .footer__nohead-last {
         position: relative;
         left: -3%;
     }
-    .footer__p4{
+
+    .footer__p3 {
+        margin: 0;
+    }
+
+    .footer__p4 {
         margin: 16px 0 0;
         line-height: 16px;
     }
+
     /* form */
     .footer_form {
         width: 35%;

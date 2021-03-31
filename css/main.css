@@ -422,7 +422,12 @@ li {
     .agh3mob {
         font: normal normal 700 19px/28px "Druk Text Wide", sans-serif;
     }
+    /*support*/
+    .s3__p2-support {
+        margin-bottom: 133px;
+    }
 
+    /*support*/
     /*Buttons start here*/
     .video__button {
         font: normal normal 400 14px/23px 'Montserrat', sans-serif;
@@ -460,6 +465,10 @@ li {
 
     .switcher.show::after {
         background: url("../img/index/arrowup.svg") center center no-repeat;
+    }
+
+    .buttonmiddle-footermob {
+        margin-bottom: 30px;
     }
 
     /*Buttons finish here*/
@@ -817,7 +826,7 @@ li {
     }
 
     .footer__desktop {
-        flex: 0 0 34%;
+        flex: 0 0 32%;
         margin: 77px 0;
     }
 
@@ -836,6 +845,7 @@ li {
     .footer__nohead-last {
         position: relative;
         left: -3%;
+        flex: 0 0 34%;
     }
 
     .footer__p3 {
@@ -870,8 +880,13 @@ li {
     }
 
     .footer__p5 {
-        display: inline-block;
-        width: 30%;
+        margin: -40px 0 0 auto;
+        max-width: 870px;
+        display: flex;
+    }
+
+    .footer__p6 {
+        margin-right: 1%;
     }
 }
 

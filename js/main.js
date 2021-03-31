@@ -2,12 +2,16 @@ let shch = {
     show: function () {
         let bodyMain = document.querySelector('body');
         let bodyMainClass = bodyMain.getAttribute('class');
-        if (bodyMainClass === 'overno') bodyMain.setAttribute('class', 'overyes');
-        else bodyMain.setAttribute('class', 'overno');
+        if (bodyMainClass === 'overno')
+            bodyMain.setAttribute('class', 'overyes');
+        else
+            bodyMain.setAttribute('class', 'overno');
     },
     extender: function () {
-        if (this.getAttribute('class') === 'maindirrection switcher') this.setAttribute('class', 'maindirrection switcher show')
-        else this.setAttribute('class', 'maindirrection switcher')
+        if (this.getAttribute('class') === 'maindirrection switcher')
+            this.setAttribute('class', 'maindirrection switcher show')
+        else
+            this.setAttribute('class', 'maindirrection switcher')
     },
     initPoint: 0,
     count: 0,
@@ -16,40 +20,44 @@ let shch = {
         e.stopPropagation();
         let activeBack = document.querySelector('.listworks__blueball');
         shch.curr = this.offsetLeft - 10;
-        shch.distance = shch.curr - shch.initPoint;
-        if (shch.distance > 0) {
-            shch.count = 1;
+        shch.distance = shch.initPoint - shch.curr;
+        if (shch.distance < 0)
             shch.animated();
+        if (shch.distance > 0) {
+            shch.animatedLeft();
         }
-        if (shch.distance < 0) shch.count = -1;
     },
     animated: function () {
+        shch.count = 1;
         shch.anim = function () {
             shch.initPoint += shch.count;
-            console.log(shch.initPoint + ' ' + shch.distance + ' ' + shch.curr + ' ' + shch.count);
             document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.initPoint + 'px;');
-            if (shch.initPoint > shch.curr) {
+            if (shch.initPoint === shch.curr) {
                 shch.initPoint = shch.curr;
-                clearInterval(shch.go)
+                clearInterval(shch.go);
                 return false;
             }
         }
-        if (shch.distance > 0) shch.count = 1;
-        shch.go = setInterval(shch.anim, 1000 / 60); // 60 FPS.}
+        if (shch.distance > 0)
+            shch.count = 1;
+        shch.go = setInterval(shch.anim, 1000 / 60);// 60 FPS.}
     },
-    animatedL: function () {
+    animatedLeft: function () {
         shch.anim = function () {
-            shch.curr -= 1;
+            shch.count = 1;
+            shch.distance -= shch.count;
             console.log(shch.initPoint + ' ' + shch.distance + ' ' + shch.curr + ' ' + shch.count);
-            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.initPoint + 'px;');
-            if (shch.initPoint > shch.curr) {
+            document.querySelector('.listworks__blueball').setAttribute('style', 'left:' + shch.distance + 'px;');
+            if (shch.distance < 0) {
                 shch.initPoint = shch.curr;
-                clearInterval(shch.go)
+                clearInterval(shch.go);
                 return false;
             }
         }
-        if (shch.distance > 0) shch.count = 1;
-        shch.go = setInterval(shch.anim, 1000 / 60); // 60 FPS.}
+        if (shch.distance > 0)
+            shch.count = 1;
+        shch.go = setInterval(shch.anim, 1000 / 60);
+        // 60 FPS.}
     },
     burger: function () {
         let visible = document.querySelector('.burger');

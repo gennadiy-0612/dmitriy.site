@@ -575,7 +575,7 @@ li {
         position: relative;;
     }
 
-    .emotions__item.backgray {
+    .emotions__item{
         padding: 10px;
     }
 
@@ -599,6 +599,10 @@ li {
 
     .emotions__item {
         margin: 0 18px;
+    }
+
+    .emotions__desk {
+        margin: -3px 0 7px;
     }
 
     .emotions__ag {

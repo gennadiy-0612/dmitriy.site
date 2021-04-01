@@ -13,51 +13,52 @@ let shch = {
         else
             this.setAttribute('class', 'maindirrection switcher')
     },
-    movement:0,
-    initPoint: 0,
+    move: 0,
+    start: 0,
     count: 0,
     curr: 0,
+    distance: 0,
     animBall: document.querySelector('.listworks__blueball'),
     activeLight: function (e) {
-        this.removeEventListener('click', shch.activeLight);
-        e.stopPropagation();
-        shch.curr = this.offsetLeft - 10;
-        shch.distance = shch.initPoint - shch.curr;
-        if (shch.distance < 0) shch.animated();
-        if (shch.distance > 0) {
-            shch.curr = this.offsetLeft + 10;
-            shch.distance = shch.initPoint - shch.curr;
-            shch.animatedLeft();
+        if (shch.move) {
+            console.log(shch.move)
+            return;
         }
-        this.addEventListener('click', shch.activeLight)
+        shch.move = 1;
+        shch.curr = this.offsetLeft - 10;
+        shch.distance = shch.start - shch.curr;
+        shch.distance < 0 ? shch.animated() : shch.animatedLeft();
     },
     animated: function () {
         shch.count = 1;
         shch.anim = function () {
-            shch.initPoint += shch.count;
-            shch.animBall.setAttribute('style', 'left:' + shch.initPoint + 'px;');
-            if (shch.initPoint > shch.curr) {
+            shch.start += shch.count;
+            shch.animBall.setAttribute('style', 'left:' + shch.start + 'px;');
+            if (shch.start > shch.curr) {
                 clearInterval(shch.go);
-                shch.initPoint = shch.curr;
+                shch.start = shch.curr;
+                shch.move = 0;
+                console.log(shch.move);
                 return false;
             }
         }
-        shch.go = setInterval(shch.anim, 60);
+        shch.go = setInterval(shch.anim, 100/60);
     },
     animatedLeft: function () {
+        shch.count = 1;
         shch.anim = function () {
-            shch.count = 1;
             shch.distance -= shch.count;
-            shch.curr -= shch.count;
-            console.log('init:' + shch.initPoint + ' curr:' + shch.curr + ' distance:' + shch.distance + ' count:' + shch.count);
-            shch.animBall.setAttribute('style', 'left:' + shch.curr + 'px;');
+            shch.start -= shch.count;
+            shch.animBall.setAttribute('style', 'left:' + shch.start + 'px;');
             if (shch.distance < 0) {
-                shch.initPoint = shch.curr;
+                shch.move = 0;
+                shch.start = shch.curr;
+                shch.count = 0;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        shch.go = setInterval(shch.anim, 1000 / 60);
+        shch.go = setInterval(shch.anim, 100 / 60);
     },
     burger: function () {
         let visible = document.querySelector('.burger');
@@ -68,8 +69,10 @@ let shch = {
             document.querySelectorAll('.switcher')[i].addEventListener('click', shch.extender);
         }
         let n = 0;
-        for (n; n < switchers.length; n++) {
-            document.querySelectorAll('.listworks__li')[n].addEventListener('click', shch.activeLight);
+        shch.balls = document.querySelectorAll('.where .listworks__li');
+        shch.ballsLenght = shch.balls.length;
+        for (n; n < shch.ballsLenght; n++) {
+            document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight, false);
         }
     }
 }

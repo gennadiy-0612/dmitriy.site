@@ -637,9 +637,10 @@ li {
 
     /*.vacancies*/
     /*contacts*/
-    .command{
+    .command {
         margin: 0 auto;
     }
+
     .contact-img {
         width: 288px;
         height: 235px;
@@ -980,10 +981,53 @@ li {
     .footer__p6 {
         margin-right: 1%;
     }
+
     /*contacts*/
-    .command{
-        margin: 0 auto;
+    .s2-contactdesk {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap
     }
+
+    .s3contactinfo__2desk {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 217px;
+        margin-bottom: 238px;
+    }
+
+    .contactinfo__2desk {
+        flex: 0 0 30%;
+        overflow: hidden;
+    }
+    .s3contactinfo__2desk-pulse {
+        flex: 2 2 30%;
+    }
+    .s3contactinfo__2desk-p {
+        margin: 0 24% 16px 0;
+    }
+
+    .s3contactinfo-bigbutton {
+        height: 260px;
+        width: 260px;
+        border-radius: 130px;
+        margin-top: -20px;
+    }
+
+    .s3contactinfo-press {
+        line-height: 260px;
+        text-align: center;
+    }
+
+    .connect-figcaption {
+        margin: 0;
+    }
+
+    .command {
+        margin: 0;
+    }
+
     .contact-img {
         width: 427px;
         height: 508px;

@@ -735,6 +735,10 @@ li {
         background-color: #FFFFFF;
     }
 
+    .uperlinedesktop-vac::after {
+        top: -40px;
+    }
+
     .s3__flex {
         display: flex;
     }
@@ -813,6 +817,7 @@ li {
     .content-vacancies {
         margin: 80px 0 25px;
     }
+
     .vacancies-half {
         width: 52%;
     }

@@ -637,13 +637,29 @@ li {
 
     /*.vacancies*/
     /*contacts*/
+    .s2-contactdesk {
+        margin-top: 144px;
+        margin-bottom: 83px;
+    }
     .command {
         margin: 0 auto;
+    }
+
+    .connect-figcaption {
+        margin: 0 0 40px;
     }
 
     .contact-img {
         width: 288px;
         height: 235px;
+    }
+
+    .command-h2 {
+        margin: 25px 0 0;
+    }
+
+    .command-p {
+        margin: 11px 0 0;
     }
 
     /*contacts*/

@@ -1145,7 +1145,7 @@ li {
 @keyframes appear {
     from {
         opacity: 0;
-        margin-top: 5%;
+        margin-top: -5%;
     }
 
     to {
@@ -1155,5 +1155,5 @@ li {
 }
 
 .appear {
-    animation: 5s appear;
+    animation: 4s appear;
 }

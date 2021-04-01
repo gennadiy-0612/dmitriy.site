@@ -588,7 +588,7 @@ li {
     }
 
     .emotions__size {
-        width: 284px;
+        width: 264px;
         text-align: left;
         margin: 4px 0 0;
     }
@@ -605,9 +605,11 @@ li {
         font: normal normal 700 20px/34px 'Montserrat', sans-serif;
     }
 
+    .emotions {
+        margin: 0 0 90px;
+    }
+
     .backgray {
-        /*background-color: hsl(0deg 0% 9% / 59%);*/
-        /*background-color: rgb(24 24 24 / 59%);*/
         background-color: #181818;
     }
 
@@ -626,9 +628,9 @@ li {
     }
 
     .video__go, .video__a {
-        width: 30px;
-        height: 30px;
-        border-radius: 15px;
+        width: 25px;
+        height: 25px;
+        border-radius: 13px;
         display: block;
     }
 
@@ -639,15 +641,21 @@ li {
     .video__prev {
         position: absolute;
         background: url("../img/index/prev.svg") center center no-repeat;
-        right: -30px;
+        right: -10px;
         background-size: contain;
+        z-index: 1;
     }
 
     .video__next {
         background: url("../img/index/next.svg") center center no-repeat;
         position: absolute;
-        left: -30px;
+        left: -10px;
         background-size: contain;
+    }
+
+    /*video*/
+    /*s7companies*/
+    .s7companies {
     }
 
     /*.vacancies*/

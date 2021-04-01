@@ -920,7 +920,7 @@ li {
 
     .footer__desktop {
         flex: 0 0 32%;
-        margin: 77px 0;
+        margin: 71px 0 86px;
     }
 
     .footer__narrow {
@@ -946,8 +946,7 @@ li {
     }
 
     .footer__p4 {
-        margin: 16px 0 0;
-        line-height: 16px;
+        margin: 16px 0 -14px;
     }
 
     /* form */
@@ -983,6 +982,11 @@ li {
     }
 
     /*contacts*/
+    .contacth1 {
+        margin-top: 380px;
+        margin-bottom: 460px;
+    }
+
     .s2-contactdesk {
         display: flex;
         justify-content: space-around;
@@ -993,19 +997,24 @@ li {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin-top: 217px;
-        margin-bottom: 238px;
+        margin-top: 70px;
+        margin-bottom: 229px;
     }
 
     .contactinfo__2desk {
-        flex: 0 0 30%;
+        flex: 0 0 33%;
         overflow: hidden;
+        margin-top: 122px;
     }
+
     .s3contactinfo__2desk-pulse {
-        flex: 2 2 30%;
+        flex: 2 2 23%;
+        margin: 50px 0 0;
+        padding: 80px 0 20px 2%;
     }
+
     .s3contactinfo__2desk-p {
-        margin: 0 24% 16px 0;
+        line-height: 40px;
     }
 
     .s3contactinfo-bigbutton {
@@ -1021,7 +1030,7 @@ li {
     }
 
     .connect-figcaption {
-        margin: 0;
+        margin: -5px 0 0 0;
     }
 
     .command {
@@ -1033,8 +1042,17 @@ li {
         height: 508px;
     }
 
+    .command-h2 {
+        margin-bottom: 17px;
+    }
+
+    .command-p {
+        line-height: 38px;
+    }
+
     /*contacts*/
 }
+
 
 .centertext {
     text-align: center;

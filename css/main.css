@@ -298,7 +298,7 @@ li {
         margin: 0;
         display: block;
         position: absolute;
-        top: 24px;
+        top: 14px;
         left: 16px;
     }
 
@@ -453,6 +453,11 @@ li {
 
     /*support*/
     /*Buttons start here*/
+    .s3contactinfo-press {
+        line-height: 204px;
+        text-align: center;
+    }
+
     .bluebutton {
         background: #1378EF;
         border-radius: 64px;
@@ -641,6 +646,7 @@ li {
         margin-top: 144px;
         margin-bottom: 83px;
     }
+
     .command {
         margin: 0 auto;
     }

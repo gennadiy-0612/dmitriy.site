@@ -42,7 +42,7 @@ let shch = {
                 return false;
             }
         }
-        shch.go = setInterval(shch.anim, 60);// 60 FPS.}
+        shch.go = setInterval(shch.anim, 60);
     },
     animatedLeft: function () {
         shch.anim = function () {
@@ -58,7 +58,6 @@ let shch = {
             }
         }
         shch.go = setInterval(shch.anim, 1000 / 60);
-        // 60 FPS.}
     },
     burger: function () {
         let visible = document.querySelector('.burger');

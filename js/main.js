@@ -42,7 +42,7 @@ let shch = {
                 return false;
             }
         }
-        shch.go = setInterval(shch.anim, 100/60);
+        shch.go = setInterval(shch.anim, 100 / 60);
     },
     animatedLeft: function () {
         shch.count = 1;
@@ -74,6 +74,32 @@ let shch = {
         for (n; n < shch.ballsLenght; n++) {
             document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
+        ScrollDetect.firstEffect = new ScrollDetect('.aboutus.s3', 'appear', 1);
+        window.addEventListener('scroll', ScrollDetect.firstEffect.scrolling.bind(ScrollDetect.firstEffect), false);
     }
 }
 window.addEventListener('load', shch.burger);
+
+function ScrollDetect(whoIsAnimate, whatKindAnimate, startChanges) {
+    this.elementTarget = whoIsAnimate;
+    this.animateClass = whatKindAnimate;
+    this.windowH = window.innerHeight;
+    this.initProps = function () {
+        this.elementWork = document.querySelector(this.elementTarget);
+        this.initClass = this.elementWork.getAttribute('class');
+        this.elPositonY = this.elementWork.offsetTop;
+    };
+    this.scrolling = function () {
+        this.initProps();
+        if ((this.elPositonY + 100) > Math.floor(window.scrollY) && Math.floor(window.scrollY) > (this.elPositonY - this.windowH) && startChanges) {
+            this.elementWork.setAttribute('class', this.initClass + ' ' + this.animateClass);
+            startChanges = 0;
+            console.clear();
+            console.log(this.elementWork);
+        } else {
+            this.elementWork.setAttribute('class', this.initClass);
+        }
+        shch.startChanges = 0;
+    }
+}
+

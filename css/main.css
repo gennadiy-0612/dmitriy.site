@@ -273,6 +273,9 @@ li {
 
 /*.vacancies*/
 @media (max-width: 1070px) {
+    .uperlinedesktop::after{
+        content: none;
+    }
     .year {
         font: normal normal 400 27px/40px 'Druk Text Wide', sans-serif;
     }

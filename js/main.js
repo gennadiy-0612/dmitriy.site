@@ -72,7 +72,7 @@ let shch = {
         shch.balls = document.querySelectorAll('.where .listworks__li');
         shch.ballsLenght = shch.balls.length;
         for (n; n < shch.ballsLenght; n++) {
-            document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight, false);
+            document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
     }
 }

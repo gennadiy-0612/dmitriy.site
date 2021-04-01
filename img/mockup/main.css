@@ -714,8 +714,19 @@ li {
     }
 
     /*Top menu nav finished*/
-    /*vacaacancies*/
-    .agh1desk-doit{}
+    /*vacancies start*/
+    .agh1desk-doit {
+        margin: 100px auto 35px;
+        max-width: 510px;
+        text-align: center;
+        padding: 0 7% 0 0;
+    }
+
+    .bigbutton-vacancies {
+        margin: 0 auto;
+    }
+
+    /*vacancies finish*/
     .s1__p2__p1__p1-fonthavy {
         font: normal normal 700 60px/82px "Druk Text Wide", sans-serif;
         margin: 347px auto 430px 0;

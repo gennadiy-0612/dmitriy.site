@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat Regular'), local('Montserrat Regular'),
-    url('./font/Montserrat-Regular.ttf') format('truetype');
+    url('https://p.cx.ua/pf/dmitriy.site/css/font/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
     font-family: 'Montserrat';
     src: local('Montserrat SemiBold'), local('Montserrat SemiBold'),
-    url('./font/Montserrat-SemiBold.ttf') format('truetype');
+    url('https://p.cx.ua/pf/dmitriy.site/css/font/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
@@ -19,7 +19,7 @@
     font-style: normal;
     font-weight: bold;
     src: local('Druk Text Wide'), local('Druk Text Wide'),
-        /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');*/ url('./font/DrukTextWide-Bold.ttf') format('truetype');
+        /*url('https://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');*/ url('https://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');
     font-display: swap;
 }
 

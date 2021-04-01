@@ -80,6 +80,7 @@ li {
     top: -20px;
 }
 
+/*.buttons start*/
 .pulseback {
     position: relative;
 }
@@ -135,6 +136,11 @@ li {
     left: 50px;
 }
 
+.video__button {
+    font: normal normal 400 14px/23px 'Montserrat', sans-serif;
+}
+
+/*.buttons finish*/
 /*.back-site start*/
 .back-site {
     position: fixed;
@@ -430,10 +436,6 @@ li {
 
     /*support*/
     /*Buttons start here*/
-    .video__button {
-        font: normal normal 400 14px/23px 'Montserrat', sans-serif;
-    }
-
     .bluebutton {
         background: #1378EF;
         border-radius: 64px;
@@ -719,7 +721,7 @@ li {
     }
 
     .s2__p1-vacancies {
-        margin: 190px 0 90px;
+        margin: 190px 0 85px;
     }
 
     .uperlinedesktop::after {
@@ -803,9 +805,31 @@ li {
     .formh1 {
         font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
     }
-    .formh1-vacancies{
+
+    .formh1-vacancies {
         margin: 50px 0 40px;
     }
+
+    .content-vacancies {
+        margin: 80px 0 25px;
+    }
+    .vacancies-half {
+        width: 52%;
+    }
+
+    .content-vacancies-first {
+        margin: 117px 0 27px;
+    }
+
+    .vacancies-p {
+        margin: 0 0 17px;
+    }
+
+    .float-r {
+        float: right;
+        margin-top: -15%;
+    }
+
     .link-foot {
         margin: 28px 10% 40px 0;
     }

@@ -273,9 +273,10 @@ li {
 
 /*.vacancies*/
 @media (max-width: 1070px) {
-    .uperlinedesktop::after{
+    .uperlinedesktop::after {
         content: none;
     }
+
     .year {
         font: normal normal 400 27px/40px 'Druk Text Wide', sans-serif;
     }
@@ -353,7 +354,7 @@ li {
     }
 
     .overyes .burger__lines::before, .overyes .burger__lines::after {
-        top: 18px;
+        top: 16px;
     }
 
     .overyes .burger__lines::before {
@@ -564,7 +565,7 @@ li {
     }
 
     .listworks__li {
-        margin: 10px;
+        margin: 15px 10px;
     }
 
     /*video emotions*/
@@ -1083,4 +1084,20 @@ li {
     text-align: center;
     line-height: 204px;
     position: relative;
+}
+
+/*hide scroll*/
+.listworks {
+    overflow-x: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.listworks::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.listworks {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }

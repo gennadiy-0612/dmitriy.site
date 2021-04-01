@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id=parent>
+    Here's some content. Scroll horizontally below.
+    <div id=container>
+        <div id=child>
+            Here's some more content and this is reasonably long and won't wrap because we told it not to.
+        </div>
+    </div>
+    <div id=coverup></div>
+</div>
+<style type="text/css">
+    body {
+        font: 10pt Verdana;
+        background: #fff;
+    }
+
+    #container {
+        width: 200px;
+        height: 200px;
+        border-right: 1px solid #000;
+        overflow-x: scroll;
+    }
+
+    #child {
+        width: 800px; height: 120px;
+    }
+
+    #coverup {
+        position: relative;
+        left: 0; top: -40px;
+        width: 200px; height: 40px;
+        background: #fff;
+    }
+</style>
+</body>
+</html>

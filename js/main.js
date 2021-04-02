@@ -8,10 +8,10 @@ let shch = {
             bodyMain.setAttribute('class', 'overno');
     },
     extender: function () {
-        if (this.getAttribute('class') === 'maindirrection switcher')
-            this.setAttribute('class', 'maindirrection switcher show')
+        if (this.getAttribute('class') === 'maindirrection switcher s3__p4 uperlinedesktop')
+            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop show')
         else
-            this.setAttribute('class', 'maindirrection switcher')
+            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop')
     },
     move: 0,
     start: 0,

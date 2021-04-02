@@ -154,6 +154,7 @@ li {
     position: absolute;
     left: 50px;
 }
+
 .listworks {
     display: flex;
     width: 100%;
@@ -177,6 +178,7 @@ li {
 .listworks__li {
     margin: 15px 10px;
 }
+
 .video__button {
     font: normal normal 400 14px/23px 'Montserrat', sans-serif;
 }
@@ -313,6 +315,94 @@ li {
 }
 
 /*.vacancies*/
+/*video test emotions*/
+.s6 {
+    position: relative;;
+}
+
+.emotions__item {
+    padding: 10px;
+}
+
+.imotions__rounded {
+    width: 62px;
+    height: 62px;
+    border-radius: 31px;
+    margin: 13px 0 0 0;
+    display: block;
+}
+
+.emotions__size {
+    width: 264px;
+    text-align: left;
+    margin: 4px 0 0;
+}
+
+.emotions__link {
+    text-align: left;
+}
+
+.emotions__item {
+    margin: 0 18px;
+}
+
+.emotions__desk {
+    margin: -3px 0 7px;
+}
+
+.emotions__ag {
+    font: normal normal 700 20px/34px 'Montserrat', sans-serif;
+}
+
+.emotions {
+    margin: 0 0 90px;
+}
+
+.backgray {
+    background-color: #181818;
+}
+
+.video {
+    display: flex;
+    width: 100%;
+}
+
+.video__nav {
+    position: absolute;
+    display: flex;
+    bottom: -100px;
+    right: 16px;
+    width: 80px;
+    margin: 0;
+}
+
+.video__go, .video__a {
+    width: 25px;
+    height: 25px;
+    border-radius: 13px;
+    display: block;
+}
+
+.video__go {
+    position: relative;
+}
+
+.video__prev {
+    position: absolute;
+    background: url("../img/index/prev.svg") center center no-repeat;
+    right: -10px;
+    background-size: contain;
+    z-index: 1;
+}
+
+.video__next {
+    background: url("../img/index/next.svg") center center no-repeat;
+    position: absolute;
+    left: -10px;
+    background-size: contain;
+}
+
+/*video test emotions*/
 @media (max-width: 1070px) {
     .uperlinedesktop::after {
         content: none;
@@ -572,94 +662,7 @@ li {
 
     /*index page*/
 
-    /*video emotions*/
-    .s6 {
-        position: relative;;
-    }
 
-    .emotions__item {
-        padding: 10px;
-    }
-
-    .imotions__rounded {
-        width: 62px;
-        height: 62px;
-        border-radius: 31px;
-        margin: 13px 0 0 0;
-        display: block;
-    }
-
-    .emotions__size {
-        width: 264px;
-        text-align: left;
-        margin: 4px 0 0;
-    }
-
-    .emotions__link {
-        text-align: left;
-    }
-
-    .emotions__item {
-        margin: 0 18px;
-    }
-
-    .emotions__desk {
-        margin: -3px 0 7px;
-    }
-
-    .emotions__ag {
-        font: normal normal 700 20px/34px 'Montserrat', sans-serif;
-    }
-
-    .emotions {
-        margin: 0 0 90px;
-    }
-
-    .backgray {
-        background-color: #181818;
-    }
-
-    .video {
-        display: flex;
-        width: 100%;
-    }
-
-    .video__nav {
-        position: absolute;
-        display: flex;
-        bottom: -100px;
-        right: 16px;
-        width: 80px;
-        margin: 0;
-    }
-
-    .video__go, .video__a {
-        width: 25px;
-        height: 25px;
-        border-radius: 13px;
-        display: block;
-    }
-
-    .video__go {
-        position: relative;
-    }
-
-    .video__prev {
-        position: absolute;
-        background: url("../img/index/prev.svg") center center no-repeat;
-        right: -10px;
-        background-size: contain;
-        z-index: 1;
-    }
-
-    .video__next {
-        background: url("../img/index/next.svg") center center no-repeat;
-        position: absolute;
-        left: -10px;
-        background-size: contain;
-    }
-
-    /*video*/
     /*s7companies*/
     .s7companies {
     }
@@ -671,6 +674,7 @@ li {
 
     .uperlinedesktop::after {
         top: -18px;
+        left: auto;
     }
 
     .buttonmiddle-vacancies {
@@ -762,7 +766,7 @@ li {
         content: none;
     }
 
-    .s1, .s2, .s3, .s4, .s5 {
+    .s1, .s2, .s3, .s4, .s5, .s6 {
         max-width: 1300px;
         margin-left: auto;
         margin-right: auto;
@@ -894,6 +898,11 @@ li {
 
     .keyprinciples__h2 {
         font: normal normal 400 20px/34px 'Montserrat', sans-serif;
+    }
+
+    .agh1desk-nofull {
+        margin: auto;
+        max-width: 900px;
     }
 
     /*Index page finished*/
@@ -1181,11 +1190,11 @@ li {
     /*contacts*/
 }
 
-.link {
+.link-top {
     position: relative;
 }
 
-.link::after {
+.link-top::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -1194,16 +1203,16 @@ li {
     background-color: #E5E5E5;
 }
 
-.link:hover::after {
+.link-top:hover::after {
     height: 1px;
 }
 
-.link:active::after {
+.link-top:active::after {
     height: 1px;
     background-color: #1378EF;;
 }
 
-.link:active {
+.link-top:active {
     color: #1378EF;;
 }
 

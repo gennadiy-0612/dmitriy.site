@@ -834,7 +834,10 @@ li {
     }
 
     /*Index page start*/
-    .h1index{}
+    .h1index {
+        font: normal normal 700 78px/90px "Druk Text Wide", sans-serif;
+    }
+
     /*Index page finished*/
     .s2__p1-vacancies {
         margin: 190px 0 85px;

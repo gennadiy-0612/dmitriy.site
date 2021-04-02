@@ -320,6 +320,27 @@ li {
     position: relative;;
 }
 
+.video__list {
+    display: flex;
+    position: relative;
+}
+
+.video__item {
+    background: url("../img/index/videoemotions.svg") center center no-repeat #181818;
+    background-size: 112px 112px;
+    width: 300px;
+    height: 200px;
+    opacity: .59;
+    margin: 5px;
+}
+
+.video__nav-top {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
 .emotions__item {
     padding: 10px;
 }
@@ -661,8 +682,6 @@ li {
     }
 
     /*index page*/
-
-
     /*s7companies*/
     .s7companies {
     }

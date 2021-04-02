@@ -181,6 +181,9 @@ li {
 
 .video__button {
     font: normal normal 400 14px/23px 'Montserrat', sans-serif;
+    margin: auto 0 auto auto;
+    width: 104px;
+    height: 24px;
 }
 
 /*.buttons finish*/
@@ -319,15 +322,19 @@ li {
 .s6 {
     position: relative;;
 }
-.video__set {
+
+.video__h1 {
+    font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
+    margin: 4.2% auto auto 2.6%;
 }
+
 .video__list {
     position: absolute;
     right: 10%;
     top: 10%;
     display: flex;
     justify-content: space-between;
-    padding: 0 120px 50px 15px;
+    padding: 0 14% 50px 4%;
     left: 10%;
     bottom: 10%;
     align-items: center;
@@ -396,13 +403,29 @@ li {
     width: 100%;
 }
 
+.video__action {
+    position: absolute;
+    right: 0;
+    width: 166px;
+    height: 246px;
+    top: 0;
+    display: flex;
+    background: url(../img/index/videoemotions.svg) -40px center no-repeat;
+    background-size: 346px 346px;
+    line-height: 246px;
+    padding-left: 146px;
+}
+
 .video__nav {
     position: absolute;
     display: flex;
     bottom: -100px;
     right: 16px;
-    width: 80px;
+    width: 170px;
     margin: 0;
+    height: 180px;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .video__go, .video__a {
@@ -422,13 +445,23 @@ li {
     right: -10px;
     background-size: contain;
     z-index: 1;
+    width: 41px;
+    right: -10px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
 }
 
 .video__next {
     background: url("../img/index/next.svg") center center no-repeat;
     position: absolute;
     left: -10px;
-    background-size: contain;
+    background-size: 41px 23px;
+    width: 41px;
+    left: -10px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
 }
 
 /*video test emotions*/
@@ -940,6 +973,12 @@ li {
         align-items: center;
     }
 
+    .video__go {
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
+
     /*Index page video finished*/
     /*Index page finished*/
     .s2__p1-vacancies {
@@ -1295,16 +1334,36 @@ li {
 .appear {
     animation: 2s appear;
 }
+
 /*Modal Video*/
 .video__set {
     height: 100%;
     width: 100%;
     position: fixed;
     top: 0;
+    display: none;
+    z-index: 1;
 }
-.close{
+
+.video__set::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1F1F1F;
+    z-index: -1;
+}
+
+.close {
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    background: url("../img/index/x.svg") center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: -10.3%;
+    top: -6%;
+    z-index: 1;
 }
+
 /*Modal Video*/

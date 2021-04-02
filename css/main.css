@@ -154,7 +154,29 @@ li {
     position: absolute;
     left: 50px;
 }
+.listworks {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
 
+.listworks__blueball {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #1378EF;
+    z-index: -1;
+}
+
+.listworks__li {
+    margin: 15px 10px;
+}
 .video__button {
     font: normal normal 400 14px/23px 'Montserrat', sans-serif;
 }
@@ -549,29 +571,6 @@ li {
     }
 
     /*index page*/
-    .listworks {
-        display: flex;
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .listworks__blueball {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        left: 0;
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
-        background-color: #1378EF;
-        z-index: -1;
-    }
-
-    .listworks__li {
-        margin: 15px 10px;
-    }
 
     /*video emotions*/
     .s6 {
@@ -882,25 +881,21 @@ li {
     .up-bottom::after {
         top: 116%;
     }
+
     .year__event {
         max-width: 360px;
         margin: 0 0 12px;
     }
-    .keyprinciples{
+
+    .keyprinciples {
         display: flex;
         margin-top: 150px;
     }
 
-.keyprinciples__h2{
-    font-family: 'Montserrat';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 34px;
-    letter-spacing: 0em;
-    text-align: left;
+    .keyprinciples__h2 {
+        font: normal normal 400 20px/34px 'Montserrat', sans-serif;
+    }
 
-}
     /*Index page finished*/
     .s2__p1-vacancies {
         margin: 190px 0 85px;
@@ -909,6 +904,7 @@ li {
     .s3__flex {
         display: flex;
     }
+
     .s3__p1 {
         margin: 10px 0 0;
         flex: 1 0 20%;
@@ -942,6 +938,10 @@ li {
     .s4__supportpage {
         margin-top: 115px;
         margin-bottom: 180px;
+    }
+
+    .where__h3 {
+        max-width: 760px;
     }
 
     .compactdesktop {

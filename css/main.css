@@ -135,7 +135,7 @@ li {
     background: #1378EF;
     border-radius: 64px;
     padding: 0 15px;
-    margin: 5px;
+    margin: 12px 5px;
 }
 
 .topics {
@@ -835,8 +835,61 @@ li {
 
     /*Index page start*/
     .h1index {
-        font: normal normal 700 78px/90px "Druk Text Wide", sans-serif;
+        margin: 155px 0 0;
+        max-width: 60%;
     }
+
+    .h1index-big {
+        font: normal normal 700 78px/90px "Druk Text Wide", sans-serif;
+        display: block;
+    }
+
+    .h1index-min {
+        font: normal normal 400 30px/41px "Druk Text Wide", sans-serif;
+        display: block;
+        margin: 45px 0 0;
+    }
+
+    .topics {
+        max-width: 580px;
+        margin: 50px 0 390px 0;
+    }
+
+    .topics__button {
+        font: normal normal 400 21px/32px "Montserrat", sans-serif;
+        padding: 2px 0;
+        display: block;
+    }
+
+    .aboutus__h3 {
+        margin: 20px 0 30px;
+    }
+
+    .year__set {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .year {
+        flex: 1 1 30%;
+    }
+
+    .year__historydate {
+        margin: 36px 0 27px;
+        width: 90px;
+    }
+
+    .up-bottom::after {
+        top: 116%;
+    }
+    .year__event {
+        max-width: 360px;
+        margin: 0 0 12px;
+    }
+    .keyprinciples{
+        display: flex;
+    }
+
 
     /*Index page finished*/
     .s2__p1-vacancies {
@@ -846,7 +899,6 @@ li {
     .s3__flex {
         display: flex;
     }
-
     .s3__p1 {
         margin: 10px 0 0;
         flex: 1 0 20%;
@@ -1146,7 +1198,7 @@ li {
 }
 
 /*scroll animation*/
-.aboutus, .keyprinciples {
+.aboutus {
     position: relative;
 }
 

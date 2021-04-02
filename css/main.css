@@ -319,10 +319,16 @@ li {
 .s6 {
     position: relative;;
 }
-
+.video__set {
+}
 .video__list {
+    position: absolute;
+    right: 0;
+    top: 0;
     display: flex;
-    position: relative;
+    justify-content: space-between;
+    padding: 0 120px 50px 15px;
+    left: 0;
 }
 
 .video__item {
@@ -383,7 +389,7 @@ li {
     background-color: #181818;
 }
 
-.video {
+.emotions__set {
     display: flex;
     width: 100%;
 }
@@ -924,6 +930,15 @@ li {
         max-width: 900px;
     }
 
+    /*Index page video start*/
+    .video__nav-top {
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /*Index page video finished*/
     /*Index page finished*/
     .s2__p1-vacancies {
         margin: 190px 0 85px;
@@ -1247,18 +1262,18 @@ li {
 }
 
 /*hide scroll*/
-.listworks, .video {
+.listworks, .emotions__set {
     overflow-x: scroll; /* Add the ability to scroll */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .listworks::-webkit-scrollbar,
-.video::-webkit-scrollbar {
+.emotions__set::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.listworks, .video {
+.listworks, .emotions__set {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }

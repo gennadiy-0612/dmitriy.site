@@ -1336,6 +1336,17 @@ li {
     animation: 2s appear;
 }
 
+@keyframes down {
+    from {
+        margin-top: -100px;
+        opacity: 0;
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
 /*Modal Video*/
 .video__set {
     height: 100%;
@@ -1344,6 +1355,8 @@ li {
     top: 0;
     display: none;
     z-index: 1;
+    animation-name: down;
+    animation-duration: 1s;
 }
 
 .video__set::after {

@@ -414,6 +414,7 @@ li {
     background-size: 346px 346px;
     line-height: 246px;
     padding-left: 146px;
+    z-index: 1;
 }
 
 .video__nav {

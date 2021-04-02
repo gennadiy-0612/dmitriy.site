@@ -257,6 +257,9 @@ li {
     border: 1px solid #FFF;
     opacity: .1;
     z-index: -1;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .back-site__round-in {
@@ -779,10 +782,10 @@ li {
     /*! display: flex; */
     /*! justify-content: center; */
     /*! align-items: center; */
-    /*! overflow: hidden; */
+    overflow: hidden;
     box-shadow: 0 0 1px black;
     position: absolute;
-    top: -200px;
+    top: 0;
     right: 0;
     left: 0;
     z-index: -1;
@@ -827,7 +830,7 @@ li {
         content: none;
     }
 
-    .s1, .s2, .s3, .s4, .s5, .s6 {
+    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         max-width: 1300px;
         margin-left: auto;
         margin-right: auto;

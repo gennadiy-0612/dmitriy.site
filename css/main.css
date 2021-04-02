@@ -323,12 +323,14 @@ li {
 }
 .video__list {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10%;
+    top: 10%;
     display: flex;
     justify-content: space-between;
     padding: 0 120px 50px 15px;
-    left: 0;
+    left: 10%;
+    bottom: 10%;
+    align-items: center;
 }
 
 .video__item {
@@ -1293,3 +1295,16 @@ li {
 .appear {
     animation: 2s appear;
 }
+/*Modal Video*/
+.video__set {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.close{
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+}
+/*Modal Video*/

@@ -891,7 +891,16 @@ li {
         margin-top: 150px;
     }
 
+.keyprinciples__h2{
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
 
+}
     /*Index page finished*/
     .s2__p1-vacancies {
         margin: 190px 0 85px;

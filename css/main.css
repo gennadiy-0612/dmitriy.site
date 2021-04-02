@@ -131,6 +131,21 @@ li {
     margin: 32px auto 0 5px;
 }
 
+.bluebutton {
+    background: #1378EF;
+    border-radius: 64px;
+    padding: 0 15px;
+    margin: 5px;
+}
+
+.topics {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    padding: 0;
+    margin: auto;
+}
+
 .connect {
     font: normal normal 400 16px/24px "Montserrat", sans-serif;
     display: block;
@@ -466,13 +481,6 @@ li {
         text-align: center;
     }
 
-    .bluebutton {
-        background: #1378EF;
-        border-radius: 64px;
-        padding: 0 15px;
-        margin: 5px;
-    }
-
     .switcher .extender {
         display: none;
     }
@@ -505,14 +513,6 @@ li {
     }
 
     /*Buttons finish here*/
-    .topics {
-        display: flex;
-        flex-wrap: wrap;
-        width: 95%;
-        padding: 0;
-        margin: auto;
-    }
-
     .allinfo {
         padding: 0;
         margin: 40px 0 0;
@@ -833,6 +833,9 @@ li {
         max-width: 50%;
     }
 
+    /*Index page start*/
+    .h1index{}
+    /*Index page finished*/
     .s2__p1-vacancies {
         margin: 190px 0 85px;
     }

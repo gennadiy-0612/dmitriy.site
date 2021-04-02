@@ -82,7 +82,30 @@ let shch = {
         for (n; n < shch.ballsLenght; n++) {
             document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
-        shch.showIt('.video__set','.video__button', '.close')
+        shch.showIt('.video__set','.video__button', '.close');
+
+        let myScript = document.createElement("script");
+        myScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js");
+        document.body.appendChild(myScript);
+        let myScript1 = document.createElement("script");
+        myScript.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/OrbitControls.js");
+        document.body.appendChild(myScript1);
+        let myScript2 = document.createElement("script");
+        myScript.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/GeometryUtils.js");
+        document.body.appendChild(myScript2);
+        let myScript3 = document.createElement("script");
+        myScript.setAttribute("src", "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js");
+        document.body.appendChild(myScript3);
+        let myScript4 = document.createElement("script");
+        myScript.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/OBJLoaderFaces.js");
+        document.body.appendChild(myScript4);
+        let myScript5 = document.createElement("script");
+        myScript.setAttribute("src", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/stats.js");
+        document.body.appendChild(myScript5);
+        let myScript6 = document.createElement("script");
+        myScript.setAttribute("src", "./js/dist/script.js");
+        document.body.appendChild(myScript6);
+
         // ScrollDetect.firstEffect = new ScrollDetect('.aboutus', 'appear', 1);
         // window.addEventListener('scroll', ScrollDetect.firstEffect.scrolling.bind(ScrollDetect.firstEffect), false);
         // ScrollDetect.firstEffect = new ScrollDetect('.keyprinciples', 'appear', 1);

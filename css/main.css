@@ -32,6 +32,10 @@
     font-display: swap;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #1F1F1F;
     margin: 0;
@@ -574,7 +578,7 @@ li {
         position: relative;;
     }
 
-    .emotions__item{
+    .emotions__item {
         padding: 10px;
     }
 
@@ -1109,6 +1113,36 @@ li {
     /*contacts*/
 }
 
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    display: block;
+    width: 100%;
+    background-color: #E5E5E5;
+}
+
+.link:hover::after {
+    height: 1px;
+}
+
+.link:active::after {
+    height: 1px;
+    background-color: #1378EF;;
+}
+
+.link:active {
+    color: #1378EF;;
+}
+
+/*scroll animation*/
+.aboutus, .keyprinciples {
+    position: relative;
+}
 
 .centertext {
     text-align: center;
@@ -1132,28 +1166,19 @@ li {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
-@keyframes move_eye {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
 
 @keyframes appear {
     from {
         opacity: 0;
-        margin-top: -5%;
+        top: 5%;
     }
 
     to {
         opacity: 1;
-        margin-top: 0;
+        top: 0;
     }
 }
 
 .appear {
-    animation: 4s appear;
+    animation: 2s appear;
 }

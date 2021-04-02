@@ -74,7 +74,9 @@ let shch = {
         for (n; n < shch.ballsLenght; n++) {
             document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
-        ScrollDetect.firstEffect = new ScrollDetect('.aboutus.s3', 'appear', 1);
+        ScrollDetect.firstEffect = new ScrollDetect('.aboutus', 'appear', 1);
+        window.addEventListener('scroll', ScrollDetect.firstEffect.scrolling.bind(ScrollDetect.firstEffect), false);
+        ScrollDetect.firstEffect = new ScrollDetect('.keyprinciples', 'appear', 1);
         window.addEventListener('scroll', ScrollDetect.firstEffect.scrolling.bind(ScrollDetect.firstEffect), false);
     }
 }

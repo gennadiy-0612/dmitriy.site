@@ -28,7 +28,7 @@
         <li class="s1__p2__p1"><a class="link fontwhite" href="#folio">Портфолио</a>
         <li class="s1__p2__p1"><a class="link link-top fontwhite" href="vacancy.html">Вакансии</a>
         <li class="s1__p2__p1"><a class="link link-top fontwhite" href="contacts.html">Контакты</a>
-        <li class="s1__p2__p1"><a class="link link-top fontwhite" href="techsupprt.html">Обратный звонок</a>
+        <li class="s1__p2__p1"><a class="link link-top fontwhite callBackButton">Обратный звонок</a>
         </li>
     </ol>
 </nav>
@@ -202,7 +202,7 @@
 <section class="s6">
     <h2 class="agtext fontwhite">Отзывы</h2>
     <p class="agh2mob agh1desk fontwhite">Что о нас говорят</p>
-    <p class="video__action video__button fontwhite">Видео отзывы</p>
+    <p id="videoButton" class="video__action video__button fontwhite">Видео отзывы</p>
     <div class="emotions">
         <div class="emotions__set">
             <div id="show-slide" class="emotions__item backgray">
@@ -365,10 +365,16 @@
         </div>
     </div>
 </footer>
-<div class="video__set">
+<div id="callBack" class="callBack backBlack">
+    <p class="agh2mob center fontwhite">Обратный звонок</p>
+    <div class="video__list">
+        <div class="close callBackClose"></div>
+    </div>
+</div>
+<div id="videoSlider" class="video__set backBlack">
     <p class="video__h1 fontwhite">Видео-отзывы</p>
     <div class="video__list">
-        <div class="close"></div>
+        <div id="videoClose" class="close"></div>
         <div class="video__item">1</div>
         <div class="video__item">2</div>
         <div class="video__item">3</div>
@@ -394,7 +400,8 @@
     <div class="vl2"></div>
     <div class="vl3"></div>
     <div class="vl4"></div>
-</div><div class="triggers">
+</div>
+<div class="triggers">
     <span data-disabled="true">Sphere</span>
     <span data-disabled="true">Cube</span>
     <span data-disabled="true">Rocket</span>

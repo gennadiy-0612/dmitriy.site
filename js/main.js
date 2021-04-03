@@ -60,22 +60,22 @@ let shch = {
         }
         shch.go = setInterval(shch.anim, 100 / 60);
     },
-    modalShow: function (modalTag, open, close) {
-        let modal = document.querySelector(modalTag);
-        let btn = document.querySelector(open);
-        let span = document.querySelector(close);
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    },
+    // modalShow: function (modalTag, open, close) {
+    //     let modal = document.querySelector(modalTag);
+    //     let btn = document.querySelector(open);
+    //     let span = document.querySelector(close);
+    //     btn.onclick = function () {
+    //         modal.style.display = "block";
+    //     }
+    //     span.onclick = function () {
+    //         modal.style.display = "none";
+    //     }
+    //     window.onclick = function (event) {
+    //         if (event.target == modal) {
+    //             modal.style.display = "none";
+    //         }
+    //     }
+    // },
     burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
@@ -90,7 +90,12 @@ let shch = {
         for (n; n < shch.ballsLenght; n++) {
             document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
-        shch.modalShow('.video__set', '.video__button', '.close');
+        shch.modalVideoSlider = new shch.modalShow('#videoSlider', '#videoButton', '#videoClose');
+        shch.modalVideoSlider.startModal();
+        shch.modalCallBack = new shch.modalShow('#callBack', ' .callBackButton', '.callBackClose');
+        shch.modalCallBack.startModal();
+        // shch.modalShow('.video__set', '.video__button', '.close');
+        // shch.modalShow('.callBack', '.callBackButton', '.close');
         shch.slideStatic = new shch.slider('.emotions__item');
         document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
         document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
@@ -152,5 +157,24 @@ shch.slider = function (selectorSlide) {
         }
         console.log(this.Current)
     };
+};
+
+shch.modalShow = function (modalTag, open, close) {
+    let modal = document.querySelector(modalTag);
+    let btn = document.querySelector(open);
+    let span = document.querySelector(close);
+    this.startModal = function () {
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
 };
 

@@ -76,58 +76,6 @@ let shch = {
             }
         }
     },
-    staticSliderCurrent: 0,
-    staticSliderItem: document.querySelectorAll('.emotions__item'),
-    staticSliderLength: document.querySelectorAll('.emotions__item').length,
-    staticSliderPlus: function () {
-        if (shch.staticSliderCurrent === (shch.staticSliderLength - 1)) {
-            return true;
-        } else {
-            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:none')
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', '')
-            shch.staticSliderCurrent += 1;
-            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:block')
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', 'show-slide')
-        }
-        console.log(shch.staticSliderCurrent)
-    },
-    staticSliderMinus: function () {
-        if (shch.staticSliderCurrent) {
-            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:none')
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', '')
-            shch.staticSliderCurrent -= 1;
-            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:block')
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', 'show-slide')
-        } else {
-            shch.staticSliderCurrent = 0;
-        }
-        console.log(shch.staticSliderCurrent)
-    },
-    slider : {
-        Current: 0,
-        Item: document.querySelectorAll('.emotions__item'),
-        Length: document.querySelectorAll('.emotions__item').length,
-        Plus: function () {
-            if (shch.slider.Current === (shch.slider.Length - 1)) {
-                return true;
-            } else {
-                shch.slider.Item[shch.slider.Current].setAttribute('style', 'display:none')
-                shch.slider.Current += 1;
-                shch.slider.Item[shch.slider.Current].setAttribute('style', 'display:block')
-            }
-            console.log(shch.slider.Current)
-        },
-        Minus: function () {
-            if (shch.Slider.Current) {
-                shch.Slider.Item[shch.Slider.Current].setAttribute('style', 'display:none')
-                shch.Slider.Current -= 1;
-                shch.Slider.Item[shch.Slider.Current].setAttribute('style', 'display:block')
-            } else {
-                shch.Slider.Current = 0;
-            }
-            console.log(shch.Slider.Current)
-        },
-    },
     burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
@@ -143,17 +91,20 @@ let shch = {
             document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
         shch.showIt('.video__set', '.video__button', '.close');
-        document.querySelector('.staticSlidePlus').addEventListener('click', shch.staticSliderPlus);
-        document.querySelector('.staticSliderMinus').addEventListener('click', shch.staticSliderMinus);
-        // ScrollDetect.firstEffect = new ScrollDetect('.aboutus', 'appear', 1);
-        // window.addEventListener('scroll', ScrollDetect.firstEffect.scrolling.bind(ScrollDetect.firstEffect), false);
-        // ScrollDetect.firstEffect = new ScrollDetect('.keyprinciples', 'appear', 1);
-        // window.addEventListener('scroll', ScrollDetect.firstEffect.scrolling.bind(ScrollDetect.firstEffect), false);
+        shch.slideStatic = new shch.slider('.emotions__item');
+        document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+        document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+        shch.slideVideo = new shch.slider('.video__item');
+        document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
+        document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
+        // shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
+        // window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
+        // shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
+        // window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
     }
 }
 window.addEventListener('load', shch.burger);
-
-function ScrollDetect(whoIsAnimate, whatKindAnimate, startChanges) {
+shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     this.elementTarget = whoIsAnimate;
     this.animateClass = whatKindAnimate;
     this.windowH = window.innerHeight;
@@ -167,7 +118,7 @@ function ScrollDetect(whoIsAnimate, whatKindAnimate, startChanges) {
         if ((this.elPositonY + 100) > Math.floor(window.scrollY) && Math.floor(window.scrollY) > (this.elPositonY - this.windowH) && startChanges) {
             this.elementWork.setAttribute('class', this.initClass + ' ' + this.animateClass);
             startChanges = 0;
-            console.clear();
+            // console.clear();
             console.log(this.elementWork);
         } else {
             this.elementWork.setAttribute('class', this.initClass);
@@ -175,4 +126,31 @@ function ScrollDetect(whoIsAnimate, whatKindAnimate, startChanges) {
         shch.startChanges = 0;
     }
 }
+shch.slider = function (selectorSlide) {
+    this.Current = 0;
+    this.Item = document.querySelectorAll(selectorSlide);
+    this.Length = document.querySelectorAll(selectorSlide).length;
+    this.Plus = function () {
+        console.log(this)
+        if (this.Current === (this.Length - 1)) {
+            return true;
+        } else {
+            this.Item[this.Current].setAttribute('id', '')
+            this.Current += 1;
+            this.Item[this.Current].setAttribute('id', 'show-slide')
+        }
+        console.log(this.Current)
+    };
+    this.Minus = function () {
+        console.log(this)
+        if (this.Current) {
+            this.Item[this.Current].setAttribute('id', '')
+            this.Current -= 1;
+            this.Item[this.Current].setAttribute('id', 'show-slide')
+        } else {
+            this.Current = 0;
+        }
+        console.log(this.Current)
+    };
+};
 

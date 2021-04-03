@@ -822,7 +822,6 @@ li {
     .emotions__set {
         width: 121%;
         margin-left: -35%;
-        justify-content: flex-end;
     }
 
     .video__nav {

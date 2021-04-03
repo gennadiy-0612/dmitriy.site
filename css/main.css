@@ -69,6 +69,9 @@ li {
     font: normal normal 400 16px/27px 'Montserrat', sans-serif;
 }
 
+a {
+    display: block;
+}
 
 .upperline, .uperlinedesktop {
     position: relative;
@@ -83,12 +86,15 @@ li {
     background-color: #FFFFFF;
     top: -20px;
 }
+
 .listworks__li {
     filter: grayscale(100%);
 }
+
 .listworks__li:hover {
     filter: grayscale(0);
 }
+
 /*.buttons start*/
 .pulseback {
     position: relative;
@@ -1385,7 +1391,10 @@ li {
     animation-name: down;
     animation-duration: 1s;
 }
-.callBack{/*! display: block; */}
+
+.callBack { /*! display: block; */
+}
+
 .backBlack::after {
     content: '';
     position: absolute;

@@ -83,7 +83,12 @@ li {
     background-color: #FFFFFF;
     top: -20px;
 }
-
+.listworks__li {
+    filter: grayscale(100%);
+}
+.listworks__li:hover {
+    filter: grayscale(0);
+}
 /*.buttons start*/
 .pulseback {
     position: relative;

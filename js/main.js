@@ -60,10 +60,10 @@ let shch = {
         }
         shch.go = setInterval(shch.anim, 100 / 60);
     },
-    showIt: function (modal, open, close) {
-        var modal = document.querySelector(modal);
-        var btn = document.querySelector(open);
-        var span = document.querySelector(close);
+    modalShow: function (modalTag, open, close) {
+        let modal = document.querySelector(modalTag);
+        let btn = document.querySelector(open);
+        let span = document.querySelector(close);
         btn.onclick = function () {
             modal.style.display = "block";
         }
@@ -90,7 +90,7 @@ let shch = {
         for (n; n < shch.ballsLenght; n++) {
             document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
         }
-        shch.showIt('.video__set', '.video__button', '.close');
+        shch.modalShow('.video__set', '.video__button', '.close');
         shch.slideStatic = new shch.slider('.emotions__item');
         document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
         document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));

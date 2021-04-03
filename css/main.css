@@ -350,6 +350,8 @@ li {
     height: 200px;
     opacity: .59;
     margin: 5px;
+    color: #fff;
+    font-size: 50px;
 }
 
 .video__nav-top {

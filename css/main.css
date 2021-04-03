@@ -820,7 +820,9 @@ li {
     }
 
     .emotions__set {
-        width: 81%;
+        width: 121%;
+        margin-left: -35%;
+        justify-content: flex-end;
     }
 
     .video__nav {
@@ -1410,22 +1412,24 @@ li {
     }
 }
 
-:nth-child(3).emotions__item ~ .emotions__item {
-    /*! display: none; */
-}
-
-#show-slide ~ :nth-child(3).emotions__item {
-    display: block;
-}
-
-#hide-slide ~ .emotions__item {
+.emotions__item {
     display: none;
 }
 
+#show-slide,
+#show-slide ~ .emotions__item {
+    display: block;
+}
+
+#show-slide,
+#show-slide ~ .emotions__item,
 .emotions__item {
     animation-name: slide;
     animation-duration: 1s;
-    flex: 0 0 27%;
+}
+
+.emotions__item {
+    flex: 0 0 528px;
 }
 
 .video__action {

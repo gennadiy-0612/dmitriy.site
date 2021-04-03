@@ -1399,7 +1399,17 @@ li {
         opacity: 1;
     }
 }
+
+:nth-child(1).emotions__item ~ .emotions__item {
+    display: none;
+}
+
 .emotions__item {
     animation-name: slide;
     animation-duration: 1s;
-}.video__action{position: relative;top: -90px;}
+}
+
+.video__action {
+    position: relative;
+    top: -90px;
+}

@@ -83,17 +83,21 @@ let shch = {
         if (shch.staticSliderCurrent === (shch.staticSliderLength - 1)) {
             return true;
         } else {
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:none')
+            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:none')
+            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', 'hide-slide')
             shch.staticSliderCurrent += 1;
             shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:block')
+            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', 'show-slide')
         }
         console.log(shch.staticSliderCurrent)
     },
     staticSliderMinus: function () {
         if (shch.staticSliderCurrent) {
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:none')
+            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:none')
+            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', 'hide-slide')
             shch.staticSliderCurrent -= 1;
-            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:block')
+            // shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('style', 'display:block')
+            shch.staticSliderItem[shch.staticSliderCurrent].setAttribute('id', 'show-slide')
         } else {
             shch.staticSliderCurrent = 0;
         }

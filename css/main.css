@@ -430,6 +430,8 @@ li {
     height: 180px;
     flex-direction: column;
     justify-content: space-around;
+    right: 0;
+    bottom: 0;
 }
 
 .video__go, .video__a {
@@ -815,6 +817,14 @@ li {
 
     .agh1desk {
         font: normal normal 700 37px/55px "Druk Text Wide", sans-serif;
+    }
+
+    .emotions__set {
+        width: 81%;
+    }
+
+    .video__nav {
+        width: 100px;
     }
 
     .emotions__ag {
@@ -1400,13 +1410,22 @@ li {
     }
 }
 
-:nth-child(1).emotions__item ~ .emotions__item {
+:nth-child(3).emotions__item ~ .emotions__item {
+    /*! display: none; */
+}
+
+#show-slide ~ :nth-child(3).emotions__item {
+    display: block;
+}
+
+#hide-slide ~ .emotions__item {
     display: none;
 }
 
 .emotions__item {
     animation-name: slide;
     animation-duration: 1s;
+    flex: 0 0 27%;
 }
 
 .video__action {

@@ -1041,6 +1041,12 @@ li {
         margin: 43px 0 0;
     }
 
+    .ourworks {
+        max-width: initial;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     /*buttons*/
     .buttonmiddle {
         margin: 0 0 0 auto;
@@ -1384,3 +1390,16 @@ li {
 }
 
 /*Modal Video*/
+
+@keyframes slide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.emotions__item {
+    animation-name: slide;
+    animation-duration: 1s;
+}.video__action{position: relative;top: -90px;}

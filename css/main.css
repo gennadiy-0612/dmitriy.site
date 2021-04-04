@@ -1533,7 +1533,7 @@ a {
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .listworks::-webkit-scrollbar,
-.emotions__set::-webkit-scrollbar
+.emotions__set::-webkit-scrollbar,
 .video__list::-webkit-scrollbar {
     display: none;
 }

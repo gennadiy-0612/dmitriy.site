@@ -71,6 +71,12 @@ let shch = {
             shch['changeList' + logisticI2] = new shch.RefreshClass('.logistic__dirrection.switcher', 'show', logisticI2);
             shch['changeList' + logisticI2]['.logistic__dirrection.switcher' + logisticI2].addAct();
         }
+        let n = 0;
+        shch.balls = document.querySelectorAll('.where .listworks__li');
+        shch.ballsLenght = shch.balls.length;
+        for (n; n < shch.ballsLenght; n++) {
+            document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
+        }
         shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
         shch.modalVideoSlider.startModal();
         shch.modalCallBack = new shch.ModalShow('#callBack', ' .callBackButton', '.callBackClose');

@@ -54,55 +54,26 @@ let shch = {
         }
         shch.go = setInterval(shch.anim, 100 / 60);
     },
-    extender: function () {
-        if (this.getAttribute('class') === 'logistic__dirrection switcher')
-            this.setAttribute('class', 'logistic__dirrection switcher show')
-        else
-            this.setAttribute('class', 'logistic__dirrection switcher')
-        console.log(this.getAttribute('class').split(' ')[this.getAttribute('class').split(' ').length - 1])
-    },
-    switcher: function (classSwitch) {
-        let switchers = document.querySelectorAll(classSwitch);
-        let i = 0;
-        let iAll = switchers.length;
-        for (i; i < iAll; i++) {
-            switchers[i].addEventListener('click', shch.extender);
-        }
-    },
-    extendKey: function () {
-        if (this.getAttribute('class') === 'maindirrection switcher s3__p4 uperlinedesktop')
-            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop show');
-        else
-            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop');
-    },
-    switchKey: function (classSwitch) {
-        let switchers = document.querySelectorAll(classSwitch);
-        let i = 0;
-        let iAll = switchers.length;
-        for (i; i < iAll; i++) {
-            switchers[i].addEventListener('click', shch.extendKey);
-        }
-    },
     burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
-        shch.switcher('.logistic .switcher');
-        shch.switchKey('.keyprinciples .switcher');
-        // let switchers = document.querySelectorAll('.keyprinciples .switcher');
-        // let i = 0;
-        // let iAll = switchers.length;
-        // for (i; i < iAll; i++) {
-        //     document.querySelectorAll('.keyprinciples .switcher')[i].addEventListener('click', shch.extender);
-        // }
-        let n = 0;
-        shch.balls = document.querySelectorAll('.where .listworks__li');
-        shch.ballsLenght = shch.balls.length;
-        for (n; n < shch.ballsLenght; n++) {
-            document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
+        let logisticI = 0;
+        let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
+        let logisticSwitcherCount = logisticSwitcher.length;
+        for (logisticI = 0; logisticI < logisticSwitcherCount; logisticI++) {
+            shch['changeList' + logisticI] = new shch.RefreshClass('.maindirrection.switcher', 'show', logisticI);
+            shch['changeList' + logisticI]['.maindirrection.switcher' + logisticI].addAct();
         }
-        shch.modalVideoSlider = new shch.modalShow('#videoSlider', '#videoButton', '#videoClose');
+        let logisticI2 = 0;
+        let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection.switcher');
+        let logisticSwitcherCount2 = logisticSwitcher2.length;
+        for (logisticI2 = 0; logisticI2 < logisticSwitcherCount2; logisticI2++) {
+            shch['changeList' + logisticI2] = new shch.RefreshClass('.logistic__dirrection.switcher', 'show', logisticI2);
+            shch['changeList' + logisticI2]['.logistic__dirrection.switcher' + logisticI2].addAct();
+        }
+        shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
         shch.modalVideoSlider.startModal();
-        shch.modalCallBack = new shch.modalShow('#callBack', ' .callBackButton', '.callBackClose');
+        shch.modalCallBack = new shch.ModalShow('#callBack', ' .callBackButton', '.callBackClose');
         shch.modalCallBack.startModal();
         shch.slideStatic = new shch.slider('.emotions__item');
         document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
@@ -167,7 +138,7 @@ shch.slider = function (selectorSlide) {
     };
 };
 
-shch.modalShow = function (modalTag, open, close) {
+shch.ModalShow = function (modalTag, open, close) {
     let modal = document.querySelector(modalTag);
     let btn = document.querySelector(open);
     let span = document.querySelector(close);
@@ -186,3 +157,29 @@ shch.modalShow = function (modalTag, open, close) {
     }
 };
 
+shch.RefreshClass = function (oldClass, newClass, I) {
+    this[oldClass + I] = {
+        initState: 0,
+        newClass: newClass,
+        tagWorker: {},
+        addAct: function () {
+            if (I) this.tagWorker = document.querySelectorAll(oldClass)[I];
+            else {
+                this.tagWorker = document.querySelector(oldClass);
+            }
+            this.oldClass = this.tagWorker.getAttribute('class');
+            this.tagWorker.addEventListener('click', this.changeIt.bind(this));
+            console.log(this)
+        },
+        changeIt: function () {
+            console.log(this);
+            if (this.initState) {
+                this.tagWorker.setAttribute('class', this.oldClass);
+                this.initState = 0;
+            } else {
+                this.tagWorker.setAttribute('class', this.oldClass + ' ' + this.newClass);
+                this.initState = 1;
+            }
+        }
+    }
+};

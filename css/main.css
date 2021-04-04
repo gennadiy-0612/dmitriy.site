@@ -1019,11 +1019,11 @@ a {
         top: 20px;
     }
 
-    #switchDeskNone .switcher::before {
+    .switchDeskNone .switcher::before {
         content: none;
     }
 
-    #switchDeskNone .extender {
+    .switchDeskNone .extender {
         display: flex;
     }
 

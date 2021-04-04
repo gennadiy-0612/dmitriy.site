@@ -482,6 +482,7 @@ a {
     top: 0;
     bottom: 0;
 }
+
 /*Arrow switcher*/
 /*video test emotions*/
 
@@ -497,7 +498,7 @@ a {
     position: relative;
 }
 
-.switcher::after {
+.switcher::before {
     content: '';
     position: absolute;
     top: 0;
@@ -508,9 +509,10 @@ a {
     border-radius: 5px;
 }
 
-.switcher.show::after {
+.switcher.show::before {
     background: url("../img/index/arrowup.svg") center center no-repeat;
 }
+
 /*video test emotions*/
 @media (max-width: 1070px) {
     .uperlinedesktop::after {
@@ -1012,9 +1014,19 @@ a {
     .logistic__dirrection {
         margin: 34px 0 0;
     }
-    .switcher::after{
+
+    .switcher::before {
         top: 20px;
     }
+
+    #switchDeskNone .switcher::before {
+        content: none;
+    }
+
+    #switchDeskNone .extender {
+        display: flex;
+    }
+
     .logisticH2 {
         margin: 30px 0 35px;
     }

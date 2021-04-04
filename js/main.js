@@ -7,12 +7,6 @@ let shch = {
         else
             bodyMain.setAttribute('class', 'overno');
     },
-    extender: function () {
-        if (this.getAttribute('class') === 'logistic__dirrection switcher')
-            this.setAttribute('class', 'logistic__dirrection switcher show')
-        else
-            this.setAttribute('class', 'logistic__dirrection switcher')
-    },
     move: 0,
     start: 0,
     count: 0,
@@ -60,36 +54,46 @@ let shch = {
         }
         shch.go = setInterval(shch.anim, 100 / 60);
     },
+    extender: function () {
+        if (this.getAttribute('class') === 'logistic__dirrection switcher')
+            this.setAttribute('class', 'logistic__dirrection switcher show')
+        else
+            this.setAttribute('class', 'logistic__dirrection switcher')
+        console.log(this.getAttribute('class').split(' ')[this.getAttribute('class').split(' ').length - 1])
+    },
     switcher: function (classSwitch) {
+        let switchers = document.querySelectorAll(classSwitch);
         let i = 0;
-        for (i; i < switchers.length; i++) {
-            document.querySelectorAll('.logistic .switcher')[i].addEventListener('click', shch.extender);
+        let iAll = switchers.length;
+        for (i; i < iAll; i++) {
+            switchers[i].addEventListener('click', shch.extender);
         }
     },
-    // modalShow: function (modalTag, open, close) {
-    //     let modal = document.querySelector(modalTag);
-    //     let btn = document.querySelector(open);
-    //     let span = document.querySelector(close);
-    //     btn.onclick = function () {
-    //         modal.style.display = "block";
-    //     }
-    //     span.onclick = function () {
-    //         modal.style.display = "none";
-    //     }
-    //     window.onclick = function (event) {
-    //         if (event.target == modal) {
-    //             modal.style.display = "none";
-    //         }
-    //     }
-    // },
+    extendKey: function () {
+        if (this.getAttribute('class') === 'maindirrection switcher s3__p4 uperlinedesktop')
+            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop show');
+        else
+            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop');
+    },
+    switchKey: function (classSwitch) {
+        let switchers = document.querySelectorAll(classSwitch);
+        let i = 0;
+        let iAll = switchers.length;
+        for (i; i < iAll; i++) {
+            switchers[i].addEventListener('click', shch.extendKey);
+        }
+    },
     burger: function () {
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
-        let switchers = document.querySelectorAll('.switcher');
-        let i = 0;
-        for (i; i < switchers.length; i++) {
-            document.querySelectorAll('.logistic .switcher')[i].addEventListener('click', shch.extender);
-        }
+        shch.switcher('.logistic .switcher');
+        shch.switchKey('.keyprinciples .switcher');
+        // let switchers = document.querySelectorAll('.keyprinciples .switcher');
+        // let i = 0;
+        // let iAll = switchers.length;
+        // for (i; i < iAll; i++) {
+        //     document.querySelectorAll('.keyprinciples .switcher')[i].addEventListener('click', shch.extender);
+        // }
         let n = 0;
         shch.balls = document.querySelectorAll('.where .listworks__li');
         shch.ballsLenght = shch.balls.length;
@@ -100,8 +104,6 @@ let shch = {
         shch.modalVideoSlider.startModal();
         shch.modalCallBack = new shch.modalShow('#callBack', ' .callBackButton', '.callBackClose');
         shch.modalCallBack.startModal();
-        // shch.modalShow('.video__set', '.video__button', '.close');
-        // shch.modalShow('.callBack', '.callBackButton', '.close');
         shch.slideStatic = new shch.slider('.emotions__item');
         document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
         document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));

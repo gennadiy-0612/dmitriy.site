@@ -81,10 +81,10 @@ let shch = {
         shch.modalVideoSlider.startModal();
         shch.modalCallBack = new shch.ModalShow('#callBack', ' .callBackButton', '.callBackClose');
         shch.modalCallBack.startModal();
-        shch.slideStatic = new shch.slider('.emotions__item');
+        shch.slideStatic = new shch.slider('.emotions__item', 'show-slide');
         document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
         document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-        shch.slideVideo = new shch.slider('.video__item');
+        shch.slideVideo = new shch.slider('.video__item', 'show-video-slide');
         document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
         document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
         // shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
@@ -116,7 +116,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
         shch.startChanges = 0;
     }
 }
-shch.slider = function (selectorSlide) {
+shch.slider = function (selectorSlide, activeSlide) {
     this.Current = 0;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Length = document.querySelectorAll(selectorSlide).length;
@@ -127,7 +127,7 @@ shch.slider = function (selectorSlide) {
         } else {
             this.Item[this.Current].setAttribute('id', '')
             this.Current += 1;
-            this.Item[this.Current].setAttribute('id', 'show-slide')
+            this.Item[this.Current].setAttribute('id', activeSlide)
         }
         console.log(this.Current)
     };
@@ -136,7 +136,7 @@ shch.slider = function (selectorSlide) {
         if (this.Current) {
             this.Item[this.Current].setAttribute('id', '')
             this.Current -= 1;
-            this.Item[this.Current].setAttribute('id', 'show-slide')
+            this.Item[this.Current].setAttribute('id', activeSlide)
         } else {
             this.Current = 0;
         }

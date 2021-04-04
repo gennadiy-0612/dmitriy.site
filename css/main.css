@@ -987,7 +987,9 @@ a {
     .keyprinciples__h2 {
         font: normal normal 400 20px/34px 'Montserrat', sans-serif;
     }
-
+.where {
+    padding-top: 95px;
+}
     .agh1desk-nofull {
         margin: auto;
         max-width: 900px;

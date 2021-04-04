@@ -196,7 +196,9 @@ a {
     width: 104px;
     height: 24px;
 }
-
+.finger:hover{
+    cursor: pointer;
+}
 /*.buttons finish*/
 /*.back-site start*/
 .back-site {
@@ -1056,7 +1058,6 @@ a {
 
     /*Index page video finished*/
     /*Index page finished*/
-
     /*vacancies */
     .s2__p1-vacancies {
         margin: 190px 0 85px;

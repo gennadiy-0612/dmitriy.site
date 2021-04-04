@@ -1021,11 +1021,11 @@ a {
     }
 
     .logistic__dirrection {
-        margin: 34px 0 0;
+        margin: 0 0 0 0;
     }
 
     .switcher::before {
-        top: 20px;
+        top: 52px;
     }
 
     .switchDeskNone.switcher::before {
@@ -1036,14 +1036,13 @@ a {
         display: flex;
     }
 
-    .logisticH2 {
-        margin: 30px 0 35px;
-    }
-    .show .logisticH2{
+
+    .show .logisticH2 {
         color: #1378EF;
     }
+
     .keyprinciples__hide {
-        margin: 15px 0 0;
+        margin: 13px 0 12px;
     }
 
     .maindirrection {
@@ -1055,6 +1054,10 @@ a {
         max-width: 900px;
     }
 
+    .cta {
+        margin-top: 170px;
+    }
+    .cta-a{z-index: 0;}
     /*Index page video start*/
     .video__nav-top {
         height: 100%;
@@ -1167,7 +1170,12 @@ a {
     }
 
     .formh1 {
-        font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
+        font: normal normal 400 27px/31px 'Druk Text Wide', sans-serif;
+    }
+
+    .logisticH2 {
+        padding: 32px 0 27px;
+        line-height: 36px;
     }
 
     .formh1-vacancies {
@@ -1339,11 +1347,20 @@ a {
         line-height: 40px;
     }
 
+    .cta-bigbutton,
     .s3contactinfo-bigbutton {
         height: 260px;
         width: 260px;
         border-radius: 130px;
         margin-top: -20px;
+    }
+
+    .cta-bigbutton {
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
     }
 
     .s3contactinfo-press {
@@ -1403,12 +1420,6 @@ a {
 
 /*scroll animation*/
 .aboutus {
-    position: relative;
-}
-
-.centertext {
-    text-align: center;
-    line-height: 204px;
     position: relative;
 }
 

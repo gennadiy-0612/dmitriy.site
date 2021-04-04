@@ -8,10 +8,10 @@ let shch = {
             bodyMain.setAttribute('class', 'overno');
     },
     extender: function () {
-        if (this.getAttribute('class') === 'maindirrection switcher s3__p4 uperlinedesktop')
-            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop show')
+        if (this.getAttribute('class') === 'logistic__dirrection switcher')
+            this.setAttribute('class', 'logistic__dirrection switcher show')
         else
-            this.setAttribute('class', 'maindirrection switcher s3__p4 uperlinedesktop')
+            this.setAttribute('class', 'logistic__dirrection switcher')
     },
     move: 0,
     start: 0,
@@ -60,6 +60,12 @@ let shch = {
         }
         shch.go = setInterval(shch.anim, 100 / 60);
     },
+    switcher: function (classSwitch) {
+        let i = 0;
+        for (i; i < switchers.length; i++) {
+            document.querySelectorAll('.logistic .switcher')[i].addEventListener('click', shch.extender);
+        }
+    },
     // modalShow: function (modalTag, open, close) {
     //     let modal = document.querySelector(modalTag);
     //     let btn = document.querySelector(open);
@@ -82,7 +88,7 @@ let shch = {
         let switchers = document.querySelectorAll('.switcher');
         let i = 0;
         for (i; i < switchers.length; i++) {
-            document.querySelectorAll('.switcher')[i].addEventListener('click', shch.extender);
+            document.querySelectorAll('.logistic .switcher')[i].addEventListener('click', shch.extender);
         }
         let n = 0;
         shch.balls = document.querySelectorAll('.where .listworks__li');

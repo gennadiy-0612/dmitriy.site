@@ -482,7 +482,35 @@ a {
     top: 0;
     bottom: 0;
 }
+/*Arrow switcher*/
+/*video test emotions*/
 
+.switcher .extender {
+    display: none;
+}
+
+.show .extender {
+    display: block;
+}
+
+.switcher {
+    position: relative;
+}
+
+.switcher::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 17px;
+    background: url("../img/index/arrowdown.svg") center center no-repeat;
+    border-radius: 5px;
+}
+
+.switcher.show::after {
+    background: url("../img/index/arrowup.svg") center center no-repeat;
+}
 /*video test emotions*/
 @media (max-width: 1070px) {
     .uperlinedesktop::after {
@@ -674,33 +702,6 @@ a {
         text-align: center;
     }
 
-    .switcher .extender {
-        display: none;
-    }
-
-    .show .extender {
-        display: block;
-    }
-
-    .switcher {
-        position: relative;
-    }
-
-    .switcher::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 20px;
-        height: 17px;
-        background: url("../img/index/arrowdown.svg") center center no-repeat;
-        border-radius: 5px;
-    }
-
-    .switcher.show::after {
-        background: url("../img/index/arrowup.svg") center center no-repeat;
-    }
-
     .buttonmiddle-footermob {
         margin-bottom: 30px;
     }
@@ -812,6 +813,7 @@ a {
         font: normal normal 400 27px/40px "Druk Text Wide", sans-serif;
     }
 
+    .keyprinciples__hide,
     .agtext {
         font: normal normal 400 16px/27px "Montserrat", sans-serif;
     }
@@ -979,19 +981,54 @@ a {
         margin: 0 0 12px;
     }
 
+    .where {
+        padding-top: 95px;
+    }
+
     .keyprinciples {
         display: flex;
-        margin-top: 150px;
+        margin-top: 80px;
     }
 
     .keyprinciples__h2 {
         font: normal normal 400 20px/34px 'Montserrat', sans-serif;
     }
-.where {
-    padding-top: 95px;
-}
+
+    .whereText {
+        font: normal normal 400 22px/33px "Montserrat", sans-serif;
+        padding: 5px 11px;
+    }
+
+    .listworks__blueball {
+        height: 67px;
+        width: 67px;
+        border-radius: 34px;
+    }
+
+    .listworks {
+        margin: 70px 0;
+    }
+
+    .logistic__dirrection {
+        margin: 34px 0 0;
+    }
+    .switcher::after{
+        top: 20px;
+    }
+    .logisticH2 {
+        margin: 30px 0 35px;
+    }
+
+    .keyprinciples__hide {
+        margin: 15px 0 0;
+    }
+
+    .maindirrection {
+        margin: 20px 0 60px;
+    }
+
     .agh1desk-nofull {
-        margin: auto;
+        margin: 0 auto 0;
         max-width: 900px;
     }
 
@@ -1056,6 +1093,7 @@ a {
 
     .where__h3 {
         max-width: 760px;
+        margin: 0;
     }
 
     .compactdesktop {

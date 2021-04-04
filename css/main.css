@@ -95,6 +95,10 @@ a {
     filter: grayscale(0);
 }
 
+.listworks__li {
+    margin: 15px 10px;
+}
+
 /*.buttons start*/
 .pulseback {
     position: relative;
@@ -184,10 +188,6 @@ a {
     border-radius: 25px;
     background-color: #1378EF;
     z-index: -1;
-}
-
-.listworks__li {
-    margin: 15px 10px;
 }
 
 .video__button {
@@ -436,8 +436,6 @@ a {
 .video__nav {
     position: absolute;
     display: flex;
-    bottom: -100px;
-    right: 16px;
     width: 170px;
     margin: 0;
     height: 180px;
@@ -465,7 +463,6 @@ a {
     background-size: contain;
     z-index: 1;
     width: 41px;
-    right: -10px;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -477,7 +474,6 @@ a {
     left: -10px;
     background-size: 41px 23px;
     width: 41px;
-    left: -10px;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -1060,6 +1056,8 @@ a {
 
     /*Index page video finished*/
     /*Index page finished*/
+
+    /*vacancies */
     .s2__p1-vacancies {
         margin: 190px 0 85px;
     }
@@ -1120,7 +1118,16 @@ a {
     .ourworks {
         max-width: initial;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
+    }
+
+    .folio__company {
+        width: 300px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0;
     }
 
     /*buttons*/

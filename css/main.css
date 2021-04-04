@@ -1019,11 +1019,11 @@ a {
         top: 20px;
     }
 
-    .switchDeskNone .switcher::before {
+    .switchDeskNone.switcher::before {
         content: none;
     }
 
-    .switchDeskNone .extender {
+    .switchDeskNone.switcher .extender {
         display: flex;
     }
 
@@ -1091,7 +1091,7 @@ a {
 
     .s3__p5 {
         padding: 0 0 0 13.3%;
-        width: 100%;
+        width: 82.7%;
     }
 
     .footer__p1 {

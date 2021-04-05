@@ -1240,6 +1240,7 @@ a {
 
     .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         max-width: 1300px;
+        padding: 0 50px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1715,10 +1716,11 @@ a {
     /*forms finish*/
     /*footer*/
     .footer__box {
-        max-width: 863px;
+        max-width: 913px;
         display: flex;
         flex-wrap: wrap;
         margin: 0 0 0 auto;
+        padding-left: 50px;
     }
 
     .footback {
@@ -1754,7 +1756,7 @@ a {
     }
 
     .footer__p4 {
-        margin: 16px 0 -14px;
+        margin: 16px 5% -14px 0;
     }
 
     /* form */

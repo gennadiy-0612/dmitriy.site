@@ -56,7 +56,7 @@ let shch = {
     },
     burger: function () {
         let visible = document.querySelector('.burger');
-        if ((window.location.pathname === "/index.html") || (window.location.pathname === "/")) {
+        if ((window.location.pathname === "/pf/dmitriy.site/index.html") || (window.location.pathname === "/pf/dmitriy.site/")) {
             visible.addEventListener('click', shch.show);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');

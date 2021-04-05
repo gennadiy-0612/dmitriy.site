@@ -611,6 +611,7 @@ a {
     .uperlinedesktop::after {
         content: none;
     }
+
     .uperlinedesktop-vac::after {
         content: '';
     }
@@ -1043,6 +1044,7 @@ a {
     .footer {
         position: relative;
     }
+
     .footer__p1 {
         margin: 15px 0;
     }
@@ -1098,6 +1100,18 @@ a {
     .s2-contactdesk {
         margin-top: 144px;
         margin-bottom: 83px;
+    }
+
+    .contactinfo__2desk {
+        margin: 0 0 40px;
+    }
+
+    .contactinfo__2desk {
+        margin: 80px 0;
+    }
+
+    .s3contactinfo__2desk-p {
+        margin: 0 0 16px;
     }
 
     .command {
@@ -1191,10 +1205,12 @@ a {
     .agtext {
         font: normal normal 400 16px/27px "Montserrat", sans-serif;
     }
-    .folio__cli{
+
+    .folio__cli {
         margin: 180px 0 0;
         font: normal normal 400 20px/34px "Montserrat", sans-serif;
     }
+
     .agh2mob__min {
         font: normal normal 700 16px/27px "Montserrat", sans-serif;
     }
@@ -1358,9 +1374,11 @@ a {
     .keyprinciples__h2 {
         font: normal normal 400 20px/34px 'Montserrat', sans-serif;
     }
-    .keyprinciples__p{
+
+    .keyprinciples__p {
         margin: 0;
     }
+
     .whereText {
         font: normal normal 400 22px/33px "Montserrat", sans-serif;
         padding: 0 11px;
@@ -1436,7 +1454,11 @@ a {
     .textCenter {
         text-align: center;
     }
-    .testEmotions-h3{margin: 22px 0 0;}
+
+    .testEmotions-h3 {
+        margin: 22px 0 0;
+    }
+
     /*Index page video start*/
     @keyframes slide {
         from {
@@ -1525,6 +1547,7 @@ a {
     .logistic__h3 {
         margin: 7px 0 0;
     }
+
     .s3__p2 {
         width: 50%;
         margin: 0;
@@ -1540,19 +1563,23 @@ a {
         flex-wrap: wrap;
         padding: 20px 2% 65px 0;
     }
+
     .switchDeskNone {
         padding: 20px 2% 0 0;
         margin: 25px 0 53px;
     }
+
     .s3__p5 {
         padding: 0 0 0 13.3%;
         width: 82.7%;
     }
-    .support__h2{
+
+    .support__h2 {
         margin: 0;
         font-size: 20px;
         line-height: 34px;
     }
+
     .footer__p1 {
         margin: 18px 0 0;
     }

@@ -237,15 +237,15 @@ a {
 }
 
 .vl2::after {
-    animation: 30s linear 4s infinite normal move_bottom;
-}
-
-.vl3::after {
     animation: 30s linear 8s infinite normal move_bottom;
 }
 
+.vl3::after {
+    animation: 30s linear 16s infinite normal move_bottom;
+}
+
 .vl4::after {
-    animation: 30s linear 12s infinite normal move_bottom;
+    animation: 30s linear 32s infinite normal move_bottom;
 }
 
 @-webkit-keyframes move_bottom {
@@ -267,15 +267,15 @@ a {
 
 .back-site__round-out {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
+    width: 600px;
+    height: 600px;
+    border-radius: 300px;
     border: 1px solid #FFF;
     opacity: .1;
     z-index: -1;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 7% 13% 0 auto;
 }
 
 .back-site__round-in {

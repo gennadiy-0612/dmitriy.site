@@ -552,8 +552,17 @@ a {
     margin: 20px 30px 0 auto;
 }
 
+.video__nav-top {
+    height: 87%;
+    max-width: 100px;
+    right: 5%;
+    bottom: 10%;
+    top: auto;
+}
+
 .video__window {
     display: flex;
+    width: 240%;
 }
 
 .video__item {
@@ -1480,6 +1489,12 @@ a {
         width: 70px;
         height: 70px;
         border-radius: 35px;
+        margin-top: 10px;
+    }
+
+    .videoSlidePlus {
+        left: 10px;
+
     }
 
     /*Index page video finished*/
@@ -1807,10 +1822,12 @@ a {
 
     /*contacts*/
     /*Video slider*/
-    .video__h1{
+    .video__h1 {
         margin: 0.6% 0 0 2.7%;
     }
+
     .video__list {
+        padding: 10px;
         left: 0;
         right: 0;
         margin: auto;
@@ -1823,16 +1840,31 @@ a {
         top: 0;
         bottom: -22%;
         margin: auto;
-        height: 200px;
+        height: 220px;
+        width: 80%;
+        overflow: hidden;
     }
 
     .video__item {
         width: 300px;
         height: 200px;
         background-size: 220px;
+        margin: 10px;
+        flex: 1 0 300px;
+        max-width: 300px;
     }
 
-    .video__window {
+    .video__nav-top {
+        height: 87%;
+        max-width: 100px;
+        right: 6%;
+        bottom: 13%;
+        top: auto;
+    }
+
+    .videoSlider-close {
+        position: relative;
+        z-index: 1;
     }
 
     /*Video slider*/

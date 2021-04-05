@@ -611,6 +611,9 @@ a {
     .uperlinedesktop::after {
         content: none;
     }
+    .uperlinedesktop-vac::after {
+        content: '';
+    }
 
     .year {
         font: normal normal 400 27px/40px 'Druk Text Wide', sans-serif;
@@ -1268,7 +1271,7 @@ a {
     /*Top menu nav finished*/
     /*vacancies start*/
     .agh1desk-doit {
-        margin: 120px auto 0;
+        margin: 131px auto 0;
         max-width: 510px;
         text-align: center;
     }
@@ -1626,7 +1629,8 @@ a {
     }
 
     .formh1-vacancies {
-        margin: 50px 0 40px;
+        margin: 55px 0 43px;
+        padding: 6px 0 0;
     }
 
     .footer__formh1-vacancies {

@@ -821,8 +821,8 @@ a {
     }
 
     .switcher::before {
-        top: 25px;
-        right: 10px;
+        top: 20px;
+        right: 20px;
     }
 
     .year-upperline::after {
@@ -1039,6 +1039,9 @@ a {
 
     .footer {
         position: relative;
+    }
+    .footer__h2{
+        line-height: 20px;
     }
     .footer__p1 {
         margin: 15px 0;
@@ -1616,6 +1619,11 @@ a {
         font: normal normal 400 27px/31px 'Druk Text Wide', sans-serif;
     }
 
+    .footer__h2{
+        line-height: 40px;
+        margin: 0;
+    }
+    
     .logisticH2 {
         padding: 32px 0 27px;
         line-height: 36px;

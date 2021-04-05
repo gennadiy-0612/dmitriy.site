@@ -56,37 +56,39 @@ let shch = {
     },
     burger: function () {
         let visible = document.querySelector('.burger');
-        visible.addEventListener('click', shch.show);
-        let logisticI = 0;
-        let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
-        let logisticSwitcherCount = logisticSwitcher.length;
-        for (logisticI = 0; logisticI < logisticSwitcherCount; logisticI++) {
-            shch['changeList' + logisticI] = new shch.RefreshClass('.maindirrection.switcher', 'show', logisticI);
-            shch['changeList' + logisticI]['.maindirrection.switcher' + logisticI].addAct();
+        if ((window.location.pathname === "/index.html") || (window.location.pathname === "/")) {
+            visible.addEventListener('click', shch.show);
+            let logisticI = 0;
+            let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
+            let logisticSwitcherCount = logisticSwitcher.length;
+            for (logisticI = 0; logisticI < logisticSwitcherCount; logisticI++) {
+                shch['changeList' + logisticI] = new shch.RefreshClass('.maindirrection.switcher', 'show', logisticI);
+                shch['changeList' + logisticI]['.maindirrection.switcher' + logisticI].addAct();
+            }
+            let logisticI2 = 0;
+            let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection.switcher');
+            let logisticSwitcherCount2 = logisticSwitcher2.length;
+            for (logisticI2 = 0; logisticI2 < logisticSwitcherCount2; logisticI2++) {
+                shch['changeList' + logisticI2] = new shch.RefreshClass('.logistic__dirrection.switcher', 'show', logisticI2);
+                shch['changeList' + logisticI2]['.logistic__dirrection.switcher' + logisticI2].addAct();
+            }
+            let n = 0;
+            shch.balls = document.querySelectorAll('.where .listworks__li');
+            shch.ballsLenght = shch.balls.length;
+            for (n; n < shch.ballsLenght; n++) {
+                document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
+            }
+            shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
+            shch.modalVideoSlider.startModal();
+            shch.modalCallBack = new shch.ModalShow('#callBack', ' .callBackButton', '.callBackClose');
+            shch.modalCallBack.startModal();
+            shch.slideStatic = new shch.slider('.emotions__item', 'show-slide');
+            document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+            document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+            shch.slideVideo = new shch.slider('.video__item', 'show-video-slide');
+            document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
+            document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
         }
-        let logisticI2 = 0;
-        let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection.switcher');
-        let logisticSwitcherCount2 = logisticSwitcher2.length;
-        for (logisticI2 = 0; logisticI2 < logisticSwitcherCount2; logisticI2++) {
-            shch['changeList' + logisticI2] = new shch.RefreshClass('.logistic__dirrection.switcher', 'show', logisticI2);
-            shch['changeList' + logisticI2]['.logistic__dirrection.switcher' + logisticI2].addAct();
-        }
-        let n = 0;
-        shch.balls = document.querySelectorAll('.where .listworks__li');
-        shch.ballsLenght = shch.balls.length;
-        for (n; n < shch.ballsLenght; n++) {
-            document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
-        }
-        shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
-        shch.modalVideoSlider.startModal();
-        shch.modalCallBack = new shch.ModalShow('#callBack', ' .callBackButton', '.callBackClose');
-        shch.modalCallBack.startModal();
-        shch.slideStatic = new shch.slider('.emotions__item', 'show-slide');
-        document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-        document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-        shch.slideVideo = new shch.slider('.video__item', 'show-video-slide');
-        document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
-        document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
         // shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
         // window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
         // shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
@@ -129,7 +131,6 @@ shch.slider = function (selectorSlide, activeSlide) {
             this.Current += 1;
             this.Item[this.Current].setAttribute('id', activeSlide)
         }
-        console.log(this.Current)
     };
     this.Minus = function () {
         console.log(this)
@@ -140,7 +141,6 @@ shch.slider = function (selectorSlide, activeSlide) {
         } else {
             this.Current = 0;
         }
-        console.log(this.Current)
     };
 };
 

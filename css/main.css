@@ -596,14 +596,14 @@ a {
     filter: grayscale(100%);
 }
 
-/*Backgroun Orbit*/
+/*Background Orbit*/
 .back-site__round-out {
     width: 320px;
     height: 320px;
     border-radius: 160px;
 }
 
-/*Backgroun Orbit*/
+/*Background Orbit*/
 
 @media (max-width: 1070px) {
     .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
@@ -1189,6 +1189,14 @@ a {
     }
 
     /*Video Slider*/
+    .back-site__round-out {
+        width: 260px;
+        height: 260px;
+        border-radius: 130px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }
 
 /*.sphere*/
@@ -1200,6 +1208,7 @@ a {
     right: 0;
     z-index: -1;
 }
+
 
 /*.sphere*/
 @media (min-width: 1071px) {
@@ -1366,7 +1375,7 @@ a {
 
     .year__event {
         max-width: 360px;
-        margin: 0 0 12px;
+        margin: 0 6% 12px 0;
     }
 
     .where {
@@ -1923,33 +1932,36 @@ a {
     }
 
     /*Video slider*/
+    /*Top link hover*/
+    .link-top {
+        position: relative;
+    }
+
+    .link-top::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        display: block;
+        width: 100%;
+        background-color: #E5E5E5;
+    }
+
+    .link-top:hover::after {
+        height: 1px;
+    }
+
+    .link-top:active::after {
+        height: 1px;
+        background-color: #1378EF;
+    }
+
+    .link-top:active {
+        color: #1378EF;
+    }
+
+    /*Top link hover*/
 }
 
-.link-top {
-    position: relative;
-}
-
-.link-top::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    display: block;
-    width: 100%;
-    background-color: #E5E5E5;
-}
-
-.link-top:hover::after {
-    height: 1px;
-}
-
-.link-top:active::after {
-    height: 1px;
-    background-color: #1378EF;
-}
-
-.link-top:active {
-    color: #1378EF;
-}
 
 /*scroll animation*/
 .aboutus {

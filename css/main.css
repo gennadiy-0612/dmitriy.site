@@ -73,17 +73,13 @@ a {
     display: block;
 }
 
-.logisticH2,
 .show .logisticH2,
-.keyprinciples-direct,
 .year-upperline,
 .upperline, .uperlinedesktop {
     position: relative;
 }
 
-.logisticH2::after,
 .show .logisticH2::after,
-.keyprinciples-direct::after,
 .year-upperline::after,
 .upperline::after {
     content: '';
@@ -465,9 +461,9 @@ a {
 }
 
 .video__go, .video__a {
-    width: 25px;
-    height: 25px;
-    border-radius: 13px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
     display: block;
 }
 
@@ -478,24 +474,27 @@ a {
 .video__prev {
     position: absolute;
     background: url("../img/index/prev.svg") center center no-repeat;
-    right: -10px;
+    right: -2px;
     background-size: contain;
     z-index: 1;
-    width: 41px;
+    width: 16px;
     margin: auto;
     top: 0;
     bottom: 0;
+    height: 8px;
 }
 
 .video__next {
     background: url("../img/index/next.svg") center center no-repeat;
     position: absolute;
-    left: -10px;
+    left: -2px;
     background-size: 41px 23px;
-    width: 41px;
+    width: 16px;
     margin: auto;
     top: 0;
     bottom: 0;
+    height: 8px;
+    background-size: contain;
 }
 
 /*Arrow switcher*/
@@ -589,7 +588,20 @@ a {
         margin-left: 15px;
         margin-right: 15px;
     }
-
+    .logisticH2,
+    .year-upperline{
+        position: relative;
+    }
+    .logisticH2::after,
+    .keyprinciples-direct::after{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #FFFFFF;
+        top: -20px;
+    }
     .uperlinedesktop::after {
         content: none;
     }
@@ -900,6 +912,7 @@ a {
 
     #show-slide {
         display: block;
+        margin: 0;
     }
 
     #show-video-slide ~ .video__item, #show-slide ~ .emotions__item {
@@ -912,31 +925,45 @@ a {
     }
 
     .emotions {
-        margin: 0 auto;
+        margin: 42px auto 0;
     }
 
     .video__button {
-        font: normal normal 400 14px/23px 'Montserrat', sans-serif;
+        font: normal normal 400 10px/17px 'Montserrat', sans-serif;
         position: absolute;
-        right: 44px;
-        top: 68px;
+        right: -33px;
+        top: 118px;
         margin: auto;
     }
 
     .video__action::before {
         height: 230px;
         width: 230px;
-        background-size: 190px;
+        background-size: 180px;
+        top: -430%;
+        left: -75%;
     }
 
     .video__nav {
         position: initial;
         margin: 0 0 0 auto;
         flex-direction: row;
-        height: 100px;
+        height: 60px;
         align-items: center;
+        width: 74px;
     }
 
+    .emotions__ag{
+        text-align: left;
+        margin: 5px 0 0;
+        line-height: 31px;
+    }
+    .emotions__link{
+        margin: 0;
+        line-height: 25px;
+    }
+    
+    .emotions__Text{margin: 9px 0 0;}
     /*video*/
     /*support*/
     .s3__p2-support {

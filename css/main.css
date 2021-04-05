@@ -1193,8 +1193,13 @@ a {
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     z-index: -1;
+}
+.sphere canvas {
+    width: 50% !important;
+    height: 50% !important;
+    margin: 0 0 0 auto;
+    display: block;
 }
 
 /*.sphere*/

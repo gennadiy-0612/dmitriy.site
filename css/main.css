@@ -588,6 +588,14 @@ a {
     color: #1378EF;
 }
 
+.folio__img:hover {
+    filter: grayscale(0);
+}
+
+.folio__img {
+    filter: grayscale(100%);
+}
+
 @media (max-width: 1070px) {
     .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         margin-left: 15px;
@@ -918,14 +926,6 @@ a {
     .folio__img {
         margin: 0;
         height: 40px;
-    }
-
-    .folio__img:hover {
-        filter: grayscale(0);
-    }
-
-    .folio__img {
-        filter: grayscale(100%);
     }
 
     /*Index page mobile*/

@@ -1806,6 +1806,36 @@ a {
     }
 
     /*contacts*/
+    /*Video slider*/
+    .video__h1{
+        margin: 0.6% 0 0 2.7%;
+    }
+    .video__list {
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 0;
+        top: 0;
+    }
+
+    .video__slides {
+        position: absolute;
+        top: 0;
+        bottom: -22%;
+        margin: auto;
+        height: 200px;
+    }
+
+    .video__item {
+        width: 300px;
+        height: 200px;
+        background-size: 220px;
+    }
+
+    .video__window {
+    }
+
+    /*Video slider*/
 }
 
 .link-top {

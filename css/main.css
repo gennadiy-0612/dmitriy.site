@@ -92,14 +92,6 @@ a {
 }
 
 .listworks__li {
-    filter: grayscale(100%);
-}
-
-.listworks__li:hover {
-    filter: grayscale(0);
-}
-
-.listworks__li {
     margin: 15px 10px;
 }
 
@@ -903,10 +895,22 @@ a {
         margin: 0;
         padding: 10px 0 0;
     }
-        .folio__company{padding: 0 5px;}
-    .listworks__li{
+
+    .folio__company {
+        padding: 0 5px;
+    }
+
+    .folio__img {
         margin: 0;
         height: 40px;
+    }
+
+    .folio__img:hover {
+        filter: grayscale(0);
+    }
+
+    .folio__img {
+        filter: grayscale(100%);
     }
 
     /*Index page mobile*/
@@ -994,7 +998,10 @@ a {
     }
 
     /*video*/
-    .ourworks{margin: 65px 0 0;}
+    .ourworks {
+        margin: 65px 0 0;
+    }
+
     /*support*/
     .s3__p2-support {
         margin: 50px 0 15px;
@@ -1020,9 +1027,11 @@ a {
     .allinfo-footermob {
         margin: 40px 0;
     }
-    .footer{
+
+    .footer {
         position: relative;
     }
+
     .footer__p1 {
         margin: 15px 0;
     }
@@ -1103,21 +1112,38 @@ a {
 
     /*contacts*/
     /*Video Slider*/
-    .video__h1{
-      margin: 0;
-      font-size: 19px;
-      text-indent: 9%;
+    .video__h1 {
+        margin: auto;
+        font-size: 19px;
+        max-width: 288px;
     }
-    .video__window{max-width: 288px;max-height: 200px;margin: auto;}
-    .video__list{/*! position: static; */top: 0;bottom: -5%;margin: auto;left: 0;max-width: 288px;right: 0;}
-    .video__item{}
-    .video__item{
+
+    .video__window {
+        max-width: 288px;
+        max-height: 200px;
+        margin: auto;
+    }
+
+    .video__list { /*! position: static; */
+        top: 0;
+        bottom: -5%;
+        margin: auto;
+        left: 0;
+        max-width: 288px;
+        right: 0;
+    }
+
+    .video__item {
+    }
+
+    .video__item {
         max-width: 288px;
         max-height: 200px;
         margin: auto;
         background-size: 227px;
     }
-    .video__nav-top{
+
+    .video__nav-top {
         position: absolute;
         margin: 0 auto 20%;
         top: auto;
@@ -1125,6 +1151,7 @@ a {
         left: 0;
         right: 0;
     }
+
     /*Video Slider*/
 }
 

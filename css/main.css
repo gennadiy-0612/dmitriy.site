@@ -1184,22 +1184,13 @@ a {
 
 /*.sphere*/
 .sphere {
-    /*! margin: auto; */
-    /*! display: flex; */
-    /*! justify-content: center; */
-    /*! align-items: center; */
     overflow: hidden;
     box-shadow: 0 0 1px black;
     position: absolute;
     top: 0;
     right: 0;
     z-index: -1;
-}
-.sphere canvas {
-    width: 50% !important;
-    height: 50% !important;
-    margin: 0 0 0 auto;
-    display: block;
+    width: 75%;
 }
 
 /*.sphere*/

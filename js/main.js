@@ -175,7 +175,6 @@ shch.RefreshClass = function (oldClass, newClass, I) {
             }
             this.oldClass = this.tagWorker.getAttribute('class');
             this.tagWorker.addEventListener('click', this.changeIt.bind(this));
-            console.log(this)
         },
         changeIt: function () {
             console.log(this);

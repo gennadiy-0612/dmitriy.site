@@ -73,10 +73,14 @@ a {
     display: block;
 }
 
+.keyprinciples-direct,
+.year-upperline,
 .upperline, .uperlinedesktop {
     position: relative;
 }
 
+.keyprinciples-direct::after,
+.year-upperline::after,
 .upperline::after {
     content: '';
     position: absolute;
@@ -521,47 +525,58 @@ a {
 }
 
 /*video test emotions*/
-    /*Modal Video*/
-    .video__set, .callBack {
-        height: 100%;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        display: none;
-        z-index: 1;
-        animation-name: down;
-        animation-duration: 1s;
-    }
+/*Modal Video*/
+.video__set, .callBack {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    z-index: 1;
+    animation-name: down;
+    animation-duration: 1s;
+}
 
-    .backBlack::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #1F1F1F;
-        z-index: -1;
-    }
+.backBlack::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1F1F1F;
+    z-index: -1;
+}
 
-    .close {
-        width: 20px;
-        height: 20px;
-        background: url("../img/index/x.svg") center center no-repeat;
-        background-size: contain;
-        margin: 20px 30px 0 auto;
-    }
+.close {
+    width: 20px;
+    height: 20px;
+    background: url("../img/index/x.svg") center center no-repeat;
+    background-size: contain;
+    margin: 20px 30px 0 auto;
+}
 
-    .video__window {
-        display: flex;
-    }
+.video__window {
+    display: flex;
+}
 
-    .video__item {
-        width: 490px;
-        height: 300px;
-    }
+.video__item {
+    width: 490px;
+    height: 300px;
+}
 
-    /*Modal Video*/
+/*Modal Video*/
+
+#show-video-slide,
+#show-video-slide ~ .video__item,
+#show-slide,
+#show-slide ~ .emotions__item {
+    display: block;
+    align-items: center;
+}
+
+/*Modal Video*/
 @media (max-width: 1070px) {
+
     .uperlinedesktop::after {
         content: none;
     }
@@ -739,13 +754,93 @@ a {
         font: normal normal 700 19px/28px "Druk Text Wide", sans-serif;
     }
 
+    /*Index page mobile*/
+    .topics {
+        margin: 0;
+    }
+
+    .bluebutton {
+        margin: 1px 0 10px;
+        line-height: 30px;
+        padding: 0 16px;
+    }
+
+    .aboutus {
+        margin-top: 71px;
+    }
+
+    .aboutus__h2 {
+        margin: 0;
+    }
+
+    .aboutus__h3 {
+        margin: 8px 0 30px;
+    }
+
+    .year {
+        padding: 0 0 30px;
+    }
+
+    .year__historydate {
+        margin: 0;
+    }
+
+    .year__event {
+        margin: 1px 0 0 4%;
+    }
+
+
+    .year-upperline::after {
+        top: -10px;
+    }
+
+    .keyprinciples__h2 {
+        margin-top: 50px;
+    }
+
+    .keyprinciples-direct {
+        margin: 60px 0;
+    }
+
+    /*Index page mobile*/
     /*video*/
-    .emotions{
+    .emotions {
+        max-width: 320px;
+        margin: auto;
+    }
+
+    .emotions__set {
+        margin: 0 0 0;
+    }
+
+    #show-slide {
+        display: block;
+    }
+
+    #show-video-slide ~ .video__item, #show-slide ~ .emotions__item {
+        display: none;
+        align-items: center;
+    }
+
+    .emotions__item {
+        display: none;
+    }
+
+    .emotions {
         margin: 0 auto;
     }
+
     .video__button {
         font: normal normal 400 14px/23px 'Montserrat', sans-serif;
         margin: auto 200px auto auto;
+    }
+
+    .video__nav {
+        position: initial;
+        margin: 0 0 0 auto;
+        flex-direction: row;
+        height: 100px;
+        align-items: center;
     }
 
     /*video*/
@@ -897,6 +992,7 @@ a {
         display: none;
     }
 
+    .year-upperline::after,
     .upperline::after {
         content: none;
     }
@@ -1121,7 +1217,6 @@ a {
     }
 
     /*Index page video start*/
-
     @keyframes slide {
         from {
             opacity: 0;
@@ -1588,13 +1683,6 @@ a {
     display: none;
 }
 
-#show-video-slide,
-#show-video-slide ~ .video__item,
-#show-slide,
-#show-slide ~ .emotions__item {
-    display: block;
-    align-items: center;
-}
 
 #show-slide, #show-video-slide,
 #show-video-slide ~ .video__item,

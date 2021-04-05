@@ -184,7 +184,7 @@ a {
     position: absolute;
     top: 0;
     bottom: 0;
-    margin: auto;
+    /*! margin: auto; */
     left: 0;
     width: 50px;
     height: 50px;
@@ -426,6 +426,7 @@ a {
 
 .video__action {
     position: relative;
+    z-index: 0;
 }
 
 .video__action::before {
@@ -470,7 +471,7 @@ a {
     background: url(../img/index/prev.svg) center center no-repeat;
     right: -10px;
     background-size: contain;
-    z-index: 1;
+    /*! z-index: 1; */
     width: 41px;
     margin: auto;
     top: 0;
@@ -930,6 +931,8 @@ a {
 
     .folio__company {
         padding: 0 5px;
+        display: flex;
+        align-items: center;
     }
 
     .folio__img {
@@ -1397,7 +1400,7 @@ a {
 
     .whereText {
         font: normal normal 400 22px/33px "Montserrat", sans-serif;
-        padding: 0 11px;
+        padding: 4px 11px;
     }
 
     .listworks__blueball {

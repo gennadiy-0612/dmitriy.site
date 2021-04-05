@@ -1545,7 +1545,11 @@ a {
         padding: 0 0 0 13.3%;
         width: 82.7%;
     }
-
+    .support__h2{
+        margin: 0;
+        font-size: 20px;
+        line-height: 34px;
+    }
     .footer__p1 {
         margin: 18px 0 0;
     }

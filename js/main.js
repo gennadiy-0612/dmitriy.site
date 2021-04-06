@@ -74,11 +74,13 @@ let shch = {
         shch.go = setInterval(shch.anim, 100 / 60);
     },
     burger: function () {
-        let visible = document.querySelector('.burger');
-        visible.addEventListener('click', shch.show);
         shch.locate = {};
         if (window.location.origin == 'https://p.cx.ua') shch.locate={index1:'/pf/dmitriy.site/',index2:'/pf/dmitriy.site/index.html'};
         if (window.location.origin == 'http://localhost:81') shch.locate={index1:'/',index2:'index.html'};
+        let visible = document.querySelector('.burger');
+        visible.addEventListener('click', shch.show);
+        let folio = document.querySelector('.nav-folio');
+        folio.addEventListener('click', shch.show);
         if ((window.location.pathname == shch.locate.index1) || (window.location.pathname == shch.locate.index2)) {
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');

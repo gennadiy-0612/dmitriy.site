@@ -118,7 +118,12 @@ let shch = {
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
         }
-        document.querySelector('.JOIN').addEventListener('click', shch.includeHTML);
+        shch['hide-form'] = new shch.RefreshClass('.hide-form', 'show', '');
+        shch['hide-form']['.hide-form'].addAct();
+        // document.querySelector('.JOIN').addEventListener('click', shch.includeHTML);
+
+        shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
+        shch.modalCallBack.startModal();
     }
 }
 window.addEventListener('load', shch.burger);
@@ -151,7 +156,6 @@ shch.slider = function (selectorSlide, activeSlide) {
     this.Item = document.querySelectorAll(selectorSlide);
     this.Length = document.querySelectorAll(selectorSlide).length;
     this.Plus = function () {
-        console.log(this)
         if (this.Current === (this.Length - 1)) {
             return true;
         } else {

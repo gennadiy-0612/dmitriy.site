@@ -1255,17 +1255,18 @@ a {
 
     /*Video Slider*/
     /*Modal forms*/
-    .modaljoinToUs {
+    .hide-form  {
         position: fixed;
         top: 0;
         background-color: #1d1d1d;
         width: 100%;
         height: 100%;
         z-index: 1;
+        display: none;
     }
 
-    form.modalJoinForm {
-        max-width: 300px;
+    .modalJoinForm {
+        max-width: 280px;
         margin: auto;
     }
 
@@ -2047,7 +2048,7 @@ a {
 
     /*Video slider*/
     /*Modal forms*/
-    .modaljoinToUs {
+    .hide-form  {
         position: fixed;
         top: 0;
         background-color: #1d1d1d;

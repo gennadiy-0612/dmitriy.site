@@ -1,35 +1,37 @@
 @font-face {
     font-family: 'Montserrat';
-    src: local('Montserrat Regular'), local('Montserrat Regular'),
-    url('./font/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
+    src: local('Montserrat Regular'), local('Montserrat Regular'),
+    url('./font/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: local('Montserrat SemiBold'), local('Montserrat SemiBold'),
-    url('./font/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
+    src: local('Montserrat SemiBold'), local('Montserrat SemiBold'),
+    url('./font/Montserrat-SemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Druk Text Wide';
     font-style: normal;
     font-weight: bold;
-    src: local('Druk Text Wide'), local('Druk Text Wide'),
-        /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Bold.ttf') format('truetype');*/ url('./font/DrukTextWide-Bold.ttf') format('truetype');
     font-display: swap;
+    src: local('Druk Text Wide'), local('Druk Text Wide'),
+    url('./font/DrukTextWide-Bold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Druk Text Medium';
     font-style: normal;
     font-weight: 500;
-    src: local('Druk Text Wide'), local('Druk Text Wide'),
-        /*url('http://p.cx.ua/pf/dmitriy.site/css/font/DrukTextWide-Medium.ttf') format('truetype');*/ url('./font/DrukTextWide-Medium.ttf') format('truetype');
     font-display: swap;
+    src: local('Druk Text Wide'), local('Druk Text Wide'),
+    url('./font/DrukTextWide-Medium.ttf') format('truetype');
 }
 
 html {
@@ -182,7 +184,7 @@ a {
     position: absolute;
     top: 0;
     bottom: 0;
-    margin: auto;
+    /*! margin: auto; */
     left: 0;
     width: 50px;
     height: 50px;
@@ -237,15 +239,15 @@ a {
 }
 
 .vl2::after {
-    animation: 30s linear 4s infinite normal move_bottom;
-}
-
-.vl3::after {
     animation: 30s linear 8s infinite normal move_bottom;
 }
 
+.vl3::after {
+    animation: 30s linear 16s infinite normal move_bottom;
+}
+
 .vl4::after {
-    animation: 30s linear 12s infinite normal move_bottom;
+    animation: 30s linear 32s infinite normal move_bottom;
 }
 
 @-webkit-keyframes move_bottom {
@@ -267,15 +269,15 @@ a {
 
 .back-site__round-out {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 125px;
+    width: 600px;
+    height: 600px;
+    border-radius: 300px;
     border: 1px solid #FFF;
     opacity: .1;
     z-index: -1;
     left: 0;
     right: 0;
-    margin: auto;
+    margin: 7% 13% 0 auto;
 }
 
 .back-site__round-in {
@@ -424,6 +426,7 @@ a {
 
 .video__action {
     position: relative;
+    z-index: 0;
 }
 
 .video__action::before {
@@ -468,7 +471,7 @@ a {
     background: url(../img/index/prev.svg) center center no-repeat;
     right: -10px;
     background-size: contain;
-    z-index: 1;
+    /*! z-index: 1; */
     width: 41px;
     margin: auto;
     top: 0;
@@ -586,8 +589,25 @@ a {
     color: #1378EF;
 }
 
+.folio__img:hover {
+    filter: grayscale(0);
+}
+
+.folio__img {
+    filter: grayscale(100%);
+}
+
+/*Background Orbit*/
+.back-site__round-out {
+    width: 320px;
+    height: 320px;
+    border-radius: 160px;
+}
+
+/*Background Orbit*/
+
 @media (max-width: 1070px) {
-    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
+    .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         margin-left: 15px;
         margin-right: 15px;
     }
@@ -610,6 +630,10 @@ a {
 
     .uperlinedesktop::after {
         content: none;
+    }
+
+    .uperlinedesktop-vac::after {
+        content: '';
     }
 
     .year {
@@ -821,8 +845,8 @@ a {
     }
 
     .switcher::before {
-        top: 20px;
-        right: 20px;
+        top: 25px;
+        right: 10px;
     }
 
     .year-upperline::after {
@@ -907,19 +931,13 @@ a {
 
     .folio__company {
         padding: 0 5px;
+        display: flex;
+        align-items: center;
     }
 
     .folio__img {
         margin: 0;
         height: 40px;
-    }
-
-    .folio__img:hover {
-        filter: grayscale(0);
-    }
-
-    .folio__img {
-        filter: grayscale(100%);
     }
 
     /*Index page mobile*/
@@ -1040,9 +1058,7 @@ a {
     .footer {
         position: relative;
     }
-    .footer__h2{
-        line-height: 20px;
-    }
+
     .footer__p1 {
         margin: 15px 0;
     }
@@ -1098,6 +1114,18 @@ a {
     .s2-contactdesk {
         margin-top: 144px;
         margin-bottom: 83px;
+    }
+
+    .contactinfo__2desk {
+        margin: 0 0 40px;
+    }
+
+    .contactinfo__2desk {
+        margin: 80px 0;
+    }
+
+    .s3contactinfo__2desk-p {
+        margin: 0 0 16px;
     }
 
     .command {
@@ -1164,22 +1192,28 @@ a {
     }
 
     /*Video Slider*/
+    .back-site__round-out {
+        width: 260px;
+        height: 260px;
+        border-radius: 130px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }
 
 /*.sphere*/
 .sphere {
-    /*! margin: auto; */
-    /*! display: flex; */
-    /*! justify-content: center; */
-    /*! align-items: center; */
     overflow: hidden;
     box-shadow: 0 0 1px black;
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     z-index: -1;
+    left: 0;
+    margin: auto;
 }
+
 
 /*.sphere*/
 @media (min-width: 1071px) {
@@ -1191,10 +1225,12 @@ a {
     .agtext {
         font: normal normal 400 16px/27px "Montserrat", sans-serif;
     }
-    .folio__cli{
+
+    .folio__cli {
         margin: 180px 0 0;
         font: normal normal 400 20px/34px "Montserrat", sans-serif;
     }
+
     .agh2mob__min {
         font: normal normal 700 16px/27px "Montserrat", sans-serif;
     }
@@ -1224,6 +1260,7 @@ a {
 
     .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         max-width: 1300px;
+        padding: 0 50px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1271,7 +1308,7 @@ a {
     /*Top menu nav finished*/
     /*vacancies start*/
     .agh1desk-doit {
-        margin: 120px auto 0;
+        margin: 131px auto 0;
         max-width: 510px;
         text-align: center;
     }
@@ -1343,7 +1380,7 @@ a {
 
     .year__event {
         max-width: 360px;
-        margin: 0 0 12px;
+        margin: 0 6% 12px 0;
     }
 
     .where {
@@ -1358,12 +1395,15 @@ a {
     .keyprinciples__h2 {
         font: normal normal 400 20px/34px 'Montserrat', sans-serif;
     }
-    .keyprinciples__p{
+
+    .keyprinciples__p {
         margin: 0;
     }
+
     .whereText {
         font: normal normal 400 22px/33px "Montserrat", sans-serif;
-        padding: 0 11px;
+        padding: 19px 11px;
+        margin: 0 10px;
     }
 
     .listworks__blueball {
@@ -1374,6 +1414,7 @@ a {
 
     .listworks {
         margin: 70px 0;
+        flex-wrap: wrap;
     }
 
     .logistic__p5 {
@@ -1436,7 +1477,11 @@ a {
     .textCenter {
         text-align: center;
     }
-    .testEmotions-h3{margin: 22px 0 0;}
+
+    .testEmotions-h3 {
+        margin: 22px 0 0;
+    }
+
     /*Index page video start*/
     @keyframes slide {
         from {
@@ -1525,6 +1570,7 @@ a {
     .logistic__h3 {
         margin: 7px 0 0;
     }
+
     .s3__p2 {
         width: 50%;
         margin: 0;
@@ -1540,13 +1586,21 @@ a {
         flex-wrap: wrap;
         padding: 20px 2% 65px 0;
     }
+
     .switchDeskNone {
         padding: 20px 2% 0 0;
         margin: 25px 0 53px;
     }
+
     .s3__p5 {
         padding: 0 0 0 13.3%;
         width: 82.7%;
+    }
+
+    .support__h2 {
+        margin: 0;
+        font-size: 20px;
+        line-height: 34px;
     }
 
     .footer__p1 {
@@ -1619,18 +1673,14 @@ a {
         font: normal normal 400 27px/31px 'Druk Text Wide', sans-serif;
     }
 
-    .footer__h2{
-        line-height: 40px;
-        margin: 0;
-    }
-    
     .logisticH2 {
         padding: 32px 0 27px;
         line-height: 36px;
     }
 
     .formh1-vacancies {
-        margin: 50px 0 40px;
+        margin: 55px 0 43px;
+        padding: 6px 0 0;
     }
 
     .footer__formh1-vacancies {
@@ -1688,10 +1738,11 @@ a {
     /*forms finish*/
     /*footer*/
     .footer__box {
-        max-width: 863px;
+        max-width: 913px;
         display: flex;
         flex-wrap: wrap;
         margin: 0 0 0 auto;
+        padding-left: 50px;
     }
 
     .footback {
@@ -1727,7 +1778,7 @@ a {
     }
 
     .footer__p4 {
-        margin: 16px 0 -14px;
+        margin: 16px 5% -14px 0;
     }
 
     /* form */
@@ -1888,33 +1939,36 @@ a {
     }
 
     /*Video slider*/
+    /*Top link hover*/
+    .link-top {
+        position: relative;
+    }
+
+    .link-top::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        display: block;
+        width: 100%;
+        background-color: #E5E5E5;
+    }
+
+    .link-top:hover::after {
+        height: 1px;
+    }
+
+    .link-top:active::after {
+        height: 1px;
+        background-color: #1378EF;
+    }
+
+    .link-top:active {
+        color: #1378EF;
+    }
+
+    /*Top link hover*/
 }
 
-.link-top {
-    position: relative;
-}
-
-.link-top::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    display: block;
-    width: 100%;
-    background-color: #E5E5E5;
-}
-
-.link-top:hover::after {
-    height: 1px;
-}
-
-.link-top:active::after {
-    height: 1px;
-    background-color: #1378EF;
-}
-
-.link-top:active {
-    color: #1378EF;
-}
 
 /*scroll animation*/
 .aboutus {

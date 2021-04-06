@@ -1193,10 +1193,10 @@ a {
 
     /*Video Slider*/
     .back-site__round-out {
-        width: 260px;
-        height: 260px;
-        border-radius: 130px;
-        top: 0;
+        width: 40vmax;
+        height: 40vmax;
+        border-radius: 20vmax;
+        top: -30vmax;
         bottom: 0;
         margin: auto;
     }
@@ -1207,7 +1207,7 @@ a {
     overflow: hidden;
     box-shadow: 0 0 1px black;
     position: absolute;
-    top: 0;
+    top: -15vmax;
     right: 0;
     z-index: -1;
 }
@@ -1400,7 +1400,8 @@ a {
 
     .whereText {
         font: normal normal 400 22px/33px "Montserrat", sans-serif;
-        padding: 4px 11px;
+        padding: 19px 11px;
+        margin: 0 10px;
     }
 
     .listworks__blueball {
@@ -1411,6 +1412,7 @@ a {
 
     .listworks {
         margin: 70px 0;
+        flex-wrap: wrap;
     }
 
     .logistic__p5 {

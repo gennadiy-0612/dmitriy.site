@@ -75,18 +75,8 @@ let shch = {
     },
     burger: function () {
         shch.locate = {};
-        if (window.location.origin == 'https://p.cx.ua') {
-            shch.locate = {
-                index1: '/pf/dmitriy.site/',
-                index2: '/pf/dmitriy.site/index.html'
-            };
-        }
-        if (window.location.origin == 'http://localhost:81') {
-            shch.locate = {
-                index1: '/',
-                index2: '/index.html'
-            };
-        }
+        if (window.location.origin == 'https://p.cx.ua') {shch.locate = {index1: '/pf/dmitriy.site/', index2: '/pf/dmitriy.site/index.html'};}
+        if (window.location.origin == 'http://localhost:81') {shch.locate = {index1: '/', index2: '/index.html'};}
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
         let folio = document.querySelector('.nav-folio');
@@ -115,22 +105,24 @@ let shch = {
             }
             shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
             shch.modalVideoSlider.startModal();
-            shch.modalCallBack = new shch.ModalShow('#callBack', ' .callBackButton', '.callBackClose');
-            shch.modalCallBack.startModal();
+            // shch.modalCallBack = new shch.ModalShow('.callwind', ' .testcall', '.callBackClose');
+            // shch.modalCallBack.startModal();
             shch.slideStatic = new shch.slider('.emotions__item', 'show-slide');
             document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
             document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
             shch.slideVideo = new shch.slider('.video__item', 'show-video-slide');
             document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
             document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
+            shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
+            window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
+            shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
+            window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
         }
-        shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
-        window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
-        shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
-        window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
+        document.querySelector('.JOIN').addEventListener('click', shch.includeHTML);
     }
 }
 window.addEventListener('load', shch.burger);
+
 shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     this.elementTarget = whoIsAnimate;
     this.animateClass = whatKindAnimate;
@@ -153,6 +145,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
         shch.startChanges = 0;
     }
 }
+
 shch.slider = function (selectorSlide, activeSlide) {
     this.Current = 0;
     this.Item = document.querySelectorAll(selectorSlide);
@@ -220,6 +213,35 @@ shch.RefreshClass = function (oldClass, newClass, I) {
                 this.tagWorker.setAttribute('class', this.oldClass + ' ' + this.newClass);
                 this.initState = 1;
             }
+        }
+    }
+};
+
+shch.includeHTML = function () {
+    let z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("w3-include-html");
+                    shch.includeHTML();
+                    elmnt.setAttribute('class', 'modaljoinToUs');
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
         }
     }
 };

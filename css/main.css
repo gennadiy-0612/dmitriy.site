@@ -619,6 +619,7 @@ a {
     width: 100%;
     background-color: #E5E5E5;
 }
+
 .nav__act::after,
 .link-top:hover::after {
     height: 1px;
@@ -2064,3 +2065,29 @@ a {
     animation-name: slide;
     animation-duration: 1s;
 }
+
+/*Modal forms*/
+.modalJoinForm {
+    position: fixed;
+    top: 0;
+    background-color: #1d1d1d;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.modaljoinToUs__h3 {
+    font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
+    color: #FFFFFF;
+}
+
+.modalJoin__text {
+    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
+    color: #FFFFFF;
+}
+
+.modalJoin-center {
+    text-align: center;
+}
+
+/*Modal forms*/

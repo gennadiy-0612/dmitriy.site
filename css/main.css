@@ -619,7 +619,7 @@ a {
     width: 100%;
     background-color: #E5E5E5;
 }
-
+.nav__act::after,
 .link-top:hover::after {
     height: 1px;
 }
@@ -659,6 +659,7 @@ a {
 /*.sphere*/
 @media (max-width: 1070px) {
     /*Top link hover*/
+    .nav__act::after,
     .link-top:hover::after {
         width: 100px;
         margin: auto;

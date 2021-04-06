@@ -75,13 +75,27 @@ let shch = {
     },
     burger: function () {
         shch.locate = {};
-        if (window.location.origin == 'https://p.cx.ua') shch.locate={index1:'/pf/dmitriy.site/',index2:'/pf/dmitriy.site/index.html'};
-        if (window.location.origin == 'http://localhost:81') shch.locate={index1:'/',index2:'index.html'};
+        if (window.location.origin == 'https://p.cx.ua') {
+            shch.locate = {
+                index1: '/pf/dmitriy.site/',
+                index2: '/pf/dmitriy.site/index.html'
+            };
+        }
+        if (window.location.origin == 'http://localhost:81') {
+            shch.locate = {
+                index1: '/',
+                index2: '/index.html'
+            };
+        }
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
         let folio = document.querySelector('.nav-folio');
         folio.addEventListener('click', shch.show);
-        if ((window.location.pathname == shch.locate.index1) || (window.location.pathname == shch.locate.index2)) {
+        let locAddr = window.location.pathname;
+        console.log(shch.locate)
+        console.log(locAddr)
+        if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
+            console.log(shch.locate)
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;

@@ -638,6 +638,68 @@ a {
     display: none;
 }
 
+/*Modal forms*/
+.hide-form {
+    position: fixed;
+    top: 0;
+    background-color: #1d1d1d;
+    max-width: 440px;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.modalJoinForm {
+    max-width: 320px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.modaljoinToUs__h3 {
+    font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.modaljoinToUs__h4 {
+    margin: 15px 0 0;
+}
+
+.modalJoin__text {
+    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
+    color: #FFFFFF;
+}
+
+.modalJoin-center {
+    text-align: center;
+}
+
+.modalJoinForm__labels {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 30px 0 0;
+}
+
+.modalJoinForm__block {
+    padding: 0;
+    margin: 4px 0;
+}
+
+.modalJoin__input {
+    background-color: transparent;
+    border-width: 0;
+    border-bottom-width: 0px;
+    border-bottom: 1px solid #E5E5E5;
+    display: block;
+    width: 100%;
+}
+
+/*Modal forms*/
+
 /*Top link hover*/
 @media (orientation: portrait) {
     /*.sphere*/

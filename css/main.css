@@ -1264,10 +1264,19 @@ a {
         z-index: 1;
     }
 
+    form.modalJoinForm {
+        max-width: 300px;
+        margin: auto;
+    }
+
     .modaljoinToUs__h3 {
         font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
         margin: 0;
+    }
+
+    .modaljoinToUs__h4 {
+        margin: 15px 0 0;
     }
 
     .modalJoin__text {
@@ -1283,8 +1292,11 @@ a {
     .modalJoinForm__labels {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
     }
-    .modalJoin__input{}
+
+    .modalJoinForm__block {
+    }
 
     /*Modal forms*/
     /*Orbit*/

@@ -1282,7 +1282,6 @@ a {
     .modalJoin__text {
         font: normal normal 400 16px/27px 'Montserrat', sans-serif;
         color: #FFFFFF;
-        margin: 0;
     }
 
     .modalJoin-center {
@@ -1293,9 +1292,21 @@ a {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        padding: 30px 0 0;
     }
 
     .modalJoinForm__block {
+        padding: 0;
+        margin: 4px 0;
+    }
+
+    .modalJoin__input {
+        background-color: transparent;
+        border-width: 0;
+        border-bottom-width: 0px;
+        border-bottom: 1px solid #E5E5E5;
+        display: block;
+        width: 100%;
     }
 
     /*Modal forms*/

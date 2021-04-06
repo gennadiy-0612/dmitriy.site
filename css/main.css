@@ -605,7 +605,29 @@ a {
 }
 
 /*Background Orbit*/
+@media (orientation: portrait) {
+    /*.sphere*/
+    .sphere {
+        overflow: hidden;
+        position: absolute;
+        top: -15vmax;
+        right: 0;
+        z-index: -1;
+    }
+}
 
+@media (orientation: landscape) {
+    /*.sphere*/
+    .sphere {
+        overflow: hidden;
+        position: absolute;
+        top: -15vmin;
+        right: -30vmin;
+        z-index: -1;
+    }
+}
+
+/*.sphere*/
 @media (max-width: 1070px) {
     .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         margin-left: 15px;
@@ -1192,6 +1214,7 @@ a {
     }
 
     /*Video Slider*/
+    /*Orbit*/
     .back-site__round-out {
         width: 40vmax;
         height: 40vmax;
@@ -1200,19 +1223,10 @@ a {
         bottom: 0;
         margin: auto;
     }
+
+    /*Orbit*/
 }
 
-/*.sphere*/
-.sphere {
-    overflow: hidden;
-    position: absolute;
-    top: -15vmax;
-    right: 0;
-    z-index: -1;
-}
-
-
-/*.sphere*/
 @media (min-width: 1071px) {
     .year__historydate, .agh3mob, .agh2mob__min {
         font: normal normal 400 27px/40px "Druk Text Wide", sans-serif;
@@ -1964,8 +1978,19 @@ a {
     }
 
     /*Top link hover*/
-}
+    /*Orbit*/
 
+    .back-site__round-out {
+        width: 40vmin;
+        height: 40vmin;
+        border-radius: 20vmin;
+        top: -30vmin;
+        bottom: 0;
+        margin: auto;
+    }
+
+    /*Orbit*/
+}
 
 /*scroll animation*/
 .aboutus {

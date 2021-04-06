@@ -634,6 +634,10 @@ a {
     color: #1378EF;
 }
 
+.hide-form {
+    display: none;
+}
+
 /*Top link hover*/
 @media (orientation: portrait) {
     /*.sphere*/
@@ -652,7 +656,7 @@ a {
         overflow: hidden;
         position: absolute;
         top: -15vmin;
-        right: -30vmin;
+        right: 0;
         z-index: -1;
     }
 }
@@ -1255,19 +1259,23 @@ a {
 
     /*Video Slider*/
     /*Modal forms*/
-    .hide-form  {
+    .hide-form {
         position: fixed;
         top: 0;
         background-color: #1d1d1d;
-        width: 100%;
+        max-width: 440px;
         height: 100%;
         z-index: 1;
         display: none;
+        left: 0;
+        right: 0;
+        margin: auto;
     }
 
     .modalJoinForm {
-        max-width: 280px;
+        max-width: 320px;
         margin: auto;
+        padding: 0 40px;
     }
 
     .modaljoinToUs__h3 {
@@ -2048,7 +2056,7 @@ a {
 
     /*Video slider*/
     /*Modal forms*/
-    .hide-form  {
+    .hide-form {
         position: fixed;
         top: 0;
         background-color: #1d1d1d;

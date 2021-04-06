@@ -92,10 +92,7 @@ let shch = {
         let folio = document.querySelector('.nav-folio');
         folio.addEventListener('click', shch.show);
         let locAddr = window.location.pathname;
-        console.log(shch.locate)
-        console.log(locAddr)
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
-            console.log(shch.locate)
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;

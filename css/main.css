@@ -1205,7 +1205,6 @@ a {
 /*.sphere*/
 .sphere {
     overflow: hidden;
-    box-shadow: 0 0 1px black;
     position: absolute;
     top: -15vmax;
     right: 0;

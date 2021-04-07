@@ -92,8 +92,6 @@ let shch = {
             }
             shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
             shch.modalVideoSlider.startModal();
-            // shch.modalCallBack = new shch.ModalShow('.callwind', ' .testcall', '.callBackClose');
-            // shch.modalCallBack.startModal();
             shch.slideStatic = new shch.slider('.emotions__item', 'show-slide');
             document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
             document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
@@ -105,7 +103,6 @@ let shch = {
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
         }
-
         shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
         shch.modalCallBack.startModal();
     }

@@ -115,17 +115,21 @@ a {
     margin: auto;
     border-radius: 50%;
     background-color: #1378EF;
-    animation: pulse 1.2s ease infinite;
+    animation: pulse 3s ease infinite;
+    box-shadow: 0 0 20px #1378EF;
 }
 
 @keyframes pulse {
     0% {
+        box-shadow: 0 0 20px #1378EF;
         transform: scale(1, 1);
     }
     50% {
-        opacity: 0.3;
+        box-shadow: 0 0 10px #1378EF;
+        opacity: 0.1;
     }
     100% {
+        box-shadow: 0 0 5px #1378EF;
         transform: scale(1.5);
         opacity: 0;
     }
@@ -584,6 +588,23 @@ a {
     align-items: center;
 }
 
+#show-slide, #show-video-slide,
+#show-video-slide ~ .video__item,
+#show-slide ~ .emotions__item,
+.emotions__item {
+    animation-name: slide;
+    animation-duration: 1s;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /*Modal Video*/
 
 .show .logisticH2 {
@@ -615,7 +636,7 @@ a {
     transition: opacity 1s;
 }
 
-.nav__act::after{
+.nav__act::after {
     height: 1px;
     opacity: 1;
 }
@@ -703,6 +724,10 @@ a {
 
 @media (max-width: 1070px) {
     /*Top link hover*/
+    .finger:hover {
+        cursor: none;
+    }
+
     .nav__act::after,
     .link-top:hover::after {
         width: 100px;
@@ -975,7 +1000,7 @@ a {
     }
 
     .logistic__h3 {
-        margin: 5px 15px 0;
+        margin: 5px 0 0;
     }
 
     .logisticH2 {
@@ -1407,6 +1432,7 @@ a {
     }
 
     /*Modal forms*/
+    .back-site{display: none;}
 
 }
 

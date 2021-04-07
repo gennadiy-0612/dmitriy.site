@@ -57,7 +57,7 @@ const init_pointer = (options) => {
             pointer.style.borderColor = getOption("pointerColor")
             isHover = true
         } else {
-            pointer.style.borderColor = "white"
+            pointer.style.borderColor = "#fff"
             isHover = false
         }
         ring.style.borderColor = getOption("pointerColor")

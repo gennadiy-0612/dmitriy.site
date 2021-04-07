@@ -609,12 +609,19 @@ a {
     bottom: -5px;
     display: block;
     width: 100%;
+    height: 1px;
+    opacity: 0;
     background-color: #E5E5E5;
+    transition: opacity 1s;
 }
 
-.nav__act::after,
-.link-top:hover::after {
+.nav__act::after{
     height: 1px;
+    opacity: 1;
+}
+
+.link-top:hover::after {
+    opacity: 1;
 }
 
 .link-top:active::after {
@@ -1674,7 +1681,6 @@ a {
     }
 
     /*Index page video start*/
-
     .emotions__item {
         display: none;
     }

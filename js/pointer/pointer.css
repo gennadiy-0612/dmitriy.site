@@ -13,7 +13,7 @@
     border-radius: 4px;
     z-index: 101;
     pointer-events: none;
-    transition: border-color 1s;
+    transition: border-color 2s;
 }
 
 #pointer-ring {

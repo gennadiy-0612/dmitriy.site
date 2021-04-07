@@ -43,23 +43,6 @@ body {
     margin: 0;
 }
 
-.back-site__round-out::after {
-    content: '';
-    width: 130vmin;
-    height: 130vmin;
-    background: radial-gradient(#fff 0, transparent 50%, transparent 80%);
-    display: block;
-    /*! top: -66vmin; */
-    margin-left: -2vmin;
-    left: 151vmin;
-    opacity: 1;
-
-    /*! margin: auto; */
-    /*! top: 0; */
-    /*! bottom: 0; */
-    position: sticky;
-}
-
 a {
     text-decoration: none;
 }

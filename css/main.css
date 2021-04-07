@@ -75,6 +75,10 @@ a {
     display: block;
 }
 
+input {
+    color: #fff;
+}
+
 .show .logisticH2,
 .year-upperline,
 .upperline, .uperlinedesktop {

@@ -8,12 +8,12 @@
     top: 0;
     width: 0;
     height: 0;
-    border: 2.5px solid white;
+    border: 2.5px solid #1378EF;
     position: fixed;
     border-radius: 4px;
     z-index: 101;
     pointer-events: none;
-    transition: border-color 0.5s;
+    transition: border-color 1s;
 }
 
 #pointer-ring {
@@ -29,10 +29,10 @@
     pointer-events: none;
 }
 
-html {
-    cursor: none !important;
+body {
+    cursor: none;
 }
 
 a {
-    cursor: none !important;
+    /*cursor: none !important;*/
 }

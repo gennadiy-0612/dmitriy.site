@@ -29,10 +29,6 @@
     pointer-events: none;
 }
 
-body {
+html {
     cursor: none;
-}
-
-a {
-    /*cursor: none !important;*/
 }

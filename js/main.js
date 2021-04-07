@@ -8,71 +8,82 @@ let shch = {
             bodyMain.setAttribute('class', 'overno');
     },
     move: 0,
-    start: 0,
+    startLeft: 0,
     count: 0,
-    curr: 0,
-    distance: 0,
+    currLeft: 0,
+    distanceLeft: 0,
     startTop: 0,
     currTop: 0,
     distanceTop: 0,
     animBall: document.querySelector('.listworks__blueball'),
     activeLight: function (e) {
         if (shch.move) {
-            console.log(shch.move)
             return;
         }
         shch.move = 1;
-        shch.curr = this.offsetLeft - 10;
-        shch.distance = shch.start - shch.curr;
+        shch.currLeft = this.offsetLeft - 10;
+        shch.distanceLeft = shch.startLeft - shch.currLeft;
         shch.currTop = this.offsetTop;
         shch.distanceTop = shch.startTop - shch.currTop;
-        shch.distance < 0 ? shch.animated() : shch.animatedLeft();
+        shch.distanceLeft < 0 ? shch.animatedRight() : shch.animatedLeft();
     },
-    animated: function () {
+    animatedRight: function () {
         shch.count = 1;
         shch.anim = function () {
-            shch.start += shch.count;
-            shch.animBall.setAttribute('style', 'left:' + shch.start + 'px; top:' + shch.startTop + 'px;');
-            if (shch.start > shch.curr) {
+            shch.startLeft += shch.count;
+            shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
+            if (shch.startLeft > shch.currLeft) {
                 if (shch.distanceTop < 0) {
                     shch.distanceTop += 1;
                     shch.startTop += 1;
-                    shch.animBall.setAttribute('style:','left:' + shch.start + 'px; top:' + shch.startTop + 'px;');
+                    shch.animBall.setAttribute('style:', 'left:' + shch.startLeft + 'px; top:' + shch.startTop + 'px;');
                     if (shch.distanceTop > 0) {
-                        console.log(shch.startTop);
-                        console.log(shch.distanceTop);
-                        //         shch.startTop = shch.distanceTop;
                         return true;
                     }
-                    shch.startTop = shch.currTop;
+                }
+                if (shch.distanceTop > 0) {
+                    shch.distanceTop -= 1;
+                    shch.startTop -= 1;
+                    console.log(shch.startTop);
+                    console.log(shch.distanceTop);
+                    shch.animBall.setAttribute('style:', 'left:' + shch.startLeft + 'px; top:' + shch.startTop + 'px;');
+                    if (shch.distanceTop < 0) {
+                        return true;
+                    }
                 }
                 clearInterval(shch.go);
-                shch.start = shch.curr;
+                shch.startTop = shch.currTop;
+                shch.startLeft = shch.currLeft;
                 shch.move = 0;
+                console.clear();
+                console.log('shch.startTop ' + shch.startTop);
+                console.log('shch.currTop ' + shch.currTop);
+                console.log('shch.distanceTop ' + shch.distanceTop);
                 return false;
             }
+
         }
-        shch.go = setInterval(shch.anim, 100 / 60);
+        shch.go = setInterval(shch.anim, 1);
     },
     animatedLeft: function () {
         shch.count = 1;
         shch.anim = function () {
-            shch.distance -= shch.count;
-            shch.start -= shch.count;
-            shch.animBall.setAttribute('style', 'left:' + shch.start + 'px;');
-            if (shch.distance < 0) {
+            shch.distanceLeft -= shch.count;
+            shch.startLeft -= shch.count;
+            shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.startTop + 'px;');
+            if (shch.distanceLeft < 0) {
                 // if (shch.distanceTop>0) {
                 //     shch.startTop = shch.currTop;
                 //     console.log(shch.distanceTop)
                 // }
                 shch.move = 0;
-                shch.start = shch.curr;
+                shch.startLeft = shch.currLeft;
                 shch.count = 0;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        shch.go = setInterval(shch.anim, 100 / 60);
+        shch.go = setInterval(shch.anim, 1);
     },
     burger: function () {
         shch.locate = {};

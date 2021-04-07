@@ -24,27 +24,28 @@ let shch = {
         shch.move = 1;
         shch.curr = this.offsetLeft - 10;
         shch.distance = shch.start - shch.curr;
-        // shch.currTop = this.offsetTop;
-        // shch.distanceTop = shch.currTop - shch.startTop;
+        shch.currTop = this.offsetTop;
+        shch.distanceTop = shch.startTop - shch.currTop;
         shch.distance < 0 ? shch.animated() : shch.animatedLeft();
     },
     animated: function () {
         shch.count = 1;
         shch.anim = function () {
             shch.start += shch.count;
-            shch.animBall.setAttribute('style', 'left:' + shch.start + 'px;');
+            shch.animBall.setAttribute('style', 'left:' + shch.start + 'px; top:' + shch.startTop + 'px;');
             if (shch.start > shch.curr) {
-                // if (shch.currTop) {
-                //     shch.startTop += 1;
-                //     // shch.animBall.setAttribute('style:','top:' + shch.startTop + 'px;');
-                //     if (shch.startTop > shch.distanceTop) {
-                //         shch.startTop = shch.distanceTop;
-                //         console.log(shch.startTop);
-                //         console.log(shch.distanceTop);
-                //         return true;
-                //     }
-                //     shch.startTop = shch.currTop;
-                // }
+                if (shch.distanceTop < 0) {
+                    shch.distanceTop += 1;
+                    shch.startTop += 1;
+                    shch.animBall.setAttribute('style:','left:' + shch.start + 'px; top:' + shch.startTop + 'px;');
+                    if (shch.distanceTop > 0) {
+                        console.log(shch.startTop);
+                        console.log(shch.distanceTop);
+                        //         shch.startTop = shch.distanceTop;
+                        return true;
+                    }
+                    shch.startTop = shch.currTop;
+                }
                 clearInterval(shch.go);
                 shch.start = shch.curr;
                 shch.move = 0;
@@ -60,7 +61,7 @@ let shch = {
             shch.start -= shch.count;
             shch.animBall.setAttribute('style', 'left:' + shch.start + 'px;');
             if (shch.distance < 0) {
-                // if (shch.distanceTop) {
+                // if (shch.distanceTop>0) {
                 //     shch.startTop = shch.currTop;
                 //     console.log(shch.distanceTop)
                 // }
@@ -75,8 +76,12 @@ let shch = {
     },
     burger: function () {
         shch.locate = {};
-        if (window.location.origin == 'https://p.cx.ua') {shch.locate = {index1: '/pf/dmitriy.site/', index2: '/pf/dmitriy.site/index.html'};}
-        if (window.location.origin == 'http://localhost:81') {shch.locate = {index1: '/', index2: '/index.html'};}
+        if (window.location.origin == 'https://p.cx.ua') {
+            shch.locate = {index1: '/pf/dmitriy.site/', index2: '/pf/dmitriy.site/index.html'};
+        }
+        if (window.location.origin == 'http://localhost:81') {
+            shch.locate = {index1: '/', index2: '/index.html'};
+        }
         let visible = document.querySelector('.burger');
         visible.addEventListener('click', shch.show);
         let folio = document.querySelector('.nav-folio');
@@ -232,10 +237,14 @@ shch.includeHTML = function () {
         if (file) {
             /* Make an HTTP request using the attribute value as the file name: */
             xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
-                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    if (this.status == 200) {
+                        elmnt.innerHTML = this.responseText;
+                    }
+                    if (this.status == 404) {
+                        elmnt.innerHTML = "Page not found.";
+                    }
                     /* Remove the attribute, and call this function once more: */
                     elmnt.removeAttribute("w3-include-html");
                     shch.includeHTML();

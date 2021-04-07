@@ -63,8 +63,9 @@ li {
     text-align: center;
 }
 
+input,
 .fontwhite {
-    color: #cccccc;
+    color: #FFF;
 }
 
 .link {
@@ -73,10 +74,6 @@ li {
 
 a {
     display: block;
-}
-
-input {
-    color: #fff;
 }
 
 .show .logisticH2,

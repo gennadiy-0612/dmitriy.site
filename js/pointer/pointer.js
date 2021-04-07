@@ -28,7 +28,7 @@ const init_pointer = (options) => {
     }
 
     window.onmouseup = (mouse) => {
-        mouseDown = false
+        mouseDown = true
     }
 
     const trace = (a, b, n) => {

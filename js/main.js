@@ -105,8 +105,6 @@ let shch = {
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
         }
-        shch['hide-form'] = new shch.RefreshClass('.hide-form', 'show', '');
-        shch['hide-form']['.hide-form'].addAct();
         // document.querySelector('.JOIN').addEventListener('click', shch.includeHTML);
 
         shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');

@@ -286,10 +286,10 @@ a {
     height: 75%;
     border-radius: 50%;
     top: 12.5%;
-    background-color: #9c9c9c;
+    /*background-color: #9c9c9c;*/
     transform: rotate(0);
     animation: 70s linear 0s infinite normal move_around;
-    box-shadow: 0 0 16px #fff;
+    /*box-shadow: 0 0 16px #fff;*/
 }
 
 .back-site__round-in::before,
@@ -2269,5 +2269,6 @@ a {
         left: 76vmin;
         bottom: 0;
         margin: auto;
+        /*background: radial-gradient(#fff, transparent);*/
     }
 }

@@ -1126,6 +1126,52 @@ a {
         margin: 65px 0 0;
     }
 
+    /*folio*/
+    .oil {
+
+        width: 117px;
+    }
+
+    .aqua {
+
+        width: 117px;
+    }
+
+    .perch {
+
+        width: 162px;
+    }
+
+    .mail {
+
+        width: 140px;
+    }
+
+    .kine {
+
+        width: 138px;
+    }
+
+    .pifa {
+
+        width: 40px;
+    }
+
+    .navy {
+
+        width: 201px;
+    }
+
+    .ncc {
+
+        width: 507px;
+    }
+
+    .sun {
+
+        width: 31px;
+    }
+
     /*support*/
     .s3__p2-support {
         margin: 50px 0 15px;
@@ -1260,7 +1306,7 @@ a {
         margin: auto;
     }
 
-    .video__list { /*! position: static; */
+    .video__list {
         top: 0;
         bottom: -5%;
         margin: auto;

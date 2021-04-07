@@ -1354,6 +1354,10 @@ a {
 }
 
 @media (min-width: 1071px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .year__historydate, .agh3mob, .agh2mob__min {
         font: normal normal 400 27px/40px "Druk Text Wide", sans-serif;
     }
@@ -2247,8 +2251,8 @@ a {
     .sphere {
         overflow: hidden;
         position: absolute;
-        top: 10vmin;
-        right: 0;
+        top: -4vmin;
+        right: -8vmin;
         z-index: -1;
     }
 
@@ -2261,8 +2265,8 @@ a {
         width: 70vmin;
         height: 70vmin;
         border-radius: 35vmin;
-        top: 10vmin;
-        left: 58vmin;
+        top: -8vmin;
+        left: 76vmin;
         bottom: 0;
         margin: auto;
     }

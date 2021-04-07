@@ -597,15 +597,6 @@ a {
     filter: grayscale(100%);
 }
 
-/*Background Orbit*/
-.back-site__round-out {
-    width: 320px;
-    height: 320px;
-    border-radius: 160px;
-}
-
-/*Background Orbit*/
-
 /*Top link hover*/
 .link-top {
     position: relative;
@@ -701,29 +692,7 @@ a {
 /*Modal forms*/
 
 /*Top link hover*/
-@media (orientation: portrait) {
-    /*.sphere*/
-    .sphere {
-        overflow: hidden;
-        position: absolute;
-        top: -20vmax;
-        right: 0;
-        z-index: -1;
-    }
-}
 
-@media (orientation: landscape) {
-    /*.sphere*/
-    .sphere {
-        overflow: hidden;
-        position: absolute;
-        top: -15vmin;
-        right: 0;
-        z-index: -1;
-    }
-}
-
-/*.sphere*/
 @media (max-width: 1070px) {
     /*Top link hover*/
     .nav__act::after,
@@ -1381,17 +1350,7 @@ a {
     }
 
     /*Modal forms*/
-    /*Orbit*/
-    .back-site__round-out {
-        width: 40vmax;
-        height: 40vmax;
-        border-radius: 20vmax;
-        top: -40vmax;
-        bottom: 0;
-        margin: auto;
-    }
 
-    /*Orbit*/
 }
 
 @media (min-width: 1071px) {
@@ -2218,3 +2177,56 @@ a {
     animation-duration: 1s;
 }
 
+@media (orientation: landscape) {
+
+}
+
+/*Orbit*/
+@media (orientation: portrait) {
+    .sphere {
+        overflow: hidden;
+        position: absolute;
+        top: -15vmin;
+        right: 0;
+        z-index: -1;
+    }
+
+    .back-site__round-out {
+        width: 40vmax;
+        height: 40vmax;
+        border-radius: 20vmax;
+        top: -40vmax;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+@media (orientation: landscape) {
+    .sphere {
+        overflow: hidden;
+        position: absolute;
+        top: 15vmin;
+        right: 0;
+        z-index: -1;
+    }
+
+    .back-site__round-out {
+        width: 40vmin;
+        height: 40vmin;
+        border-radius: 20vmin;
+        top: -30vmin;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1070px) {
+    .back-site__round-out {
+        width: 60vmin;
+        height: 60vmin;
+        border-radius: 30vmin;
+        top: 30vmin;
+    }
+}
+
+/*Orbit*/

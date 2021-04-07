@@ -2298,7 +2298,7 @@ a {
         overflow: hidden;
         position: absolute;
         top: -4vmin;
-        right: -8vmin;
+        left: 7vmin;
         z-index: -1;
     }
 

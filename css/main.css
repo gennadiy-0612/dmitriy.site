@@ -2316,5 +2316,6 @@ a {
         left: 76vmin;
         bottom: 0;
         margin: auto;
+        background: radial-gradient(#fff 0, transparent 50%, transparent 80%);
     }
 }

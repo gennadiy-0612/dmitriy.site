@@ -9,7 +9,6 @@ let shch = {
     },
     move: 0,
     startLeft: 0,
-    count: 0,
     currLeft: 0,
     distanceLeft: 0,
     startTop: 0,
@@ -24,75 +23,38 @@ let shch = {
         shch.currLeft = this.offsetLeft - 10;
         shch.distanceLeft = shch.startLeft - shch.currLeft;
         shch.currTop = this.offsetTop;
-        shch.distanceTop = shch.startTop - shch.currTop;
+        shch.distanceTop = shch.currTop - shch.startTop;
         shch.distanceLeft < 0 ? shch.animatedRight() : shch.animatedLeft();
     },
     animatedRight: function () {
-        shch.count = 1;
         shch.anim = function () {
-            console.log('shch.startTop ' + shch.startTop);
-            console.log('shch.currTop ' + shch.currTop);
-            console.log('shch.distanceTop ' + shch.distanceTop);
-            shch.startLeft += shch.count;
+            shch.startLeft += 1;
             shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
             if (shch.startLeft > shch.currLeft) {
-                // if (shch.distanceTop < 0) {
-                //     shch.distanceTop += 1;
-                //     shch.startTop += 1;
-                //     shch.animBall.setAttribute('style:', 'left:' + shch.startLeft + 'px; top:' + shch.startTop + 'px;');
-                //     if (shch.distanceTop > 0) {
-                //         return true;
-                //     }
-                // }
-                // if (shch.distanceTop > 0) {
-                //     shch.distanceTop -= 1;
-                //     shch.startTop -= 1;
-                //     console.log(shch.startTop);
-                //     console.log(shch.distanceTop);
-                //     shch.animBall.setAttribute('style:', 'left:' + shch.startLeft + 'px; top:' + shch.startTop + 'px;');
-                //     if (shch.distanceTop < 0) {
-                //         return true;
-                //     }
-                // }
                 clearInterval(shch.go);
                 shch.startTop = shch.currTop;
                 shch.startLeft = shch.currLeft;
                 shch.move = 0;
-                // console.clear();
-                console.log('shch.startTop ' + shch.startTop);
-                console.log('shch.currTop ' + shch.currTop);
-                console.log('shch.distanceTop ' + shch.distanceTop);
                 return false;
             }
-
         }
-        shch.go = setInterval(shch.anim, 1);
+        shch.go = setInterval(shch.anim, 10);
     },
     animatedLeft: function () {
-        shch.count = 1;
         shch.anim = function () {
-            shch.distanceLeft -= shch.count;
-            shch.startLeft -= shch.count;
+            shch.startLeft -= 1;
             shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
+            shch.distanceLeft -= 1;
             if (shch.distanceLeft < 0) {
-                // if (shch.distanceTop>0) {
-                //     shch.startTop = shch.currTop;
-                //     console.log(shch.distanceTop)
-                // }
                 shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
-                console.clear();
-                console.log('shch.startTop ' + shch.startTop);
-                console.log('shch.currTop ' + shch.currTop);
-                console.log('shch.distanceTop ' + shch.distanceTop);
                 shch.move = 0;
                 shch.startTop = shch.currTop;
                 shch.startLeft = shch.currLeft;
-                shch.count = 0;
                 clearInterval(shch.go);
                 return false;
             }
         }
-        shch.go = setInterval(shch.anim, 1);
+        shch.go = setInterval(shch.anim, 10);
     },
     burger: function () {
         shch.locate = {};

@@ -228,13 +228,13 @@ input {
 }
 
 .vl1::after, .vl2::after, .vl3::after, .vl4::after {
-    width: 4px;
-    height: 20px;
+    width: 8px;
+    height: 30px;
     content: '';
     display: block;
     position: absolute;
     background-color: #fff;
-    margin-left: -2px;
+    margin-left: -4px;
     top: -10%;
 }
 
@@ -789,7 +789,7 @@ input {
     }
 
     .overyes .s1__p2 {
-        height: 100vh;
+        height: 105vh;
         display: block;
     }
 
@@ -1674,14 +1674,6 @@ input {
     }
 
     /*Index page video start*/
-    @keyframes slide {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
 
     .emotions__item {
         display: none;
@@ -2195,20 +2187,41 @@ input {
     scrollbar-width: none; /* Firefox */
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        top: 5%;
-    }
-
-    to {
-        opacity: 1;
-        top: 0;
-    }
+.appear {
+    position: relative;
+    animation: 2s appear;
 }
 
-.appear {
-    animation: 2s appear;
+@keyframes appear {
+    0% {
+        opacity: 0;
+        left: 4%;
+        top: 4%;
+    }
+
+    20% {
+        opacity: .2;
+        left: 3%;
+        top: 3%;
+    }
+
+    50% {
+        opacity: .5;
+        left: 2%;
+        top: 2%;
+    }
+
+    50% {
+        opacity: .8;
+        left: 1%;
+        top: 1%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+        top: 0;
+    }
 }
 
 @keyframes down {
@@ -2224,15 +2237,6 @@ input {
 
 .emotions__item, .video__item {
     display: none;
-}
-
-
-#show-slide, #show-video-slide,
-#show-video-slide ~ .video__item,
-#show-slide ~ .emotions__item,
-.emotions__item {
-    animation-name: slide;
-    animation-duration: 1s;
 }
 
 /*Orbit*/

@@ -1733,8 +1733,9 @@ a {
     }
 
     .video__nav {
-        width: 183px;
-        height: 155px;
+        width: 225px;
+        height: 164px;
+        margin-bottom: -11px;
     }
 
     .emotions__ag {
@@ -1776,7 +1777,9 @@ a {
         border-radius: 35px;
         margin-top: 10px;
     }
-
+    .video__go-prev{
+        margin-left: -11px;
+    }
     .videoSlidePlus {
         left: 10px;
 

@@ -1954,7 +1954,7 @@ a {
     /*forms finish*/
     /*footer*/
     .footer__box {
-        max-width: 913px;
+        max-width: 870px;
         display: flex;
         flex-wrap: wrap;
         margin: 0 0 0 auto;
@@ -1963,7 +1963,7 @@ a {
 
     .footback {
         position: relative;
-        width: 61%;
+        width: 61.45%;
     }
 
     .footer__desktop {
@@ -2050,7 +2050,7 @@ a {
     }
 
     .contactinfo__2desk {
-        flex: 0 0 33%;
+        flex: 0 0 33.4%;
         overflow: hidden;
         margin-top: 122px;
     }

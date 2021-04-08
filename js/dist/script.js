@@ -20,7 +20,7 @@ var stats = new Stats();
 var renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x000000, 0); // the default
+// renderer.setClearColor(0x000000, 0); // the default
 // document.body.appendChild( renderer.domElement );
 document.querySelector(".sphere").appendChild(renderer.domElement);
 

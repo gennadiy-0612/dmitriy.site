@@ -123,8 +123,6 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
         if ((this.elPositonY + 100) > Math.floor(window.scrollY) && Math.floor(window.scrollY) > (this.elPositonY - this.windowH) && startChanges) {
             this.elementWork.setAttribute('class', this.initClass + ' ' + this.animateClass);
             startChanges = 0;
-            // console.clear();
-            console.log(this.elementWork);
         } else {
             this.elementWork.setAttribute('class', this.initClass);
         }
@@ -169,6 +167,7 @@ shch.ModalShow = function (modalTag, open, close) {
             modal.style.display = "none";
         }
         window.onclick = function (event) {
+            event.stopPropagation();
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -234,13 +233,14 @@ shch.includeHTML = function () {
         }
     }
 };
+
 class Swipe {
     constructor(element) {
         this.xDown = null;
         this.yDown = null;
-        this.element = typeof(element) === 'string' ? document.querySelector(element) : element;
+        this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
 
-        this.element.addEventListener('touchstart', function(evt) {
+        this.element.addEventListener('touchstart', function (evt) {
             this.xDown = evt.touches[0].clientX;
             this.yDown = evt.touches[0].clientY;
         }.bind(this), false);
@@ -272,7 +272,7 @@ class Swipe {
     }
 
     handleTouchMove(evt) {
-        if ( ! this.xDown || ! this.yDown ) {
+        if (!this.xDown || !this.yDown) {
             return;
         }
 
@@ -282,14 +282,14 @@ class Swipe {
         this.xDiff = this.xDown - xUp;
         this.yDiff = this.yDown - yUp;
 
-        if ( Math.abs( this.xDiff ) > Math.abs( this.yDiff ) ) { // Most significant.
-            if ( this.xDiff > 0 ) {
+        if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
+            if (this.xDiff > 0) {
                 this.onLeft();
             } else {
                 this.onRight();
             }
         } else {
-            if ( this.yDiff > 0 ) {
+            if (this.yDiff > 0) {
                 this.onUp();
             } else {
                 this.onDown();
@@ -302,17 +302,22 @@ class Swipe {
     }
 
     run() {
-        this.element.addEventListener('touchmove', function(evt) {
+        this.element.addEventListener('touchmove', function (evt) {
             this.handleTouchMove(evt).bind(this);
         }.bind(this), false);
     }
 }
+
 // Use class to get element by string.
 var swiperL = new Swipe('#show-slide');
-swiperL.onLeft(function() { alert('You swiped left.') });
+swiperL.onLeft(function () {
+    alert('You swiped left.')
+});
 swiperL.run();
 var swiperR = new Swipe('#show-slide');
-swiperR.onRight(function() { alert('You swiped right.') });
+swiperR.onRight(function () {
+    alert('You swiped right.')
+});
 swiperR.run();
 
 // Get the element yourself.

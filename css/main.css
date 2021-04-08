@@ -1064,7 +1064,7 @@ a {
     }
 
     .folio__company {
-        padding: 0 5px;
+        padding: 5px;
         display: flex;
         align-items: center;
     }
@@ -1088,6 +1088,7 @@ a {
     #show-slide {
         display: block;
         margin: 0;
+        padding: 10px 5px 42px 10px;
     }
 
     #show-video-slide ~ .video__item, #show-slide ~ .emotions__item {
@@ -1136,11 +1137,12 @@ a {
 
     .video__nav {
         position: initial;
-        margin: 28px 0 0 auto;
+        margin: 0 0 0 auto;
         flex-direction: row;
-        height: 60px;
+        height: 52px;
         align-items: center;
-        width: 80px;
+        width: 71px;
+        justify-content: space-between;
     }
 
     .emotions__ag {
@@ -1159,8 +1161,19 @@ a {
     }
 
     /*video*/
+    .folio {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .folio {
+        overflow-x: scroll;
+    }
+
     .ourworks {
-        margin: 65px 0 0;
+        margin: 64px 0 35px;
+        width: 930px;
+        flex-wrap: wrap;
     }
 
     /*folio*/
@@ -1433,7 +1446,9 @@ a {
     }
 
     /*Modal forms*/
-    .back-site{display: none;}
+    .back-site {
+        display: none;
+    }
 
 }
 

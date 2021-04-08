@@ -1480,7 +1480,7 @@ a {
     }
 
     .agh2desk {
-        font: normal normal 700 24px/41px "Montserrat", sans-serif;
+        font: normal normal 700 24px/41px "Druk Text Wide", sans-serif;
     }
 
     .agh1desk {
@@ -1693,6 +1693,8 @@ a {
     .agh1desk-nofull {
         margin: 0 auto 0;
         max-width: 900px;
+        z-index: 1;
+        position: relative;
     }
 
     .cta {
@@ -1777,9 +1779,11 @@ a {
         border-radius: 35px;
         margin-top: 10px;
     }
-    .video__go-prev{
+
+    .video__go-prev {
         margin-left: -11px;
     }
+
     .videoSlidePlus {
         left: 10px;
 
@@ -2096,7 +2100,6 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: -1;
     }
 
     .s3contactinfo-press {

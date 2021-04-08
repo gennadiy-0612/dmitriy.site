@@ -1046,6 +1046,7 @@ a {
 
     .switcher .extender {
         padding: 30px 0 0;
+        animation:2s appear;
     }
 
     .evaluate {

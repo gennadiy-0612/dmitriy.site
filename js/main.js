@@ -84,6 +84,9 @@ let shch = {
                 shch['changeList' + logisticI2] = new shch.RefreshClass('.logistic__dirrection.switcher', 'show', logisticI2);
                 shch['changeList' + logisticI2]['.logistic__dirrection.switcher' + logisticI2].addAct();
             }
+
+            shch['.topics'] = new shch.RefreshClass('.topics', 'show', '');
+            shch['.topics']['.topics'].addAct();
             let n = 0;
             shch.balls = document.querySelectorAll('.where .listworks__li');
             shch.ballsLenght = shch.balls.length;
@@ -181,6 +184,7 @@ shch.RefreshClass = function (oldClass, newClass, I) {
         newClass: newClass,
         tagWorker: {},
         addAct: function () {
+            console.log(this);
             if (I) this.tagWorker = document.querySelectorAll(oldClass)[I];
             else {
                 this.tagWorker = document.querySelector(oldClass);
@@ -188,8 +192,8 @@ shch.RefreshClass = function (oldClass, newClass, I) {
             this.oldClass = this.tagWorker.getAttribute('class');
             this.tagWorker.addEventListener('click', this.changeIt.bind(this));
         },
-        changeIt: function () {
-            console.log(this);
+        changeIt: function (e) {
+            e.stopPropagation()
             if (this.initState) {
                 this.tagWorker.setAttribute('class', this.oldClass);
                 this.initState = 0;
@@ -248,26 +252,26 @@ class Swipe {
     }
 
     onLeft(callback) {
+        if (typeof callback == 'undefined') return;
         this.onLeft = callback;
-
         return this;
     }
 
     onRight(callback) {
+        if (typeof callback == 'undefined') return;
         this.onRight = callback;
-
         return this;
     }
 
     onUp(callback) {
+        if (typeof callback == 'undefined') return;
         this.onUp = callback;
-
         return this;
     }
 
     onDown(callback) {
+        if (typeof callback == 'undefined') return;
         this.onDown = callback;
-
         return this;
     }
 
@@ -284,8 +288,12 @@ class Swipe {
 
         if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
             if (this.xDiff > 0) {
+                console.log(this)
+                if (typeof this.onLeft == 'undefined') return;
                 this.onLeft();
             } else {
+                if (typeof this.onLeft == 'undefined') return;
+                console.log(this)
                 this.onRight();
             }
         } else {
@@ -303,21 +311,17 @@ class Swipe {
 
     run() {
         this.element.addEventListener('touchmove', function (evt) {
-            this.handleTouchMove(evt).bind(this);
+            this.handleTouchMove(evt);
         }.bind(this), false);
     }
 }
 
 // Use class to get element by string.
 var swiperL = new Swipe('#show-slide');
-swiperL.onLeft(function () {
-    alert('You swiped left.')
-});
+swiperL.onLeft(function () {console.log(this)});
 swiperL.run();
 var swiperR = new Swipe('#show-slide');
-swiperR.onRight(function () {
-    alert('You swiped right.')
-});
+swiperR.onRight(function () {console.log(this)});
 swiperR.run();
 
 // Get the element yourself.

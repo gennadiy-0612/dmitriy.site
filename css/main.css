@@ -1728,8 +1728,8 @@ a {
     }
 
     .emotions__set {
-        width: 118.8%;
-        margin-left: -35%;
+        width: 130.8%;
+        margin-left: -45%;
     }
 
     .video__nav {
@@ -1745,7 +1745,7 @@ a {
 
     .emotions__item {
         flex: 0 0 452px;
-        padding: 0 40px 30px;
+        padding: 0 38px 32px;
         display: flex;
         flex-direction: column;
     }

@@ -1,12 +1,4 @@
 let shch = {
-    show: function () {
-        let bodyMain = document.querySelector('body');
-        let bodyMainClass = bodyMain.getAttribute('class');
-        if (bodyMainClass === 'overno')
-            bodyMain.setAttribute('class', 'overyes');
-        else
-            bodyMain.setAttribute('class', 'overno');
-    },
     move: 0,
     startLeft: 0,
     currLeft: 0,
@@ -64,8 +56,8 @@ let shch = {
         if (window.location.origin == 'http://localhost:81') {
             shch.locate = {index1: '/', index2: '/index.html'};
         }
-        let visible = document.querySelector('.burger');
-        visible.addEventListener('click', shch.show);
+        shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
+        shch['.overno']['.overno'].addAct();
         let folio = document.querySelector('.nav-folio');
         folio.addEventListener('click', shch.show);
         let locAddr = window.location.pathname;
@@ -74,19 +66,17 @@ let shch = {
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;
             for (logisticI = 0; logisticI < logisticSwitcherCount; logisticI++) {
-                shch['changeList' + logisticI] = new shch.RefreshClass('.maindirrection.switcher', 'show', logisticI);
-                shch['changeList' + logisticI]['.maindirrection.switcher' + logisticI].addAct();
+                shch['.maindirrection' + logisticI] = new shch.RefreshClass('.maindirrection', 'show', logisticI, '.s3__p2');
+                shch['.maindirrection' + logisticI]['.maindirrection' + logisticI].addAct();
             }
             let logisticI2 = 0;
-            let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection.switcher');
+            let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
             let logisticSwitcherCount2 = logisticSwitcher2.length;
             for (logisticI2 = 0; logisticI2 < logisticSwitcherCount2; logisticI2++) {
-                shch['changeList' + logisticI2] = new shch.RefreshClass('.logistic__dirrection.switcher', 'show', logisticI2);
-                shch['changeList' + logisticI2]['.logistic__dirrection.switcher' + logisticI2].addAct();
+                shch['.logicInfo' + logisticI2] = new shch.RefreshClass('.logicInfo', 'show', logisticI2, '.logicButton','.logistic__dirrection');
+                shch['.logicInfo' + logisticI2]['.logicInfo' + logisticI2].addAct();
             }
 
-            shch['.topics'] = new shch.RefreshClass('.topics', 'show', '');
-            shch['.topics']['.topics'].addAct();
             let n = 0;
             shch.balls = document.querySelectorAll('.where .listworks__li');
             shch.ballsLenght = shch.balls.length;
@@ -178,27 +168,43 @@ shch.ModalShow = function (modalTag, open, close) {
     }
 };
 
-shch.RefreshClass = function (oldClass, newClass, I) {
-    this[oldClass + I] = {
+shch.RefreshClass = function (childT, newClass, I, button, parentTag) {
+    this[childT + I] = {
         initState: 0,
         newClass: newClass,
-        tagWorker: {},
+        childT: childT,
+        button: button,
+        infoTag: {},
+        parentT: {},
         addAct: function () {
-            console.log(this);
-            if (I) this.tagWorker = document.querySelectorAll(oldClass)[I];
-            else {
-                this.tagWorker = document.querySelector(oldClass);
+            if (I) {
+                this.infoTag = document.querySelectorAll(this.childT)[I];
+                this.infoTagClass = this.infoTag.getAttribute('class');
+                this.button = document.querySelectorAll(this.button)[I];
+                if (parentTag) {
+                    this.parentT = document.querySelectorAll(parentTag)[I];
+                    this.parentTclass = this.parentT.getAttribute('class');
+                }
+            } else {
+                this.infoTag = document.querySelector(this.childT);
+                this.infoTagClass = this.infoTag.getAttribute('class');
+                this.button = document.querySelector(this.button);
+                if (parentTag) {
+                    this.parentT = document.querySelector(parentTag);
+                    this.parentTclass = this.parentT.getAttribute('class')
+                }
             }
-            this.oldClass = this.tagWorker.getAttribute('class');
-            this.tagWorker.addEventListener('click', this.changeIt.bind(this));
+            this.button.addEventListener('click', this.changeIt.bind(this));
         },
         changeIt: function (e) {
             e.stopPropagation()
             if (this.initState) {
-                this.tagWorker.setAttribute('class', this.oldClass);
+                this.infoTag.setAttribute('class', this.infoTagClass);
+                if (parentTag) this.parentT.setAttribute('class', this.parentTclass);
                 this.initState = 0;
             } else {
-                this.tagWorker.setAttribute('class', this.oldClass + ' ' + this.newClass);
+                this.infoTag.setAttribute('class', this.infoTagClass + ' ' + this.newClass);
+                if (parentTag) this.parentT.setAttribute('class', this.parentTclass + ' ' + this.newClass);
                 this.initState = 1;
             }
         }
@@ -318,10 +324,14 @@ class Swipe {
 
 // Use class to get element by string.
 var swiperL = new Swipe('#show-slide');
-swiperL.onLeft(function () {console.log(this)});
+swiperL.onLeft(function () {
+    console.log(this)
+});
 swiperL.run();
 var swiperR = new Swipe('#show-slide');
-swiperR.onRight(function () {console.log(this)});
+swiperR.onRight(function () {
+    console.log(this)
+});
 swiperR.run();
 
 // Get the element yourself.

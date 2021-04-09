@@ -1,53 +1,4 @@
 let shch = {
-    move: 0,
-    startLeft: 0,
-    currLeft: 0,
-    distanceLeft: 0,
-    startTop: 0,
-    currTop: 0,
-    distanceTop: 0,
-    animBall: document.querySelector('.listworks__blueball'),
-    activeLight: function (e) {
-        if (shch.move) {
-            return;
-        }
-        shch.move = 1;
-        shch.currLeft = this.offsetLeft - 10;
-        shch.distanceLeft = shch.startLeft - shch.currLeft;
-        shch.currTop = this.offsetTop;
-        shch.distanceTop = shch.currTop - shch.startTop;
-        shch.distanceLeft < 0 ? shch.animatedRight() : shch.animatedLeft();
-    },
-    animatedRight: function () {
-        shch.anim = function () {
-            shch.startLeft += 1;
-            shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
-            if (shch.startLeft > shch.currLeft) {
-                clearInterval(shch.go);
-                shch.startTop = shch.currTop;
-                shch.startLeft = shch.currLeft;
-                shch.move = 0;
-                return false;
-            }
-        }
-        shch.go = setInterval(shch.anim, 10);
-    },
-    animatedLeft: function () {
-        shch.anim = function () {
-            shch.startLeft -= 1;
-            shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
-            shch.distanceLeft -= 1;
-            if (shch.distanceLeft < 0) {
-                shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
-                shch.move = 0;
-                shch.startTop = shch.currTop;
-                shch.startLeft = shch.currLeft;
-                clearInterval(shch.go);
-                return false;
-            }
-        }
-        shch.go = setInterval(shch.anim, 10);
-    },
     burger: function () {
         shch.locate = {};
         if (window.location.origin == 'https://p.cx.ua') {
@@ -58,8 +9,8 @@ let shch = {
         }
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
         shch['.overno']['.overno'].addAct();
-        let folio = document.querySelector('.nav-folio');
-        folio.addEventListener('click', shch.show);
+        shch['.folio'] = new shch.RefreshClass('.overno', 'overyes', '', '.folio');
+        shch['.folio']['.overno'].addAct();
         let locAddr = window.location.pathname;
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
             let logisticI = 0;

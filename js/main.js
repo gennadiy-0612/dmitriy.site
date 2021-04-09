@@ -104,13 +104,12 @@ let shch = {
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
-            window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
+            shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
+            shch.modalCallBack.startModal();
+            shch.swiper = new shch.Swipe('.emotions__item');
+            shch.swiper.start()
+            shch.swiper.run();window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
         }
-        shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
-        shch.modalCallBack.startModal();
-        shch.swiper = new shch.Swipe('.emotions__item');
-        shch.swiper.start()
-        shch.swiper.run();
     }
 }
 window.addEventListener('load', shch.burger);
@@ -311,7 +310,14 @@ shch.Swipe = function (element) {
             this.element = all[i];
             this.element.addEventListener('touchmove', function (evt) {
                 this.handleTouchMove(evt);
-            }.bind(this), {passive: true});
+            }.bind(this), {passive: false});
         }
     }
+}
+
+shch.BallBack = function (ball) {
+    this.ballBack = document.querySelector(ball);
+    this.placeBall = function (){console.log(this)}
+    this.ballBack.addEventListener('click', this.placeBall,{passive: false})
+    // shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
 }

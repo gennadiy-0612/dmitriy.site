@@ -85,10 +85,20 @@ let shch = {
             }
             shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
             shch.modalVideoSlider.startModal();
-            shch.slideStatic = new shch.slider('.emotions__item', 'deskTopSlide');
-            document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-            document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-            shch.slideVideo = new shch.slider('.video__item', 'show-video-slide');
+            if (window.matchMedia("(max-width: 1070px)").matches) {
+                shch.viewPort = 'mob';
+                shch.slideStatic = new shch.sliderMob('.emotions__item', 'deskTopSlide');
+                document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+                document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+            } else {
+                shch.viewPort = 'Desk';
+                shch.slideStatic = new shch.sliderDesk('.emotions__item', 'deskTopSlide');
+                document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+                document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+
+            }
+            console.log(shch.viewPort)
+            shch.slideVideo = new shch.sliderDesk('.video__item', 'show-video-slide');
             document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
             document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
@@ -126,7 +136,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     }
 }
 
-shch.slider = function (selectorSlide, activeSlide) {
+shch.sliderDesk = function (selectorSlide, activeSlide) {
     this.Current = 0;
     this.secondSlide = 1;
     this.thirdSlide = 2;
@@ -165,6 +175,31 @@ shch.slider = function (selectorSlide, activeSlide) {
         }
         console.log(this.Current)
         console.log(this)
+    };
+};
+
+shch.sliderMob = function (selectorSlide, activeSlide) {
+    this.Current = 0;
+    this.Item = document.querySelectorAll(selectorSlide);
+    this.Length = document.querySelectorAll(selectorSlide).length;
+    this.Plus = function () {
+        if (this.Current === (this.Length - 1)) {
+            return true;
+        } else {
+            this.Item[this.Current].setAttribute('id', '')
+            this.Current += 1;
+            this.Item[this.Current].setAttribute('id', activeSlide)
+        }
+    };
+    this.Minus = function () {
+        console.log(this)
+        if (this.Current) {
+            this.Item[this.Current].setAttribute('id', '')
+            this.Current -= 1;
+            this.Item[this.Current].setAttribute('id', activeSlide)
+        } else {
+            this.Current = 0;
+        }
     };
 };
 
@@ -276,7 +311,7 @@ shch.Swipe = function (element) {
             this.element = all[i];
             this.element.addEventListener('touchmove', function (evt) {
                 this.handleTouchMove(evt);
-            }.bind(this),{passive:true});
+            }.bind(this), {passive: true});
         }
     }
 }

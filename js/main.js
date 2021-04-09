@@ -77,11 +77,17 @@ let shch = {
                 shch['.logicInfo' + logisticI2]['.logicInfo' + logisticI2].addAct();
             }
 
-            let n = 0;
-            shch.balls = document.querySelectorAll('.where .listworks__li');
-            shch.ballsLenght = shch.balls.length;
-            for (n; n < shch.ballsLenght; n++) {
-                document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
+            // let n = 0;
+            // shch.balls = document.querySelectorAll('.where .listworks__li');
+            // shch.ballsLenght = shch.balls.length;
+            // for (n; n < shch.ballsLenght; n++) {
+            //     document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
+            // }
+            let ballCollect = document.querySelectorAll('.where .listworks__li');
+            let ballCollectMax = ballCollect.length;
+            shch.setBall = new shch.PlaceBall('.where .listworks__li')
+            for (let ballI = 0; ballI < ballCollectMax; ballI++) {
+                ballCollect[ballI].addEventListener('click', shch.setBall.setPlace.bind(shch.setBall), false)
             }
             shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
             shch.modalVideoSlider.startModal();
@@ -97,19 +103,19 @@ let shch = {
                 document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
 
             }
-            console.log(shch.viewPort)
             shch.slideVideo = new shch.sliderDesk('.video__item', 'show-video-slide');
             document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
             document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
-            shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
-            shch.modalCallBack.startModal();
+            window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.swiper = new shch.Swipe('.emotions__item');
             shch.swiper.start()
-            shch.swiper.run();window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
+            shch.swiper.run();
         }
+        shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
+        shch.modalCallBack.startModal();
     }
 }
 window.addEventListener('load', shch.burger);
@@ -213,12 +219,12 @@ shch.ModalShow = function (modalTag, open, close) {
         span.onclick = function () {
             modal.style.display = "none";
         }
-        window.onclick = function (event) {
-            event.stopPropagation();
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+        // window.onclick = function (event) {
+        //     event.stopPropagation();
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
     }
 };
 
@@ -276,7 +282,7 @@ shch.Swipe = function (element) {
             this.element.addEventListener('touchstart', function (evt) {
                 this.xDown = evt.touches[0].clientX;
                 this.yDown = evt.touches[0].clientY;
-            }.bind(this));
+            }.bind(this), {passive: false});
         }
     }
 
@@ -315,9 +321,13 @@ shch.Swipe = function (element) {
     }
 }
 
-shch.BallBack = function (ball) {
-    this.ballBack = document.querySelector(ball);
-    this.placeBall = function (){console.log(this)}
-    this.ballBack.addEventListener('click', this.placeBall,{passive: false})
-    // shch.animBall.setAttribute('style', 'left:' + shch.startLeft + 'px; top:' + shch.currTop + 'px;');
+shch.PlaceBall = function (balls) {
+    this.initLI = document.querySelector(balls);
+    this.initLI.setAttribute('id','ballIsPlaced')
+    this.setPlace = function (e) {
+        console.log(this.initLI)
+        e.target.setAttribute('id', 'ballIsPlaced');
+        this.initLI.setAttribute('id', '');
+        this.initLI = e.target
+    }
 }

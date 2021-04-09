@@ -196,10 +196,11 @@ a {
     position: relative;
 }
 
-.listworks__blueball {
+#ballIsPlaced:after {
+    content: '';
     position: absolute;
     top: 0;
-    /*! bottom: 0; */
+    bottom: 0;
     margin: auto;
     left: 0;
     width: 50px;
@@ -755,10 +756,13 @@ a {
 
     .nav__act::after,
     .link-top:hover::after {
-        width: 100px;
-        margin: auto;
         left: 0;
         right: 0;
+    }
+
+    .link-top:after {
+        margin: auto;
+        width: 100px;
     }
 
     /*Top link hover*/
@@ -1668,6 +1672,7 @@ a {
         font: normal normal 400 22px/33px "Montserrat", sans-serif;
         padding: 19px 11px;
         margin: 0 10px;
+        position: relative;
     }
 
     .listworks__blueball {

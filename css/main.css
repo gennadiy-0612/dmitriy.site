@@ -2248,19 +2248,18 @@ a {
 }
 
 /*hide scroll*/
-.listworks, .emotions__set, .video__list {
+.listworks, .video__list {
     overflow-x: scroll; /* Add the ability to scroll */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .listworks::-webkit-scrollbar,
-.emotions__set::-webkit-scrollbar,
 .video__list::-webkit-scrollbar {
     display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.listworks, .emotions__set, .video__list {
+.listworks, .video__list {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }

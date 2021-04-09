@@ -98,20 +98,9 @@ let shch = {
         }
         shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
         shch.modalCallBack.startModal();
-
-
-
-// Use class to get element by string.
-        var swiperL = new Swipe('#show-slide');
-        swiperL.onLeft(function () {
-            shch.slideStatic.Plus()
-        });
-        swiperL.run();
-        var swiperR = new Swipe('#show-slide');
-        swiperR.onRight(function () {
-            shch.slideStatic.Minus()
-        });
-        swiperR.run();
+        shch.swiper = new shch.Swipe('.emotions__item');
+        shch.swiper.start()
+        shch.swiper.run();
     }
 }
 window.addEventListener('load', shch.burger);
@@ -242,77 +231,22 @@ shch.RefreshClass = function (childT, newClass, I, button, parentTag) {
     }
 };
 
-shch.includeHTML = function () {
-    let z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        elmnt.innerHTML = this.responseText;
-                    }
-                    if (this.status == 404) {
-                        elmnt.innerHTML = "Page not found.";
-                    }
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("w3-include-html");
-                    shch.includeHTML();
-                    elmnt.setAttribute('class', 'modaljoinToUs');
-                }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
-        }
-    }
-};
-
-class Swipe {
-    constructor(element) {
+shch.Swipe = function (element) {
+    this.start = function () {
         this.xDown = null;
         this.yDown = null;
-        this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
-
-        this.element.addEventListener('touchstart', function (evt) {
-            this.xDown = evt.touches[0].clientX;
-            this.yDown = evt.touches[0].clientY;
-        }.bind(this), false);
-
+        let i = 0;
+        let all = document.querySelectorAll(element);
+        for (i = 0; i < all.length; i++) {
+            this.element = all[i];
+            this.element.addEventListener('touchstart', function (evt) {
+                this.xDown = evt.touches[0].clientX;
+                this.yDown = evt.touches[0].clientY;
+            }.bind(this));
+        }
     }
 
-    onLeft(callback) {
-        if (typeof callback == 'undefined') return;
-        this.onLeft = callback;
-        return this;
-    }
-
-    onRight(callback) {
-        if (typeof callback == 'undefined') return;
-        this.onRight = callback;
-        return this;
-    }
-
-    onUp(callback) {
-        if (typeof callback == 'undefined') return;
-        this.onUp = callback;
-        return this;
-    }
-
-    onDown(callback) {
-        if (typeof callback == 'undefined') return;
-        this.onDown = callback;
-        return this;
-    }
-
-    handleTouchMove(evt) {
+    this.handleTouchMove = function (evt) {
         if (!this.xDown || !this.yDown) {
             return;
         }
@@ -325,51 +259,24 @@ class Swipe {
 
         if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
             if (this.xDiff > 0) {
-                if (typeof this.onLeft == 'undefined') return;
-                this.onLeft();
+                shch.slideStatic.Plus()
             } else {
-                if (typeof this.onLeft == 'undefined') return;
-                this.onRight();
+                shch.slideStatic.Minus()
             }
-        } else {
-            if (this.yDiff > 0) {
-                this.onUp();
-            } else {
-                this.onDown();
-            }
+
+            // Reset values.
+            this.xDown = null;
+            this.yDown = null;
         }
-
-        // Reset values.
-        this.xDown = null;
-        this.yDown = null;
     }
-
-    run() {
-        this.element.addEventListener('touchmove', function (evt) {
-            this.handleTouchMove(evt);
-        }.bind(this), false);
+    this.run = function () {
+        let i = 0;
+        let all = document.querySelectorAll(element);
+        for (i = 0; i < all.length; i++) {
+            this.element = all[i];
+            this.element.addEventListener('touchmove', function (evt) {
+                this.handleTouchMove(evt);
+            }.bind(this),{passive:true});
+        }
     }
 }
-//
-// // Use class to get element by string.
-// var swiperL = new Swipe('#show-slide');
-// swiperL.onLeft(function () {
-//     console.log(this)
-// });
-// swiperL.run();
-// var swiperR = new Swipe('#show-slide');
-// swiperR.onRight(function () {
-//     console.log(shch.slideStatic)
-//     console.log(this)
-//     shch.slideStatic.Plus()
-// });
-// swiperR.run();
-
-// Get the element yourself.
-// var swiper = new Swipe(document.getElementById('#show-slide'));
-// swiper.onLeft(function() { alert('You swiped left.') });
-// swiper.run();
-
-// One-liner.
-// (new Swipe('#my-element')).onLeft(function() { alert('You swiped left.') }).run();
-// (new Swipe('#my-element')).onRight(function() { alert('You swiped right.') }).run();

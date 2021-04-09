@@ -76,13 +76,6 @@ let shch = {
                 shch['.logicInfo' + logisticI2] = new shch.RefreshClass('.logicInfo', 'show', logisticI2, '.logicButton', '.logistic__dirrection');
                 shch['.logicInfo' + logisticI2]['.logicInfo' + logisticI2].addAct();
             }
-
-            // let n = 0;
-            // shch.balls = document.querySelectorAll('.where .listworks__li');
-            // shch.ballsLenght = shch.balls.length;
-            // for (n; n < shch.ballsLenght; n++) {
-            //     document.querySelectorAll('.where .listworks__li')[n].addEventListener('click', shch.activeLight);
-            // }
             let ballCollect = document.querySelectorAll('.where .listworks__li');
             let ballCollectMax = ballCollect.length;
             shch.setBall = new shch.PlaceBall('.where .listworks__li')

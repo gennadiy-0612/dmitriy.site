@@ -85,7 +85,7 @@ let shch = {
             }
             shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
             shch.modalVideoSlider.startModal();
-            shch.slideStatic = new shch.slider('.emotions__item', 'show-slide');
+            shch.slideStatic = new shch.slider('.emotions__item', 'deskTopSlide');
             document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
             document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
             shch.slideVideo = new shch.slider('.video__item', 'show-video-slide');

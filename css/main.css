@@ -597,18 +597,18 @@ a {
 
 /*Modal Video*/
 
-#show-slide,
-#show-slide1,
-#show-slide2,
+#deskTopSlide,
+#deskTopSlide1,
+#deskTopSlide2,
 #show-video-slide,
 #show-video-slide ~ .video__item {
     display: block;
     align-items: center;
 }
 
-#show-slide,
-#show-slide1,
-#show-slide2,
+#deskTopSlide,
+#deskTopSlide1,
+#deskTopSlide2,
 #show-video-slide,
 #show-video-slide ~ .video__item,
 .emotions__item {
@@ -1109,14 +1109,14 @@ a {
         margin: 0 0 0;
     }
 
-    #show-slide {
+    #deskTopSlide {
         display: block;
         margin: 0;
         padding: 10px 5px 42px 10px;
     }
 
     #show-video-slide ~ .video__item,
-    #show-slide ~ .emotions__item {
+    #deskTopSlide ~ .emotions__item {
         display: none;
     }
 

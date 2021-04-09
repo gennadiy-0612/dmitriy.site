@@ -597,17 +597,20 @@ a {
 
 /*Modal Video*/
 
-#show-video-slide,
-#show-video-slide ~ .video__item,
 #show-slide,
-#show-slide ~ .emotions__item {
+#show-slide1,
+#show-slide2,
+#show-video-slide,
+#show-video-slide ~ .video__item {
     display: block;
     align-items: center;
 }
 
-#show-slide, #show-video-slide,
+#show-slide,
+#show-slide1,
+#show-slide2,
+#show-video-slide,
 #show-video-slide ~ .video__item,
-#show-slide ~ .emotions__item,
 .emotions__item {
     animation-name: slide;
     animation-duration: 1s;
@@ -738,8 +741,9 @@ a {
 /*Modal forms*/
 /*animate tabs*/
 .switcher .extender {
-    animation:2s appearTabs;
+    animation: 2s appearTabs;
 }
+
 /*animate tabs*/
 /*Top link hover*/
 
@@ -1111,9 +1115,9 @@ a {
         padding: 10px 5px 42px 10px;
     }
 
-    #show-video-slide ~ .video__item, #show-slide ~ .emotions__item {
+    #show-video-slide ~ .video__item,
+    #show-slide ~ .emotions__item {
         display: none;
-        align-items: center;
     }
 
     .emotions__item {
@@ -2267,7 +2271,7 @@ a {
 }
 
 @keyframes appear {
-    from{
+    from {
         opacity: 0;
         padding-top: 4%;
     }
@@ -2287,10 +2291,6 @@ a {
         margin-top: 0;
         opacity: 1;
     }
-}
-
-.emotions__item, .video__item {
-    display: none;
 }
 
 @keyframes appearTabs {

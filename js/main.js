@@ -73,7 +73,7 @@ let shch = {
             let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
             let logisticSwitcherCount2 = logisticSwitcher2.length;
             for (logisticI2 = 0; logisticI2 < logisticSwitcherCount2; logisticI2++) {
-                shch['.logicInfo' + logisticI2] = new shch.RefreshClass('.logicInfo', 'show', logisticI2, '.logicButton','.logistic__dirrection');
+                shch['.logicInfo' + logisticI2] = new shch.RefreshClass('.logicInfo', 'show', logisticI2, '.logicButton', '.logistic__dirrection');
                 shch['.logicInfo' + logisticI2]['.logicInfo' + logisticI2].addAct();
             }
 
@@ -98,6 +98,20 @@ let shch = {
         }
         shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
         shch.modalCallBack.startModal();
+
+
+
+// Use class to get element by string.
+        var swiperL = new Swipe('#show-slide');
+        swiperL.onLeft(function () {
+            shch.slideStatic.Plus()
+        });
+        swiperL.run();
+        var swiperR = new Swipe('#show-slide');
+        swiperR.onRight(function () {
+            shch.slideStatic.Minus()
+        });
+        swiperR.run();
     }
 }
 window.addEventListener('load', shch.burger);
@@ -125,26 +139,43 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
 
 shch.slider = function (selectorSlide, activeSlide) {
     this.Current = 0;
+    this.secondSlide = 1;
+    this.thirdSlide = 2;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Length = document.querySelectorAll(selectorSlide).length;
     this.Plus = function () {
-        if (this.Current === (this.Length - 1)) {
-            return true;
+        if (this.thirdSlide === (this.Length - 1)) {
+            return;
         } else {
-            this.Item[this.Current].setAttribute('id', '')
+            this.Item[this.Current].setAttribute('id', '');
+            this.Item[this.secondSlide].setAttribute('id', '');
+            this.Item[this.thirdSlide].setAttribute('id', '');
             this.Current += 1;
-            this.Item[this.Current].setAttribute('id', activeSlide)
+            this.secondSlide += 1;
+            this.thirdSlide += 1;
+            this.Item[this.Current].setAttribute('id', activeSlide);
+            this.Item[this.secondSlide].setAttribute('id', activeSlide + '1');
+            this.Item[this.thirdSlide].setAttribute('id', activeSlide + '2');
         }
+        console.log(this)
     };
     this.Minus = function () {
-        console.log(this)
         if (this.Current) {
-            this.Item[this.Current].setAttribute('id', '')
+            this.Item[this.Current].setAttribute('id', '');
+            this.Item[this.secondSlide].setAttribute('id', '');
+            this.Item[this.thirdSlide].setAttribute('id', '');
             this.Current -= 1;
-            this.Item[this.Current].setAttribute('id', activeSlide)
+            this.secondSlide -= 1;
+            this.thirdSlide -= 1;
+            this.Item[this.Current].setAttribute('id', activeSlide);
+            this.Item[this.secondSlide].setAttribute('id', activeSlide + '1');
+            this.Item[this.thirdSlide].setAttribute('id', activeSlide + '2');
         } else {
             this.Current = 0;
+            return;
         }
+        console.log(this.Current)
+        console.log(this)
     };
 };
 
@@ -244,83 +275,81 @@ shch.includeHTML = function () {
     }
 };
 
-// class Swipe {
-//     constructor(element) {
-//         this.xDown = null;
-//         this.yDown = null;
-//         this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
-//
-//         this.element.addEventListener('touchstart', function (evt) {
-//             this.xDown = evt.touches[0].clientX;
-//             this.yDown = evt.touches[0].clientY;
-//         }.bind(this), false);
-//
-//     }
-//
-//     onLeft(callback) {
-//         if (typeof callback == 'undefined') return;
-//         this.onLeft = callback;
-//         return this;
-//     }
-//
-//     onRight(callback) {
-//         if (typeof callback == 'undefined') return;
-//         this.onRight = callback;
-//         return this;
-//     }
-//
-//     onUp(callback) {
-//         if (typeof callback == 'undefined') return;
-//         this.onUp = callback;
-//         return this;
-//     }
-//
-//     onDown(callback) {
-//         if (typeof callback == 'undefined') return;
-//         this.onDown = callback;
-//         return this;
-//     }
-//
-//     handleTouchMove(evt) {
-//         if (!this.xDown || !this.yDown) {
-//             return;
-//         }
-//
-//         var xUp = evt.touches[0].clientX;
-//         var yUp = evt.touches[0].clientY;
-//
-//         this.xDiff = this.xDown - xUp;
-//         this.yDiff = this.yDown - yUp;
-//
-//         if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
-//             if (this.xDiff > 0) {
-//                 console.log(this)
-//                 if (typeof this.onLeft == 'undefined') return;
-//                 this.onLeft();
-//             } else {
-//                 if (typeof this.onLeft == 'undefined') return;
-//                 console.log(this)
-//                 this.onRight();
-//             }
-//         } else {
-//             if (this.yDiff > 0) {
-//                 this.onUp();
-//             } else {
-//                 this.onDown();
-//             }
-//         }
-//
-//         // Reset values.
-//         this.xDown = null;
-//         this.yDown = null;
-//     }
-//
-//     run() {
-//         this.element.addEventListener('touchmove', function (evt) {
-//             this.handleTouchMove(evt);
-//         }.bind(this), false);
-//     }
-// }
+class Swipe {
+    constructor(element) {
+        this.xDown = null;
+        this.yDown = null;
+        this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
+
+        this.element.addEventListener('touchstart', function (evt) {
+            this.xDown = evt.touches[0].clientX;
+            this.yDown = evt.touches[0].clientY;
+        }.bind(this), false);
+
+    }
+
+    onLeft(callback) {
+        if (typeof callback == 'undefined') return;
+        this.onLeft = callback;
+        return this;
+    }
+
+    onRight(callback) {
+        if (typeof callback == 'undefined') return;
+        this.onRight = callback;
+        return this;
+    }
+
+    onUp(callback) {
+        if (typeof callback == 'undefined') return;
+        this.onUp = callback;
+        return this;
+    }
+
+    onDown(callback) {
+        if (typeof callback == 'undefined') return;
+        this.onDown = callback;
+        return this;
+    }
+
+    handleTouchMove(evt) {
+        if (!this.xDown || !this.yDown) {
+            return;
+        }
+
+        var xUp = evt.touches[0].clientX;
+        var yUp = evt.touches[0].clientY;
+
+        this.xDiff = this.xDown - xUp;
+        this.yDiff = this.yDown - yUp;
+
+        if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
+            if (this.xDiff > 0) {
+                if (typeof this.onLeft == 'undefined') return;
+                this.onLeft();
+            } else {
+                if (typeof this.onLeft == 'undefined') return;
+                this.onRight();
+            }
+        } else {
+            if (this.yDiff > 0) {
+                this.onUp();
+            } else {
+                this.onDown();
+            }
+        }
+
+        // Reset values.
+        this.xDown = null;
+        this.yDown = null;
+    }
+
+    run() {
+        this.element.addEventListener('touchmove', function (evt) {
+            this.handleTouchMove(evt);
+        }.bind(this), false);
+    }
+}
 //
 // // Use class to get element by string.
 // var swiperL = new Swipe('#show-slide');
@@ -330,15 +359,17 @@ shch.includeHTML = function () {
 // swiperL.run();
 // var swiperR = new Swipe('#show-slide');
 // swiperR.onRight(function () {
+//     console.log(shch.slideStatic)
 //     console.log(this)
+//     shch.slideStatic.Plus()
 // });
 // swiperR.run();
-//
-// // Get the element yourself.
-// // var swiper = new Swipe(document.getElementById('#show-slide'));
-// // swiper.onLeft(function() { alert('You swiped left.') });
-// // swiper.run();
-//
-// // One-liner.
-// // (new Swipe('#my-element')).onLeft(function() { alert('You swiped left.') }).run();
-// // (new Swipe('#my-element')).onRight(function() { alert('You swiped right.') }).run();
+
+// Get the element yourself.
+// var swiper = new Swipe(document.getElementById('#show-slide'));
+// swiper.onLeft(function() { alert('You swiped left.') });
+// swiper.run();
+
+// One-liner.
+// (new Swipe('#my-element')).onLeft(function() { alert('You swiped left.') }).run();
+// (new Swipe('#my-element')).onRight(function() { alert('You swiped right.') }).run();

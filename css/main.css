@@ -738,7 +738,7 @@ a {
 /*Modal forms*/
 /*animate tabs*/
 .switcher .extender {
-    animation:2s appear;
+    animation:2s appearTabs;
 }
 /*animate tabs*/
 /*Top link hover*/
@@ -2285,6 +2285,19 @@ a {
     }
     to {
         margin-top: 0;
+        opacity: 1;
+    }
+}
+
+.emotions__item, .video__item {
+    display: none;
+}
+
+@keyframes appearTabs {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
 }

@@ -1,9 +1,15 @@
+if (window.matchMedia("(max-width: 1070px)").matches) {
+    shch.formPort = 'mob';
+} else {
+    shch.formPort = 'desk'
+}
+
 // Options
 const numberOfParticles = 6000;
 
 const particleImage = './js/dist/particle-tiny.png',
-    particleColor = '0xFFFFFF',
-    particleSize = .1;
+    particleColor = '0x000000',
+    particleSize = .3;
 
 const defaultAnimationSpeed = 1,
     morphAnimationSpeed = 3;
@@ -39,9 +45,13 @@ var scene = new THREE.Scene();
 
 // Camera and position
 var camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 10000);
-
-camera.position.y = 30;
-camera.position.z = 45;
+if (shch.formPort === 'mob') {
+    camera.position.y = 40;
+    camera.position.z = 48;
+} else {
+    camera.position.y = 25;
+    camera.position.z = 38;
+}
 
 // Lighting
 // var light = new THREE.AmbientLight( 0x404040, 1 ); // soft white light
@@ -156,10 +166,10 @@ if (window.location.origin === 'http://localhost:81') {
 }
 if ((window.location.pathname === shch1.locate.index1) || (window.location.pathname === shch1.locate.index2)) {
     setTimeout(toSphere, 500);
-}
-else {
+} else {
     setTimeout(toCube, 500);
 }
+
 function toSphere() {
     // handleTriggers(0);
     morphTo(sphereParticles);

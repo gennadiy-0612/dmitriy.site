@@ -974,7 +974,7 @@ a {
     }
 
     .bluebutton {
-        margin: 1px 10px 10px 0;
+        margin: 2px 10px 10px 0;
         line-height: 30px;
         padding: 0 16px;
     }
@@ -1597,9 +1597,24 @@ a {
     }
 
     /*Index page start*/
+    .firstScreen {
+        height: 100vh;
+        position: relative;
+    }
+
+    .mainScreen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 57vh;
+    }
+
     .h1index {
-        margin: 155px 0 0;
-        max-width: 60%;
+        margin: 5vh 0 0;
+        min-width: 60%;
     }
 
     .h1index-big {
@@ -2343,7 +2358,7 @@ a {
     .sphere {
         overflow: hidden;
         position: absolute;
-        top: -15vmin;
+        top: -30vmin;
         left: 0;
         right: 0;
         margin: auto;
@@ -2354,8 +2369,8 @@ a {
         width: 40vmax;
         height: 40vmax;
         border-radius: 20vmax;
-        top: -17vmax;
-        left: 0vmin;
+        top: -34vmax;
+        left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
@@ -2408,23 +2423,17 @@ a {
     .sphere {
         overflow: hidden;
         position: absolute;
-        top: -4vmin;
-        left: 7vmin;
+        top: -17vmin;
+        left: 17vmin;
         z-index: -1;
-
-    }
-
-    .sphere canvas {
-        position: relative;
-        left: 30vmin;
     }
 
     .back-site__round-out {
         width: 70vmin;
         height: 70vmin;
         border-radius: 35vmin;
-        top: -8vmin;
-        left: 76vmin;
+        top: 10vmin;
+        left: 40vmax;
         bottom: 0;
         margin: auto;
         background: radial-gradient(#FFFFFF 0, transparent 50%, transparent 80%);

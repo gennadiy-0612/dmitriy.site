@@ -783,7 +783,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function onTouchStart( event ) {
 
-		if ( scope.enabled === false ) return;
+		if ( scope.enabled === true ) return;
 
 		switch ( event.touches.length ) {
 

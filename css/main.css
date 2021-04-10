@@ -280,7 +280,7 @@ a {
     display: block;
     top: 10%;
     left: 0;
-    margin: auto 0 auto 12%;
+    margin: auto;
     right: 0;
 }
 
@@ -289,24 +289,32 @@ a {
     width: 600px;
     height: 600px;
     border-radius: 300px;
-    border: 1px solid #FFFFFF;
-    opacity: .1;
+    border: 1px solid #4f4f4f;
+    /*! opacity: .1; */
     z-index: -1;
     left: 0;
     right: 0;
     margin: 7% 13% 0 auto;
 }
 
+.back-site__round-in canvas {
+    align-self: center;
+}
+
 .back-site__round-in {
     position: relative;
-    width: 75%;
-    height: 75%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    top: 12.5%;
-    /*background-color: #9c9c9c;*/
+    top: 0;
+    /*! background-color: #9c9c9c; */
     transform: rotate(0);
     animation: 70s linear 0s infinite normal move_around;
-    /*box-shadow: 0 0 16px #FFFFFF;*/
+    /*! box-shadow: 0 0 16px #FFFFFF; */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
 }
 
 .back-site__round-in::before,
@@ -316,17 +324,17 @@ a {
     height: 10%;
     border-radius: 50%;
     position: absolute;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #4f4f4f;
 }
 
 .back-site__round-in::before {
-    top: -5%;
+    top: 23%;
     left: 0;
 }
 
 .back-site__round-in::after {
     right: 0;
-    bottom: -5%;
+    bottom: 23%;
 }
 
 @-webkit-keyframes move_around {
@@ -1480,7 +1488,7 @@ a {
 
 }
 
-@media (min-width: 1071px) {
+@media (min-width: 1069px) {
     body {
         overflow-x: hidden;
     }
@@ -2246,7 +2254,7 @@ a {
         height: 100%;
         z-index: 1;
         max-height: 600px;
-        margin: auto;
+        margin: 0;
         bottom: 0;
     }
 
@@ -2272,7 +2280,7 @@ a {
         border-radius: 20vmin;
         top: -30vmin;
         bottom: 0;
-        margin: auto;
+        margin: 0;
     }
 
     /*Orbit*/
@@ -2364,10 +2372,10 @@ a {
     }
 
     .back-site__round-out {
-        width: 40vmax;
-        height: 40vmax;
-        border-radius: 20vmax;
-        top: -34vmax;
+        width: 41vmax;
+        height: 41vmax;
+        border-radius: 21vmax;
+        top: -28vmax;
         left: 0;
         right: 0;
         bottom: 0;
@@ -2387,11 +2395,11 @@ a {
     }
 
     .back-site__round-out {
-        width: 40vmax;
-        height: 40vmax;
-        border-radius: 20vmax;
-        top: 0vmax;
-        left: 6vmin;
+        /*! width: 40vmax; */
+        /*! height: 40vmax; */
+        /*! border-radius: 20vmax; */
+        top: 0;
+        left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
@@ -2421,19 +2429,19 @@ a {
     .sphere {
         overflow: hidden;
         position: absolute;
-        top: -17vmin;
-        left: 17vmin;
+        right: 0;
         z-index: -1;
     }
 
     .back-site__round-out {
-        width: 70vmin;
-        height: 70vmin;
-        border-radius: 35vmin;
-        top: 10vmin;
-        left: 40vmax;
+        width: 80vmin;
+        height: 80vmin;
+        border-radius: 40vmin;
+        top: 0;
+        right: 0;
         bottom: 0;
+        left: auto;
+        background: radial-gradient(#4f4f4f 0, transparent 50%, transparent 80%);
         margin: auto;
-        background: radial-gradient(#FFFFFF 0, transparent 50%, transparent 80%);
     }
 }

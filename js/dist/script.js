@@ -1,9 +1,13 @@
+let shchs = {mob: 0, desk: 0, port: 0, land: 0};
 if (window.matchMedia("(max-width: 1070px)").matches) {
-    shch.formPort = 'mob';
+    shchs.mob = 1
+    shchs.mini = Math.min(window.innerWidth, window.innerHeight) - 15
 } else {
-    shch.formPort = 'desk'
+    shchs.desk = 1
+    shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 1.65
 }
 
+console.log(shchs.mini)
 // Options
 const numberOfParticles = 6000;
 
@@ -25,10 +29,10 @@ var stats = new Stats();
 // Renderer
 var renderer = new THREE.WebGLRenderer({alpha: true});
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-// renderer.setClearColor(0x000000, 0); // the default
+renderer.setSize(shchs.mini, shchs.mini);
+renderer.setClearColor(0x000000, 0); // the default
 // document.body.appendChild( renderer.domElement );
-document.querySelector(".sphere").appendChild(renderer.domElement);
+document.querySelector(".back-site__round-in").appendChild(renderer.domElement);
 
 // Ensure Full Screen on Resize
 // function fullScreen() {
@@ -44,13 +48,13 @@ document.querySelector(".sphere").appendChild(renderer.domElement);
 var scene = new THREE.Scene();
 
 // Camera and position
-var camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 1, 10000);
-if (shch.formPort === 'mob') {
-    camera.position.y = 40;
-    camera.position.z = 48;
+var camera = new THREE.PerspectiveCamera(25, 1, 1, 10000);
+if (shch.mob) {
+    camera.position.y = 115;
+    camera.position.z = 117;
 } else {
-    camera.position.y = 25;
-    camera.position.z = 38;
+    camera.position.y = 15;
+    camera.position.z = 22;
 }
 
 // Lighting

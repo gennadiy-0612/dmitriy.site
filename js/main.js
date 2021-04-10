@@ -94,7 +94,7 @@ shch.HeaderTracer = function (tracer) {
                 this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
                 this.letIsGo = 0;
             }
-            if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide)) {
+            if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide + this.heightWind * .4)) {
                 this.traceEl.setAttribute('class', this.traceElOldClass);
                 return;
             }
@@ -315,7 +315,7 @@ shch.PlaceBall = function (balls) {
     this.initLI = document.querySelector(balls);
     this.initLI.setAttribute('id', 'ballIsPlaced')
     this.setPlace = function (e) {
-        console.log(this.initLI)
+        if (this.initLI == e.target) return;
         e.target.setAttribute('id', 'ballIsPlaced');
         this.initLI.setAttribute('id', '');
         this.initLI = e.target

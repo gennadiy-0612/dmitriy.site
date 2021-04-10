@@ -1,3 +1,4 @@
+"use strict"
 let shch = {
     burger: function () {
         shch.locate = {};
@@ -9,8 +10,7 @@ let shch = {
         }
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
         shch['.overno']['.overno'].addAct();
-        shch['.folio'] = new shch.RefreshClass('.overno', 'overyes', '', '.folio');
-        shch['.folio']['.overno'].addAct();
+        document.querySelector('.nav-folio').addEventListener('click', shch.foloiB);
         let locAddr = window.location.pathname;
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
             let logisticI = 0;
@@ -54,15 +54,56 @@ let shch = {
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
+            shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
+            window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
+
+            shch.ttt = function () {
+                console.log(this)
+            }
             shch.swiper = new shch.Swipe('.emotions__item');
-            shch.swiper.start()
-            shch.swiper.run();
+            shch.swiper.onLeft(shch.slideStatic.Plus())
+            shch.swiper.run.bind(shch.ttt);
         }
         shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
         shch.modalCallBack.startModal();
     }
 }
 window.addEventListener('load', shch.burger);
+
+shch.foloiB = function () {
+    console.log(shch['.overno']['.overno'])
+    if (shch['.overno']['.overno'].initState) {
+        shch['.overno']['.overno'].infoTag.setAttribute('class', shch['.overno']['.overno'].infoTagClass)
+        shch['.overno']['.overno'].initState = 0;
+    }
+}
+
+shch.HeaderTracer = function (tracer) {
+    this.letIsGo = 1;
+    this.traceEl = document.querySelector(tracer);
+    this.traceElOldClass = this.traceEl.getAttribute('class');
+    this.actClass = 'Tracer';
+    this.traceSel = this.traceEl.getAttribute('class');
+    this.tracingHeader = function () {
+        this.topPap = this.traceEl.parentElement.parentElement.offsetTop;
+        this.heightPap = this.traceEl.parentElement.parentElement.offsetHeight;
+        this.heightWind = window.innerHeight;
+        this.heightHide = this.heightPap - this.heightWind;
+        if (Math.floor(window.scrollY) > Math.floor(this.topPap)) {
+            if (this.letIsGo) {
+                this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
+                this.letIsGo = 0;
+            }
+            if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide)) {
+                this.traceEl.setAttribute('class', this.traceElOldClass);
+                return;
+            }
+        } else {
+            this.traceEl.setAttribute('class', this.traceElOldClass);
+            return true;
+        }
+    }
+}
 
 shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     this.elementTarget = whoIsAnimate;
@@ -105,7 +146,6 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
             this.Item[this.secondSlide].setAttribute('id', activeSlide + '1');
             this.Item[this.thirdSlide].setAttribute('id', activeSlide + '2');
         }
-        console.log(this)
     };
     this.Minus = function () {
         if (this.Current) {
@@ -122,8 +162,6 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
             this.Current = 0;
             return;
         }
-        console.log(this.Current)
-        console.log(this)
     };
 };
 
@@ -141,7 +179,6 @@ shch.sliderMob = function (selectorSlide, activeSlide) {
         }
     };
     this.Minus = function () {
-        console.log(this)
         if (this.Current) {
             this.Item[this.Current].setAttribute('id', '')
             this.Current -= 1;
@@ -215,7 +252,7 @@ shch.RefreshClass = function (childT, newClass, I, button, parentTag) {
     }
 };
 
-shch.Swipe = function (element) {
+shch.Swipe = function (element, test) {
     this.start = function () {
         this.xDown = null;
         this.yDown = null;
@@ -230,20 +267,24 @@ shch.Swipe = function (element) {
         }
     }
 
+    this.onLeft = function (callback) {
+        this.onLeft = callback;
+    }
     this.handleTouchMove = function (evt) {
         if (!this.xDown || !this.yDown) {
             return;
         }
 
-        var xUp = evt.touches[0].clientX;
-        var yUp = evt.touches[0].clientY;
+        let xUp = evt.touches[0].clientX;
+        let yUp = evt.touches[0].clientY;
 
         this.xDiff = this.xDown - xUp;
         this.yDiff = this.yDown - yUp;
 
         if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
             if (this.xDiff > 0) {
-                shch.slideStatic.Plus()
+                shch.slideStatic.Plus();
+                // this.onLeft()
             } else {
                 shch.slideStatic.Minus()
             }
@@ -253,7 +294,12 @@ shch.Swipe = function (element) {
             this.yDown = null;
         }
     }
-    this.run = function () {
+
+    this.run = function (callBack) {
+        this.fff = function () {
+            this.fff = callBack;
+        }
+        this.fff()
         let i = 0;
         let all = document.querySelectorAll(element);
         for (i = 0; i < all.length; i++) {
@@ -267,7 +313,7 @@ shch.Swipe = function (element) {
 
 shch.PlaceBall = function (balls) {
     this.initLI = document.querySelector(balls);
-    this.initLI.setAttribute('id','ballIsPlaced')
+    this.initLI.setAttribute('id', 'ballIsPlaced')
     this.setPlace = function (e) {
         console.log(this.initLI)
         e.target.setAttribute('id', 'ballIsPlaced');

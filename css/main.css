@@ -346,6 +346,7 @@ a {
         transform: rotate(360deg);
     }
 }
+
 @-webkit-keyframes move_around_back {
     from {
         transform: rotate(360deg);
@@ -593,6 +594,7 @@ a {
     background: url("../img/index/x.svg") center center no-repeat;
     background-size: contain;
     margin: 20px 30px 0 auto;
+    position: relative;
 }
 
 .video__nav-top {
@@ -700,20 +702,32 @@ a {
 .hide-form {
     position: fixed;
     top: 0;
-    background-color: #1d1d1d;
-    max-width: 440px;
+    /*! background-color: #1d1d1d; */
+    /*! max-width: 440px; */
     height: 100%;
-    z-index: 1;
-    display: none;
+    /*! z-index: 1; */
+    /*! display: none; */
     left: 0;
     right: 0;
     margin: auto;
 }
 
+.show-form-vacancies {
+    display: flex;
+}
+
 .modalJoinForm {
     max-width: 320px;
     margin: auto;
-    padding: 0 40px;
+    padding: 10px 40px 40px;
+    max-height: 600px;
+    position: relative;
+    background-color: #1d1d1d;
+}
+
+.JoinToUs {
+    max-width: 500px;
+    padding: 30px;
 }
 
 .modaljoinToUs__h3 {
@@ -2262,14 +2276,28 @@ a {
     /*Modal forms*/
     .hide-form {
         position: fixed;
-        top: 0;
-        background-color: #1d1d1d;
         width: 100%;
         height: 100%;
         z-index: 1;
-        max-height: 600px;
-        margin: 0;
         bottom: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        top: 0;
+    }
+
+    .hide-form::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: block;
+        background-color: #000000;
+        position: absolute;
+        top: 0;
+        z-index: -2;
+        opacity: .9;
     }
 
     .modaljoinToUs__h3 {

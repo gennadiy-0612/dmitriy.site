@@ -1,5 +1,6 @@
 "use strict"
 let shch = {
+    e: {},
     burger: function () {
         shch.locate = {};
         if (window.location.origin == 'https://p.cx.ua') {
@@ -10,7 +11,7 @@ let shch = {
         }
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
         shch['.overno']['.overno'].addAct();
-        document.querySelector('.nav-folio').addEventListener('click', shch.foloiB);
+        document.querySelector('.nav-folio').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
             let logisticI = 0;
@@ -57,20 +58,24 @@ let shch = {
             shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
             window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
 
-            shch.ttt = function () {
-                console.log(this)
-            }
-            shch.swiper = new shch.Swipe('.emotions__item');
-            shch.swiper.onLeft(shch.slideStatic.Plus())
-            shch.swiper.run.bind(shch.ttt);
+            shch.staticSwipe = new shch.Swipe('.emotions__item');
+            shch.staticSwipe.start();
+            shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
+            shch.modalCallBack = new shch.ModalShow('.hide-form-index', ' .JOIN', '.callBackCloser');
+            shch.modalCallBack.startModal();
         }
-        shch.modalCallBack = new shch.ModalShow('.hide-form', ' .JOIN', '.callBackCloser');
-        shch.modalCallBack.startModal();
+
+        shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');
+        shch['.hf1']['.hidden-form-vacancies1'].addAct();
+        shch['.hf2'] = new shch.RefreshClass('.hidden-form-vacancies2', 'show-form-vacancies', '', '.vacancies-form-button2', '', '.hide-form-vacancies2');
+        shch['.hf2']['.hidden-form-vacancies2'].addAct();
+        shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
+        shch['.hf3']['.hidden-form-vacancies3'].addAct();
     }
 }
 window.addEventListener('load', shch.burger);
 
-shch.foloiB = function () {
+shch.foloiButton = function () {
     console.log(shch['.overno']['.overno'])
     if (shch['.overno']['.overno'].initState) {
         shch['.overno']['.overno'].infoTag.setAttribute('class', shch['.overno']['.overno'].infoTagClass)
@@ -209,14 +214,15 @@ shch.ModalShow = function (modalTag, open, close) {
     }
 };
 
-shch.RefreshClass = function (childT, newClass, I, button, parentTag) {
+shch.RefreshClass = function (childT, newClass, I, button, parentTag, closer, event) {
     this[childT + I] = {
-        initState: 0,
-        newClass: newClass,
         childT: childT,
+        newClass: newClass,
         button: button,
         infoTag: {},
         parentT: {},
+        closer: {},
+        initState: 0,
         addAct: function () {
             if (I) {
                 this.infoTag = document.querySelectorAll(this.childT)[I];
@@ -236,6 +242,10 @@ shch.RefreshClass = function (childT, newClass, I, button, parentTag) {
                 }
             }
             this.button.addEventListener('click', this.changeIt.bind(this));
+            if (closer) {
+                this.closer = document.querySelector(closer);
+                this.closer.addEventListener('click', this.changeIt.bind(this));
+            }
         },
         changeIt: function (e) {
             e.stopPropagation()
@@ -248,11 +258,12 @@ shch.RefreshClass = function (childT, newClass, I, button, parentTag) {
                 if (parentTag) this.parentT.setAttribute('class', this.parentTclass + ' ' + this.newClass);
                 this.initState = 1;
             }
+            console.log(this);
         }
     }
 };
 
-shch.Swipe = function (element, test) {
+shch.Swipe = function (element) {
     this.start = function () {
         this.xDown = null;
         this.yDown = null;
@@ -267,9 +278,13 @@ shch.Swipe = function (element, test) {
         }
     }
 
-    this.onLeft = function (callback) {
-        this.onLeft = callback;
+    this.prev = function (back) {
+        this.prev = back;
     }
+    this.next = function (forward) {
+        this.next = forward;
+    }
+
     this.handleTouchMove = function (evt) {
         if (!this.xDown || !this.yDown) {
             return;
@@ -283,10 +298,9 @@ shch.Swipe = function (element, test) {
 
         if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
             if (this.xDiff > 0) {
-                // shch.slideStatic.Plus();
-                this.onLeft()
+                this.prev();
             } else {
-                shch.slideStatic.Minus()
+                this.next();
             }
 
             // Reset values.
@@ -295,11 +309,9 @@ shch.Swipe = function (element, test) {
         }
     }
 
-    this.run = function (callBack) {
-        this.fff = function () {
-            this.fff = callBack;
-        }
-        this.fff()
+    this.run = function (back, forward) {
+        this.prev = back;
+        this.next = forward;
         let i = 0;
         let all = document.querySelectorAll(element);
         for (i = 0; i < all.length; i++) {

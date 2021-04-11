@@ -295,27 +295,26 @@ a {
     left: 0;
     right: 0;
     margin: 7% 13% 0 auto;
+    background: radial-gradient(#3a3a3a 0, transparent 70%);
 }
 
 .back-site__round-in canvas {
     align-self: center;
-    animation: 2s move_around_back;
 }
 
 .back-site__round-in {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
     top: 0;
-    /*! background-color: #9c9c9c; */
+    /* background-color: #9c9c9c; */
     transform: rotate(0);
-    animation: 70s linear 0s infinite normal move_around;
-    /*! box-shadow: 0 0 16px #FFFFFF; */
     display: flex;
     justify-content: center;
     align-self: center;
     align-content: center;
+    animation: 70s linear 0s infinite normal move_around;
 }
 
 .back-site__round-in::before,
@@ -329,13 +328,13 @@ a {
 }
 
 .back-site__round-in::before {
-    top: 23%;
+    top: 0;
     left: 0;
 }
 
 .back-site__round-in::after {
     right: 0;
-    bottom: 23%;
+    bottom: 0;
 }
 
 @-webkit-keyframes move_around {
@@ -725,11 +724,29 @@ a {
     background-color: #1d1d1d;
 }
 
+/*vacncies forms*/
 .JoinToUs {
-    max-width: 500px;
-    padding: 30px;
+    max-width: 520px;
+    padding: 20px 30px 110px;
 }
 
+.modaljoinToUs__h4 {
+    max-width: 300px;
+}
+
+.vac__close {
+    margin: 0 -10px 0 auto;
+}
+
+.vacancies-hidden-form {
+    padding: 0 30px 0;
+}
+
+.vac__pulse {
+    margin: 20px 100px 10px auto;
+}
+
+/*vacncies forms*/
 .modaljoinToUs__h3 {
     font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
     color: #FFFFFF;
@@ -737,7 +754,7 @@ a {
 }
 
 .modaljoinToUs__h4 {
-    margin: 15px 0 0;
+    margin: 15px auto 0;
 }
 
 .modalJoin__text {
@@ -781,6 +798,15 @@ a {
 /*Top link hover*/
 
 @media (max-width: 1070px) {
+    .back-site__round-in{
+        animation: none;
+    }
+    .back-site__round-in::before, .back-site__round-in::after{
+        opacity: 0;
+    }
+    .back-site__round-out{
+        border-color: transparent;
+    }
     /*Top link hover*/
     .finger:hover {
         cursor: none;
@@ -1558,7 +1584,7 @@ a {
         content: none;
     }
 
-    .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
+    .firstScreen, .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         max-width: 1300px;
         padding: 0 50px;
         margin-left: auto;
@@ -2303,6 +2329,7 @@ a {
     .modaljoinToUs__h3 {
         font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
+        padding: 32px 65px 0;
     }
 
     .modalJoin__text {
@@ -2414,14 +2441,15 @@ a {
     }
 
     .back-site__round-out {
-        width: 41vmax;
-        height: 41vmax;
-        border-radius: 21vmax;
+        width: 100vmin;
+        height: 100vmin;
+        border-radius: 50vmin;
         top: -28vmax;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
+       
     }
 }
 
@@ -2437,9 +2465,9 @@ a {
     }
 
     .back-site__round-out {
-        /*! width: 40vmax; */
-        /*! height: 40vmax; */
-        /*! border-radius: 20vmax; */
+        width: 40vmax;
+        height: 40vmax;
+        border-radius: 20vmax;
         top: 0;
         left: 0;
         right: 0;
@@ -2483,7 +2511,8 @@ a {
         right: 0;
         bottom: 0;
         left: auto;
-        background: radial-gradient(#4f4f4f 0, transparent 50%, transparent 80%);
+        background: radial-gradient(#3a3a3a 0, transparent 70%);
         margin: auto;
+        display: flex;
     }
 }

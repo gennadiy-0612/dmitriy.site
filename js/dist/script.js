@@ -65,8 +65,14 @@ if (shch.mob) {
     camera.position.y = 115;
     camera.position.z = 117;
 } else {
-    camera.position.y = 15;
-    camera.position.z = 22;
+    if (window.location.origin !== (shch1.locate.index1 || shch1.locate.index2)) {
+        console.log('cube')
+        camera.position.y = 20;
+        camera.position.z = 30;
+    } else {
+        camera.position.y = 15;
+        camera.position.z = 22;
+    }
 }
 
 // Lighting

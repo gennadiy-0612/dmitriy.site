@@ -1,13 +1,20 @@
 "use strict"
 let shch = {
-    e: {},
     burger: function () {
         shch.locate = {};
         if (window.location.origin == 'https://p.cx.ua') {
-            shch.locate = {index1: '/pf/dmitriy.site/', index2: '/pf/dmitriy.site/index.html'};
+            shch.locate = {
+                index1: '/pf/dmitriy.site/',
+                index2: '/pf/dmitriy.site/index.html',
+                vacancy: '/pf/dmitriy.site/vacancy.html'
+            };
         }
         if (window.location.origin == 'http://localhost:81') {
-            shch.locate = {index1: '/', index2: '/index.html'};
+            shch.locate = {
+                index1: '/',
+                index2: '/index.html',
+                vacancy: '/vacancy.html'
+            };
         }
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
         shch['.overno']['.overno'].addAct();
@@ -61,16 +68,17 @@ let shch = {
             shch.staticSwipe = new shch.Swipe('.emotions__item');
             shch.staticSwipe.start();
             shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
-            shch.modalCallBack = new shch.ModalShow('.hide-form-index', ' .JOIN', '.callBackCloser');
-            shch.modalCallBack.startModal();
         }
-
-        shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');
-        shch['.hf1']['.hidden-form-vacancies1'].addAct();
-        shch['.hf2'] = new shch.RefreshClass('.hidden-form-vacancies2', 'show-form-vacancies', '', '.vacancies-form-button2', '', '.hide-form-vacancies2');
-        shch['.hf2']['.hidden-form-vacancies2'].addAct();
-        shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
-        shch['.hf3']['.hidden-form-vacancies3'].addAct();
+        if (locAddr === shch.locate.vacancy) {
+            shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');
+            shch['.hf1']['.hidden-form-vacancies1'].addAct();
+            shch['.hf2'] = new shch.RefreshClass('.hidden-form-vacancies2', 'show-form-vacancies', '', '.vacancies-form-button2', '', '.hide-form-vacancies2');
+            shch['.hf2']['.hidden-form-vacancies2'].addAct();
+            shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
+            shch['.hf3']['.hidden-form-vacancies3'].addAct();
+        }
+        shch.modalCallBack = new shch.ModalShow('.hide-form-index', ' .JOIN', '.callBackCloser');
+        shch.modalCallBack.startModal();
     }
 }
 window.addEventListener('load', shch.burger);

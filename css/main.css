@@ -798,15 +798,18 @@ a {
 /*Top link hover*/
 
 @media (max-width: 1070px) {
-    .back-site__round-in{
+    .back-site__round-in {
         animation: none;
     }
-    .back-site__round-in::before, .back-site__round-in::after{
+
+    .back-site__round-in::before, .back-site__round-in::after {
         opacity: 0;
     }
-    .back-site__round-out{
+
+    .back-site__round-out {
         border-color: transparent;
     }
+
     /*Top link hover*/
     .finger:hover {
         cursor: none;
@@ -1959,6 +1962,7 @@ a {
         line-height: 34px;
     }
 
+    .contacth1, .s2__p1-vacancies,
     .TechSupportH1 {
         margin-top: 21vh;
     }
@@ -2174,11 +2178,6 @@ a {
     }
 
     /*contacts*/
-    .contacth1 {
-        margin-top: 380px;
-        margin-bottom: 460px;
-    }
-
     .s2-contactdesk {
         display: flex;
         justify-content: space-around;
@@ -2449,7 +2448,7 @@ a {
         right: 0;
         bottom: 0;
         margin: auto;
-       
+
     }
 }
 

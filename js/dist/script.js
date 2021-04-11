@@ -1,13 +1,25 @@
+shch1 = {};
+if (window.location.origin === 'https://p.cx.ua') {
+    shch1.locate = {
+        index1: '/pf/dmitriy.site/',
+        index2: '/pf/dmitriy.site/index.html'
+    };
+}
+if (window.location.origin === 'http://localhost:81') {
+    shch1.locate = {
+        index1: '/',
+        index2: '/index.html'
+    };
+}
+
 let shchs = {mob: 0, desk: 0, port: 0, land: 0};
 if (window.matchMedia("(max-width: 1070px)").matches) {
     shchs.mob = 1
     shchs.mini = Math.min(window.innerWidth, window.innerHeight) - 15
 } else {
     shchs.desk = 1
-    shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 1.65
+    if (shchs.desk) shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 1.65
 }
-
-console.log(shchs.mini)
 // Options
 const numberOfParticles = 6000;
 
@@ -155,23 +167,12 @@ function animate() {
 }
 
 animate();
-shch1 = {};
-if (window.location.origin === 'https://p.cx.ua') {
-    shch1.locate = {
-        index1: '/pf/dmitriy.site/',
-        index2: '/pf/dmitriy.site/index.html'
-    };
-}
-if (window.location.origin === 'http://localhost:81') {
-    shch1.locate = {
-        index1: '/',
-        index2: '/index.html'
-    };
-}
+
 if ((window.location.pathname === shch1.locate.index1) || (window.location.pathname === shch1.locate.index2)) {
     setTimeout(toSphere, 500);
 } else {
     setTimeout(toCube, 500);
+
 }
 
 function toSphere() {

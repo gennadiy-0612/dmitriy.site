@@ -283,8 +283,8 @@ shch.Swipe = function (element, test) {
 
         if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
             if (this.xDiff > 0) {
-                shch.slideStatic.Plus();
-                // this.onLeft()
+                // shch.slideStatic.Plus();
+                this.onLeft()
             } else {
                 shch.slideStatic.Minus()
             }

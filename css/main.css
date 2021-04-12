@@ -800,6 +800,8 @@ a {
 @media (max-width: 1070px) {
     .back-site__round-in {
         animation: none;
+        width: 90%;
+        height: 90%;
     }
 
     .back-site__round-in::before, .back-site__round-in::after {
@@ -2440,15 +2442,15 @@ a {
     }
 
     .back-site__round-out {
-        width: 100vmin;
-        height: 100vmin;
-        border-radius: 50vmin;
+        width: 94vmin;
+        height: 94vmin;
+        border-radius: 47vmin;
         top: -28vmax;
         left: 0;
         right: 0;
         bottom: 0;
         margin: auto;
-
+        overflow: hidden;
     }
 }
 

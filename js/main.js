@@ -68,6 +68,9 @@ let shch = {
             shch.staticSwipe = new shch.Swipe('.emotions__item');
             shch.staticSwipe.start();
             shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
+            shch.videoSwipe = new shch.Swipe('.video__item');
+            shch.videoSwipe.start();
+            shch.videoSwipe.run(shch.slideVideo.Plus.bind(shch.slideVideo), shch.slideVideo.Minus.bind(shch.slideVideo));
         }
         if (locAddr === shch.locate.vacancy) {
             shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');

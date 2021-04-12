@@ -910,6 +910,13 @@ a {
 /*animate tabs*/
 /*Top link hover*/
 
+.whereText {
+    font: normal normal 400 22px/33px "Montserrat", sans-serif;
+    padding: 19px 11px;
+    margin: 0 10px;
+    position: relative;
+}
+
 @media (max-width: 1070px) {
     .back-site__round-in {
         animation: none;
@@ -1905,13 +1912,6 @@ a {
     }
     .keyprinciples__p {
         margin: 0;
-    }
-
-    .whereText {
-        font: normal normal 400 22px/33px "Montserrat", sans-serif;
-        padding: 19px 11px;
-        margin: 0 10px;
-        position: relative;
     }
 
     .listworks__blueball {

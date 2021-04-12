@@ -143,6 +143,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
 }
 
 shch.sliderDesk = function (selectorSlide, activeSlide) {
+    this.init=0;
     this.Current = 0;
     this.secondSlide = 1;
     this.thirdSlide = 2;

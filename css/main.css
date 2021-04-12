@@ -626,16 +626,42 @@ a {
 }
 
 #deskTopSlide,
-#deskTopSlide1,
-#deskTopSlide2,
-#show-video-slide,
-#show-video-slide ~ .video__item,
-.emotions__item {
+#show-video-slide {
     animation-name: slide;
     animation-duration: 1s;
 }
 
+#show-video-slide1,
+#deskTopSlide1 {
+    animation-name: slide1;
+    animation-duration: 1s;
+}
+
+#show-video-slide2,
+#deskTopSlide2 {
+    animation-name: slide2;
+    animation-duration: 1s;
+}
+
 @keyframes slide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide2 {
     from {
         opacity: 0;
     }

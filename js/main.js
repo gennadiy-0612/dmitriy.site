@@ -148,6 +148,8 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
     this.thirdSlide = 2;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Length = document.querySelectorAll(selectorSlide).length;
+    this.firstPadding = this.Item[0];
+    this.firstPadd = this.firstPadding.getAttribute('class');
     this.Plus = function () {
         if (this.thirdSlide === (this.Length - 1)) {
             return;
@@ -175,6 +177,7 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
             this.Item[this.secondSlide].setAttribute('id', activeSlide + '1');
             this.Item[this.thirdSlide].setAttribute('id', activeSlide + '2');
         } else {
+            this.firstPadding.setAttribute('class', this.firstPadd + ' paddLeft');
             this.Current = 0;
             return;
         }

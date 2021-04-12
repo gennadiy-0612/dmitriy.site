@@ -615,6 +615,20 @@ a {
 }
 
 /*Modal Video*/
+#deskTopSlide.paddLeft {
+    animation-name: marin-left;
+    animation-duration: 1s;
+    margin-left: 25%;
+}
+
+@keyframes marin-left {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: 25%;
+    }
+}
 
 #deskTopSlide,
 #deskTopSlide1,
@@ -947,7 +961,7 @@ a {
     .back-site__round-in {
         animation: none;
         width: 90%;
-        height: 100%;
+        height: 90%;
     }
 
     .back-site__round-in::before, .back-site__round-in::after {
@@ -2026,6 +2040,7 @@ a {
     .emotions__set {
         width: 130.8%;
         margin-left: -45%;
+        overflow: hidden;
     }
 
     .video__nav {
@@ -2604,7 +2619,7 @@ a {
         width: 94vmin;
         height: 94vmin;
         border-radius: 47vmin;
-        top: -38vmax;
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;

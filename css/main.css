@@ -1520,11 +1520,13 @@ a {
         flex-wrap: wrap;
         flex-direction: column;
         padding: 30px 0 0;
+        width: 93%;
+        margin: 0 auto 0 2%;
     }
 
     .modalJoinForm__block {
         padding: 0;
-        margin: 4px 0;
+        margin: 0 0 4px;
     }
 
     .modalJoin__input {
@@ -1534,6 +1536,7 @@ a {
         border-bottom: 1px solid #E5E5E5;
         display: block;
         width: 100%;
+        margin: 0 auto;
     }
 
     /*Modal forms*/
@@ -1966,7 +1969,7 @@ a {
 
     .contacth1, .s2__p1-vacancies,
     .TechSupportH1 {
-        margin-top: 21vh;
+        margin-top: 28vh;
     }
 
     .footer__p1 {
@@ -2509,7 +2512,7 @@ a {
         height: 80vmin;
         border-radius: 40vmin;
         top: 0;
-        right: 0;
+        right: 7%;
         bottom: 0;
         left: auto;
         background: radial-gradient(#3a3a3a 0, transparent 70%);

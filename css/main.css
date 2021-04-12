@@ -787,6 +787,72 @@ a {
     width: 100%;
 }
 
+
+.hide-form {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    top: 0;
+}
+
+.hide-form::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    opacity: .9;
+}
+
+/*CallBack*/
+
+.hide-form-index__h {
+    padding: 0;
+    margin: 35px 0 0;
+    letter-spacing: -1px;
+}
+
+.hide-form-index__p {
+    margin: 22px 17% 0;
+    max-width: initial;
+}
+
+.hide-form-index__label {
+    padding: 43px 20px 0;
+}
+
+.hide-form-index__label {
+    padding: 15px 20px;
+}
+
+.hide-form-index__common {
+    margin: 0 20.7% 0 auto;
+}
+
+.hide-form-index__close {
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.hide-form-index__i {
+    height: 30px;
+    margin: 0 0 10px;
+
+}
+
+/*CallBack*/
+
 /*Modal forms*/
 /*animate tabs*/
 
@@ -1326,7 +1392,7 @@ a {
     }
 
     .buttonmiddle-footermob {
-        margin: 27px auto 0 2px;
+        margin: 0 31% 0 auto;
     }
 
     /*Buttons finish here*/
@@ -1387,10 +1453,6 @@ a {
     .uperlinedesktop::after {
         top: -18px;
         left: auto;
-    }
-
-    .buttonmiddle-vacancies {
-        margin: 35px auto 40px 16%;
     }
 
     /*.vacancies*/
@@ -1477,11 +1539,11 @@ a {
 
     /*Video Slider*/
     /*Modal forms*/
+    .hidden-form-vacancies3,
     .hide-form {
         position: fixed;
         top: 0;
         background-color: #1d1d1d;
-        max-width: 440px;
         height: 100%;
         z-index: 1;
         display: none;
@@ -1539,6 +1601,18 @@ a {
         margin: 0 auto;
     }
 
+    /*CallBack*/
+    .hide-form-index__form {
+        top: 10%;
+        max-width: 310px;
+        padding: 42px 0 40px;
+    }
+
+    .hide-form-index__label {
+        padding: 30px 6px 20px;
+    }
+
+    /*CallBack*/
     /*Modal forms*/
     .back-site {
         display: none;
@@ -2304,36 +2378,24 @@ a {
 
     /*Video slider*/
     /*Modal forms*/
-    .hide-form {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        top: 0;
+    .modalJoinForm {
+        max-width: 500px;
     }
 
-    .hide-form::after {
-        content: '';
-        width: 100%;
-        height: 100%;
+    .hide-form-index__close {
         position: absolute;
-        display: block;
-        background-color: #000000;
-        position: absolute;
-        top: 0;
-        z-index: -2;
-        opacity: .9;
+        right: 0;
+        top: 8%;
+    }
+
+    .hide-form-index__h2 {
+        margin: 44px 0 24px;
     }
 
     .modaljoinToUs__h3 {
         font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
-        padding: 32px 65px 0;
+        padding: 32px 35px 0;
     }
 
     .modalJoin__text {

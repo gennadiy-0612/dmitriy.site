@@ -886,8 +886,11 @@ a {
     margin: auto;
     top: 0;
 }
+
 .show#videoSlider{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .show.hide-form-index {
     display: flex;
@@ -905,6 +908,12 @@ a {
     top: 0;
     z-index: -2;
     opacity: .9;
+}
+
+.video__group {
+    min-width: 1140px;
+    position: relative;
+    min-height: 400px;
 }
 
 /*CallBack*/

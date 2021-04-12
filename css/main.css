@@ -886,9 +886,11 @@ a {
     margin: auto;
     top: 0;
 }
-
-.show .hide-form-index {
+.show#videoSlider{
     display: block;
+}
+.show.hide-form-index {
+    display: flex;
 }
 
 .show-form-vacancies::after,

@@ -41,8 +41,9 @@ let shch = {
             for (let ballI = 0; ballI < ballCollectMax; ballI++) {
                 ballCollect[ballI].addEventListener('click', shch.setBall.setPlace.bind(shch.setBall), false)
             }
-            shch.modalVideoSlider = new shch.ModalShow('#videoSlider', '#videoButton', '#videoClose');
-            shch.modalVideoSlider.startModal();
+
+            shch['#vS'] = new shch.RefreshClass('#videoSlider', 'show', '', '#videoButton', '', '#videoClose');
+            shch['#vS']['#videoSlider'].addAct();
             if (window.matchMedia("(max-width: 1070px)").matches) {
                 shch.viewPort = 'mob';
                 shch.slideStatic = new shch.sliderMob('.emotions__item', 'deskTopSlide');
@@ -206,26 +207,6 @@ shch.sliderMob = function (selectorSlide, activeSlide) {
             this.Current = 0;
         }
     };
-};
-
-shch.ModalShow = function (modalTag, open, close) {
-    let modal = document.querySelector(modalTag);
-    let btn = document.querySelector(open);
-    let span = document.querySelector(close);
-    this.startModal = function () {
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        // window.onclick = function (event) {
-        //     event.stopPropagation();
-        //     if (event.target == modal) {
-        //         modal.style.display = "none";
-        //     }
-        // }
-    }
 };
 
 shch.RefreshClass = function (childT, newClass, I, button, parentTag, closer, event) {

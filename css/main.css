@@ -701,11 +701,7 @@ a {
 .hide-form {
     position: fixed;
     top: 0;
-    /*! background-color: #1d1d1d; */
-    /*! max-width: 440px; */
     height: 100%;
-    /*! z-index: 1; */
-    /*! display: none; */
     left: 0;
     right: 0;
     margin: auto;
@@ -713,6 +709,13 @@ a {
 
 .show-form-vacancies {
     display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation-name: down;
+    animation-duration: 1s;
 }
 
 .modalJoinForm {
@@ -801,6 +804,7 @@ a {
     top: 0;
 }
 
+.show-form-vacancies::after,
 .hide-form::after {
     content: '';
     width: 100%;
@@ -1539,7 +1543,6 @@ a {
 
     /*Video Slider*/
     /*Modal forms*/
-    .hidden-form-vacancies3,
     .hide-form {
         position: fixed;
         top: 0;
@@ -1553,15 +1556,19 @@ a {
     }
 
     .modalJoinForm {
-        max-width: 320px;
+        max-width: 300px;
         margin: auto;
-        padding: 0 40px;
+        padding: 0 10px;
     }
 
     .modaljoinToUs__h3 {
         font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
         margin: 0;
+    }
+
+    .vacancies-hidden-form {
+        padding: 0;
     }
 
     .modaljoinToUs__h4 {
@@ -1571,10 +1578,6 @@ a {
     .modalJoin__text {
         font: normal normal 400 16px/27px 'Montserrat', sans-serif;
         color: #FFFFFF;
-    }
-
-    .modalJoin-center {
-        text-align: center;
     }
 
     .modalJoinForm__labels {
@@ -1601,6 +1604,10 @@ a {
         margin: 0 auto;
     }
 
+
+    .show-form-vacancies{
+        display: block;
+    }
     /*CallBack*/
     .hide-form-index__form {
         top: 10%;

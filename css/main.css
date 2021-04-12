@@ -714,8 +714,8 @@ a {
 }
 
 #firstname1,
-#firstname1,
-#firstname1 {
+#firstname2,
+#firstname3 {
     text-indent: 50px;
 }
 
@@ -723,6 +723,12 @@ a {
 #lastname2,
 #lastname3 {
     text-indent: 65px;
+}
+
+#phone1,
+#phone2,
+#phone3 {
+    text-indent: 80px;
 }
 
 .show-form-vacancies {

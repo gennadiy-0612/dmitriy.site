@@ -61,21 +61,29 @@ var scene = new THREE.Scene();
 
 // Camera and position
 var camera = new THREE.PerspectiveCamera(25, 1, 1, 10000);
-if (shchs.mob &&( window.location.pathname === (shch1.locate.index1 || shch1.locate.index2))) {
-        camera.position.y = 115;
-        camera.position.z = 117;
-        console.log('sphere')
+if (shchs.mob) {
+    if ((window.location.pathname === shch1.locate.index1) || (window.location.pathname === shch1.locate.index2)) {
+        camera.position.y = 15;
+        camera.position.z = 22;
+        console.log('mob sphere')
+    } else {
+        camera.position.y = 28;
+        camera.position.z = 42;
+        console.log('cube mob')
+    }
 }
-// if (window.location.pathname !== (shch1.locate.index1 || shch1.locate.index2)) {
-//     console.log(window.location.origin)
-//     console.log('cube')
-//     camera.position.y = 20;
-//     camera.position.z = 30;
-// } else {
-    camera.position.y = 15;
-    camera.position.z = 22;
-// }
-console.log(shchs)
+if (shchs.desk) {
+    if ((window.location.pathname === shch1.locate.index1) || (window.location.pathname === shch1.locate.index2)) {
+        camera.position.y = 14;
+        camera.position.z = 21;
+        console.log('desk sphere')
+    } else {
+        camera.position.y = 20;
+        camera.position.z = 30;
+        console.log('desk cube')
+
+    }
+}
 
 // Lighting
 // var light = new THREE.AmbientLight( 0x404040, 1 ); // soft white light

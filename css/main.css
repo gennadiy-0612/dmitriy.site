@@ -801,7 +801,7 @@ a {
     .back-site__round-in {
         animation: none;
         width: 90%;
-        height: 90%;
+        height: 100%;
     }
 
     .back-site__round-in::before, .back-site__round-in::after {
@@ -2445,7 +2445,7 @@ a {
         width: 94vmin;
         height: 94vmin;
         border-radius: 47vmin;
-        top: -28vmax;
+        top: -38vmax;
         left: 0;
         right: 0;
         bottom: 0;

@@ -1558,13 +1558,13 @@ a {
     .modalJoinForm {
         max-width: 300px;
         margin: auto;
-        padding: 0 10px;
+        padding: 40px 10px;
     }
 
     .modaljoinToUs__h3 {
         font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
-        margin: 0;
+        margin: -22px 0 0;
     }
 
     .vacancies-hidden-form {
@@ -1578,36 +1578,62 @@ a {
     .modalJoin__text {
         font: normal normal 400 16px/27px 'Montserrat', sans-serif;
         color: #FFFFFF;
+        max-width: 220px;
+        margin: 12px auto 0;
     }
 
     .modalJoinForm__labels {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        padding: 30px 0 0;
+        padding: 23px 0 0;
         width: 93%;
         margin: 0 auto 0 2%;
     }
 
     .modalJoinForm__block {
+        position: relative;
         padding: 0;
         margin: 0 0 4px;
+        width: 100%;
+        max-width: initial;
+    }
+
+    .modalJoinForm__block::after {
+        position: absolute;
+
+        content: '';
+        background-color: #ffffff;
+        height: 1px;
+        width: 100%;
+        display: block;
     }
 
     .modalJoin__input {
         background-color: transparent;
         border-width: 0;
-        border-bottom-width: 0px;
-        border-bottom: 1px solid #E5E5E5;
+        border-bottom-width: 0;
         display: block;
         width: 100%;
         margin: 0 auto;
     }
 
-
-    .show-form-vacancies{
+    /*Vacancies form*/
+    .show-form-vacancies {
         display: block;
     }
+
+    .vac__close {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+    }
+
+    .close {
+        background-size: 18px 18px;
+    }
+
+    /*Vacancies form*/
     /*CallBack*/
     .hide-form-index__form {
         top: 10%;

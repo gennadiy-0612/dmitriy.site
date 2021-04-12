@@ -80,8 +80,8 @@ let shch = {
             shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
             shch['.hf3']['.hidden-form-vacancies3'].addAct();
         }
-        shch.modalCallBack = new shch.ModalShow('.hide-form-index', ' .JOIN', '.callBackCloser');
-        shch.modalCallBack.startModal();
+        shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
+        shch['.hide-form-index']['.hide-form-index'].addAct();
     }
 }
 window.addEventListener('load', shch.burger);

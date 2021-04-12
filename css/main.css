@@ -751,6 +751,10 @@ a {
     background-color: #1d1d1d;
 }
 
+.opacity0 {
+    opacity: 0;
+}
+
 /*vacncies forms*/
 .JoinToUs {
     max-width: 520px;
@@ -808,13 +812,23 @@ a {
 .modalJoinForm__block {
     padding: 0;
     margin: 4px 0;
+    position: relative;
+}
+
+.modalJoinForm__block::after {
+    position: absolute;
+    content: '';
+    background-color: #ffffff;
+    height: 1px;
+    width: 100%;
+    display: block;
+    top: 40px;
 }
 
 .modalJoin__input {
     background-color: transparent;
     border-width: 0;
     border-bottom-width: 0px;
-    border-bottom: 1px solid #E5E5E5;
     display: block;
     width: 100%;
 }
@@ -1070,7 +1084,7 @@ a {
 
     .s1__p2__p1__p1-fonthavy {
         font: normal normal bold 28px/38px "Druk Text Wide", sans-serif;
-        margin: 225px auto 0;
+        margin: 225px auto 0 15px;
     }
 
     .s2 {
@@ -1629,16 +1643,6 @@ a {
         max-width: initial;
     }
 
-    .modalJoinForm__block::after {
-        position: absolute;
-        content: '';
-        background-color: #ffffff;
-        height: 1px;
-        width: 100%;
-        display: block;
-        top: 40px;
-    }
-
     .modalJoin__input {
         background-color: transparent;
         border-width: 0;
@@ -1673,7 +1677,7 @@ a {
     }
 
     .hide-form-index__label {
-        padding: 30px 6px 20px;
+        padding: 30px 0 20px;
     }
 
     /*CallBack*/

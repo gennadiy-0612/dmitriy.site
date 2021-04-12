@@ -1396,7 +1396,7 @@ a {
     }
 
     .buttonmiddle-footermob {
-        margin: 0 31% 0 auto;
+        margin: 8px 35.1% 0 auto;
     }
 
     /*Buttons finish here*/
@@ -1558,17 +1558,18 @@ a {
     .modalJoinForm {
         max-width: 300px;
         margin: auto;
-        padding: 40px 10px;
+        padding: 40px 10px 26px;
     }
 
     .modaljoinToUs__h3 {
         font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
         margin: -22px 0 0;
+        letter-spacing: 0;
     }
 
     .vacancies-hidden-form {
-        padding: 0;
+        padding: 20px 0 0;
     }
 
     .modaljoinToUs__h4 {
@@ -1586,27 +1587,27 @@ a {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        padding: 23px 0 0;
-        width: 93%;
+        padding: 26px 0 0;
+        width: 96%;
         margin: 0 auto 0 2%;
     }
 
     .modalJoinForm__block {
         position: relative;
         padding: 0;
-        margin: 0 0 4px;
+        margin: 0 0 6px;
         width: 100%;
         max-width: initial;
     }
 
     .modalJoinForm__block::after {
         position: absolute;
-
         content: '';
         background-color: #ffffff;
         height: 1px;
         width: 100%;
         display: block;
+        top: 40px;
     }
 
     .modalJoin__input {
@@ -1615,7 +1616,7 @@ a {
         border-bottom-width: 0;
         display: block;
         width: 100%;
-        margin: 0 auto;
+        margin: 5px auto 0;
     }
 
     /*Vacancies form*/

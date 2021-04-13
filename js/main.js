@@ -209,7 +209,7 @@ shch.sliderMob = function (selectorSlide, activeSlide) {
     };
 };
 
-shch.RefreshClass = function (childT, newClass, I, button, parentTag, closer, event) {
+shch.RefreshClass = function (childT, newClass, I, button, parentTag, closer) {
     this[childT + I] = {
         childT: childT,
         newClass: newClass,

@@ -752,10 +752,19 @@ a {
     margin: auto;
 }
 
+.hidden-form-vacancies,
 .hidden-form-vacancies1,
 .hidden-form-vacancies2,
 .hidden-form-vacancies3 {
     display: none;
+}
+
+.hidden-form-vacancies {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .hide-form-index__fname,
@@ -1002,8 +1011,7 @@ a {
         cursor: none;
     }
 
-    .nav__act::after,
-    .link-top:hover::after {
+    .nav__act::after{
         left: 0;
         right: 0;
     }
@@ -1011,6 +1019,8 @@ a {
     .link-top:after {
         margin: auto;
         width: 100px;
+        left: 0;
+        right: 0;
     }
 
     /*Top link hover*/

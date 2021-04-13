@@ -1796,7 +1796,7 @@ a {
     }
 
     .folio__cli {
-        margin: 180px 0 0;
+        margin: 185px 0 29px 57px;
         font: normal normal 400 20px/34px "Montserrat", sans-serif;
     }
 
@@ -1840,7 +1840,8 @@ a {
 
     .folio {
         margin-top: 64px;
-        margin-bottom: 193px;
+        margin-bottom: 170px;
+        max-width: 1394px;
     }
 
     .s1 {
@@ -2298,8 +2299,8 @@ a {
         max-width: initial;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin-top: 32px;
-        margin-bottom: -32px;
+        margin: 0;
+        padding: 16px 0;
     }
 
     .folio-works {
@@ -2308,11 +2309,11 @@ a {
 
     .folio__company {
         max-width: 300px;
-        height: 100px;
+        height: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 0 15px;
+        margin: 0;
     }
 
     /*buttons*/

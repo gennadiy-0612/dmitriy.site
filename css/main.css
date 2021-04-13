@@ -1090,11 +1090,12 @@ a {
     }
 
     .burger {
-        position: relative;
+        position: fixed;
         width: 50px;
         height: 50px;
-        margin: 15px 17px 15px auto;
         z-index: 2;
+        right: 17px;
+        top: 15px;
     }
 
     .s1__p2 {
@@ -1173,7 +1174,11 @@ a {
 
     .s1__p2__p1__p1-fonthavy {
         font: normal normal bold 28px/38px "Druk Text Wide", sans-serif;
-        margin: 225px auto 0 15px;
+        margin: 225px auto 0 0;
+    }
+
+    .mobmargleft {
+        margin-left: 16px;
     }
 
     .s2 {
@@ -1928,7 +1933,6 @@ a {
 
     .topics__button {
         font: normal normal 400 21px/32px "Montserrat", sans-serif;
-        padding: 2px 0;
         display: block;
     }
 
@@ -2452,6 +2456,8 @@ a {
     .s3contactinfo-press {
         line-height: 260px;
         text-align: center;
+        z-index: 0;
+        position: relative;
     }
 
     .connect-figcaption {
@@ -2730,12 +2736,12 @@ a {
 }
 
 @media (max-width: 1920px) {
-    .back-site__round-out{
+    .back-site__round-out {
         right: 5%;
     }
 }
 
-@media (min-width: 1070px) and (max-width: 1650px){
+@media (min-width: 1070px) and (max-width: 1650px) {
     .emotions__set {
         width: 109%;
         margin-left: -31%;

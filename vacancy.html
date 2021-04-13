@@ -27,7 +27,7 @@
 </head>
 <body class="overno">
 <div class="firstScreen">
-    <nav class="s1">
+    <nav class="navigate">
         <a href="index.html" class="s1__p1">
             <strong class="s1__p1__p1 fontwhite">TURAN</strong>
             <span class="s1__p1__p2 fontwhite">группа IТ-компаний</span>
@@ -36,10 +36,11 @@
             <div class="burger__lines"></div>
         </div>
         <ol class="s1__p2">
-            <li class="s1__p2__p1"><a class="link link-top fontwhite finger hidedesktop" href="index.html">Главная</a>
+            <li class="s1__p2__p1"><a class="link link-top fontwhite finger hidedesktop nav__act"
+                                      href="index.html">Главная</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger" href="techsupprt.html">Техподдержка</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger nav-folio" href="index.html#projects">Портфолио</a>
-            <li class="s1__p2__p1"><a class="link link-top fontwhite finger nav__act" href="vacancy.html">Вакансии</a>
+            <li class="s1__p2__p1"><a class="link link-top fontwhite finger" href="vacancy.html">Вакансии</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger" href="contacts.html">Контакты</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger JOIN">Обратный звонок</a>
             </li>
@@ -48,7 +49,7 @@
     <div class="back-site__round-out">
         <div class="back-site__round-in"></div>
     </div>
-    <h1 class="s2__p1-vacancies fontwhite s1__p2__p1__p1-fonthavy">Вакансии</h1>
+    <h1 id="vacancies" class="s2__p1-vacancies fontwhite s1__p2__p1__p1-fonthavy mobmargleft">Вакансии</h1>
 </div>
 <section class="s2">
     <h2 class="agh2mob formh1 formh1-vacancies fontwhite">Что ты получишь, работая у нас?</h2>
@@ -117,21 +118,21 @@
         <div class="footback">
             <div class="footer__box">
                 <div class="allinfo mobillehide footer__desktop footer__narrow">
-                    <p class="footer__p2 fontwhite agh2mob agh2desk">Сервисы</p>
-                    <p class="footer__p1 fontwhite agtext">CRM системы</p>
-                    <p class="footer__p1 fontwhite agtext">CRM системы</p>
-                    <p class="footer__p1 fontwhite agtext">CRM системы</p>
+                    <a class="footer__p2 fontwhite agh2mob agh2desk">Сервисы</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">CRM системы</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">CRM системы</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">CRM системы</a>
                 </div>
                 <div class="allinfo mobillehide footer__desktop footer__narrow">
-                    <p class="footer__p2 fontwhite agh2mob agh2desk">Ссылки</p>
-                    <p class="footer__p1 fontwhite agtext">Главная</p>
-                    <p class="footer__p1 fontwhite agtext">О нас</p>
-                    <p class="footer__p1 fontwhite agtext">Портфолио</p>
+                    <a class="footer__p2 fontwhite agh2mob agh2desk">Ссылки</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">Главная</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">О нас</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">Портфолио</a>
                 </div>
                 <div class="allinfo allinfo-footermob footer__desktop footer__wide footer__nohead footer__nohead-last">
-                    <a class="footer__p1 fontwhite finger agtext" href="/">Вакансии</a>
-                    <a class="footer__p1 fontwhite finger agtext" href="/">Контакты</a>
-                    <a class="footer__p1 fontwhite finger agtext" href="/">Поддержка и сопровождение</a>
+                    <a class="footer__p1 fontwhite finger agtext" href="vacancy.html#tvacancies">Вакансии</a>
+                    <a class="footer__p1 fontwhite finger agtext" href="contacts.html#contacts">Контакты</a>
+                    <a class="footer__p1 fontwhite finger agtext" href="techsupprt.html#techsupprt">Поддержка и сопровождение</a>
                 </div>
                 <div class="allinfo footer__desktop">
                     <div class="footer__p3">
@@ -186,8 +187,8 @@
                     <label class="link fontwhite" for="lname">Сообщение</label><br>
                     <input class="footer__form__input" type="text" id="msg" name="msg">
                 </form>
-                <div class="buttonmiddle buttonmiddle-footer buttonmiddle-footermob blueback pulseback vac__pulse">
-                    <a class="connect fontwhite" href="index.html">Обсудить проект</a>
+                <div class="buttonmiddle buttonmiddle-footer buttonmiddle-footermob blueback pulseback testcall finger">
+                    <span class="connect fontwhite finger">Обсудить проект</span>
                 </div>
             </div>
         </div>

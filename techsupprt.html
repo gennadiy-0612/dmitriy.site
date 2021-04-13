@@ -27,17 +27,18 @@
 </head>
 <body class="overno">
 <div class="firstScreen">
-    <nav class="s1">
+    <nav class="navigate">
         <a href="index.html" class="s1__p1">
             <strong class="s1__p1__p1 fontwhite">TURAN</strong>
             <span class="s1__p1__p2 fontwhite">группа IТ-компаний</span>
         </a>
-        <div class="burger">
+        <div class="burger hide">
             <div class="burger__lines"></div>
         </div>
         <ol class="s1__p2">
-            <li class="s1__p2__p1"><a class="link link-top fontwhite finger hidedesktop" href="index.html">Главная</a>
-            <li class="s1__p2__p1"><a class="link link-top fontwhite finger nav__act" href="techsupprt.html">Техподдержка</a>
+            <li class="s1__p2__p1"><a class="link link-top fontwhite finger hidedesktop nav__act"
+                                      href="index.html">Главная</a>
+            <li class="s1__p2__p1"><a class="link link-top fontwhite finger" href="techsupprt.html">Техподдержка</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger nav-folio" href="index.html#projects">Портфолио</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger" href="vacancy.html">Вакансии</a>
             <li class="s1__p2__p1"><a class="link link-top fontwhite finger" href="contacts.html">Контакты</a>
@@ -48,15 +49,7 @@
     <div class="back-site__round-out">
         <div class="back-site__round-in"></div>
     </div>
-    <section class="s2">
-        <h1 class="fontwhite s1__p2__p1__p1-fonthavy TechSupportH1">Техподдержка проектов</h1>
-        <p class="s2__p2 s2__p2-triggers triggers">
-            <!--        <span data-disabled="true">Sphere</span>-->
-            <!--        <span data-disabled="true">Cube</span>-->
-            <!--        <span data-disabled="true">Rocket</span>-->
-            <!--        <span data-disabled="true">Spaceman</span>-->
-        </p>
-    </section>
+    <h1 id="techsupprt" class="fontwhite s1__p2__p1__p1-fonthavy TechSupportH1 mobmargleft">Техподдержка проектов</h1>
 </div>
 <section class="s3 s3__flex">
     <h2 class="s3__p1 fontwhite agtext support__h2">Преимущества нашей поддержки</h2>
@@ -97,22 +90,23 @@
         <div class="footback">
             <div class="footer__box">
                 <div class="allinfo mobillehide footer__desktop footer__narrow">
-                    <p class="footer__p2 fontwhite agh2mob agh2desk">Сервисы</p>
-                    <p class="footer__p1 fontwhite agtext">CRM системы</p>
-                    <p class="footer__p1 fontwhite agtext">CRM системы</p>
-                    <p class="footer__p1 fontwhite agtext">CRM системы</p>
+                    <a class="footer__p2 fontwhite agh2mob agh2desk">Сервисы</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">CRM системы</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">CRM системы</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">CRM системы</a>
                 </div>
                 <div class="allinfo mobillehide footer__desktop footer__narrow">
-                    <p class="footer__p2 fontwhite agh2mob agh2desk">Ссылки</p>
-                    <p class="footer__p1 fontwhite agtext">Главная</p>
-                    <p class="footer__p1 fontwhite agtext">О нас</p>
-                    <p class="footer__p1 fontwhite agtext">Портфолио</p>
+                    <a class="footer__p2 fontwhite agh2mob agh2desk">Ссылки</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">Главная</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">О нас</a>
+                    <a class="footer__p1 fontwhite agtext" href="/">Портфолио</a>
                 </div>
-                <ol class="allinfo allinfo-footermob footer__desktop footer__wide footer__nohead footer__nohead-last">
-                    <li class="footer__p1 fontwhite finger agtext" href="/">Вакансии</li>
-                    <li class="footer__p1 fontwhite finger agtext" href="/">Контакты</li>
-                    <li class="footer__p1 fontwhite finger agtext" href="/">Поддержка и сопровождение</li>
-                </ol>
+                <div class="allinfo allinfo-footermob footer__desktop footer__wide footer__nohead footer__nohead-last">
+                    <a class="footer__p1 fontwhite finger agtext" href="vacancy.html#tvacancies">Вакансии</a>
+                    <a class="footer__p1 fontwhite finger agtext" href="contacts.html#contacts">Контакты</a>
+                    <a class="footer__p1 fontwhite finger agtext" href="techsupprt.html#techsupprt">Поддержка и
+                        сопровождение</a>
+                </div>
                 <div class="allinfo footer__desktop">
                     <div class="footer__p3">
                         <a class="footer__p2 fontwhite finger agh2mob agh2desk" href="/">Контакты</a>
@@ -166,8 +160,8 @@
                     <label class="link fontwhite" for="lname">Сообщение</label><br>
                     <input class="footer__form__input" type="text" id="msg" name="msg">
                 </form>
-                <div class="buttonmiddle buttonmiddle-footer buttonmiddle-footermob blueback pulseback">
-                    <a class="connect fontwhite" href="index.html">Обсудить проект</a>
+                <div class="buttonmiddle buttonmiddle-footer buttonmiddle-footermob blueback pulseback testcall finger">
+                    <span class="connect fontwhite finger">Обсудить проект</span>
                 </div>
             </div>
         </div>
@@ -183,14 +177,17 @@
     <form class="modalJoinForm hide-form-index__form">
         <div class="close callBackCloser hide-form-index__close finger"></div>
         <h2 class="modaljoinToUs__h3 modalJoin-center hide-form-index__h2">Обратный звонок</h2>
-        <p class="modalJoin__text modalJoin-center modaljoinToUs__h4 hide-form-index__p">Оставь номер телефона и мы свяжемся с вами в
+        <p class="modalJoin__text modalJoin-center modaljoinToUs__h4 hide-form-index__p">Оставь номер телефона и мы
+            свяжемся с вами в
             ближайшее
             время</p>
         <div class="modalJoinForm__labels hide-form-index__label">
             <label class="modalJoin__text modalJoinForm__block hide-form-index__l" for="fname">Имя</label>
-            <input class="modalJoin__input modalJoinForm__block hide-form-index__i hide-form-index__fname" type="text" id="fnamehide" name="fname">
+            <input class="modalJoin__input modalJoinForm__block hide-form-index__i hide-form-index__fname" type="text"
+                   id="fnamehide" name="fname">
             <label class="modalJoin__text modalJoinForm__block hide-form-index__l" for="lname">Телефон</label>
-            <input class="modalJoin__input modalJoinForm__block hide-form-index__i hide-form-index__phone" type="text" id="lnamehide" name="lname">
+            <input class="modalJoin__input modalJoinForm__block hide-form-index__i hide-form-index__phone" type="text"
+                   id="lnamehide" name="lname">
         </div>
         <div class="buttonmiddle buttonmiddle-footer buttonmiddle-footermob blueback pulseback hide-form-index__common hide-form-index__button">
             <p class="connect fontwhite">Отправить заявку</p>

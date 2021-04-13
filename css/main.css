@@ -1648,7 +1648,7 @@ a {
     /*contacts*/
     .s2-contactdesk {
         margin-top: 144px;
-        margin-bottom: 83px;
+        margin-bottom: 0;
     }
 
     .contactinfo__2desk {
@@ -1656,7 +1656,7 @@ a {
     }
 
     .contactinfo__2desk {
-        margin: 80px 0;
+        margin: 40px 0;
     }
 
     .s3contactinfo__2desk-p {

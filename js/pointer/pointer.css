@@ -29,17 +29,12 @@
     pointer-events: none;
 }
 
-html {
+body {
     cursor: none;
 }
-/* IE9, IE10, IE11 */
-@media screen and (min-width:0\0) {
-    html{
-        cursor: pointer;
-    }
-}
-@media(max-width: 1070px) {
-    #pointer-ring, #pointer-dot{
+
+@media (max-width: 1070px) {
+    #pointer-ring, #pointer-dot {
         display: none;
     }
 }

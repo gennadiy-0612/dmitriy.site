@@ -83,9 +83,7 @@ let shch = {
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
-        if(window.msCrypto) {
-            alert('IE')
-        }
+        if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }
 }
 window.addEventListener('load', shch.burger);

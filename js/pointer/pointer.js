@@ -3,38 +3,38 @@
      and can be found at https://seattleowl.com/pointer.
 */
 
-const pointer = document.createElement("div")
-pointer.id = "pointer-dot"
-const ring = document.createElement("div")
-ring.id = "pointer-ring"
-document.body.insertBefore(pointer, document.body.children[0])
-document.body.insertBefore(ring, document.body.children[0])
+const pointer = document.createElement("div");
+pointer.id = "pointer-dot";
+const ring = document.createElement("div");
+ring.id = "pointer-ring";
+document.body.insertBefore(pointer, document.body.children[0]);
+document.body.insertBefore(ring, document.body.children[0]);
 
-let mouseX = -100
-let mouseY = -100
-let ringX = -100
-let ringY = -100
-let isHover = false
-let mouseDown = false
+let mouseX = -100;
+let mouseY = -100;
+let ringX = -100;
+let ringY = -100;
+let isHover = false;
+let mouseDown = false;
 const init_pointer = (options) => {
 
     window.onmousemove = (mouse) => {
-        mouseX = mouse.clientX
-        mouseY = mouse.clientY
+        mouseX = mouse.clientX;
+        mouseY = mouse.clientY;
     }
 
     window.onmousedown = (mouse) => {
-        mouseDown = true
+        mouseDown = true;
     }
 
     window.onmouseup = (mouse) => {
-        mouseDown = true
+        mouseDown = true;
     }
 
     const trace = (a, b, n) => {
         return (1 - n) * a + n * b;
     }
-    window["trace"] = trace
+    window["trace"] = trace;
 
     const getOption = (option) => {
         let defaultObj = {
@@ -43,34 +43,35 @@ const init_pointer = (options) => {
             ringClickSize: (options["ringSize"] || 15) - 5,
         }
         if (options[option] == undefined) {
-            return defaultObj[option]
+            return defaultObj[option];
         } else {
-            return options[option]
+            return options[option];
         }
     }
 
     const render = () => {
-        ringX = trace(ringX, mouseX, 0.2)
-        ringY = trace(ringY, mouseY, 0.2)
+        ringX = trace(ringX, mouseX, 0.2);
+        ringY = trace(ringY, mouseY, 0.2);
 
         if (document.querySelector(".p-action-click:hover")) {
             pointer.style.borderColor = getOption("pointerColor")
-            isHover = true
+            isHover = true;
         } else {
-            pointer.style.borderColor = "#fff"
-            isHover = false
+            pointer.style.borderColor = "#ffffff";
+            isHover = false;
         }
-        ring.style.borderColor = getOption("pointerColor")
+        ring.style.borderColor = getOption("pointerColor");
         if (mouseDown) {
-            ring.style.padding = getOption("ringClickSize") + "px"
+            ring.style.padding = getOption("ringClickSize") + "px";
         } else {
-            ring.style.padding = getOption("ringSize") + "px"
+            ring.style.padding = getOption("ringSize") + "px";
         }
 
-        pointer.style.transform = `translate(${mouseX}px, ${mouseY}px)`
-        ring.style.transform = `translate(${ringX - (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))}px, ${ringY - (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))}px)`
+        pointer.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+        ring.style.transform = `translate(${ringX - (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))}px, ${ringY - (mouseDown ? getOption("ringClickSize") : getOption("ringSize"))}px)`;
 
-        requestAnimationFrame(render)
+        requestAnimationFrame(render);
     }
-    requestAnimationFrame(render)
+    requestAnimationFrame(render);
 }
+window.addEventListener('load', init_pointer.bind({}));

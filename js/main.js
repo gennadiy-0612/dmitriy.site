@@ -84,20 +84,9 @@ let shch = {
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
-        shch.setTrance();
     }
 }
 window.addEventListener('load', shch.burger);
-
-shch.setTrance = function () {
-    let c = document.querySelector('.back-site__round-in canvas');
-    let ctx = c.getContext("2d");
-
-    ctx.beginPath();
-    ctx.rect(20, 20, 150, 100);
-    ctx.fillStyle = rgba(0, 0, 0, 0);
-    ctx.fill();
-};
 
 shch.foloiButton = function () {
     console.log(shch['.overno']['.overno'])
@@ -161,8 +150,8 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
     this.thirdSlide = 2;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Length = document.querySelectorAll(selectorSlide).length;
-    this.firstPadding = this.Item[0];
-    this.firstPadd = this.firstPadding.getAttribute('class');
+    // this.firstPadding = this.Item[0];
+    // this.firstPadd = this.firstPadding.getAttribute('class');
     this.Plus = function () {
         if (this.thirdSlide === (this.Length - 1)) {
             return;
@@ -190,8 +179,8 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
             this.Item[this.secondSlide].setAttribute('id', activeSlide + '1');
             this.Item[this.thirdSlide].setAttribute('id', activeSlide + '2');
         } else {
-            this.firstPadding.setAttribute('class', this.firstPadd + ' paddLeft');
-            this.Current = 0;
+            // this.firstPadding.setAttribute('class', this.firstPadd + ' paddLeft');
+            this.Current = this.Length - 1;
             return;
         }
     };

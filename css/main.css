@@ -205,9 +205,9 @@ a {
     bottom: 0;
     margin: auto;
     left: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 67px;
+    height: 67px;
+    border-radius: 34px;
     background-color: #1378EF;
     z-index: -1;
 }
@@ -334,7 +334,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(#3a3a3a 0, transparent 70%);;
+    background: radial-gradient(#3a3a3a 0, transparent 70%);
     opacity: 0;
     border-radius: 50%;
     animation: 1s slow-show;
@@ -920,7 +920,6 @@ a {
     width: 100%;
     height: 100%;
     z-index: 1;
-    bottom: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -946,7 +945,6 @@ a {
     position: absolute;
     display: block;
     background-color: #000000;
-    position: absolute;
     top: 0;
     z-index: -2;
     opacity: .9;
@@ -1009,7 +1007,7 @@ a {
 
 .whereText {
     font: normal normal 400 22px/33px "Montserrat", sans-serif;
-    padding: 19px 11px;
+    padding: 20px 11px;
     margin: 0 10px;
     position: relative;
 }
@@ -1838,8 +1836,12 @@ a {
         font: normal normal 400 16px/27px "Montserrat", sans-serif;
     }
 
+    .whereText {
+        font: normal normal 400 22px/33px "Montserrat", sans-serif;
+    }
+
     .folio__cli {
-        margin: 185px 0 29px 57px;
+        margin: 175px 0 29px 57px;
         font: normal normal 400 20px/34px "Montserrat", sans-serif;
     }
 
@@ -1930,7 +1932,7 @@ a {
     /*Top menu nav finished*/
     /*vacancies start*/
     .agh1desk-doit {
-        margin: 131px auto 0;
+        margin: 118px auto 0;
         max-width: 510px;
         text-align: center;
     }
@@ -1951,7 +1953,7 @@ a {
     }
 
     /*Index page start*/
-    . mainpage {
+    .mainpage {
         min-height: 790px;
     }
 
@@ -1967,11 +1969,11 @@ a {
         top: 0;
         bottom: 0;
         margin: auto;
-        height: 57vh;
+        height: 473px;
     }
 
     .h1index {
-        margin: 3.4vh 0 0;
+        margin: 0;
         min-width: 60%;
     }
 
@@ -1988,7 +1990,7 @@ a {
 
     .topics {
         max-width: 580px;
-        margin: 50px 0 390px 0;
+        margin: 50px 0 0;
     }
 
     .topics__button {
@@ -2056,12 +2058,12 @@ a {
         margin: 0;
     }
 
-    .listworks__blueball {
+    #ballIsPlaced::after {
         height: 67px;
         width: 67px;
         border-radius: 34px;
     }
-
+   
     .listworks {
         margin: 70px 0;
         flex-wrap: wrap;
@@ -2146,9 +2148,9 @@ a {
     }
 
     .video__nav {
-        width: 225px;
+        width: 216px;
         height: 164px;
-        margin-bottom: -11px;
+        margin-bottom: 0;
     }
 
     .emotions__ag {
@@ -2157,8 +2159,8 @@ a {
     }
 
     .emotions__item {
-        flex: 0 0 452px;
-        padding: 0 38px 32px;
+        flex: 0 0 450px;
+        padding: 0 40px 32px;
         display: flex;
         flex-direction: column;
     }
@@ -2311,7 +2313,12 @@ a {
 
     .contacth1, .s2__p1-vacancies,
     .TechSupportH1 {
-        margin-top: 28vh;
+        position: absolute;
+        margin-top: auto;
+        top: 0;
+        bottom: 0;
+        height: 82px;
+        margin-bottom: auto;
     }
 
     .footer__p1 {
@@ -2319,7 +2326,7 @@ a {
     }
 
     .s4__supportpage {
-        margin-top: 115px;
+        margin-top: 100px;
         margin-bottom: 180px;
     }
 
@@ -2540,7 +2547,7 @@ a {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin-top: 70px;
+        margin-top: 80px;
         margin-bottom: 229px;
     }
 
@@ -2596,7 +2603,7 @@ a {
     }
 
     .command-h2 {
-        margin-bottom: 17px;
+        margin: 17px 0 15px;
     }
 
     .command-p {
@@ -2775,7 +2782,7 @@ a {
 
 /*Orbit*/
 
-@media (min-width: 1070px) and (max-width: 1920px) {
+@media (min-width: 1070px) and (max-width: 1800px) {
     .back-site__round-out {
         right: 5%;
     }

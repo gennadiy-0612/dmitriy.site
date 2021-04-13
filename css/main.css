@@ -300,6 +300,7 @@ a {
 
 .back-site__round-in canvas {
     align-self: center;
+    margin: 0;
 }
 
 .back-site__round-in {
@@ -994,8 +995,9 @@ a {
 @media (max-width: 1070px) {
     .back-site__round-in {
         animation: none;
-        width: 90%;
-        height: 90%;
+        width: 94%;
+        height: 94%;
+        padding: 6%;
     }
 
     .back-site__round-in::before, .back-site__round-in::after {
@@ -1011,7 +1013,7 @@ a {
         cursor: none;
     }
 
-    .nav__act::after{
+    .nav__act::after {
         left: 0;
         right: 0;
     }
@@ -1809,7 +1811,9 @@ a {
     .upperline::after {
         content: none;
     }
-
+    .navigate {
+        display: flex;
+    }
     .firstScreen, .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         max-width: 1300px;
         padding: 0 50px;
@@ -1897,7 +1901,7 @@ a {
     }
 
     .h1index {
-        margin: 5vh 0 0;
+        margin: 3.4vh 0 0;
         min-width: 60%;
     }
 
@@ -2648,10 +2652,9 @@ a {
         width: 94vmin;
         height: 94vmin;
         border-radius: 47vmin;
-        top: 0;
+        top: 17%;
         left: 0;
         right: 0;
-        bottom: 0;
         margin: auto;
         overflow: hidden;
     }
@@ -2711,8 +2714,8 @@ a {
         width: 80vmin;
         height: 80vmin;
         border-radius: 40vmin;
-        top: 0;
-        right: 7%;
+        top: -7%;
+        right: -10%;
         bottom: 0;
         left: auto;
         background: radial-gradient(#3a3a3a 0, transparent 70%);

@@ -18,14 +18,14 @@ if (window.matchMedia("(max-width: 1070px)").matches) {
     shchs.mini = Math.min(window.innerWidth, window.innerHeight) - 15
 } else {
     shchs.desk = 1
-    if (shchs.desk) shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 1.65
+    if (shchs.desk) shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 2.15
 }
 // Options
 const numberOfParticles = 6000;
 
 const particleImage = './js/dist/particle-tiny.png',
     particleColor = '0x000000',
-    particleSize = .3;
+    particleSize = .2;
 
 const defaultAnimationSpeed = 1,
     morphAnimationSpeed = 3;

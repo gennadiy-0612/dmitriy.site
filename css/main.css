@@ -197,6 +197,8 @@ a {
 }
 
 #ballIsPlaced:after {
+    animation-name: slide;
+    animation-duration: 1s;
     content: '';
     position: absolute;
     top: 0;
@@ -302,10 +304,6 @@ a {
     margin: 0;
 }
 
-.back-site__round-out {
-    animation: 1s slow-show;
-}
-
 @keyframes slow-show {
     from {
         opacity: 0;
@@ -321,13 +319,25 @@ a {
     height: 80%;
     border-radius: 50%;
     top: 0;
-    /* background-color: #9c9c9c; */
     transform: rotate(0);
     display: flex;
     justify-content: center;
     align-self: center;
     align-content: center;
     animation: 70s linear 0s infinite normal move_around;
+}
+
+.back-site__round-out::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(#3a3a3a 0, transparent 70%);;
+    opacity: 0;
+    border-radius: 50%;
+    animation: 1s slow-show;
 }
 
 .back-site__round-in::before,
@@ -1009,7 +1019,8 @@ a {
         animation: none;
         width: 94%;
         height: 94%;
-        padding: 6%;
+        max-width: 282px;
+        max-height: 282px;
     }
 
     .back-site__round-in::before, .back-site__round-in::after {
@@ -1018,6 +1029,19 @@ a {
 
     .back-site__round-out {
         border-color: transparent;
+        width: 94vmin;
+        height: 94vmin;
+        max-width: 302px;
+        max-height: 302px;
+        border-radius: 47vmin;
+        top: 60px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /*Top link hover*/
@@ -1105,7 +1129,7 @@ a {
         position: fixed;
         width: 50px;
         height: 50px;
-        z-index: 2;
+        z-index: 3;
         right: 17px;
         top: 15px;
     }
@@ -1126,7 +1150,15 @@ a {
 
     .overyes .s1__p2 {
         height: 105vh;
-        display: block;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        flex-direction: column;
+        margin: auto;
+        left: 0;
+        right: 0;
+        z-index: 2;
     }
 
     .burger__lines {
@@ -1708,7 +1740,7 @@ a {
         top: 0;
         background-color: #1d1d1d;
         height: 100%;
-        z-index: 1;
+        z-index: 2;
         display: none;
         left: 0;
         right: 0;
@@ -2414,6 +2446,11 @@ a {
         margin: 31px 0 0 36%;
     }
 
+    .index-textarea:focus,
+    .index-textarea:focus-visible {
+        border: 0;
+    }
+
     /*forms finish*/
     /*footer*/
     .footer__box {
@@ -2648,12 +2685,16 @@ a {
     /*Modal forms*/
     /*Orbit*/
     .back-site__round-out {
-        width: 40vmin;
-        height: 40vmin;
-        border-radius: 20vmin;
-        top: -30vmin;
+        width: 80vmin;
+        height: 80vmin;
+        border-radius: 40vmin;
+        top: 0;
+        right: -10%;
         bottom: 0;
-        margin: 0;
+        left: auto;
+        background: radial-gradient(#3a3a3a 0, transparent 70%);
+        margin: auto;
+        display: flex;
     }
 
     /*Orbit*/
@@ -2733,94 +2774,8 @@ a {
 }
 
 /*Orbit*/
-@media (orientation: portrait) and (max-width: 1070px) {
-    .sphere {
-        overflow: hidden;
-        position: absolute;
-        top: -30vmin;
-        left: 0;
-        right: 0;
-        margin: auto;
-        z-index: -1;
-    }
 
-    .back-site__round-out {
-        width: 94vmin;
-        height: 94vmin;
-        border-radius: 47vmin;
-        top: 17%;
-        left: 0;
-        right: 0;
-        margin: auto;
-        overflow: hidden;
-    }
-}
-
-@media (orientation: landscape) and (max-width: 1070px) {
-    .sphere {
-        overflow: hidden;
-        position: absolute;
-        top: 0vmin;
-        left: 2vmin;
-        right: 0;
-        margin: auto;
-        z-index: -1;
-    }
-
-    .back-site__round-out {
-        width: 40vmax;
-        height: 40vmax;
-        border-radius: 20vmax;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-    }
-}
-
-@media (orientation: portrait) and (min-width: 1070px) {
-    .sphere {
-        overflow: hidden;
-        position: absolute;
-        top: -15vmin;
-        right: 0;
-        z-index: -1;
-    }
-
-    .back-site__round-out {
-        width: 40vmin;
-        height: 40vmin;
-        border-radius: 20vmin;
-        top: -30vmin;
-        bottom: 0;
-        margin: auto;
-    }
-}
-
-@media (orientation: landscape) and (min-width: 1070px) {
-    .sphere {
-        overflow: hidden;
-        position: absolute;
-        right: 0;
-        z-index: -1;
-    }
-
-    .back-site__round-out {
-        width: 80vmin;
-        height: 80vmin;
-        border-radius: 40vmin;
-        top: 0;
-        right: -10%;
-        bottom: 0;
-        left: auto;
-        background: radial-gradient(#3a3a3a 0, transparent 70%);
-        margin: auto;
-        display: flex;
-    }
-}
-
-@media (max-width: 1920px) {
+@media (min-width: 1070px) and (max-width: 1920px) {
     .back-site__round-out {
         right: 5%;
     }

@@ -15,7 +15,7 @@ if (window.location.origin === 'http://localhost:81') {
 let shchs = {mob: 0, desk: 0, port: 0, land: 0};
 if (window.matchMedia("(max-width: 1070px)").matches) {
     shchs.mob = 1
-    shchs.mini = Math.min(window.innerWidth, window.innerHeight) - 15
+    shchs.mini = 300
 } else {
     shchs.desk = 1
     if (shchs.desk) shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 2.15
@@ -67,8 +67,8 @@ if (shchs.mob) {
         camera.position.z = 22;
         console.log('mob sphere')
     } else {
-        camera.position.y = 28;
-        camera.position.z = 42;
+        camera.position.y = 22;
+        camera.position.z = 33;
         console.log('cube mob')
     }
 }

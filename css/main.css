@@ -290,7 +290,6 @@ a {
     height: 600px;
     border-radius: 300px;
     border: 1px solid #4f4f4f;
-    /*! opacity: .1; */
     z-index: -1;
     left: 0;
     right: 0;
@@ -301,6 +300,19 @@ a {
 .back-site__round-in canvas {
     align-self: center;
     margin: 0;
+}
+
+.back-site__round-out {
+    animation: 1s slow-show;
+}
+
+@keyframes slow-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .back-site__round-in {
@@ -1895,7 +1907,7 @@ a {
     }
 
     /*Index page start*/
-    . mainpage{
+    . mainpage {
         min-height: 790px;
     }
 
@@ -2142,6 +2154,61 @@ a {
     .videoSlidePlus {
         left: 10px;
 
+    }
+
+    .oil {
+        width: 208px;
+        height: 71px;
+    }
+
+    .aqua {
+        width: 168px;
+        height: 46px;
+    }
+
+    .know {
+        width: 117px;
+        height: 58px;
+    }
+
+    .perch {
+        width: 191px;
+        height: 47px;
+    }
+
+    .mail {
+        width: 235px;
+        height: 67px;
+    }
+
+    .kine {
+        width: 197px;
+        height: 57px;
+    }
+
+    .pifa {
+        width: 94px;
+        height: 95px;
+    }
+
+    .navy {
+        width: 226px;
+        height: 45px;
+    }
+
+    .ncc {
+        width: 234px;
+        height: 32px;
+    }
+
+    .sun {
+        width: 63px;
+        height: 81px;
+    }
+
+    .ano {
+        width: 109px;
+        height: 34px;
     }
 
     /*Index page video finished*/

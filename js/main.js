@@ -84,9 +84,20 @@ let shch = {
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
+        shch.setTrance();
     }
 }
 window.addEventListener('load', shch.burger);
+
+shch.setTrance = function () {
+    let c = document.querySelector('.back-site__round-in canvas');
+    let ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.rect(20, 20, 150, 100);
+    ctx.fillStyle = rgba(0, 0, 0, 0);
+    ctx.fill();
+};
 
 shch.foloiButton = function () {
     console.log(shch['.overno']['.overno'])

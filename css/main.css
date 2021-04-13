@@ -1031,6 +1031,11 @@ a {
         margin-right: 15px;
     }
 
+    .folio {
+        margin-top: 64px;
+        margin-bottom: 73px;
+    }
+
     .logisticH2,
     .year-upperline {
         position: relative;
@@ -1449,19 +1454,10 @@ a {
     }
 
     /*video*/
-    .folio {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .folio {
-        overflow-x: scroll;
-    }
-
     .ourworks {
-        margin: 64px 0 35px;
-        width: 930px;
-        flex-wrap: wrap;
+        margin: 0;
+        /*width: 930px;*/
+        /*flex-wrap: wrap;*/
     }
 
     /*folio*/
@@ -1811,14 +1807,21 @@ a {
     .upperline::after {
         content: none;
     }
+
     .navigate {
         display: flex;
     }
+
     .firstScreen, .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
         max-width: 1300px;
         padding: 0 50px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .folio {
+        margin-top: 64px;
+        margin-bottom: 193px;
     }
 
     .s1 {
@@ -2218,8 +2221,8 @@ a {
         max-width: initial;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin-top: 33px;
-        margin-bottom: 160px;
+        margin-top: 32px;
+        margin-bottom: -32px;
     }
 
     .folio-works {

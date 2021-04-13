@@ -581,10 +581,14 @@ a {
     content: '';
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: #1F1F1F;
     z-index: -1;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .close {
@@ -753,6 +757,7 @@ a {
     display: none;
 }
 
+.hide-form-index__fname,
 #firstname1,
 #firstname2,
 #firstname3 {
@@ -765,6 +770,7 @@ a {
     text-indent: 65px;
 }
 
+.hide-form-index__phone,
 #phone1,
 #phone2,
 #phone3 {
@@ -868,9 +874,11 @@ a {
 .modalJoin__input {
     background-color: transparent;
     border-width: 0;
-    border-bottom-width: 0px;
     display: block;
     width: 100%;
+    height: 35px;
+    position: relative;
+    top: -35px;
 }
 
 
@@ -887,11 +895,12 @@ a {
     top: 0;
 }
 
-.show#videoSlider{
+.show#videoSlider {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .show.hide-form-index {
     display: flex;
 }
@@ -1504,6 +1513,10 @@ a {
         margin: 8px 35.1% 0 auto;
     }
 
+    .hide-form-index__common {
+        margin: -30px 32% 0 auto;
+    }
+
     /*Buttons finish here*/
     .allinfo {
         padding: 0;
@@ -1684,7 +1697,7 @@ a {
     .modalJoin__text {
         font: normal normal 400 16px/27px 'Montserrat', sans-serif;
         color: #FFFFFF;
-        max-width: 220px;
+        max-width: 270px;
         margin: 12px auto 0;
     }
 
@@ -1705,21 +1718,7 @@ a {
         max-width: initial;
     }
 
-    .modalJoin__input {
-        background-color: transparent;
-        border-width: 0;
-        display: block;
-        width: 100%;
-        height: 35px;
-        position: relative;
-        top: -35px;
-    }
-
     /*Vacancies form*/
-    .show-form-vacancies {
-        display: block;
-    }
-
     .vac__close {
         position: absolute;
         right: 30px;
@@ -1733,13 +1732,13 @@ a {
     /*Vacancies form*/
     /*CallBack*/
     .hide-form-index__form {
-        top: 10%;
-        max-width: 310px;
-        padding: 42px 0 40px;
+        min-width: 320px;
+        padding: 64px 0 40px;
     }
 
     .hide-form-index__label {
-        padding: 30px 0 20px;
+        padding: 30px 3% 20px;
+        width: 90%;
     }
 
     /*CallBack*/
@@ -2474,7 +2473,7 @@ a {
         bottom: -22%;
         margin: auto;
         height: 220px;
-        width: 80%;
+        width: 84%;
         overflow: hidden;
     }
 
@@ -2490,8 +2489,8 @@ a {
     .video__nav-top {
         height: 87%;
         max-width: 100px;
-        right: 6%;
-        bottom: 13%;
+        right: 5.8%;
+        bottom: 16%;
         top: auto;
     }
 

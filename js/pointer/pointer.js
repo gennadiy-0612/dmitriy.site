@@ -24,11 +24,11 @@ const init_pointer = (options) => {
     }
 
     window.onmousedown = (mouse) => {
-        mouseDown = true
+        mouseDown = false
     }
 
     window.onmouseup = (mouse) => {
-        mouseDown = true
+        mouseDown = false
     }
 
     const trace = (a, b, n) => {

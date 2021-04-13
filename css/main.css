@@ -2734,3 +2734,10 @@ a {
         right: 5%;
     }
 }
+
+@media (min-width: 1070px) and (max-width: 1650px){
+    .emotions__set {
+        width: 109%;
+        margin-left: -31%;
+    }
+}

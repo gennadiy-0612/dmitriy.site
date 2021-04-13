@@ -1577,7 +1577,7 @@ a {
     }
 
     .buttonmiddle-footermob {
-        margin: 8px 35.1% 0 auto;
+        margin: 34px auto 0 0;
     }
 
     .hide-form-index__common {
@@ -1655,12 +1655,23 @@ a {
         margin: 0 0 40px;
     }
 
+    .s3contactinfo__2desk {
+        margin-top: 0;
+    }
+
     .contactinfo__2desk {
         margin: 40px 0;
     }
 
+    .s3contactinfo__2desk-pulse {
+        margin: 0;
+    }
+
     .s3contactinfo__2desk-p {
         margin: 0 0 16px;
+    }
+
+    .footer_form {
     }
 
     .command {
@@ -2063,7 +2074,7 @@ a {
         width: 67px;
         border-radius: 34px;
     }
-   
+
     .listworks {
         margin: 70px 0;
         flex-wrap: wrap;

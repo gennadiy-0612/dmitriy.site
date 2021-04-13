@@ -1477,52 +1477,63 @@ a {
         /*flex-wrap: wrap;*/
     }
 
-    /*folio*/
+    /*portfolio*/
     .oil {
-
-        width: 117px;
+        width: 118px;
+        height: 40px;
     }
 
     .aqua {
+        width: 95px;
+        height: 26px;
+    }
 
+    .know {
         width: 117px;
+        height: 40px;
     }
 
     .perch {
-
-        width: 162px;
+        width: 191px;
+        height: 47px;
     }
 
     .mail {
-
-        width: 140px;
+        width: 235px;
+        height: 40px;
     }
 
     .kine {
-
-        width: 138px;
+        width: 111px;
+        height: 32px;
     }
 
     .pifa {
-
-        width: 40px;
+        width: 53px;
+        height: 53px;
     }
 
     .navy {
-
-        width: 201px;
+        width: 226px;
+        height: 25px;
     }
 
     .ncc {
-
-        width: 507px;
+        width: 234px;
+        height: 32px;
     }
 
     .sun {
-
-        width: 31px;
+        width: 63px;
+        height: 40px;
     }
 
+    .ano {
+        width: 109px;
+        height: 34px;
+    }
+
+    /*portfolio*/
     /*support*/
     .s3__p2-support {
         margin: 50px 0 15px;
@@ -2157,6 +2168,8 @@ a {
 
     }
 
+    /*Index page video finished*/
+    /*portfolio*/
     .oil {
         width: 208px;
         height: 71px;
@@ -2212,7 +2225,7 @@ a {
         height: 34px;
     }
 
-    /*Index page video finished*/
+    /*portfolio*/
     /*Index page finished*/
     /*vacancies */
     .s2__p1-vacancies {

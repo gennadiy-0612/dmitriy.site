@@ -1895,6 +1895,10 @@ a {
     }
 
     /*Index page start*/
+    . mainpage{
+        min-height: 790px;
+    }
+
     .firstScreen {
         height: 100vh;
         position: relative;

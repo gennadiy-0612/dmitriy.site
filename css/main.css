@@ -267,7 +267,7 @@ a {
     animation: 30s linear 32s infinite normal move_bottom;
 }
 
-@-webkit-keyframes move_bottom {
+@keyframes move_bottom {
     from {
         top: -10%;
     }
@@ -338,7 +338,7 @@ a {
     bottom: 0;
 }
 
-@-webkit-keyframes move_around {
+@keyframes move_around {
     from {
         transform: rotate(0);
     }
@@ -347,7 +347,7 @@ a {
     }
 }
 
-@-webkit-keyframes move_around_back {
+@keyframes move_around_back {
     from {
         transform: rotate(360deg);
     }

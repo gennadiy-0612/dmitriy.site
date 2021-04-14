@@ -219,6 +219,7 @@ a {
     height: 24px;
 }
 
+.fingerMob:hover,
 .finger:hover {
     cursor: pointer;
 }
@@ -1036,10 +1037,6 @@ a {
     /*Top link hover*/
     .finger:hover {
         cursor: none;
-    }
-
-    .fingerMob:hover {
-        cursor: pointer;
     }
 
     .nav__act::after {

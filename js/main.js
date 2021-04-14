@@ -19,6 +19,10 @@ let shch = {
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
         shch['.overno']['.overno'].addAct();
         document.querySelector('.nav-folio').addEventListener('click', shch.foloiButton);
+
+        shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
+        shch['.overno']['.overno'].addAct();
+        document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
             let logisticI = 0;

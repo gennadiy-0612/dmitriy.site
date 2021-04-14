@@ -21,7 +21,6 @@ let shch = {
         document.querySelector('.nav-folio').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
-            document.querySelector('.back-site__round-in').setAttribute('style', '');
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;

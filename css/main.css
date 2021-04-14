@@ -1284,10 +1284,12 @@ a {
     .topics {
         margin: 0;
     }
-    #ballIsPlaced::after{
+
+    #ballIsPlaced::after {
         width: 50px;
         height: 50px;
     }
+
     .bluebutton {
         margin: 2px 10px 10px 0;
         line-height: 30px;

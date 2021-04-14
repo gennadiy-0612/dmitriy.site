@@ -567,6 +567,7 @@ a {
     height: 17px;
     background: url("../img/index/arrowdown.svg") center center no-repeat;
     border-radius: 5px;
+    z-index: -1;
 }
 
 .switcher.show::before {

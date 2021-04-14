@@ -21,6 +21,7 @@ let shch = {
         document.querySelector('.nav-folio').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
+            document.querySelector('.back-site__round-in').setAttribute('style', '');
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;
@@ -80,7 +81,6 @@ let shch = {
             shch['.hf2']['.hidden-form-vacancies2'].addAct();
             shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
             shch['.hf3']['.hidden-form-vacancies3'].addAct();
-            document.querySelector('.back-site__round-in').setAttribute('style', '');
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();

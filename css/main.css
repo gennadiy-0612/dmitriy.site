@@ -72,6 +72,7 @@ input {
     padding: 0;
     margin: 0;
     height: 25px;
+    background-color: transparent;
 }
 
 input:focus {
@@ -163,6 +164,7 @@ a {
     width: 100px;
     border-radius: 50px;
     margin: 32px auto 0 5px;
+    position: relative;
 }
 
 .bluebutton {
@@ -186,7 +188,8 @@ a {
     width: 150px;
     line-height: 100px;
     position: absolute;
-    left: 50px;
+    left: 0;
+    padding-left: 50px;
 }
 
 .listworks {
@@ -903,7 +906,7 @@ a {
     width: 100%;
     height: 35px;
     position: relative;
-    top: -35px;
+    top: -37px;
 }
 
 
@@ -1035,10 +1038,6 @@ a {
     }
 
     /*Top link hover*/
-    .finger:hover {
-        cursor: none;
-    }
-
     .fingerMob:hover {
         cursor: pointer;
     }
@@ -1807,15 +1806,15 @@ a {
     }
 
     /*Vacancies form*/
+    .close {
+        background-size: 18px 18px;
+        margin-right: 19px;
+    }
+
     .vac__close {
         position: absolute;
         right: 30px;
         top: 20px;
-    }
-
-    .close {
-        background-size: 18px 18px;
-        margin-right: 19px;
     }
 
     /*Vacancies form*/

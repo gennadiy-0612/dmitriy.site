@@ -80,6 +80,7 @@ let shch = {
             shch['.hf2']['.hidden-form-vacancies2'].addAct();
             shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
             shch['.hf3']['.hidden-form-vacancies3'].addAct();
+            document.querySelector('ack-site__round-in').setAttribute('style', '');
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();

@@ -2,14 +2,14 @@
 let shch = {
     burger: function () {
         shch.locate = {};
-        if (window.location.origin == 'https://p.cx.ua') {
+        if (window.location.origin === 'https://p.cx.ua') {
             shch.locate = {
                 index1: '/pf/dmitriy.site/',
                 index2: '/pf/dmitriy.site/index.html',
                 vacancy: '/pf/dmitriy.site/vacancy.html'
             };
         }
-        if (window.location.origin == 'http://localhost:81') {
+        if (window.location.origin === 'http://localhost:81') {
             shch.locate = {
                 index1: '/',
                 index2: '/index.html',
@@ -24,18 +24,18 @@ let shch = {
         shch['.overno']['.overno'].addAct();
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
-        if ((locAddr == shch.locate.index1) || (locAddr == shch.locate.index2)) {
+        if ((locAddr === shch.locate.index1) || (locAddr === shch.locate.index2)) {
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;
-            for (logisticI = 0; logisticI < logisticSwitcherCount; logisticI++) {
+            for (logisticI; logisticI < logisticSwitcherCount; logisticI++) {
                 shch['.maindirrection' + logisticI] = new shch.RefreshClass('.maindirrection', 'show', logisticI, '.s3__p2');
                 shch['.maindirrection' + logisticI]['.maindirrection' + logisticI].addAct();
             }
             let logisticI2 = 0;
             let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
             let logisticSwitcherCount2 = logisticSwitcher2.length;
-            for (logisticI2 = 0; logisticI2 < logisticSwitcherCount2; logisticI2++) {
+            for (logisticI2; logisticI2 < logisticSwitcherCount2; logisticI2++) {
                 shch['.logicInfo' + logisticI2] = new shch.RefreshClass('.logicInfo', 'show', logisticI2, '.logicButton', '.logistic__dirrection');
                 shch['.logicInfo' + logisticI2]['.logicInfo' + logisticI2].addAct();
             }
@@ -118,7 +118,7 @@ shch.HeaderTracer = function (tracer) {
             }
             if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide + this.heightWind * .4)) {
                 this.traceEl.setAttribute('class', this.traceElOldClass);
-                return;
+                return true;
             }
         } else {
             this.traceEl.setAttribute('class', this.traceElOldClass);
@@ -158,7 +158,7 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
     this.firstPadd = this.firstPadding.getAttribute('class');
     this.Plus = function () {
         if (this.thirdSlide === (this.Length - 1)) {
-            return;
+            return true;
         } else {
             this.Item[this.Current].setAttribute('id', '');
             this.Item[this.secondSlide].setAttribute('id', '');
@@ -185,7 +185,7 @@ shch.sliderDesk = function (selectorSlide, activeSlide) {
         } else {
             this.firstPadding.setAttribute('class', this.firstPadd + ' paddLeft');
             this.Current = 0;
-            return;
+            return true;
         }
     };
 };
@@ -269,7 +269,7 @@ shch.Swipe = function (element) {
         this.yDown = null;
         let i = 0;
         let all = document.querySelectorAll(element);
-        for (i = 0; i < all.length; i++) {
+        for (i; i < all.length; i++) {
             this.element = all[i];
             this.element.addEventListener('touchstart', function (evt) {
                 this.xDown = evt.touches[0].clientX;
@@ -287,7 +287,7 @@ shch.Swipe = function (element) {
 
     this.handleTouchMove = function (evt) {
         if (!this.xDown || !this.yDown) {
-            return;
+            return true;
         }
 
         let xUp = evt.touches[0].clientX;
@@ -314,7 +314,7 @@ shch.Swipe = function (element) {
         this.next = forward;
         let i = 0;
         let all = document.querySelectorAll(element);
-        for (i = 0; i < all.length; i++) {
+        for (i; i < all.length; i++) {
             this.element = all[i];
             this.element.addEventListener('touchmove', function (evt) {
                 this.handleTouchMove(evt);
@@ -327,7 +327,7 @@ shch.PlaceBall = function (balls) {
     this.initLI = document.querySelector(balls);
     this.initLI.setAttribute('id', 'ballIsPlaced')
     this.setPlace = function (e) {
-        if (this.initLI == e.target) return;
+        if (this.initLI === e.target) return;
         e.target.setAttribute('id', 'ballIsPlaced');
         this.initLI.setAttribute('id', '');
         this.initLI = e.target

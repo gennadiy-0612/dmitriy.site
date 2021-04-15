@@ -44,9 +44,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(shchs.mini, shchs.mini);
 renderer.setClearColor(0x000000, 0); // the default
 // document.body.appendChild( renderer.domElement );
-let shape = document.querySelector(".back-site__round-in");
-shape.setAttribute('style', 'opacity:0;');
-shape.appendChild(renderer.domElement);
+document.querySelector(".back-site__round-in").appendChild(renderer.domElement);
 
 // Ensure Full Screen on Resize
 // function fullScreen() {
@@ -252,4 +250,3 @@ function slowDown() {
 // 		}
 // 	}
 // }
-shape.setAttribute('style', '');

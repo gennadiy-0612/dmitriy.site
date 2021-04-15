@@ -893,7 +893,7 @@ a {
     width: 100%;
     height: 35px;
     position: relative;
-    top: -37px;
+    top: -31px;
 }
 
 
@@ -1571,6 +1571,10 @@ a {
         margin: 34px auto 0 0;
     }
 
+    .vac__pulse-mob {
+        margin: 11px auto 0 93px;
+    }
+
     .hide-form-index__common {
         margin: -30px 32% 0 auto;
     }
@@ -1750,6 +1754,11 @@ a {
     .modalJoinForm {
         max-width: 300px;
         margin: auto;
+        padding: 40px 20px 26px;
+    }
+
+    .vac__wind {
+        min-width: 300px;
         padding: 40px 10px 26px;
     }
 
@@ -1779,7 +1788,7 @@ a {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        padding: 26px 0 0;
+        padding: 24px 0 0;
         width: 96%;
         margin: 0 auto 0 2%;
     }
@@ -1787,7 +1796,7 @@ a {
     .modalJoinForm__block {
         position: relative;
         padding: 0;
-        margin: 0 0 6px;
+        margin: 0;
         width: 100%;
         max-width: initial;
     }
@@ -1800,8 +1809,9 @@ a {
 
     .vac__close {
         position: absolute;
-        right: 30px;
-        top: 20px;
+        right: 28px;
+        top: 15px;
+        margin-right: 0;
     }
 
     /*Vacancies form*/

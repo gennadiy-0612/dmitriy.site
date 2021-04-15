@@ -1675,7 +1675,7 @@ a {
         margin: 0 0 16px;
     }
 
-    .footer_form {
+    .FootForm {
     }
 
     .command {
@@ -2425,7 +2425,7 @@ a {
         margin: -7px 0 30px;
     }
 
-    .footer__form__part {
+    .common__form {
         padding: 0 0 0 7.5%;
         max-width: 380px;
     }
@@ -2499,7 +2499,7 @@ a {
         top: 0;
         width: 100%;
         left: 0;
-        border-top: solid 1px #fff;
+        border-bottom: solid 1px #fff;
     }
 
     .buttonmiddle-footer {
@@ -2558,7 +2558,7 @@ a {
     }
 
     /* form */
-    .footer_form {
+    .FootForm {
         width: 35%;
         display: inline-block;
     }

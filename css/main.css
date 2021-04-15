@@ -573,8 +573,6 @@ a {
     top: 0;
     display: none;
     z-index: 4;
-    animation-name: down;
-    animation-duration: 1s;
 }
 
 .hide-form {

@@ -773,23 +773,31 @@ a {
 }
 
 .hide-form-index__fname,
+#fnamehide,
 #firstname1,
 #firstname2,
 #firstname3 {
-    text-indent: 50px;
+    text-indent: 10px;
+    left: 15%;
+    width: 85%;
 }
 
+#lnamehide,
 #lastname1,
 #lastname2,
 #lastname3 {
-    text-indent: 65px;
+    text-indent: 10px;
+    left: 20%;
+    width: 80%;
 }
 
 .hide-form-index__phone,
 #phone1,
 #phone2,
 #phone3 {
-    text-indent: 80px;
+    text-indent: 10px;
+    width: 70%;
+    left: 30%;
 }
 
 .show-form-vacancies {

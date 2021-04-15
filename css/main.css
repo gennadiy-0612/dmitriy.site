@@ -896,6 +896,9 @@ a {
     top: -31px;
 }
 
+.hide-form-index__i{
+    top: -38px;
+}
 
 .hide-form {
     position: fixed;
@@ -1576,7 +1579,7 @@ a {
     }
 
     .hide-form-index__common {
-        margin: -10px 32% 0 auto;
+        margin: -15px 32% 0 auto;
     }
 
     /*Buttons finish here*/
@@ -1756,10 +1759,12 @@ a {
         margin: auto;
         padding: 40px 20px 26px;
     }
-    .vac__wind{
-        min-width:300px;
+
+    .vac__wind {
+        min-width: 300px;
         padding: 40px 10px 26px;
     }
+
     .modaljoinToUs__h3 {
         font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;
@@ -1799,6 +1804,10 @@ a {
         max-width: initial;
     }
 
+    .index__n {
+        padding: 0 0 9px;
+    }
+
     /*Vacancies form*/
     .close {
         background-size: 18px 18px;
@@ -1814,6 +1823,12 @@ a {
 
     /*Vacancies form*/
     /*CallBack*/
+    .hide-form-index__close {
+        width: 18px;
+        height: 17px;
+        margin: 19px 30px 0 0;
+    }
+
     .hide-form-index__form {
         min-width: 320px;
         padding: 64px 0 40px;
@@ -1822,6 +1837,10 @@ a {
     .hide-form-index__label {
         padding: 30px 3% 20px;
         width: 90%;
+    }
+
+    .index__con {
+        letter-spacing: -0.8px;
     }
 
     /*CallBack*/
@@ -2699,6 +2718,14 @@ a {
         text-align: center;
     }
 
+    .hide-form-index__form{
+        padding: 59px 40px 10px;
+    }
+
+    .hide-form-index__h2 {
+        margin: 0;
+        padding: 0;
+    }
     /*Modal forms*/
     /*Orbit*/
     .back-site__round-out {

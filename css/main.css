@@ -1576,7 +1576,7 @@ a {
     }
 
     .hide-form-index__common {
-        margin: -30px 32% 0 auto;
+        margin: -10px 32% 0 auto;
     }
 
     /*Buttons finish here*/
@@ -1756,12 +1756,10 @@ a {
         margin: auto;
         padding: 40px 20px 26px;
     }
-
-    .vac__wind {
-        min-width: 300px;
+    .vac__wind{
+        min-width:300px;
         padding: 40px 10px 26px;
     }
-
     .modaljoinToUs__h3 {
         font: normal normal 700 19px/28px 'Druk Text Wide', sans-serif;
         color: #FFFFFF;

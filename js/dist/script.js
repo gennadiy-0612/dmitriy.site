@@ -231,8 +231,8 @@ function morphTo(newParticles, color = '0xffffff') {
 
 function slowDown() {
     TweenMax.to(animationVars, 4, {
-        ease:
-        Power2.easeOut, speed: normalSpeed, delay: 1
+        ease: Power2.easeOut,
+        speed: normalSpeed, delay: 1
     });
 }
 

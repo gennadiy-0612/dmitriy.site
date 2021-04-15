@@ -18,7 +18,7 @@ if (window.matchMedia("(max-width: 1070px)").matches) {
     shchs.mini = 300
 } else {
     shchs.desk = 1
-    if (shchs.desk) shchs.mini = Math.min(window.innerWidth, window.innerHeight) / 2.15
+    if (shchs.desk) shchs.mini = 502
 }
 // Options
 const numberOfParticles = 6000;

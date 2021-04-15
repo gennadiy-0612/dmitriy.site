@@ -330,19 +330,6 @@ a {
     animation: 70s linear 0s infinite normal move_around;
 }
 
-.back-site__round-out::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(#3a3a3a 0, transparent 70%);
-    opacity: 0;
-    border-radius: 50%;
-    animation: 1s slow-show;
-}
-
 .back-site__round-in::before,
 .back-site__round-in::after {
     content: '';

@@ -782,7 +782,6 @@ a {
     width: 85%;
 }
 
-#lnamehide,
 #lastname1,
 #lastname2,
 #lastname3 {
@@ -796,8 +795,8 @@ a {
 #phone2,
 #phone3 {
     text-indent: 10px;
-    width: 70%;
-    left: 30%;
+    width: 75%;
+    left: 25%;
 }
 
 .show-form-vacancies {
@@ -884,6 +883,12 @@ a {
     position: relative;
 }
 
+.footer__label {
+    position: relative;
+    display: block;
+}
+
+.footer__label::after,
 .modalJoinForm__block::after {
     position: absolute;
     content: '';
@@ -2484,9 +2489,19 @@ a {
     .footer__form__input {
         background-color: transparent;
         border-width: 0;
-        border-bottom: 1px solid #E5E5E5;;
         display: block;
+        position: relative;
+        top: -41px;
+        left: 24%;
+        width: 76%;
+        text-indent: 10px;
+    }
+
+    .index-textarea {
+        top: 0;
         width: 100%;
+        left: 0;
+        border-top: solid 1px #fff;
     }
 
     .buttonmiddle-footer {

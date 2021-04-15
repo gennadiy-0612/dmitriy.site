@@ -417,6 +417,81 @@ a {
     margin: auto;
 }
 
+/*Static*/
+.activeForward {
+    animation: 1s activeForward;
+}
+
+@keyframes activeForward {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.activeBack0 {
+    animation: 1s activeBack0;
+}
+
+.activeBack1 {
+    animation: 1s activeBack1;
+}
+
+@keyframes activeBack0 {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes activeBack1 {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.activeForward0 {
+    animation: 1s activeForward0;
+}
+
+.activeForward1 {
+    animation: 1s activeForward1;
+}
+
+@keyframes activeForward0 {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes activeForward1 {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*Static*/
 .emotions__item {
     padding: 10px;
 }
@@ -623,11 +698,6 @@ a {
 }
 
 /*Modal Video*/
-#deskTopSlide.paddLeft {
-    animation-name: marin-left;
-    animation-duration: 1s;
-    margin-left: 25%;
-}
 
 @keyframes marin-left {
     from {
@@ -638,29 +708,23 @@ a {
     }
 }
 
-#deskTopSlide,
-#deskTopSlide1,
-#deskTopSlide2,
-#show-video-slide,
-#show-video-slide ~ .video__item {
+.deskTopSlide,
+. ~ .video__item {
     display: block;
     align-items: center;
 }
 
-#deskTopSlide,
-#show-video-slide {
+.deskTopSlide {
     animation-name: slide;
     animation-duration: 1s;
 }
 
-#show-video-slide1,
-#deskTopSlide1 {
+.deskTopSlide1 {
     animation-name: slide1;
     animation-duration: 1s;
 }
 
-#show-video-slide2,
-#deskTopSlide2 {
+.deskTopSlide2 {
     animation-name: slide2;
     animation-duration: 1s;
 }
@@ -1425,14 +1489,7 @@ a {
         margin: 0 0 0;
     }
 
-    #deskTopSlide {
-        display: block;
-        margin: 0;
-        padding: 10px 5px 42px 10px;
-    }
-
-    #show-video-slide ~ .video__item,
-    #deskTopSlide ~ .emotions__item {
+    .deskTopSlide ~ .video__item {
         display: none;
     }
 
@@ -2854,10 +2911,6 @@ a {
     to {
         opacity: 1;
     }
-}
-
-.emotions__item, .video__item {
-    display: none;
 }
 
 /*Orbit*/

@@ -893,11 +893,6 @@ a {
     width: 100%;
     height: 35px;
     position: relative;
-    top: -31px;
-}
-
-.hide-form-index__i{
-    top: -38px;
 }
 
 .hide-form {
@@ -959,7 +954,7 @@ a {
 }
 
 .hide-form-index__label {
-    padding: 15px 20px;
+    padding: 42px 18px 0;
 }
 
 .hide-form-index__common {
@@ -1821,6 +1816,10 @@ a {
         margin-right: 0;
     }
 
+    .modalJoin__input {
+        top: -31px;
+    }
+
     /*Vacancies form*/
     /*CallBack*/
     .hide-form-index__close {
@@ -1832,6 +1831,10 @@ a {
     .hide-form-index__form {
         min-width: 320px;
         padding: 64px 0 40px;
+    }
+
+    .hide-form-index__i {
+        top: -37px;
     }
 
     .hide-form-index__label {
@@ -2693,10 +2696,14 @@ a {
         max-width: 500px;
     }
 
+    .modalJoin__input {
+        top: -38px;
+    }
+
     .hide-form-index__close {
         position: absolute;
-        right: 0;
-        top: 8%;
+        right: -10px;
+        top: 0;
     }
 
     .hide-form-index__h2 {
@@ -2718,14 +2725,29 @@ a {
         text-align: center;
     }
 
-    .hide-form-index__form{
-        padding: 59px 40px 10px;
+    .hide-form-index__form {
+        padding: 0 40px 50px;
     }
 
     .hide-form-index__h2 {
-        margin: 0;
+        margin: 47px 0 0;
         padding: 0;
+        letter-spacing: -1.1px;
     }
+
+    .index__n {
+        margin: 5px 0 -11px;
+    }
+
+    .hide-form-index__i {
+        top: -17px;
+    }
+
+    .hide-form-index__button {
+        margin: 18px 21% 0 auto;
+        letter-spacing: -0.7px;
+    }
+
     /*Modal forms*/
     /*Orbit*/
     .back-site__round-out {

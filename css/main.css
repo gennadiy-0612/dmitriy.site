@@ -1455,6 +1455,9 @@ a {
         text-align: center;
         display: block;
         z-index: 0;
+        height: 100%;
+        width: 100%;
+        line-height: 186px;
     }
 
     .testEmotions-h2 {
@@ -2215,6 +2218,10 @@ a {
 
     .cta-a {
         z-index: 0;
+        height: 100%;
+        width: 100%;
+        line-height: 260px;
+        text-align: center;
     }
 
     .testEmotions {

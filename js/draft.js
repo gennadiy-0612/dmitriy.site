@@ -15,7 +15,9 @@ w3.hideElement = function (element) {
 };
 w3.show = function (sel, a) {
     var elements = w3.getElements(sel);
-    if (a) {w3.hideElements(elements);}
+    if (a) {
+        w3.hideElements(elements);
+    }
     w3.showElements(elements);
 };
 w3.showElements = function (elements) {
@@ -63,7 +65,9 @@ w3.addClassElement = function (element, name) {
     arr1 = element.className.split(" ");
     arr2 = name.split(" ");
     for (i = 0; i < arr2.length; i++) {
-        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+        }
     }
 };
 w3.removeClass = function (sel, name) {
@@ -105,7 +109,9 @@ w3.toggleClassElement = function (element, c1, c2) {
     if (t2Arr.length == 0) {
         allPresent = true;
         for (j = 0; j < t1Arr.length; j++) {
-            if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+            if (arr.indexOf(t1Arr[j]) == -1) {
+                allPresent = false;
+            }
         }
         if (allPresent) {
             w3.removeClassElement(element, t1);
@@ -115,7 +121,9 @@ w3.toggleClassElement = function (element, c1, c2) {
     } else {
         allPresent = true;
         for (j = 0; j < t1Arr.length; j++) {
-            if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+            if (arr.indexOf(t1Arr[j]) == -1) {
+                allPresent = false;
+            }
         }
         if (allPresent) {
             w3.removeClassElement(element, t1);
@@ -133,7 +141,7 @@ w3.getElements = function (id) {
         return document.querySelectorAll(id);
     }
 };
-w3.filterHTML = function(id, sel, filter) {
+w3.filterHTML = function (id, sel, filter) {
     var a, b, c, i, ii, iii, hit;
     a = w3.getElements(id);
     for (i = 0; i < a.length; i++) {
@@ -157,7 +165,7 @@ w3.filterHTML = function(id, sel, filter) {
         }
     }
 };
-w3.sortHTML = function(id, sel, sortvalue) {
+w3.sortHTML = function (id, sel, sortvalue) {
     var a, b, i, ii, y, bytt, v1, v2, cc, j;
     a = w3.getElements(id);
     for (i = 0; i < a.length; i++) {
@@ -189,7 +197,9 @@ w3.sortHTML = function(id, sel, sortvalue) {
                     cc++;
                 }
             }
-            if (cc > 0) {break;}
+            if (cc > 0) {
+                break;
+            }
         }
     }
 };
@@ -204,22 +214,28 @@ w3.slideshow = function (sel, ms, func) {
     } else {
         ss.milliseconds = 1000;
     }
-    ss.start = function() {
+    ss.start = function () {
         ss.display(ss.current)
-        if (ss.ondisplaychange) {ss.ondisplaychange();}
+        if (ss.ondisplaychange) {
+            ss.ondisplaychange();
+        }
         if (ss.milliseconds > 0) {
             window.clearTimeout(ss.timeout);
             ss.timeout = window.setTimeout(ss.next, ss.milliseconds);
         }
     };
-    ss.next = function() {
+    ss.next = function () {
         ss.current += 1;
-        if (ss.current > ss.x.length) {ss.current = 1;}
+        if (ss.current > ss.x.length) {
+            ss.current = 1;
+        }
         ss.start();
     };
-    ss.previous = function() {
+    ss.previous = function () {
         ss.current -= 1;
-        if (ss.current < 1) {ss.current = ss.x.length;}
+        if (ss.current < 1) {
+            ss.current = ss.x.length;
+        }
         ss.start();
     };
     ss.display = function (n) {
@@ -229,7 +245,7 @@ w3.slideshow = function (sel, ms, func) {
     ss.start();
     return ss;
 };
-w3.includeHTML = function(cb) {
+w3.includeHTML = function (cb) {
     var z, i, elmnt, file, xhttp;
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
@@ -237,10 +253,14 @@ w3.includeHTML = function(cb) {
         file = elmnt.getAttribute("w3-include-html");
         if (file) {
             xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
-                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                    if (this.status == 200) {
+                        elmnt.innerHTML = this.responseText;
+                    }
+                    if (this.status == 404) {
+                        elmnt.innerHTML = "Page not found.";
+                    }
                     elmnt.removeAttribute("w3-include-html");
                     w3.includeHTML(cb);
                 }
@@ -275,14 +295,18 @@ w3.displayHttp = function (id, file) {
 };
 w3.http = function (target, readyfunc, xml, method) {
     var httpObj;
-    if (!method) {method = "GET"; }
+    if (!method) {
+        method = "GET";
+    }
     if (window.XMLHttpRequest) {
         httpObj = new XMLHttpRequest();
     } else if (window.ActiveXObject) {
         httpObj = new ActiveXObject("Microsoft.XMLHTTP");
     }
     if (httpObj) {
-        if (readyfunc) {httpObj.onreadystatechange = readyfunc;}
+        if (readyfunc) {
+            httpObj.onreadystatechange = readyfunc;
+        }
         httpObj.open(method, target, true);
         httpObj.send(xml);
     }
@@ -291,8 +315,13 @@ w3.getElementsByAttribute = function (x, att) {
     var arr = [], arrCount = -1, i, l, y = x.getElementsByTagName("*"), z = att.toUpperCase();
     l = y.length;
     for (i = -1; i < l; i += 1) {
-        if (i == -1) {y[i] = x;}
-        if (y[i].getAttribute(z) !== null) {arrCount += 1; arr[arrCount] = y[i];}
+        if (i == -1) {
+            y[i] = x;
+        }
+        if (y[i].getAttribute(z) !== null) {
+            arrCount += 1;
+            arr[arrCount] = y[i];
+        }
     }
     return arr;
 };
@@ -333,13 +362,17 @@ w3.dataObject = {},
         }
         html = w3_replace_curly(html, "element");
         htmlObj.parentNode.replaceChild(html, htmlObj);
+
         function init_template(id, obj) {
             var template;
             template = obj.cloneNode(true);
-            if (w3.dataObject.hasOwnProperty(id)) {return w3.dataObject[id];}
+            if (w3.dataObject.hasOwnProperty(id)) {
+                return w3.dataObject[id];
+            }
             w3.dataObject[id] = template;
             return template;
         }
+
         function w3_replace_curly(elmnt, typ, repeatX, x) {
             var value, rowClone, pos1, pos2, originalHTML, lookFor, lookForARR = [], i, cc, r;
             rowClone = elmnt.cloneNode(true);
@@ -347,30 +380,42 @@ w3.dataObject = {},
             while (pos1 > -1) {
                 originalHTML = (typ == "attribute") ? rowClone.value : rowClone.innerHTML;
                 pos1 = originalHTML.indexOf("{{", pos1);
-                if (pos1 === -1) {break;}
+                if (pos1 === -1) {
+                    break;
+                }
                 pos2 = originalHTML.indexOf("}}", pos1 + 1);
                 lookFor = originalHTML.substring(pos1 + 2, pos2);
                 lookForARR = lookFor.split("||");
                 value = undefined;
                 for (i = 0; i < lookForARR.length; i += 1) {
                     lookForARR[i] = lookForARR[i].replace(/^\s+|\s+$/gm, ''); //trim
-                    if (x) {value = x[lookForARR[i]];}
-                    if (value == undefined && data) {value = data[lookForARR[i]];}
-                    if (value == undefined) {
-                        cc = lookForARR[i].split(".");
-                        if (cc[0] == repeatX) {value = x[cc[1]]; }
+                    if (x) {
+                        value = x[lookForARR[i]];
+                    }
+                    if (value == undefined && data) {
+                        value = data[lookForARR[i]];
                     }
                     if (value == undefined) {
-                        if (lookForARR[i] == repeatX) {value = x;}
+                        cc = lookForARR[i].split(".");
+                        if (cc[0] == repeatX) {
+                            value = x[cc[1]];
+                        }
+                    }
+                    if (value == undefined) {
+                        if (lookForARR[i] == repeatX) {
+                            value = x;
+                        }
                     }
                     if (value == undefined) {
                         if (lookForARR[i].substr(0, 1) == '"') {
                             value = lookForARR[i].replace(/"/g, "");
-                        } else if (lookForARR[i].substr(0,1) == "'") {
+                        } else if (lookForARR[i].substr(0, 1) == "'") {
                             value = lookForARR[i].replace(/'/g, "");
                         }
                     }
-                    if (value != undefined) {break;}
+                    if (value != undefined) {
+                        break;
+                    }
                 }
                 if (value != undefined) {
                     r = "{{" + lookFor + "}}";
@@ -384,13 +429,16 @@ w3.dataObject = {},
             }
             return rowClone;
         }
+
         function w3_replace_html(a, r, result) {
             var b, l, i, a, x, j;
             if (a.hasAttributes()) {
                 b = a.attributes;
                 l = b.length;
                 for (i = 0; i < l; i += 1) {
-                    if (b[i].value.indexOf(r) > -1) {b[i].value = b[i].value.replace(r, result);}
+                    if (b[i].value.indexOf(r) > -1) {
+                        b[i].value = b[i].value.replace(r, result);
+                    }
                 }
             }
             x = a.getElementsByTagName("*");
@@ -398,3 +446,22 @@ w3.dataObject = {},
             a.innerHTML = a.innerHTML.replace(r, result);
         }
     };
+
+function myPrint(a, b, res) {
+    return a + '^' + b + '=' + res
+};
+
+function pow(x, n) {
+    if (n !== 1) return x *= pow(x, n - 1);
+
+    return x;
+};
+
+function myPow(a, b, callback) {
+
+
+    return callback(a, b, pow(a, b));
+};
+
+console.log(myPow(3, 4, myPrint)); // 3^4=81
+console.log(myPow(2, 3, myPrint)); // 2^3=8

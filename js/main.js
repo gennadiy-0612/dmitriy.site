@@ -148,6 +148,8 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
 }
 
 shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
+    shch.includeHTML();
+    this.setEls = [];
     this.num = 0;
     this.Current = 0;
     this.secondSlide = 1;
@@ -166,7 +168,6 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
         this.Item[1].setAttribute('class', activeForward + this.num + ' ' + this.Classes);
         this.Item[2].setAttribute('class', activeForward + this.num + ' ' + this.Classes);
         this.num ? this.num = 0 : this.num = 1;
-        this.goVideo(this.Item[0], this.Current, this.Item[1], this.secondSlide, this.Item[2], this.thirdSlide);
     };
     this.Minus = function () {
         this.setEmotions = [];
@@ -180,36 +181,36 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
         this.Item[1].setAttribute('class', activeBack + this.num + ' ' + this.Classes);
         this.Item[2].setAttribute('class', activeBack + this.num + ' ' + this.Classes);
         !this.num ? this.num = 1 : this.num = 0;
-        this.goVideo(this.Item[0], this.Current, this.Item[1], this.secondSlide, this.Item[2], this.thirdSlide);
-    }
-    this.goVideo = function (elem1, numb1, elem2, numb2, elem3, numb3) {
-        shch.getReq(shch.locate.index1 + 'emotions/static/1.json', elem1, numb1, elem2, numb2, elem3, numb3);
-    }
+    };
 };
 
-shch.getReq = function (file, el1, num1, el2, num2, el3, num3) {
-    let http = new XMLHttpRequest();
-    http.onreadystatechange = function () {
-        if (this.readyState === 4) {
-            if (this.status === 200) {
-                let emotion = JSON.parse(this.responseText);
-                el1.innerHTML = emotion[num1]["contents"];
-                el2.innerHTML = emotion[num2]["contents"];
-                el3.innerHTML = emotion[num3]["contents"];
-                console.log(el1.innerHTML);
-                console.log(el2.innerHTML);
-                console.log(el3.innerHTML);
+shch.includeHTML = function (cb) {
+    let z, i, elmnt, file, xhttp;
+    z = document.getElementsByTagName("*");
+    for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4) {
+                    if (this.status === 200) {
+                        elmnt.innerHTML = this.responseText;
+                    }
+                    if (this.status === 404) {
+                        elmnt.innerHTML = "Page not found.";
+                    }
+                    elmnt.removeAttribute("w3-include-html");
+                    shch.includeHTML(cb);
+                }
             }
-            if (this.status === 404) {
-                console.log("Page not found.");
-            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            return;
         }
     }
-    http.open("GET", file, true);
-    http.send();
-    /* Exit the function: */
-
-}
+    if (cb) cb();
+};
 
 shch.sliderMob = function (selectorSlide, activeSlide) {
     this.Current = 0;

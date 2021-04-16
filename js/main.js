@@ -156,31 +156,31 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
     this.thirdSlide = 2;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Classes = this.Item[0].getAttribute('class');
-    this.Length = this.Item.length;
-    this.Plus = function () {
-        this.Current += 1;
-        this.secondSlide += 1;
-        this.thirdSlide += 1;
-        if (this.Current > (this.Length - 1)) this.Current = 0;
-        if (this.secondSlide > (this.Length - 1)) this.secondSlide = 0;
-        if (this.thirdSlide > (this.Length - 1)) this.thirdSlide = 0;
-        this.Item[0].setAttribute('class', activeForward + this.num + ' ' + this.Classes);
-        this.Item[1].setAttribute('class', activeForward + this.num + ' ' + this.Classes);
-        this.Item[2].setAttribute('class', activeForward + this.num + ' ' + this.Classes);
-        this.num ? this.num = 0 : this.num = 1;
-    };
+    this.callBack = function () {
+        console.log(shch.slideVideo)
+    },
+        this.Plus = function () {
+            this.Current += 1;
+            this.secondSlide += 1;
+            this.thirdSlide += 1;
+            this.changer('activeForward');
+            shch.includeHTML(this.callBack);
+        };
     this.Minus = function () {
-        this.setEmotions = [];
         this.Current -= 1;
         this.secondSlide -= 1;
         this.thirdSlide -= 1;
-        if (this.Current < 0) this.Current = (this.Length - 1);
-        if (this.secondSlide < 0) this.secondSlide = (this.Length - 1);
-        if (this.thirdSlide < 0) this.thirdSlide = (this.Length - 1);
-        this.Item[0].setAttribute('class', activeBack + this.num + ' ' + this.Classes);
-        this.Item[1].setAttribute('class', activeBack + this.num + ' ' + this.Classes);
-        this.Item[2].setAttribute('class', activeBack + this.num + ' ' + this.Classes);
-        !this.num ? this.num = 1 : this.num = 0;
+        this.changer('activeBack');
+        shch.includeHTML(this.callBack);
+    };
+    this.changer = function (st) {
+        this.Item[0].setAttribute('class', st + this.num + ' ' + this.Classes);
+        this.Item[0].setAttribute('w3-include-html', 'emotions/static/e' + this.Current + '.html');
+        this.Item[1].setAttribute('class', st + this.num + ' ' + this.Classes);
+        this.Item[1].setAttribute('w3-include-html', 'emotions/static/e' + this.secondSlide + '.html');
+        this.Item[2].setAttribute('class', st + this.num + ' ' + this.Classes);
+        this.Item[2].setAttribute('w3-include-html', 'emotions/static/e' + this.thirdSlide + '.html');
+        this.num ? this.num = 0 : this.num = 1;
     };
 };
 
@@ -196,6 +196,7 @@ shch.includeHTML = function (cb) {
                 if (this.readyState === 4) {
                     if (this.status === 200) {
                         elmnt.innerHTML = this.responseText;
+                        console.log(shch.Current)
                     }
                     if (this.status === 404) {
                         elmnt.innerHTML = "Page not found.";

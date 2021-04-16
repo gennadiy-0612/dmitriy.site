@@ -60,9 +60,9 @@ let shch = {
                 document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
 
             }
-            shch.slideVideo = new shch.sliderDesk('.video__item', 'activeForward', 'activeBack');
-            document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
-            document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
+            // shch.slideVideo = new shch.sliderDesk('.video__item', 'activeForward', 'activeBack');
+            // document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
+            // document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
@@ -73,9 +73,9 @@ let shch = {
             shch.staticSwipe = new shch.Swipe('.emotions__item');
             shch.staticSwipe.start();
             shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
-            shch.videoSwipe = new shch.Swipe('.video__item');
-            shch.videoSwipe.start();
-            shch.videoSwipe.run(shch.slideVideo.Plus.bind(shch.slideVideo), shch.slideVideo.Minus.bind(shch.slideVideo));
+            // shch.videoSwipe = new shch.Swipe('.video__item');
+            // shch.videoSwipe.start();
+            // shch.videoSwipe.run(shch.slideVideo.Plus.bind(shch.slideVideo), shch.slideVideo.Minus.bind(shch.slideVideo));
         }
         if (locAddr === shch.locate.vacancy) {
             shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');
@@ -196,7 +196,6 @@ shch.includeHTML = function (cb) {
                 if (this.readyState === 4) {
                     if (this.status === 200) {
                         elmnt.innerHTML = this.responseText;
-                        console.log(shch.Current)
                     }
                     if (this.status === 404) {
                         elmnt.innerHTML = "Page not found.";

@@ -48,18 +48,21 @@ let shch = {
 
             shch['#vS'] = new shch.RefreshClass('#videoSlider', 'show', '', '#videoButton', '', '#videoClose');
             shch['#vS']['#videoSlider'].addAct();
-            if (window.matchMedia("(max-width: 1070px)").matches) {
-                shch.viewPort = 'mob';
-                shch.slideStatic = new shch.sliderMob('.emotions__item', 'activeForward', 'activeBack');
-                document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-                document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-            } else {
-                shch.viewPort = 'Desk';
-                shch.slideStatic = new shch.sliderDesk('.emotions__item', 'activeForward', 'activeBack');
-                document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-                document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+            // if (window.matchMedia("(max-width: 1070px)").matches) {
+            //     shch.viewPort = 'mob';
+            //     shch.slideStatic = new shch.sliderMob('.emotions__item', 'activeForward', 'activeBack');
+            //     document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+            //     document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+            // } else {
+            //     shch.viewPort = 'Desk';
+            //     shch.slideStatic = new shch.sliderDesk('.emotions__item', 'activeForward', 'activeBack');
+            //     document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+            //     document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+            //
+            // }
+            shch.sliderStatic = {};
+            shch.getReq(shch.locate.index1 + 'emotions/static/1.json');
 
-            }
             // shch.slideVideo = new shch.sliderDesk('.video__item', 'activeForward', 'activeBack');
             // document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
             // document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
@@ -70,9 +73,9 @@ let shch = {
             shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
             window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
 
-            shch.staticSwipe = new shch.Swipe('.emotions__item');
-            shch.staticSwipe.start();
-            shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
+            // shch.staticSwipe = new shch.Swipe('.emotions__item');
+            // shch.staticSwipe.start();
+            // shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
             // shch.videoSwipe = new shch.Swipe('.video__item');
             // shch.videoSwipe.start();
             // shch.videoSwipe.run(shch.slideVideo.Plus.bind(shch.slideVideo), shch.slideVideo.Minus.bind(shch.slideVideo));
@@ -148,8 +151,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
 }
 
 shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
-    shch.includeHTML();
-    this.setEls = [];
+    // shch.includeHTML(this.callBack, this.Current);
     this.num = 0;
     this.Current = 0;
     this.secondSlide = 1;
@@ -157,21 +159,20 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
     this.Item = document.querySelectorAll(selectorSlide);
     this.Classes = this.Item[0].getAttribute('class');
     this.callBack = function () {
-        console.log(shch.slideVideo)
-    },
-        this.Plus = function () {
-            this.Current += 1;
-            this.secondSlide += 1;
-            this.thirdSlide += 1;
-            this.changer('activeForward');
-            shch.includeHTML(this.callBack);
-        };
+    };
+    this.Plus = function () {
+        this.Current += 1;
+        this.secondSlide += 1;
+        this.thirdSlide += 1;
+        this.changer('activeForward');
+        // shch.includeHTML(this.callBack, this.Current);
+    };
     this.Minus = function () {
         this.Current -= 1;
         this.secondSlide -= 1;
         this.thirdSlide -= 1;
         this.changer('activeBack');
-        shch.includeHTML(this.callBack);
+        // shch.includeHTML(this.callBack, this.Current);
     };
     this.changer = function (st) {
         this.Item[0].setAttribute('class', st + this.num + ' ' + this.Classes);
@@ -184,7 +185,7 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
     };
 };
 
-shch.includeHTML = function (cb) {
+shch.includeHTML = function (cb, num) {
     let z, i, elmnt, file, xhttp;
     z = document.getElementsByTagName("*");
     for (i = 0; i < z.length; i++) {
@@ -211,6 +212,36 @@ shch.includeHTML = function (cb) {
     }
     if (cb) cb();
 };
+
+shch.emotionsGall = function (papa, sonTag, son, sonSet) {
+    let Papa = document.querySelector(papa);
+    for (let i = 0; i < sonSet.length; i++) {
+        let newNode = document.createElement(sonTag);
+        Papa.appendChild(newNode);
+        newNode.setAttribute('class', son);
+        newNode.innerHTML = sonSet[i]['contents'];
+    }
+    console.log(sonSet)
+};
+
+shch.getReq = function (file) {
+    let http = new XMLHttpRequest();
+    http.onreadystatechange = function () {
+        if (this.readyState === 4) {
+            if (this.status === 200) {
+                JSON.parse(this.responseText);
+                shch.emotionsGall('.emotions__set','div', 'emotions__item backgray', JSON.parse(this.responseText))
+            }
+            if (this.status === 404) {
+                console.log("Page not found.");
+            }
+        }
+    }
+    http.open("GET", file, true);
+    http.send();
+    /* Exit the function: */
+
+}
 
 shch.sliderMob = function (selectorSlide, activeSlide) {
     this.Current = 0;
@@ -354,3 +385,5 @@ shch.PlaceBall = function (balls) {
         this.initLI = e.target
     }
 }
+
+let g = {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1}

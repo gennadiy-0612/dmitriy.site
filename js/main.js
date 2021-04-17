@@ -158,8 +158,6 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
     this.three = 2;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Classes = this.Item[0].getAttribute('class');
-    this.callBack = function () {
-    };
     this.Plus = function () {
         this.one < this.length ? this.one++ : this.one = 0;
         this.two < this.length ? this.two++ : this.two = 0;
@@ -167,10 +165,10 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
         this.changer(activeForward, this.one, this.two, this.three);
     };
     this.Minus = function () {
+        this.one > 0 ? --this.one : this.one = this.length-1;
+        this.two > 0 ? --this.two : this.two = this.length-1;
+        this.three > 0 ? --this.three : this.three = this.length-1;
         this.changer(activeBack, this.one, this.two, this.three);
-        this.one > 0 ? this.one-- : this.one = this.length-1;
-        this.two > 0 ? this.two-- : this.two = this.length-1;
-        this.three > 0 ? this.three-- : this.three = this.length-1;
     };
     this.changer = function (st, one, two, three) {
         this.Item[0].setAttribute('class', st + this.num + ' ' + this.Classes);

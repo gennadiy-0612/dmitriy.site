@@ -1067,6 +1067,22 @@ a {
     position: relative;
 }
 
+/* Video Show */
+.videoScreen {
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    width: 90%;
+    height: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Video Show */
 @media (max-width: 1070px) {
     .back-site__round-in {
         animation: none;

@@ -173,6 +173,17 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
     };
 };
 
+shch.VideoShow = function (video) {
+    this.videoScreen = 'div';
+    this.classScreen = 'videoScreen';
+    this.movie = function () {
+        let canvasVideo = document.createElement(this.videoScreen);
+        document.querySelector('body').appendChild(canvasVideo);
+        canvasVideo.setAttribute('class', this.classScreen);
+        canvasVideo.innerHTML = video;
+    }
+};
+
 shch.emotionsGall = function (papa, sonTag, son, sonSet) {
     let Papa = document.querySelector(papa);
     for (let i = 0; i < sonSet.length; i++) {
@@ -180,6 +191,9 @@ shch.emotionsGall = function (papa, sonTag, son, sonSet) {
         Papa.appendChild(newNode);
         newNode.setAttribute('class', son);
         newNode.innerHTML = sonSet[i]['contents'];
+        shch.videoShow = new shch.VideoShow(sonSet[i]['addVideoShow']);
+
+        if (sonSet[i]['addVideoShow']) newNode.addEventListener('click', shch.videoShow.movie.bind(shch.videoShow));
     }
 };
 

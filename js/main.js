@@ -150,37 +150,50 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     }
 }
 
-shch.sliderDesk = function (selectorSlide, activeForward, activeBack) {
-    // shch.includeHTML(this.callBack, this.Current);
+shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
+    this.length = setSons.length;
     this.num = 0;
-    this.Current = 0;
-    this.secondSlide = 1;
-    this.thirdSlide = 2;
+    this.one = 0;
+    this.two = 1;
+    this.three = 2;
     this.Item = document.querySelectorAll(selectorSlide);
     this.Classes = this.Item[0].getAttribute('class');
     this.callBack = function () {
     };
     this.Plus = function () {
-        this.Current += 1;
-        this.secondSlide += 1;
-        this.thirdSlide += 1;
-        this.changer('activeForward');
-        // shch.includeHTML(this.callBack, this.Current);
+        this.one < this.length ? this.one++ : this.one = 0;
+        this.two < this.length ? this.two++ : this.two = 0;
+        this.three < this.length ? this.three++ : this.three = 0;
+        this.changer(activeForward, this.one, this.two, this.three);
     };
     this.Minus = function () {
-        this.Current -= 1;
-        this.secondSlide -= 1;
-        this.thirdSlide -= 1;
-        this.changer('activeBack');
-        // shch.includeHTML(this.callBack, this.Current);
+        this.changer(activeBack, this.one, this.two, this.three);
+        this.one > 0 ? this.one-- : this.one = this.length-1;
+        this.two > 0 ? this.two-- : this.two = this.length-1;
+        this.three > 0 ? this.three-- : this.three = this.length-1;
     };
-    this.changer = function (st) {
+    this.changer = function (st, one, two, three) {
         this.Item[0].setAttribute('class', st + this.num + ' ' + this.Classes);
-        this.Item[0].setAttribute('w3-include-html', 'emotions/static/e' + this.Current + '.html');
+        if (this.length > one) {
+            this.Item[0].innerHTML = setSons[one]['contents'];
+        } else {
+            this.Item[0].innerHTML = setSons[0]['contents'];
+            this.one = 0;
+        }
         this.Item[1].setAttribute('class', st + this.num + ' ' + this.Classes);
-        this.Item[1].setAttribute('w3-include-html', 'emotions/static/e' + this.secondSlide + '.html');
+        if (this.length > two) {
+            this.Item[1].innerHTML = setSons[two]['contents'];
+        } else {
+            this.Item[1].innerHTML = setSons[0]['contents'];
+            this.two = 0;
+        }
         this.Item[2].setAttribute('class', st + this.num + ' ' + this.Classes);
-        this.Item[2].setAttribute('w3-include-html', 'emotions/static/e' + this.thirdSlide + '.html');
+        if (this.length > three) {
+            this.Item[2].innerHTML = setSons[three]['contents'];
+        } else {
+            this.Item[2].innerHTML = setSons[0]['contents'];
+            this.three = 0;
+        }
         this.num ? this.num = 0 : this.num = 1;
     };
 };
@@ -221,7 +234,6 @@ shch.emotionsGall = function (papa, sonTag, son, sonSet) {
         newNode.setAttribute('class', son);
         newNode.innerHTML = sonSet[i]['contents'];
     }
-    console.log(sonSet)
 };
 
 shch.getReq = function (file) {
@@ -230,7 +242,14 @@ shch.getReq = function (file) {
         if (this.readyState === 4) {
             if (this.status === 200) {
                 JSON.parse(this.responseText);
-                shch.emotionsGall('.emotions__set','div', 'emotions__item backgray', JSON.parse(this.responseText))
+                shch.emotionsGall('.emotions__set', 'div', 'emotions__item backgray', JSON.parse(this.responseText));
+                shch.viewPort = 'Desk';
+                shch.slideStatic = new shch.sliderDesk('.emotions__item', 'activeForward', 'activeBack', JSON.parse(this.responseText));
+                document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
+                document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
+                shch.staticSwipe = new shch.Swipe('.emotions__item');
+                shch.staticSwipe.start();
+                shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
             }
             if (this.status === 404) {
                 console.log("Page not found.");

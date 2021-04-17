@@ -687,7 +687,7 @@ a {
     top: auto;
 }
 
-.video__window {
+.videoEmotionSet {
     display: flex;
     width: 240%;
 }
@@ -1771,7 +1771,7 @@ a {
         max-width: 288px;
     }
 
-    .video__window {
+    .videoEmotionSet {
         max-width: 288px;
         max-height: 200px;
         margin: auto;

@@ -48,37 +48,14 @@ let shch = {
 
             shch['#vS'] = new shch.RefreshClass('#videoSlider', 'show', '', '#videoButton', '', '#videoClose');
             shch['#vS']['#videoSlider'].addAct();
-            // if (window.matchMedia("(max-width: 1070px)").matches) {
-            //     shch.viewPort = 'mob';
-            //     shch.slideStatic = new shch.sliderMob('.emotions__item', 'activeForward', 'activeBack');
-            //     document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-            //     document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-            // } else {
-            //     shch.viewPort = 'Desk';
-            //     shch.slideStatic = new shch.sliderDesk('.emotions__item', 'activeForward', 'activeBack');
-            //     document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-            //     document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-            //
-            // }
-            shch.sliderStatic = {};
-            shch.getReq(shch.locate.index1 + 'emotions/static/1.json');
-
-            // shch.slideVideo = new shch.sliderDesk('.video__item', 'activeForward', 'activeBack');
-            // document.querySelector('.videoSlidePlus').addEventListener('click', shch.slideVideo.Plus.bind(shch.slideVideo));
-            // document.querySelector('.videoSlideMinus').addEventListener('click', shch.slideVideo.Minus.bind(shch.slideVideo));
+            shch.getReq(shch.locate.index1 + 'emotions/static/1.json', '.emotions__set', 'div', 'emotions__item backgray', shch.staticSlider, '.emotions__item', 'activeForward', 'activeBack', '.staticSlidePlus', '.staticSlideMinus', 'slideStatic');
+            shch.getReq(shch.locate.index1 + 'emotions/video/1.json', '.videoEmotionSet', 'div', 'video__item', shch.staticSlider, '.video__item', 'activeForward', 'activeBack', '.videoSlidePlus', '.videoSlideMinus', 'slideVideo');
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
             window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
-
-            // shch.staticSwipe = new shch.Swipe('.emotions__item');
-            // shch.staticSwipe.start();
-            // shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
-            // shch.videoSwipe = new shch.Swipe('.video__item');
-            // shch.videoSwipe.start();
-            // shch.videoSwipe.run(shch.slideVideo.Plus.bind(shch.slideVideo), shch.slideVideo.Minus.bind(shch.slideVideo));
         }
         if (locAddr === shch.locate.vacancy) {
             shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');
@@ -165,9 +142,9 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
         this.changer(activeForward, this.one, this.two, this.three);
     };
     this.Minus = function () {
-        this.one > 0 ? --this.one : this.one = this.length-1;
-        this.two > 0 ? --this.two : this.two = this.length-1;
-        this.three > 0 ? --this.three : this.three = this.length-1;
+        this.one > 0 ? --this.one : this.one = this.length - 1;
+        this.two > 0 ? --this.two : this.two = this.length - 1;
+        this.three > 0 ? --this.three : this.three = this.length - 1;
         this.changer(activeBack, this.one, this.two, this.three);
     };
     this.changer = function (st, one, two, three) {
@@ -234,20 +211,22 @@ shch.emotionsGall = function (papa, sonTag, son, sonSet) {
     }
 };
 
-shch.getReq = function (file) {
+shch.staticSlider = function (setEmotions, papa, sonTag, sonClass, setEm, nextCl, backCl, sliderPlus, sliderMinus, objectSlide) {
+    shch.emotionsGall(papa, sonTag, sonClass, setEmotions);
+    shch[objectSlide] = new shch.sliderDesk(setEm, nextCl, backCl, setEmotions);
+    document.querySelector(sliderPlus).addEventListener('click', shch[objectSlide].Plus.bind(shch[objectSlide]));
+    document.querySelector(sliderMinus).addEventListener('click', shch[objectSlide].Minus.bind(shch[objectSlide]));
+    shch.staticSwipe = new shch.Swipe(setEm);
+    shch.staticSwipe.start();
+    shch.staticSwipe.run(shch[objectSlide].Plus.bind(shch[objectSlide]), shch[objectSlide].Minus.bind(shch[objectSlide]));
+};
+
+shch.getReq = function (file, pap, sonT, conCl, slider, setEms, nextClass, backClass, sliderPlus, sliderMinus) {
     let http = new XMLHttpRequest();
     http.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
-                JSON.parse(this.responseText);
-                shch.emotionsGall('.emotions__set', 'div', 'emotions__item backgray', JSON.parse(this.responseText));
-                shch.viewPort = 'Desk';
-                shch.slideStatic = new shch.sliderDesk('.emotions__item', 'activeForward', 'activeBack', JSON.parse(this.responseText));
-                document.querySelector('.staticSlidePlus').addEventListener('click', shch.slideStatic.Plus.bind(shch.slideStatic));
-                document.querySelector('.staticSlideMinus').addEventListener('click', shch.slideStatic.Minus.bind(shch.slideStatic));
-                shch.staticSwipe = new shch.Swipe('.emotions__item');
-                shch.staticSwipe.start();
-                shch.staticSwipe.run(shch.slideStatic.Plus.bind(shch.slideStatic), shch.slideStatic.Minus.bind(shch.slideStatic));
+                slider(JSON.parse(this.responseText), pap, sonT, conCl, setEms, nextClass, backClass, sliderPlus, sliderMinus)
             }
             if (this.status === 404) {
                 console.log("Page not found.");
@@ -256,33 +235,7 @@ shch.getReq = function (file) {
     }
     http.open("GET", file, true);
     http.send();
-    /* Exit the function: */
-
 }
-
-shch.sliderMob = function (selectorSlide, activeSlide) {
-    this.Current = 0;
-    this.Item = document.querySelectorAll(selectorSlide);
-    this.Length = document.querySelectorAll(selectorSlide).length;
-    this.Plus = function () {
-        if (this.Current === (this.Length - 1)) {
-            return true;
-        } else {
-            this.Item[this.Current].setAttribute('id', '')
-            this.Current += 1;
-            this.Item[this.Current].setAttribute('id', activeSlide)
-        }
-    };
-    this.Minus = function () {
-        if (this.Current) {
-            this.Item[this.Current].setAttribute('id', '')
-            this.Current -= 1;
-            this.Item[this.Current].setAttribute('id', activeSlide)
-        } else {
-            this.Current = 0;
-        }
-    };
-};
 
 shch.RefreshClass = function (childT, newClass, I, button, parentTag, closer) {
     this[childT + I] = {
@@ -402,5 +355,3 @@ shch.PlaceBall = function (balls) {
         this.initLI = e.target
     }
 }
-
-let g = {0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1}

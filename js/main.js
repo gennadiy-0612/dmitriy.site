@@ -151,28 +151,28 @@ shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
         this.Item[0].setAttribute('class', st + this.num + ' ' + this.Classes);
         if (this.length > one) {
             this.Item[0].innerHTML = setSons[one]['contents'];
-            this.Item[0].setAttribute('data-json-id', setSons[one]['id'])
+            this.Item[0].setAttribute('data-json-id', this.one);
         } else {
             this.Item[0].innerHTML = setSons[0]['contents'];
-            this.Item[0].setAttribute('data-json-id', setSons[0]['id']);
+            this.Item[0].setAttribute('data-json-id', 0);
             this.one = 0;
         }
         this.Item[1].setAttribute('class', st + this.num + ' ' + this.Classes);
         if (this.length > two) {
             this.Item[1].innerHTML = setSons[two]['contents'];
-            this.Item[1].setAttribute('data-json-id', setSons[two]['id']);
+            this.Item[1].setAttribute('data-json-id', this.two);
         } else {
             this.Item[1].innerHTML = setSons[0]['contents'];
-            this.Item[1].setAttribute('data-json-id', setSons[0]['id']);
+            this.Item[1].setAttribute('data-json-id', 0);
             this.two = 0;
         }
         this.Item[2].setAttribute('class', st + this.num + ' ' + this.Classes);
         if (this.length > three) {
             this.Item[2].innerHTML = setSons[three]['contents'];
-            this.Item[2].setAttribute('data-json-id', setSons[three]['id']);
+            this.Item[2].setAttribute('data-json-id', this.three);
         } else {
             this.Item[2].innerHTML = setSons[0]['contents'];
-            this.Item[2].setAttribute('data-json-id', setSons[this]['id']);
+            this.Item[2].setAttribute('data-json-id', 0);
             this.three = 0;
         }
         this.num ? this.num = 0 : this.num = 1;
@@ -181,25 +181,31 @@ shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
 
 shch.VideoShow = function (video, itemVideo) {
     this.videoScreen = 'div';
-    this.classScreen = 'videoScreen videoScreen' + itemVideo;
-    this.classClose = 'videoClose videoClose' + itemVideo;
+    this.classScreen = 'videoScreen videoScreen';
+    this.classClose = 'videoClose videoClose';
     this.videoCanvas = 'videoCanvas';
-    this.movie = function () {
-        if (shch['.VS' + itemVideo]) return;
+    this.movie = function (e) {
+        let itemVideo = e.target.getAttribute('data-json-id');
+        if (shch['.VS' + itemVideo]) {
+            console.log(shch['.VS' + itemVideo]);
+            shch['.VS' + itemVideo].initState = 0;
+            shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag.setAttribute('class', shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTagClass);
+        }
         let videoScreen = document.createElement(this.videoScreen);
         document.querySelector('body').appendChild(videoScreen);
-        videoScreen.setAttribute('class', this.classScreen);
+        videoScreen.setAttribute('class', this.classScreen + itemVideo);
 
         let classClose = document.createElement(this.videoScreen);
         videoScreen.appendChild(classClose);
-        classClose.setAttribute('class', this.classClose);
+        classClose.setAttribute('class', this.classClose + itemVideo);
 
         let videoCanvas = document.createElement(this.videoScreen);
         videoScreen.appendChild(videoCanvas);
         videoCanvas.setAttribute('class', this.videoCanvas);
-        videoCanvas.innerHTML = video;
+        videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
         shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, 'videoScreenClose', '', '.videoClose' + itemVideo);
         shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
+        console.log(itemVideo)
     }
 };
 
@@ -210,8 +216,8 @@ shch.emotionsGall = function (papa, sonTag, son, sonSet) {
         Papa.appendChild(newNode);
         newNode.setAttribute('class', son);
         newNode.innerHTML = sonSet[i]['contents'];
-        shch.videoShow = new shch.VideoShow(sonSet[i]['addVideoShow'], sonSet[i]['contents']);
-
+        newNode.setAttribute('data-json-id', sonSet[i]['id']);
+        shch.videoShow = new shch.VideoShow(sonSet[i]['addVideoShow'], newNode.getAttribute('data-json-id'));
         if (sonSet[i]['addVideoShow']) newNode.addEventListener('click', shch.videoShow.movie.bind(shch.videoShow));
     }
 };
@@ -231,7 +237,8 @@ shch.getReq = function (file, pap, sonT, conCl, slider, setEms, nextClass, backC
     http.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
-                slider(JSON.parse(this.responseText), pap, sonT, conCl, setEms, nextClass, backClass, sliderPlus, sliderMinus)
+                shch.getReq['videoData'] = JSON.parse(this.responseText);
+                slider(JSON.parse(this.responseText), pap, sonT, conCl, setEms, nextClass, backClass, sliderPlus, sliderMinus);
             }
             if (this.status === 404) {
                 console.log("Page not found.");

@@ -708,8 +708,7 @@ a {
     }
 }
 
-.deskTopSlide,
-. ~ .video__item {
+.deskTopSlide {
     display: block;
     align-items: center;
 }

@@ -432,7 +432,7 @@ a {
 }
 
 .activeBack0 {
-    animation: 1s activeBack0;
+    animation: .7s activeBack0;
 }
 
 .activeBack1 {
@@ -442,7 +442,7 @@ a {
 @keyframes activeBack0 {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-200px);
     }
     to {
         opacity: 1;
@@ -453,7 +453,7 @@ a {
 @keyframes activeBack1 {
     from {
         opacity: 0;
-        transform: translateX(-50px);
+        transform: translateX(-200px);
     }
     to {
         opacity: 1;
@@ -462,17 +462,17 @@ a {
 }
 
 .activeForward0 {
-    animation: 1s activeForward0;
+    animation: .7s activeForward0;
 }
 
 .activeForward1 {
-    animation: 1s activeForward1;
+    animation: .7s activeForward1;
 }
 
 @keyframes activeForward0 {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(200px);
     }
     to {
         opacity: 1;
@@ -483,7 +483,7 @@ a {
 @keyframes activeForward1 {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateX(200px);
     }
     to {
         opacity: 1;
@@ -577,6 +577,12 @@ a {
 
 .video__go {
     position: relative;
+}
+
+.video__go:hover {
+    transition: all 1s;
+    scale: 1.1;
+    opacity: .8;
 }
 
 .video__prev {
@@ -1523,6 +1529,7 @@ a {
 
     .emotions__set {
         margin: 0 0 0;
+        overflow: hidden;
     }
 
     .deskTopSlide ~ .video__item {
@@ -1963,6 +1970,19 @@ a {
         display: none;
     }
 
+}
+
+@media (max-width: 1070px) and (orientation: portrait) {
+    .mainScreen {
+        margin-top: auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .h1index {
+        margin-top: auto;
+    }
 }
 
 @media (min-width: 1069px) {

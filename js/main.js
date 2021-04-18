@@ -49,7 +49,7 @@ let shch = {
             shch['#vS'] = new shch.RefreshClass('#videoSlider', 'show', '', '#videoButton', '', '#videoClose');
             shch['#vS']['#videoSlider'].addAct();
             shch.getReq(shch.locate.index1 + 'emotions/static/1.json', '.emotions__set', 'div', 'emotions__item backgray', shch.staticSlider, '.emotions__item', 'activeForward', 'activeBack', '.staticSlidePlus', '.staticSlideMinus', 'slideStatic');
-            shch.getReq(shch.locate.index1 + 'emotions/video/1.json', '.videoEmotionSet', 'div', 'video__item', shch.staticSlider, '.video__item', 'activeForward', 'activeBack', '.videoSlidePlus', '.videoSlideMinus', 'slideVideo');
+            shch.getReq(shch.locate.index1 + 'emotions/video/1.json', '.videoEmotionSet', 'div', 'video__item', shch.staticSlider, '.video__item', 'activeForward', 'activeBack', '.videoSlidePlus', '.videoSlideMinus', 'slideVideo', 'videoData');
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
             window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
@@ -179,12 +179,12 @@ shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
     };
 };
 
-shch.VideoShow = function (video, itemVideo) {
+shch.VideoShow = function () {
     this.videoScreen = 'div';
     this.classScreen = 'videoScreen videoScreen';
     this.classClose = 'videoClose videoClose';
     this.videoCanvas = 'videoCanvas';
-    this.loader  = 'loader';
+    this.loader = 'loader';
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
         if (shch['.VS' + itemVideo]) {
@@ -238,12 +238,12 @@ shch.staticSlider = function (setEmotions, papa, sonTag, sonClass, setEm, nextCl
     shch.staticSwipe.run(shch[objectSlide].Plus.bind(shch[objectSlide]), shch[objectSlide].Minus.bind(shch[objectSlide]));
 };
 
-shch.getReq = function (file, pap, sonT, conCl, slider, setEms, nextClass, backClass, sliderPlus, sliderMinus) {
+shch.getReq = function (file, pap, sonT, conCl, slider, setEms, nextClass, backClass, sliderPlus, sliderMinus, dataSet) {
     let http = new XMLHttpRequest();
     http.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200) {
-                shch.getReq['videoData'] = JSON.parse(this.responseText);
+                if (dataSet) shch.getReq['videoData'] = JSON.parse(this.responseText);
                 slider(JSON.parse(this.responseText), pap, sonT, conCl, setEms, nextClass, backClass, sliderPlus, sliderMinus);
             }
             if (this.status === 404) {

@@ -1531,6 +1531,11 @@ a {
 
     .emotions__item {
         display: none;
+        margin: 0;
+    }
+
+    .emotions__item:first-child {
+        display: block;
     }
 
     .emotions {
@@ -1819,10 +1824,12 @@ a {
         right: 0;
     }
 
-    .video__item {
+    .video__item:first-child {
+        display: block;
     }
 
     .video__item {
+        display: none;
         max-width: 288px;
         max-height: 200px;
         margin: auto;
@@ -2978,15 +2985,6 @@ a {
     animation: spin 2s linear infinite;
     position: absolute;
     z-index: -1;
-}
-
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
 }
 
 @keyframes spin {

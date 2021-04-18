@@ -2975,7 +2975,6 @@ a {
     border-top: 16px solid #1378EF;
     width: 120px;
     height: 120px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
     position: absolute;
     z-index: -1;

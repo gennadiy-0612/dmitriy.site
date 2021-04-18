@@ -127,7 +127,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     }
 }
 
-shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
+shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
     this.length = setSons.length;
     this.num = 0;
     this.one = 0;
@@ -173,12 +173,13 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
     };
 };
 
-shch.VideoShow = function (video) {
+shch.VideoShow = function (video, itemVideo) {
     this.videoScreen = 'div';
-    this.classScreen = 'videoScreen';
-    this.classClose = 'videoClose';
+    this.classScreen = 'videoScreen videoScreen' + itemVideo;
+    this.classClose = 'videoClose videoClose' + itemVideo;
     this.videoCanvas = 'videoCanvas';
     this.movie = function () {
+        if (shch['.VS' + itemVideo]) return;
         let videoScreen = document.createElement(this.videoScreen);
         document.querySelector('body').appendChild(videoScreen);
         videoScreen.setAttribute('class', this.classScreen);
@@ -191,9 +192,8 @@ shch.VideoShow = function (video) {
         videoScreen.appendChild(videoCanvas);
         videoCanvas.setAttribute('class', this.videoCanvas);
         videoCanvas.innerHTML = video;
-
-        shch['.vC'] = new shch.RefreshClass('.videoScreen', 'videoScreenClose', '', '.videoClose');
-        shch['.vC']['.videoScreen'].addAct();
+        shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, 'videoScreenClose', '', '.videoClose' + itemVideo);
+        shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
     }
 };
 
@@ -204,7 +204,7 @@ shch.emotionsGall = function (papa, sonTag, son, sonSet) {
         Papa.appendChild(newNode);
         newNode.setAttribute('class', son);
         newNode.innerHTML = sonSet[i]['contents'];
-        shch.videoShow = new shch.VideoShow(sonSet[i]['addVideoShow']);
+        shch.videoShow = new shch.VideoShow(sonSet[i]['addVideoShow'], sonSet[i]['contents']);
 
         if (sonSet[i]['addVideoShow']) newNode.addEventListener('click', shch.videoShow.movie.bind(shch.videoShow));
     }
@@ -212,7 +212,7 @@ shch.emotionsGall = function (papa, sonTag, son, sonSet) {
 
 shch.staticSlider = function (setEmotions, papa, sonTag, sonClass, setEm, nextCl, backCl, sliderPlus, sliderMinus, objectSlide) {
     shch.emotionsGall(papa, sonTag, sonClass, setEmotions);
-    shch[objectSlide] = new shch.sliderDesk(setEm, nextCl, backCl, setEmotions);
+    shch[objectSlide] = new shch.Slider(setEm, nextCl, backCl, setEmotions);
     document.querySelector(sliderPlus).addEventListener('click', shch[objectSlide].Plus.bind(shch[objectSlide]));
     document.querySelector(sliderMinus).addEventListener('click', shch[objectSlide].Minus.bind(shch[objectSlide]));
     shch.staticSwipe = new shch.Swipe(setEm);
@@ -236,28 +236,28 @@ shch.getReq = function (file, pap, sonT, conCl, slider, setEms, nextClass, backC
     http.send();
 }
 
-shch.RefreshClass = function (childT, newClass, I, button, parentTag, closer) {
-    this[childT + I] = {
-        childT: childT,
+shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer) {
+    this[whatChange + I] = {
+        whatChange: whatChange,
         newClass: newClass,
-        button: button,
+        button: {},
         infoTag: {},
         parentT: {},
         closer: {},
         initState: 0,
         addAct: function () {
             if (I) {
-                this.infoTag = document.querySelectorAll(this.childT)[I];
+                this.infoTag = document.querySelectorAll(this.whatChange)[I];
                 this.infoTagClass = this.infoTag.getAttribute('class');
-                this.button = document.querySelectorAll(this.button)[I];
+                this.button = document.querySelectorAll(button)[I];
                 if (parentTag) {
                     this.parentT = document.querySelectorAll(parentTag)[I];
                     this.parentTclass = this.parentT.getAttribute('class');
                 }
             } else {
-                this.infoTag = document.querySelector(this.childT);
+                this.infoTag = document.querySelector(this.whatChange);
                 this.infoTagClass = this.infoTag.getAttribute('class');
-                this.button = document.querySelector(this.button);
+                this.button = document.querySelector(button);
                 if (parentTag) {
                     this.parentT = document.querySelector(parentTag);
                     this.parentTclass = this.parentT.getAttribute('class')

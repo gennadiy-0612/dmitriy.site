@@ -151,22 +151,28 @@ shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
         this.Item[0].setAttribute('class', st + this.num + ' ' + this.Classes);
         if (this.length > one) {
             this.Item[0].innerHTML = setSons[one]['contents'];
+            this.Item[0].setAttribute('data-json-id', setSons[one]['id'])
         } else {
             this.Item[0].innerHTML = setSons[0]['contents'];
+            this.Item[0].setAttribute('data-json-id', setSons[0]['id']);
             this.one = 0;
         }
         this.Item[1].setAttribute('class', st + this.num + ' ' + this.Classes);
         if (this.length > two) {
             this.Item[1].innerHTML = setSons[two]['contents'];
+            this.Item[1].setAttribute('data-json-id', setSons[two]['id']);
         } else {
             this.Item[1].innerHTML = setSons[0]['contents'];
+            this.Item[1].setAttribute('data-json-id', setSons[0]['id']);
             this.two = 0;
         }
         this.Item[2].setAttribute('class', st + this.num + ' ' + this.Classes);
         if (this.length > three) {
             this.Item[2].innerHTML = setSons[three]['contents'];
+            this.Item[2].setAttribute('data-json-id', setSons[three]['id']);
         } else {
             this.Item[2].innerHTML = setSons[0]['contents'];
+            this.Item[2].setAttribute('data-json-id', setSons[0]['id']);
             this.three = 0;
         }
         this.num ? this.num = 0 : this.num = 1;

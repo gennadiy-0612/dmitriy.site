@@ -1081,7 +1081,21 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000000e6;
 }
+
+.videoClose {
+    background: url("../img/index/x.svg") center center no-repeat;
+        background-size: auto;
+    background-size: auto;
+    background-size: contain;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+}
+
 /* Video Show */
 @media (max-width: 1070px) {
     .back-site__round-in {

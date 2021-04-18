@@ -176,11 +176,21 @@ shch.sliderDesk = function (selectorSlide, activeForward, activeBack, setSons) {
 shch.VideoShow = function (video) {
     this.videoScreen = 'div';
     this.classScreen = 'videoScreen';
+    this.classClose = 'videoClose';
+    this.videoCanvas = 'videoCanvas';
     this.movie = function () {
-        let canvasVideo = document.createElement(this.videoScreen);
-        document.querySelector('body').appendChild(canvasVideo);
-        canvasVideo.setAttribute('class', this.classScreen);
-        canvasVideo.innerHTML = video;
+        let videoScreen = document.createElement(this.videoScreen);
+        document.querySelector('body').appendChild(videoScreen);
+        videoScreen.setAttribute('class', this.classScreen);
+
+        let classClose = document.createElement(this.videoScreen);
+        videoScreen.appendChild(classClose);
+        classClose.setAttribute('class', this.classClose);
+
+        let videoCanvas = document.createElement(this.videoScreen);
+        videoScreen.appendChild(videoCanvas);
+        videoCanvas.setAttribute('class', this.videoCanvas);
+        videoCanvas.innerHTML = video;
     }
 };
 

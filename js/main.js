@@ -184,12 +184,14 @@ shch.VideoShow = function (video, itemVideo) {
     this.classScreen = 'videoScreen videoScreen';
     this.classClose = 'videoClose videoClose';
     this.videoCanvas = 'videoCanvas';
+    this.loader  = 'loader';
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
         if (shch['.VS' + itemVideo]) {
             console.log(shch['.VS' + itemVideo]);
             shch['.VS' + itemVideo].initState = 0;
             shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag.setAttribute('class', shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTagClass);
+            return;
         }
         let videoScreen = document.createElement(this.videoScreen);
         document.querySelector('body').appendChild(videoScreen);
@@ -202,10 +204,14 @@ shch.VideoShow = function (video, itemVideo) {
         let videoCanvas = document.createElement(this.videoScreen);
         videoScreen.appendChild(videoCanvas);
         videoCanvas.setAttribute('class', this.videoCanvas);
+
+        let videoLoader = document.createElement(this.videoScreen);
+        videoScreen.appendChild(videoLoader);
+        videoLoader.setAttribute('class', this.loader);
+
         videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
         shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, 'videoScreenClose', '', '.videoClose' + itemVideo);
         shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
-        console.log(itemVideo)
     }
 };
 

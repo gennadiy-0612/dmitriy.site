@@ -551,7 +551,7 @@ a {
     width: 300px;
     height: 300px;
     margin: auto;
-    background: url(../img/index/videoemotions.svg) center center no-repeat;
+    background: url('../img/index/videoemotions.svg') center center no-repeat;
     background-size: 360px;
     z-index: 1;
 }
@@ -581,7 +581,7 @@ a {
 
 .video__prev {
     position: absolute;
-    background: url(../img/index/prev.svg) center center no-repeat;
+    background: url('../img/index/prev.svg') center center no-repeat;
     right: -10px;
     background-size: contain;
     /*! z-index: 1; */
@@ -672,7 +672,7 @@ a {
 .close {
     width: 20px;
     height: 20px;
-    background: url("../img/index/x.svg") center center no-repeat;
+    background: url('../img/index/x.svg') center center no-repeat;
     background-size: contain;
     margin: 20px 30px 0 auto;
     position: relative;
@@ -2966,5 +2966,35 @@ a {
     .emotions__set {
         width: 109%;
         margin-left: -31%;
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #1378EF;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+    position: absolute;
+    z-index: -1;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }

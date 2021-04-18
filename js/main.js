@@ -191,6 +191,9 @@ shch.VideoShow = function (video) {
         videoScreen.appendChild(videoCanvas);
         videoCanvas.setAttribute('class', this.videoCanvas);
         videoCanvas.innerHTML = video;
+
+        shch['.vC'] = new shch.RefreshClass('.videoScreen', 'videoScreenClose', '', '.videoClose');
+        shch['.vC']['.videoScreen'].addAct();
     }
 };
 

@@ -172,7 +172,7 @@ shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
             this.Item[2].setAttribute('data-json-id', setSons[three]['id']);
         } else {
             this.Item[2].innerHTML = setSons[0]['contents'];
-            this.Item[2].setAttribute('data-json-id', setSons[0]['id']);
+            this.Item[2].setAttribute('data-json-id', setSons[this]['id']);
             this.three = 0;
         }
         this.num ? this.num = 0 : this.num = 1;

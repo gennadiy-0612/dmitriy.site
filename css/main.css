@@ -325,22 +325,6 @@ a {
     animation: 2s linear 0s slow-show;
 }
 
-@keyframes slow-show {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 0;
-    }
-    40% {
-        opacity: .1;
-    }
-    100% {
-        opacity: 1;
-    }
-
-}
-
 .back-site__round-in::before,
 .back-site__round-in::after {
     content: '';
@@ -368,6 +352,22 @@ a {
     to {
         transform: rotate(360deg);
     }
+}
+
+@keyframes slow-show {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    40% {
+        opacity: .1;
+    }
+    100% {
+        opacity: 1;
+    }
+
 }
 
 /*.back-site finish*/

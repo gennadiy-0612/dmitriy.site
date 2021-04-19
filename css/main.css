@@ -321,6 +321,7 @@ a {
     animation: 70s linear 0s infinite normal move_around;
 }
 
+.back-site__round-out,
 .back-site__round-in canvas,
 .slow-show {
     animation: 2s slow-show;

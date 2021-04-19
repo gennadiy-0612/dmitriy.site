@@ -181,12 +181,12 @@ shch.VideoShow = function () {
     this.classClose = 'videoClose videoClose';
     this.videoCanvas = 'videoCanvas';
     this.loader = 'loader';
+    this.videoScreenClose = 'videoScreenClose';
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
         if (shch['.VS' + itemVideo]) {
             shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag.setAttribute('class', shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTagClass);
             shch['.VS' + itemVideo].initState = 1;
-            console.log(shch['.VS' + itemVideo]);
             return;
         }
         let videoScreen = document.createElement(this.videoScreen);
@@ -206,7 +206,7 @@ shch.VideoShow = function () {
         videoLoader.setAttribute('class', this.loader);
 
         videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
-        shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, 'videoScreenClose', '', '.videoClose' + itemVideo);
+        shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
         shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
     }
 };
@@ -261,6 +261,7 @@ shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer
         closer: {},
         initState: 0,
         addAct: function () {
+            console.log(this.initState)
             if (I) {
                 this.infoTag = document.querySelectorAll(this.whatChange)[I];
                 this.infoTagClass = this.infoTag.getAttribute('class');
@@ -285,6 +286,7 @@ shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer
             }
         },
         changeIt: function (e) {
+            console.log(this.infoTag)
             e.stopPropagation()
             if (this.initState) {
                 this.infoTag.setAttribute('class', this.infoTagClass);
@@ -368,30 +370,3 @@ shch.PlaceBall = function (balls) {
         this.initLI = e.target
     }
 }
-shch.includeHTML = function (cb) {
-    let z, i, elmnt, file, xhttp;
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        elmnt.innerHTML = this.responseText;
-                    }
-                    if (this.status == 404) {
-                        elmnt.innerHTML = "Page not found.";
-                    }
-                    elmnt.removeAttribute("w3-include-html");
-                    shch.includeHTML(cb);
-                }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            return;
-        }
-    }
-    if (cb) cb();
-};

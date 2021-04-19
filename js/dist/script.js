@@ -46,6 +46,7 @@ renderer.setClearColor(0x000000, 0); // the default
 document.body.appendChild( renderer.domElement );
 document.querySelector(".back-site__round-in").appendChild(renderer.domElement);
 
+
 // Ensure Full Screen on Resize
 // function fullScreen() {
 //     camera.aspect = window.innerWidth / window.innerHeight;

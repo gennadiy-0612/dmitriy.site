@@ -1,6 +1,8 @@
 "use strict"
 let shch = {
     burger: function () {
+        document.querySelector('.back-site__round-in').appendChild(document.querySelector('.sphere canvas'));
+        document.querySelector('.sphere canvas').remove();
         shch.locate = {};
         if (window.location.origin === 'https://p.cx.ua') {
             shch.locate = {

@@ -1973,9 +1973,12 @@ a {
 }
 
 @media (max-width: 1070px) and (orientation: portrait) {
+    .firstScreen {
+    height: 100vh;
+}
     .mainScreen {
         margin-top: auto;
-        height: 100vh;
+        height: 100%;
         display: flex;
         flex-direction: column;
     }

@@ -860,8 +860,8 @@ a {
 #firstname2,
 #firstname3 {
     text-indent: 10px;
-    left: 15%;
-    width: 85%;
+    left: 7%;
+    width: 93%;
 }
 
 #lastname1,
@@ -2664,10 +2664,25 @@ a {
         border-width: 0;
         display: block;
         position: relative;
-        top: -41px;
+        top: -44px;
         left: 24%;
         width: 76%;
         text-indent: 10px;
+    }
+
+    .FootForm-fn {
+        left: 10%;
+        width: 90%;
+    }
+
+    .FootForm-em {
+        left: 15%;
+        width: 85%;
+    }
+
+    .FootForm-ph {
+        left: 20%;
+        width: 80%;
     }
 
     .index-textarea {
@@ -2912,6 +2927,7 @@ a {
         padding: 32px 35px 0;
     }
 
+    .footer__form__input,
     .modalJoin__text {
         font: normal normal 400 16px/27px 'Montserrat', sans-serif;
         color: #FFFFFF;
@@ -2942,6 +2958,12 @@ a {
     .hide-form-index__button {
         margin: 18px 21% 0 auto;
         letter-spacing: -0.7px;
+    }
+
+    .hide-form-index__phone {
+        left: 15%;
+        width: 85%;
+        text-indent: 20px;
     }
 
     /*Modal forms*/

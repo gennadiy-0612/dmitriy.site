@@ -1105,13 +1105,10 @@ a {
     justify-content: center;
     align-items: center;
     background-color: #000000e6;
-    display: flex;
 }
 
 .videoClose {
     background: url("../img/index/x.svg") center center no-repeat;
-    background-size: auto;
-    background-size: auto;
     background-size: contain;
     position: absolute;
     right: 40px;

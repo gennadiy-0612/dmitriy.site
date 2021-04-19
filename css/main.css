@@ -33,9 +33,11 @@
     src: local('Druk Text Wide'), local('Druk Text Wide'),
     url('./font/DrukTextWide-Medium.ttf') format('truetype');
 }
-canvas{
+
+canvas {
     visibility: hidden;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -837,6 +839,10 @@ a {
     display: none;
 }
 
+.show {
+    display: flex;
+}
+
 /*Modal forms*/
 .hide-form {
     position: fixed;
@@ -1526,6 +1532,10 @@ a {
         justify-content: center;
     }
 
+    .cta-bigbutton:hover {
+        z-index: 0;
+    }
+
     .cta-a {
         text-align: center;
         display: block;
@@ -1903,6 +1913,10 @@ a {
         left: 0;
         right: 0;
         margin: auto;
+    }
+
+    .show {
+        display: flex;
     }
 
     .modalJoinForm {
@@ -3066,6 +3080,6 @@ a {
     }
 }
 
-canvas{
+canvas {
     visibility: visible;
 }

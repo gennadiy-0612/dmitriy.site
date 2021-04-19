@@ -64,7 +64,9 @@ let shch = {
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
-        document.querySelector('.talkButton').addEventListener('click', shch.talkButton);
+        shch['.hide-form-tanks'] = new shch.RefreshClass('.hide-form-tanks', 'show', '', '.tanksButton', '', '.hide-form-tanks__close');
+        shch['.hide-form-tanks']['.hide-form-tanks'].addAct();
+        // document.querySelector('.hide-form-index').addEventListener('click', shch.tanksButton);
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }
 }
@@ -74,9 +76,9 @@ shch.foloiButton = function (e) {
     shch['.overno']['.overno'].changeIt(e);
 }
 
-shch.talkButton = function (e) {
-    shch['.hide-form-index']['.hide-form-index'].changeIt(e);
-}
+// shch.tanksButton = function (e) {
+//     shch['.hide-form-index']['.hide-form-index'].changeIt(e);
+// }
 
 shch.HeaderTracer = function (tracer) {
     this.traceEl = document.querySelector(tracer);

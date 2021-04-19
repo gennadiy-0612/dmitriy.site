@@ -80,9 +80,6 @@ shch.foloiButton = function () {
 }
 
 shch.HeaderTracer = function (tracer) {
-    this.letIsGo = 1;
-    this.down = {posit: 300, go: 1};
-    this.up = {posit: 600, go: 0};
     this.traceEl = document.querySelector(tracer);
     this.traceElOldClass = this.traceEl.getAttribute('class');
     this.actClass = 'Tracer';
@@ -93,10 +90,7 @@ shch.HeaderTracer = function (tracer) {
         this.heightWind = window.innerHeight;
         this.heightHide = this.heightPap - this.heightWind;
         if (Math.floor(window.scrollY) > Math.floor(this.topPap)) {
-            if (this.letIsGo) {
-                this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
-                this.letIsGo = 0;
-            }
+            this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
             if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide + this.heightWind * .4)) {
                 this.traceEl.setAttribute('class', this.traceElOldClass);
                 return true;
@@ -104,24 +98,6 @@ shch.HeaderTracer = function (tracer) {
         } else {
             this.traceEl.setAttribute('class', this.traceElOldClass);
             return true;
-        }
-        if (this.down.posit < window.pageYOffset && this.down.go) {
-            this.down.go = 0;
-            this.up.go = 1;
-            console.clear()
-            console.log('more');
-            console.log('this.down.posit: ' + this.down.posit);
-            console.log('this.down.go: ' + this.down.go);
-            console.log('window.pageYOffset: ' + window.pageYOffset);
-        }
-        if (this.up.posit > window.pageYOffset && this.up.go) {
-            console.clear()
-            console.log('more');
-            console.log('this.up.posit: ' + this.up.posit);
-            console.log('this.up.go: ' + this.up.go);
-            console.log('window.pageYOffset: ' + window.pageYOffset);
-            this.down.go = 1;
-            this.up.go = 0;
         }
     }
 }

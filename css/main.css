@@ -1697,6 +1697,8 @@ a {
     .s3contactinfo-press {
         line-height: 204px;
         text-align: center;
+        z-index: 0;
+        position: relative;
     }
 
     .buttonmiddle-footermob {

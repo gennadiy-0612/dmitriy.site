@@ -64,13 +64,18 @@ let shch = {
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
+        document.querySelector('.talkButton').addEventListener('click', shch.talkButton);
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }
 }
 window.addEventListener('load', shch.burger);
 
 shch.foloiButton = function (e) {
-    shch['.overno']['.overno'].changeIt(e)
+    shch['.overno']['.overno'].changeIt(e);
+}
+
+shch.talkButton = function (e) {
+    shch['.hide-form-index']['.hide-form-index'].changeIt(e);
 }
 
 shch.HeaderTracer = function (tracer) {

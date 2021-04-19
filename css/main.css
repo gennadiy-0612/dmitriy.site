@@ -281,7 +281,7 @@ a {
     }
 }
 
-.back-site__round-out, .back-site__round-in slow-show {
+.back-site__round-out, .back-site__round-in {
     display: block;
     top: 10%;
     left: 0;
@@ -302,21 +302,12 @@ a {
     background: radial-gradient(#3a3a3a 0, transparent 70%);
 }
 
-.back-site__round-in slow-show canvas {
+.back-site__round-in canvas {
     align-self: center;
     margin: 0;
 }
 
-@keyframes slow-show {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.back-site__round-in slow-show {
+.back-site__round-in {
     position: relative;
     width: 80%;
     height: 80%;
@@ -344,8 +335,8 @@ a {
 
 }
 
-.back-site__round-in slow-show::before,
-.back-site__round-in slow-show::after {
+.back-site__round-in::before,
+.back-site__round-in::after {
     content: '';
     width: 10%;
     height: 10%;
@@ -354,12 +345,12 @@ a {
     border: 1px solid #4f4f4f;
 }
 
-.back-site__round-in slow-show::before {
+.back-site__round-in::before {
     top: 0;
     left: 0;
 }
 
-.back-site__round-in slow-show::after {
+.back-site__round-in::after {
     right: 0;
     bottom: 0;
 }
@@ -1121,7 +1112,7 @@ a {
 
 /* Video Show */
 @media (max-width: 1070px) {
-    .back-site__round-in slow-show {
+    .back-site__round-in {
         animation: none;
         width: 94%;
         height: 94%;
@@ -1129,7 +1120,7 @@ a {
         max-height: 282px;
     }
 
-    .back-site__round-in slow-show::before, .back-site__round-in slow-show::after {
+    .back-site__round-in::before, .back-site__round-in::after {
         opacity: 0;
     }
 

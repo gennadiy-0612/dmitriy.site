@@ -860,8 +860,8 @@ a {
 #firstname2,
 #firstname3 {
     text-indent: 10px;
-    left: 7%;
-    width: 93%;
+    left: 10%;
+    width: 90%;
 }
 
 #lastname1,
@@ -2963,7 +2963,7 @@ a {
     .hide-form-index__phone {
         left: 15%;
         width: 85%;
-        text-indent: 20px;
+        text-indent: 10px;
     }
 
     /*Modal forms*/

@@ -19,9 +19,6 @@ let shch = {
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
         shch['.overno']['.overno'].addAct();
         document.querySelector('.nav-folio').addEventListener('click', shch.foloiButton);
-
-        shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
-        shch['.overno']['.overno'].addAct();
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if ((locAddr === shch.locate.index1) || (locAddr === shch.locate.index2)) {
@@ -72,11 +69,8 @@ let shch = {
 }
 window.addEventListener('load', shch.burger);
 
-shch.foloiButton = function () {
-    if (shch['.overno']['.overno'].initState) {
-        shch['.overno']['.overno'].infoTag.setAttribute('class', shch['.overno']['.overno'].infoTagClass)
-        shch['.overno']['.overno'].initState = 0;
-    }
+shch.foloiButton = function (e) {
+    shch['.overno']['.overno'].changeIt(e)
 }
 
 shch.HeaderTracer = function (tracer) {
@@ -185,29 +179,28 @@ shch.VideoShow = function () {
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
         if (shch['.VS' + itemVideo]) {
-            shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag.setAttribute('class', shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTagClass);
-            shch['.VS' + itemVideo].initState = 1;
-            return;
+            shch['.VS' + itemVideo]['.videoScreen' + itemVideo].changeIt(e);
+        } else {
+            let videoScreen = document.createElement(this.videoScreen);
+            document.querySelector('body').appendChild(videoScreen);
+            videoScreen.setAttribute('class', this.classScreen + itemVideo);
+
+            let classClose = document.createElement(this.videoScreen);
+            videoScreen.appendChild(classClose);
+            classClose.setAttribute('class', this.classClose + itemVideo);
+
+            let videoCanvas = document.createElement(this.videoScreen);
+            videoScreen.appendChild(videoCanvas);
+            videoCanvas.setAttribute('class', this.videoCanvas);
+
+            let videoLoader = document.createElement(this.videoScreen);
+            videoScreen.appendChild(videoLoader);
+            videoLoader.setAttribute('class', this.loader);
+
+            videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
+            shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
+            shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
         }
-        let videoScreen = document.createElement(this.videoScreen);
-        document.querySelector('body').appendChild(videoScreen);
-        videoScreen.setAttribute('class', this.classScreen + itemVideo);
-
-        let classClose = document.createElement(this.videoScreen);
-        videoScreen.appendChild(classClose);
-        classClose.setAttribute('class', this.classClose + itemVideo);
-
-        let videoCanvas = document.createElement(this.videoScreen);
-        videoScreen.appendChild(videoCanvas);
-        videoCanvas.setAttribute('class', this.videoCanvas);
-
-        let videoLoader = document.createElement(this.videoScreen);
-        videoScreen.appendChild(videoLoader);
-        videoLoader.setAttribute('class', this.loader);
-
-        videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
-        shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
-        shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
     }
 };
 
@@ -261,7 +254,6 @@ shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer
         closer: {},
         initState: 0,
         addAct: function () {
-            console.log(this.initState)
             if (I) {
                 this.infoTag = document.querySelectorAll(this.whatChange)[I];
                 this.infoTagClass = this.infoTag.getAttribute('class');
@@ -286,7 +278,6 @@ shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer
             }
         },
         changeIt: function (e) {
-            console.log(this.infoTag)
             e.stopPropagation()
             if (this.initState) {
                 this.infoTag.setAttribute('class', this.infoTagClass);

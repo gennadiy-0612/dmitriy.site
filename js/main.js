@@ -179,28 +179,27 @@ shch.VideoShow = function () {
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
         if (shch['.VS' + itemVideo]) {
-            shch['.VS' + itemVideo]['.videoScreen' + itemVideo].changeIt(e);
-        } else {
-            let videoScreen = document.createElement(this.videoScreen);
-            document.querySelector('body').appendChild(videoScreen);
-            videoScreen.setAttribute('class', this.classScreen + itemVideo);
-
-            let classClose = document.createElement(this.videoScreen);
-            videoScreen.appendChild(classClose);
-            classClose.setAttribute('class', this.classClose + itemVideo);
-
-            let videoCanvas = document.createElement(this.videoScreen);
-            videoScreen.appendChild(videoCanvas);
-            videoCanvas.setAttribute('class', this.videoCanvas);
-
-            let videoLoader = document.createElement(this.videoScreen);
-            videoScreen.appendChild(videoLoader);
-            videoLoader.setAttribute('class', this.loader);
-
-            videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
-            shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
-            shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
+            delete shch['.VS' + itemVideo];
         }
+        let videoScreen = document.createElement(this.videoScreen);
+        document.querySelector('body').appendChild(videoScreen);
+        videoScreen.setAttribute('class', this.classScreen + itemVideo);
+
+        let classClose = document.createElement(this.videoScreen);
+        videoScreen.appendChild(classClose);
+        classClose.setAttribute('class', this.classClose + itemVideo);
+
+        let videoCanvas = document.createElement(this.videoScreen);
+        videoScreen.appendChild(videoCanvas);
+        videoCanvas.setAttribute('class', this.videoCanvas);
+
+        let videoLoader = document.createElement(this.videoScreen);
+        videoScreen.appendChild(videoLoader);
+        videoLoader.setAttribute('class', this.loader);
+
+        videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
+        shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
+        shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
     }
 };
 

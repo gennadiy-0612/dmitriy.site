@@ -188,9 +188,9 @@ shch.VideoShow = function () {
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
         if (shch['.VS' + itemVideo]) {
-            console.log(shch['.VS' + itemVideo]);
-            shch['.VS' + itemVideo].initState = 0;
             shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag.setAttribute('class', shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTagClass);
+            shch['.VS' + itemVideo].initState = 1;
+            console.log(shch['.VS' + itemVideo]);
             return;
         }
         let videoScreen = document.createElement(this.videoScreen);
@@ -336,14 +336,13 @@ shch.Swipe = function (element) {
         this.xDiff = this.xDown - xUp;
         this.yDiff = this.yDown - yUp;
 
-        if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) { // Most significant.
+        if (Math.abs(this.xDiff) > Math.abs(this.yDiff)) {
             if (this.xDiff > 0) {
                 this.prev();
             } else {
                 this.next();
             }
 
-            // Reset values.
             this.xDown = null;
             this.yDown = null;
         }

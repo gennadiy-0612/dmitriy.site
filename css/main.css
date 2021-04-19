@@ -304,11 +304,13 @@ a {
     right: 0;
     margin: 7% 13% 0 auto;
     background: radial-gradient(#3a3a3a 0, transparent 70%);
+    animation: 70s linear 0s infinite normal move_around;
 }
 
 .back-site__round-in canvas {
     align-self: center;
     margin: 0;
+    animation: 2s slow-show;
 }
 
 .back-site__round-in {
@@ -322,7 +324,6 @@ a {
     justify-content: center;
     align-self: center;
     align-content: center;
-    animation: 70s linear 0s infinite normal move_around;
 }
 
 .back-site__round-in canvas,
@@ -362,21 +363,6 @@ a {
 @keyframes slow-show {
     0% {
         opacity: 0;
-    }
-    20% {
-        opacity: 0;
-    }
-    40% {
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-    }
-    80% {
-        opacity: 0;
-    }
-    95% {
-        opacity: .1;
     }
     100% {
         opacity: 1;

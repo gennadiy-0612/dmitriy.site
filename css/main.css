@@ -33,7 +33,9 @@
     src: local('Druk Text Wide'), local('Druk Text Wide'),
     url('./font/DrukTextWide-Medium.ttf') format('truetype');
 }
-
+canvas{
+    visibility: hidden;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -3062,4 +3064,8 @@ a {
     100% {
         transform: rotate(360deg);
     }
+}
+
+canvas{
+    visibility: visible;
 }

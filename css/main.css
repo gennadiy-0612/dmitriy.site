@@ -1105,6 +1105,7 @@ a {
     justify-content: center;
     align-items: center;
     background-color: #000000e6;
+    display: flex;
 }
 
 .videoClose {
@@ -1117,6 +1118,14 @@ a {
     top: 40px;
     width: 40px;
     height: 40px;
+}
+
+.videoCanvas {
+    width: 100%;
+}
+
+.videoCanvas iframe {
+    width: 100%;
 }
 
 .videoScreenClose {

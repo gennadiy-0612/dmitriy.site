@@ -323,7 +323,7 @@ a {
 
 .back-site__round-in canvas,
 .slow-show {
-    animation: 0s slow-show;
+    animation: 2s slow-show;
 }
 
 .back-site__round-in::before,

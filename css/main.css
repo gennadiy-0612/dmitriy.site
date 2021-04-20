@@ -2747,420 +2747,419 @@ a {
     .callBackButton {
         margin: 18px auto 0 296px;
     }
-}
-
-.periodTA,
-.index-textarea {
-    transition: 1s all;
-}
-
-.index-textarea:focus,
-.index-textarea:focus-visible {
-    border: 0;
-    height: 100px;
-}
-
-.periodTA:focus {
-    height: 40px;
-    text-indent: 115px;
-}
-
-.periodTA {
-    top: -30px;
-}
-
-/*forms finish*/
-/*footer*/
-.footer__box {
-    max-width: 870px;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 0 0 auto;
-    padding-left: 50px;
-}
-
-.footback {
-    position: relative;
-    width: 61.45%;
-}
-
-.footer__desktop {
-    flex: 0 0 32%;
-    margin: 71px 0 86px;
-}
-
-.footer__narrow {
-    flex: 0 0 32%;
-}
-
-.footer__wide {
-    flex: 0 0 36%;
-}
-
-.footer__nohead {
-    padding: 42px 0 0;
-}
-
-.footer__nohead-last {
-    position: relative;
-    left: -3%;
-    flex: 0 0 34%;
-}
-
-.footer__p3 {
-    margin: 0;
-}
-
-.footer__p4 {
-    margin: 16px 5% -14px 0;
-}
-
-/* form */
-.FootForm {
-    width: 35%;
-    display: inline-block;
-}
-
-.footback::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.footback::before {
-    background-color: #121212;
-    z-index: -3;
-}
-
-.footer__setboxes {
-    display: flex;
-}
-
-.footer__p5 {
-    margin: -40px 0 0 auto;
-    max-width: 870px;
-    display: flex;
-}
-
-.footer__p6 {
-    margin-right: 1%;
-}
-
-/*contacts*/
-.s2-contactdesk {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap
-}
-
-.s3contactinfo__2desk {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 80px;
-    margin-bottom: 229px;
-}
-
-.contactinfo__2desk {
-    flex: 0 0 33.4%;
-    overflow: hidden;
-    margin-top: 122px;
-}
-
-.s3contactinfo__2desk-pulse {
-    flex: 2 2 23%;
-    margin: 50px 0 0;
-    padding: 80px 0 20px 2%;
-}
-
-.s3contactinfo__2desk-p {
-    line-height: 40px;
-}
-
-.cta-bigbutton,
-.s3contactinfo-bigbutton {
-    height: 260px;
-    width: 260px;
-    border-radius: 130px;
-    margin-top: -20px;
-}
-
-.cta-bigbutton {
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.s3contactinfo-press {
-    line-height: 260px;
-    text-align: center;
-    z-index: 0;
-    position: relative;
-}
-
-.connect-figcaption {
-    margin: -5px 0 0 0;
-}
-
-.command {
-    margin: 0;
-}
-
-.contact-img {
-    width: 427px;
-    height: 508px;
-}
-
-.command-h2 {
-    margin: 17px 0 15px;
-}
-
-.command-p {
-    line-height: 38px;
-}
-
-/*contacts*/
-/*Video slider*/
-.video__h1 {
-    margin: 0.6% 0 0 2.7%;
-}
-
-.video__list {
-    padding: 10px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: 0;
-    top: 0;
-    max-width: 1140px;
-}
-
-.video__slides {
-    position: absolute;
-    top: 0;
-    bottom: -22%;
-    margin: auto;
-    height: 220px;
-    width: 84%;
-    overflow: hidden;
-}
-
-.video__item {
-    width: 300px;
-    height: 200px;
-    background-size: 220px;
-    margin: 10px;
-    flex: 1 0 300px;
-    max-width: 300px;
-}
-
-.video__nav-top {
-    height: 87%;
-    max-width: 100px;
-    right: 5.8%;
-    bottom: 16%;
-    top: auto;
-}
-
-.videoSlider-close {
-    position: relative;
-    z-index: 1;
-}
-
-/*Video slider*/
-/*Modal forms*/
-.modalJoinForm {
-    max-width: 500px;
-}
-
-.vac__close {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-}
-
-.vac__wind {
-    max-width: 600px;
-    max-height: initial;
-    padding: 20px;
-}
-
-.vacancies-hidden-form {
-    min-width: 460px;
-    padding: 0 40px 0;
-}
-
-.modalJoin__input {
-    top: -39px;
-}
-
-.hide-form-index__close {
-    position: absolute;
-    right: -10px;
-    top: 0;
-}
-
-.hide-form-index__h2 {
-    margin: 44px 0 24px;
-}
-
-.modaljoinToUs__h3 {
-    font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
-    color: #FFFFFF;
-    padding: 32px 35px 0;
-}
-
-.footer__form__input,
-.modalJoin__text {
-    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
-    color: #FFFFFF;
-}
-
-.eriodTA {
-    top: -28px;
-}
-
-.eriodTA:focus {
-    height: 40px;
-}
-
-.modalJoin-center {
-    text-align: center;
-}
-
-.hide-form-index__form {
-    padding: 0 40px 50px;
-}
-
-.hide-form-index__h2 {
-    margin: 47px 0 0;
-    padding: 0;
-    letter-spacing: -1.1px;
-}
-
-.vac__labels {
-    padding-top: 36px;
-}
-
-.vac__h2 {
-    padding: 25px 0 10px;
-}
-
-.vac__block {
-    margin: 0;
-}
-
-.index__n {
-    margin: 5px 0 -11px;
-}
-
-.hide-form-index__i {
-    top: -17px;
-}
-
-.hide-form-index__button {
-    margin: 18px 21% 0 auto;
-    letter-spacing: -0.7px;
-}
-
-.hide-form-index__phone {
-    left: 15%;
-    width: 85%;
-    text-indent: 10px;
-}
-
-/*Modal forms*/
-/*Orbit*/
-.back-site__round-out {
-    width: 80vmin;
-    height: 80vmin;
-    border-radius: 40vmin;
-    top: 0;
-    right: -10%;
-    bottom: 0;
-    left: auto;
-    background: radial-gradient(#3a3a3a 0, transparent 70%);
-    margin: auto;
-    display: flex;
-}
-
-/*Orbit*/
-
-
-/*Period*/
-.periodForm {
-    max-height: 624px;
-    max-width: 288px;
-    padding: 0 16px 35px;
-}
-
-.periodClose {
-    position: absolute;
-    top: 2px;
-    right: -9px;
-    height: 16px;
-    width: 16px;
-}
-
-.periodH2 {
-    padding: 41px 0 0;
-    font: normal normal 700 19px/29px 'Druk Text Wide', sans-serif;
-    margin: 0;
-}
-
-.periodH4 {
-    margin: 13px 0 0;
-}
-
-.periodLabels {
-    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
-    color: #FFFFFF;
-    margin: 0 auto 0;
-    width: 100%;
-    padding: 22px 0 0;
-}
-
-.periodInputFN {
-    text-indent: 45px;
-    top: -27px;
-}
-
-.periodInputLN {
-    text-indent: 70px;
-    top: -28px;
-}
-
-.periodInputFNPhone {
-    text-indent: 85px;
-    top: -27px;
-}
-
-.periodLabelMSG {
-    top: 0;
-}
-
-.periodLabelMSG::after {
-    top: 55px;
-}
-
-
-.period__text {
-    height: 20px;
-    margin: 0 0 11px;
-}
-
-#msg.periodMSG {
-    text-indent: 110px;
-    top: -55px;
-}
 
-.periodSend {
-    margin: 26px 99px 0 auto;
+    .periodTA,
+    .index-textarea {
+        transition: 1s all;
+    }
+
+    .index-textarea:focus,
+    .index-textarea:focus-visible {
+        border: 0;
+        height: 100px;
+    }
+
+    .periodTA:focus {
+        height: 40px;
+        text-indent: 115px;
+    }
+
+    .periodTA {
+        top: -30px;
+    }
+
+    /*forms finish*/
+    /*footer*/
+    .footer__box {
+        max-width: 870px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 0 0 auto;
+        padding-left: 50px;
+    }
+
+    .footback {
+        position: relative;
+        width: 61.45%;
+    }
+
+    .footer__desktop {
+        flex: 0 0 32%;
+        margin: 71px 0 86px;
+    }
+
+    .footer__narrow {
+        flex: 0 0 32%;
+    }
+
+    .footer__wide {
+        flex: 0 0 36%;
+    }
+
+    .footer__nohead {
+        padding: 42px 0 0;
+    }
+
+    .footer__nohead-last {
+        position: relative;
+        left: -3%;
+        flex: 0 0 34%;
+    }
+
+    .footer__p3 {
+        margin: 0;
+    }
+
+    .footer__p4 {
+        margin: 16px 5% -14px 0;
+    }
+
+    /* form */
+    .FootForm {
+        width: 35%;
+        display: inline-block;
+    }
+
+    .footback::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .footback::before {
+        background-color: #121212;
+        z-index: -3;
+    }
+
+    .footer__setboxes {
+        display: flex;
+    }
+
+    .footer__p5 {
+        margin: -40px 0 0 auto;
+        max-width: 870px;
+        display: flex;
+    }
+
+    .footer__p6 {
+        margin-right: 1%;
+    }
+
+    /*contacts*/
+    .s2-contactdesk {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap
+    }
+
+    .s3contactinfo__2desk {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 80px;
+        margin-bottom: 229px;
+    }
+
+    .contactinfo__2desk {
+        flex: 0 0 33.4%;
+        overflow: hidden;
+        margin-top: 122px;
+    }
+
+    .s3contactinfo__2desk-pulse {
+        flex: 2 2 23%;
+        margin: 50px 0 0;
+        padding: 80px 0 20px 2%;
+    }
+
+    .s3contactinfo__2desk-p {
+        line-height: 40px;
+    }
+
+    .cta-bigbutton,
+    .s3contactinfo-bigbutton {
+        height: 260px;
+        width: 260px;
+        border-radius: 130px;
+        margin-top: -20px;
+    }
+
+    .cta-bigbutton {
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .s3contactinfo-press {
+        line-height: 260px;
+        text-align: center;
+        z-index: 0;
+        position: relative;
+    }
+
+    .connect-figcaption {
+        margin: -5px 0 0 0;
+    }
+
+    .command {
+        margin: 0;
+    }
+
+    .contact-img {
+        width: 427px;
+        height: 508px;
+    }
+
+    .command-h2 {
+        margin: 17px 0 15px;
+    }
+
+    .command-p {
+        line-height: 38px;
+    }
+
+    /*contacts*/
+    /*Video slider*/
+    .video__h1 {
+        margin: 0.6% 0 0 2.7%;
+    }
+
+    .video__list {
+        padding: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 0;
+        top: 0;
+        max-width: 1140px;
+    }
+
+    .video__slides {
+        position: absolute;
+        top: 0;
+        bottom: -22%;
+        margin: auto;
+        height: 220px;
+        width: 84%;
+        overflow: hidden;
+    }
+
+    .video__item {
+        width: 300px;
+        height: 200px;
+        background-size: 220px;
+        margin: 10px;
+        flex: 1 0 300px;
+        max-width: 300px;
+    }
+
+    .video__nav-top {
+        height: 87%;
+        max-width: 100px;
+        right: 5.8%;
+        bottom: 16%;
+        top: auto;
+    }
+
+    .videoSlider-close {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*Video slider*/
+    /*Modal forms*/
+    .modalJoinForm {
+        max-width: 500px;
+    }
+
+    .vac__close {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+
+    .vac__wind {
+        max-width: 600px;
+        max-height: initial;
+        padding: 20px;
+    }
+
+    .vacancies-hidden-form {
+        min-width: 460px;
+        padding: 0 40px 0;
+    }
+
+    .modalJoin__input {
+        top: -39px;
+    }
+
+    .hide-form-index__close {
+        position: absolute;
+        right: -10px;
+        top: 0;
+    }
+
+    .hide-form-index__h2 {
+        margin: 44px 0 24px;
+    }
+
+    .modaljoinToUs__h3 {
+        font: normal normal 400 27px/41px 'Druk Text Wide', sans-serif;
+        color: #FFFFFF;
+        padding: 32px 35px 0;
+    }
+
+    .footer__form__input,
+    .modalJoin__text {
+        font: normal normal 400 16px/27px 'Montserrat', sans-serif;
+        color: #FFFFFF;
+    }
+
+    .eriodTA {
+        top: -28px;
+    }
+
+    .eriodTA:focus {
+        height: 40px;
+    }
+
+    .modalJoin-center {
+        text-align: center;
+    }
+
+    .hide-form-index__form {
+        padding: 0 40px 50px;
+    }
+
+    .hide-form-index__h2 {
+        margin: 47px 0 0;
+        padding: 0;
+        letter-spacing: -1.1px;
+    }
+
+    .vac__labels {
+        padding-top: 36px;
+    }
+
+    .vac__h2 {
+        padding: 25px 0 10px;
+    }
+
+    .vac__block {
+        margin: 0;
+    }
+
+    .index__n {
+        margin: 5px 0 -11px;
+    }
+
+    .hide-form-index__i {
+        top: -17px;
+    }
+
+    .hide-form-index__button {
+        margin: 18px 21% 0 auto;
+        letter-spacing: -0.7px;
+    }
+
+    .hide-form-index__phone {
+        left: 15%;
+        width: 85%;
+        text-indent: 10px;
+    }
+
+    /*Modal forms*/
+    /*Orbit*/
+    .back-site__round-out {
+        width: 80vmin;
+        height: 80vmin;
+        border-radius: 40vmin;
+        top: 0;
+        right: -10%;
+        bottom: 0;
+        left: auto;
+        background: radial-gradient(#3a3a3a 0, transparent 70%);
+        margin: auto;
+        display: flex;
+    }
+
+    /*Orbit*/
+    /*Period*/
+    .periodForm {
+        max-height: 624px;
+        max-width: 288px;
+        padding: 0 16px 35px;
+    }
+
+    .periodClose {
+        position: absolute;
+        top: 2px;
+        right: -9px;
+        height: 16px;
+        width: 16px;
+    }
+
+    .periodH2 {
+        padding: 41px 0 0;
+        font: normal normal 700 19px/29px 'Druk Text Wide', sans-serif;
+        margin: 0;
+    }
+
+    .periodH4 {
+        margin: 13px 0 0;
+    }
+
+    .periodLabels {
+        font: normal normal 400 16px/27px 'Montserrat', sans-serif;
+        color: #FFFFFF;
+        margin: 0 auto 0;
+        width: 100%;
+        padding: 22px 0 0;
+    }
+
+    .periodInputFN {
+        text-indent: 45px;
+        top: -27px;
+    }
+
+    .periodInputLN {
+        text-indent: 70px;
+        top: -28px;
+    }
+
+    .periodInputFNPhone {
+        text-indent: 85px;
+        top: -27px;
+    }
+
+    .periodLabelMSG {
+        top: 0;
+    }
+
+    .periodLabelMSG::after {
+        top: 55px;
+    }
+
+
+    .period__text {
+        height: 20px;
+        margin: 0 0 11px;
+    }
+
+    #msg.periodMSG {
+        text-indent: 110px;
+        top: -55px;
+    }
+
+    .periodSend {
+        margin: 26px 99px 0 auto;
+    }
+
+    /*Period*/
 }
 
-/*Period*/
 /*scroll animation*/
 .aboutus {
     position: relative;

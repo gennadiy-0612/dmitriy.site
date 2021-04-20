@@ -855,9 +855,7 @@ a {
 #firstname1,
 #firstname2,
 #firstname3 {
-    text-indent: 10px;
-    left: 10%;
-    width: 90%;
+    text-indent: 49px;
 }
 
 #lastname1,
@@ -872,9 +870,8 @@ a {
 #phone1,
 #phone2,
 #phone3 {
-    text-indent: 10px;
-    width: 75%;
-    left: 25%;
+    text-indent: 45px;
+    left: 0;
 }
 
 .show-form-vacancies {
@@ -1724,7 +1721,7 @@ a {
         margin: -15px 32% 0 auto;
     }
 
-    .CallBackButton {
+    .callBackButton {
         margin: -15px auto 0 117px;
     }
 
@@ -1992,6 +1989,8 @@ a {
 
     .hide-form-index__i {
         top: -37px;
+        left: 0;
+        text-indent: 82px;
     }
 
     .hide-form-index__label {
@@ -2661,29 +2660,39 @@ a {
     }
 
     .FootForm-fn {
-        left: 10%;
-        width: 90%;
+        left: 0;
+        text-indent: 45px;
     }
 
     .FootForm-em {
-        left: 15%;
-        width: 85%;
+        left: 0;
+        text-indent: 70px;
     }
 
     .FootForm-ph {
-        left: 20%;
-        width: 80%;
+        left: 0;
+        text-indent: 95px;
     }
 
     .index-textarea {
-        top: 0;
-        width: 100%;
+        text-indent: 100px;
+        position: relative;
+        top: -25px;
         left: 0;
-        border-bottom: solid 1px #fff;
+        width: 100%;
+        height: 20px;
+    }
+
+    .index-textarea:focus {
+        height: auto;
     }
 
     .buttonmiddle-footer {
         margin: 31px 0 0 36%;
+    }
+
+    .callBackButton {
+        margin: 18px auto 0 296px;
     }
 
     .index-textarea:focus,

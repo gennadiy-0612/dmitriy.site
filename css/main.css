@@ -1989,6 +1989,10 @@ a {
         margin-right: 19px;
     }
 
+    .periodClose {
+        top: 20px;
+    }
+
     .vac__close {
         position: absolute;
         right: 18px;

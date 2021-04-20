@@ -2254,20 +2254,9 @@ a {
 
     .Tracer {
         position: fixed;
-        top: 50%;
-        animation: 2s appear;
+        top: 0;
     }
 
-    @keyframes Tracer {
-        from {
-            opacity: 0;
-            top: 0;
-        }
-
-        to {
-            top: 50%;
-        }
-    }
     .keyprinciples__p {
         margin: 0;
     }

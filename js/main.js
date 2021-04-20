@@ -88,7 +88,7 @@ shch.HeaderTracer = function (tracer) {
         this.heightHide = this.heightPap - this.heightWind;
         if (Math.floor(window.scrollY) > Math.floor(this.topPap)) {
             this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
-            if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide + this.heightWind * .4)) {
+            if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide + this.heightWind * .9)) {
                 this.traceEl.setAttribute('class', this.traceElOldClass);
                 return true;
             }

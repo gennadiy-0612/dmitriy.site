@@ -76,10 +76,6 @@ shch.foloiButton = function (e) {
     shch['.overno']['.overno'].changeIt(e);
 }
 
-// shch.tanksButton = function (e) {
-//     shch['.hide-form-index']['.hide-form-index'].changeIt(e);
-// }
-
 shch.HeaderTracer = function (tracer) {
     this.traceEl = document.querySelector(tracer);
     this.traceElOldClass = this.traceEl.getAttribute('class');

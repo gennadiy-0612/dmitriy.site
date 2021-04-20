@@ -64,8 +64,8 @@ let shch = {
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
-        shch['.hide-form-tanks'] = new shch.RefreshClass('.hide-form-tanks', 'show', '', '.tanksButton', '', '.hide-form-tanks__close');
-        shch['.hide-form-tanks']['.hide-form-tanks'].addAct();
+        shch['.period'] = new shch.RefreshClass('.period', 'show', '', '.periodCount', '', '.periodClose');
+        shch['.period']['.period'].addAct();
         // document.querySelector('.hide-form-index').addEventListener('click', shch.tanksButton);
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }

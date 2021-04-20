@@ -1724,6 +1724,10 @@ a {
         margin: -15px 32% 0 auto;
     }
 
+    .CallBackButton {
+        margin: -15px auto 0 117px;
+    }
+
     /*Buttons finish here*/
     .allinfo {
         padding: 0;
@@ -1932,7 +1936,7 @@ a {
         font: normal normal 400 16px/27px 'Montserrat', sans-serif;
         color: #FFFFFF;
         max-width: 270px;
-        margin: 12px auto 0;
+        margin: 13px auto 0;
     }
 
     .modalJoinForm__labels {
@@ -2952,31 +2956,6 @@ a {
         text-indent: 10px;
     }
 
-    /*Period*/
-    .periodForm {
-        max-height: 624px;
-        max-width: 280px;
-        padding: 0 20px 0;
-    }
-
-    .periodInputFN {
-        text-indent: 45px;
-    }
-
-    .periodInputLN {
-        text-indent: 70px;
-    }
-
-    .periodInputFNPhone {
-        text-indent: 85px;
-    }
-
-    .periodMSG {
-        text-indent: 110px;
-        top: -60px;
-    }
-
-    /*Period*/
     /*Modal forms*/
     /*Orbit*/
     .back-site__round-out {
@@ -2995,6 +2974,71 @@ a {
     /*Orbit*/
 }
 
+
+/*Period*/
+.periodForm {
+    max-height: 624px;
+    max-width: 288px;
+    padding: 0 16px 35px;
+}
+
+.periodClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 16px;
+    width: 16px;
+}
+
+.periodH2 {
+    padding: 41px 0 0;
+    font: normal normal 700 19px/29px 'Druk Text Wide', sans-serif;
+    margin: 0;
+}
+
+.periodH4 {
+    margin: 13px 0 0;
+}
+
+.periodLabels {
+    font: normal normal 400 16px/27px 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    margin: 0 auto 0;
+    width: 100%;
+    padding: 22px 0 0;
+}
+
+.periodInputFN {
+    text-indent: 45px;
+}
+
+.periodInputLN {
+    text-indent: 70px;
+}
+
+.periodInputFNPhone {
+    text-indent: 85px;
+}
+
+.periodLabelMSG::after {
+    top: 55px;
+}
+
+.periodMSG {
+    text-indent: 110px;
+    top: -60px;
+}
+
+.period__text {
+    height: 20px;
+    margin: 0 0 11px;
+}
+
+.periodSend {
+    margin: 26px 99px 0 auto;
+}
+
+/*Period*/
 /*scroll animation*/
 .aboutus {
     position: relative;

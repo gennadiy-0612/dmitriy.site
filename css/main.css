@@ -861,16 +861,15 @@ a {
 #lastname1,
 #lastname2,
 #lastname3 {
-    text-indent: 10px;
-    left: 20%;
-    width: 80%;
+    text-indent: 70px;
+    left: 0;
 }
 
 .hide-form-index__phone,
 #phone1,
 #phone2,
 #phone3 {
-    text-indent: 45px;
+    text-indent: 85px;
     left: 0;
 }
 
@@ -2921,7 +2920,7 @@ a {
     }
 
     .modalJoin__input {
-        top: -38px;
+        top: -39px;
     }
 
     .hide-form-index__close {

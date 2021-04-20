@@ -964,6 +964,7 @@ a {
     margin: 0 0 16px;
 }
 
+
 .footer__label::after,
 .modalJoinForm__block::after {
     position: absolute;
@@ -2598,10 +2599,12 @@ a {
     .formh1 {
         font: normal normal 400 27px/31px 'Druk Text Wide', sans-serif;
     }
-    .footer__h2{
+
+    .footer__h2 {
         margin: 0;
         line-height: 40px;
     }
+
     .logisticH2 {
         padding: 32px 0 27px;
         line-height: 36px;
@@ -2657,10 +2660,16 @@ a {
         border-width: 0;
         display: block;
         position: relative;
-        top: -44px;
+        top: -40px;
         left: 24%;
         width: 76%;
         text-indent: 10px;
+    }
+
+    .index-textarea {
+        border-width: 0;
+        border-bottom: 1px solid #ffffff;
+        height: 1px;
     }
 
     .FootForm-fn {

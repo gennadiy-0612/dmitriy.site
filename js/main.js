@@ -6,14 +6,16 @@ let shch = {
             shch.locate = {
                 index1: '/pf/dmitriy.site/',
                 index2: '/pf/dmitriy.site/index.html',
-                vacancy: '/pf/dmitriy.site/vacancy.html'
+                vacancy: '/pf/dmitriy.site/vacancy.html',
+                contacts: '/pf/dmitriy.site/contacts.html'
             };
         }
         if (window.location.origin === 'http://localhost:81') {
             shch.locate = {
                 index1: '/',
                 index2: '/index.html',
-                vacancy: '/vacancy.html'
+                vacancy: '/vacancy.html',
+                contacts: '/contacts.html'
             };
         }
         shch['.overno'] = new shch.RefreshClass('.overno', 'overyes', '', '.burger');
@@ -22,6 +24,7 @@ let shch = {
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if ((locAddr === shch.locate.index1) || (locAddr === shch.locate.index2)) {
+            document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;
@@ -54,6 +57,9 @@ let shch = {
             shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
             window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
         }
+        if (locAddr === shch.locate.contacts) {
+            document.querySelector('.write-to-us').addEventListener('click', shch.writeToUs);
+        }
         if (locAddr === shch.locate.vacancy) {
             shch['.hf1'] = new shch.RefreshClass('.hidden-form-vacancies1', 'show-form-vacancies', '', '.vacancies-form-button1', '', '.hide-form-vacancies1');
             shch['.hf1']['.hidden-form-vacancies1'].addAct();
@@ -61,6 +67,8 @@ let shch = {
             shch['.hf2']['.hidden-form-vacancies2'].addAct();
             shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
             shch['.hf3']['.hidden-form-vacancies3'].addAct();
+            shch['.hf4'] = new shch.RefreshClass('.hidden-form-vacancies4', 'show-form-vacancies', '', '.vacancies-form-button4', '', '.hide-form-vacancies4');
+            shch['.hf4']['.hidden-form-vacancies4'].addAct();
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
@@ -74,6 +82,14 @@ window.addEventListener('load', shch.burger);
 
 shch.foloiButton = function (e) {
     shch['.overno']['.overno'].changeIt(e);
+}
+
+shch.writeToUs = function (e) {
+    shch['.period']['.period'].changeIt(e);
+}
+
+shch.talkAboutProject = function (e) {
+    shch['.period']['.period'].changeIt(e);
 }
 
 shch.HeaderTracer = function (tracer) {
@@ -368,12 +384,7 @@ shch.PlaceBall = function (balls) {
     }
 }
 
-shch.getInfo = {
-    switch: 0,
-    go: function (e) {
-        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'));
-    }
-};
+shch.getInfo = {switch: 0};
 
 shch.includeHTML = function (file, idData) {
     let showIt = document.querySelector('.whereDisplay');
@@ -389,7 +400,7 @@ shch.includeHTML = function (file, idData) {
                     shch.getInfo.switch ? shch.getInfo.switch = 0 : shch.getInfo.switch = 1;
                     Json = JSON.parse(this.responseText);
                     showIt.setAttribute('class', 'whereDisplay ' + classes)
-                    showIt.innerHTML = Json[idData]["contents"];
+                    showIt.innerHTML = '<h3 class="agh1desk fontwhite agtext">' + Json[idData]["header"] + '</h3>' + Json[idData]["contents"];
                 }
                 if (this.status == 404) {
                     showIt.innerHTML = "Page not found.";

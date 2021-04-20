@@ -856,7 +856,8 @@ a {
 .hidden-form-vacancies,
 .hidden-form-vacancies1,
 .hidden-form-vacancies2,
-.hidden-form-vacancies3 {
+.hidden-form-vacancies3,
+.hidden-form-vacancies4 {
     display: none;
 }
 
@@ -872,13 +873,15 @@ a {
 #fnamehide,
 #firstname1,
 #firstname2,
-#firstname3 {
+#firstname3,
+#firstname4 {
     text-indent: 49px;
 }
 
 #lastname1,
 #lastname2,
-#lastname3 {
+#lastname3,
+#lastname4 {
     text-indent: 70px;
     left: 0;
 }
@@ -886,7 +889,8 @@ a {
 .hide-form-index__phone,
 #phone1,
 #phone2,
-#phone3 {
+#phone3,
+#phone4 {
     text-indent: 85px;
     left: 0;
 }
@@ -926,7 +930,7 @@ a {
 }
 
 .vac__close {
-    margin: 0 -10px 0 auto;
+    margin: 0 10px 0 auto;
 }
 
 .vacancies-hidden-form {
@@ -1523,7 +1527,7 @@ a {
 
     .cta-bigbutton {
         margin-top: -10px;
-        z-index: -1;
+        z-index: 0;
         height: 186px;
         width: 186px;
         display: flex;
@@ -2733,6 +2737,14 @@ a {
         margin: 31px 0 0 36%;
     }
 
+    .vac__pulse {
+        margin: 12px 98px 29px auto;
+    }
+
+    .modalJoin__input {
+        margin: 0;
+    }
+
     .callBackButton {
         margin: 18px auto 0 296px;
     }
@@ -2948,14 +2960,21 @@ a {
         max-width: 500px;
     }
 
-    .show-form-vacancies {
-
+    .vac__close {
+        position: absolute;
+        top: 20px;
+        right: 10px;
     }
 
     .vac__wind {
         max-width: 600px;
         max-height: initial;
         padding: 20px;
+    }
+
+    .vacancies-hidden-form {
+        min-width: 460px;
+        padding: 0 40px 0;
     }
 
     .modalJoin__input {
@@ -2996,6 +3015,18 @@ a {
         margin: 47px 0 0;
         padding: 0;
         letter-spacing: -1.1px;
+    }
+
+    .vac__labels {
+        padding-top: 36px;
+    }
+
+    .vac__h2 {
+        padding: 25px 0 10px;
+    }
+
+    .vac__block {
+        margin: 0;
     }
 
     .index__n {
@@ -3178,6 +3209,22 @@ a {
 }
 
 /*Orbit*/
+
+@media (max-width: 1070px) and (orientation: landscape) {
+    .overyes .s1__p2 {
+        height: 95vmin;
+        padding: 3vmin 0;
+        justify-content: space-around;
+    }
+
+    .s1__p2__p1 {
+        padding: 5px 0;
+    }
+
+    .back-site__round-out {
+        top: 0;
+    }
+}
 
 @media (min-width: 1070px) and (max-width: 1800px) {
     .back-site__round-out {

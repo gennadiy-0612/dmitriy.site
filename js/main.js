@@ -181,9 +181,6 @@ shch.VideoShow = function () {
     this.videoScreenClose = 'videoScreenClose';
     this.movie = function (e) {
         let itemVideo = e.target.getAttribute('data-json-id');
-        if (shch['.VS' + itemVideo]) {
-            delete shch['.VS' + itemVideo];
-        }
         let videoScreen = document.createElement(this.videoScreen);
         document.querySelector('body').appendChild(videoScreen);
         videoScreen.setAttribute('class', this.classScreen + itemVideo);
@@ -203,6 +200,12 @@ shch.VideoShow = function () {
         videoCanvas.innerHTML = shch.getReq['videoData'][itemVideo]['addVideoShow'];
         shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
         shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
+
+        shch.removeVideo=function () {
+            document.querySelector('body').removeChild(shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag)
+            delete shch['.VS' + itemVideo];
+        }
+        shch['.VS' + itemVideo]['.videoScreen' + itemVideo].button.addEventListener('click', shch.removeVideo);
     }
 };
 

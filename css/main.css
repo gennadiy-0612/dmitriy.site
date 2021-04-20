@@ -827,6 +827,7 @@ a {
 
 .show {
     display: flex;
+    flex-direction: column;
 }
 
 /*Modal forms*/

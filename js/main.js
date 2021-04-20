@@ -360,18 +360,44 @@ shch.PlaceBall = function (balls) {
     this.initLI = document.querySelector(balls);
     this.initLI.setAttribute('id', 'ballIsPlaced')
     this.setPlace = function (e) {
+        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'));
         if (this.initLI === e.target) return;
         e.target.setAttribute('id', 'ballIsPlaced');
         this.initLI.setAttribute('id', '');
         this.initLI = e.target
     }
 }
-shch.includeJSON = function (cb) {
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("demo").innerHTML = this.responseText;
+
+shch.getInfo = {
+    switch: 0,
+    go: function (e) {
+        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'));
+    }
+};
+
+shch.includeHTML = function (file, idData) {
+    let showIt = document.querySelector('.whereDisplay');
+    let Json;
+    let classes;
+    if (file) {
+        let nghttp;
+        nghttp = new XMLHttpRequest();
+        nghttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    shch.getInfo.switch ? classes = 'whereDisplay0' : classes = 'whereDisplay1';
+                    shch.getInfo.switch ? shch.getInfo.switch = 0 : shch.getInfo.switch = 1;
+                    Json = JSON.parse(this.responseText);
+                    showIt.setAttribute('class', 'whereDisplay ' + classes)
+                    showIt.innerHTML = Json[idData]["contents"];
+                }
+                if (this.status == 404) {
+                    showIt.innerHTML = "Page not found.";
+                }
+            }
         }
-    };
-    xhttp.open("GET", "ajax_info.txt", true);
-    xhttp.send();
-}
+        nghttp.open("GET", file, true);
+        nghttp.send();
+        return;
+    }
+};

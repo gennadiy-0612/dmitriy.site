@@ -365,6 +365,24 @@ a {
 
 }
 
+@keyframes slow-show1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.whereDisplay0 {
+    animation: 1s slow-show;
+}
+
+.whereDisplay1 {
+    animation: 1s slow-show1;
+}
+
 /*.back-site finish*/
 /*.vacancies*/
 .uperlinedesktop::after {

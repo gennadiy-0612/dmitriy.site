@@ -1990,7 +1990,15 @@ a {
     }
 
     .periodClose {
-        top: 20px;
+        margin: -20px 7px 24px auto;
+    }
+
+    .periodForm {
+        padding: 40px 10px 26px;
+    }
+
+    .periodSend {
+        margin: 8px auto 20px 88px;
     }
 
     .vac__close {

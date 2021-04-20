@@ -2013,9 +2013,7 @@ a {
         display: none;
     }
 
-}
-
-@media (max-width: 1070px) and (orientation: portrait) {
+    /*First Screen*/
     .firstScreen {
         height: 100vh;
         display: flex;
@@ -2038,6 +2036,8 @@ a {
     .h1index {
         margin-top: auto;
     }
+
+    /*First Screen*/
 }
 
 @media (min-width: 1069px) {

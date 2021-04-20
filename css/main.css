@@ -1970,8 +1970,8 @@ a {
 
     .vac__close {
         position: absolute;
-        right: 28px;
-        top: 15px;
+        right: 18px;
+        top: 18px;
         margin-right: 0;
     }
 
@@ -2026,8 +2026,11 @@ a {
         flex-direction: column;
     }
 
+    .contacth1,
     #contacts,
+    .s2__p1-vacancies,
     #vacancies,
+    .TechSupportH1,
     #techsupprt {
         margin-top: auto;
         margin-bottom: auto;
@@ -2178,6 +2181,7 @@ a {
     .firstScreen {
         height: 100vh;
         position: relative;
+        overflow: hidden;
     }
 
     .mainScreen {
@@ -2924,6 +2928,16 @@ a {
     /*Modal forms*/
     .modalJoinForm {
         max-width: 500px;
+    }
+
+    .show-form-vacancies {
+
+    }
+
+    .vac__wind {
+        max-width: 600px;
+        max-height: initial;
+        padding: 20px;
     }
 
     .modalJoin__input {

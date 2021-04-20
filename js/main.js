@@ -201,7 +201,7 @@ shch.VideoShow = function () {
         shch['.VS' + itemVideo] = new shch.RefreshClass('.videoScreen' + itemVideo, this.videoScreenClose, '', '.videoClose' + itemVideo);
         shch['.VS' + itemVideo]['.videoScreen' + itemVideo].addAct();
 
-        shch.removeVideo=function () {
+        shch.removeVideo = function () {
             document.querySelector('body').removeChild(shch['.VS' + itemVideo]['.videoScreen' + itemVideo].infoTag)
             delete shch['.VS' + itemVideo];
         }
@@ -365,4 +365,13 @@ shch.PlaceBall = function (balls) {
         this.initLI.setAttribute('id', '');
         this.initLI = e.target
     }
+}
+shch.includeJSON = function (cb) {
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "ajax_info.txt", true);
+    xhttp.send();
 }

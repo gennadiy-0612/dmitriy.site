@@ -2249,7 +2249,7 @@ a {
 
     .Tracer {
         position: fixed;
-        top: 0;
+        top: 20px;
     }
 
     .keyprinciples__p {

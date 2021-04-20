@@ -1786,6 +1786,10 @@ a {
         left: auto;
     }
 
+    .buttonmiddle-vacancies {
+        margin: 40px auto 0 50px;
+    }
+
     /*.vacancies*/
     /*contacts*/
     .s2-contactdesk {
@@ -2674,23 +2678,26 @@ a {
     .FootForm-fn {
         left: 0;
         text-indent: 48px;
-        top: -42px;
+        top: -40px;
+        width: 100%;
     }
 
     .FootForm-em {
         left: 0;
         text-indent: 70px;
+        width: 100%;
     }
 
     .FootForm-ph {
         left: 0;
         text-indent: 85px;
+        width: 100%;
     }
 
     .index-textarea {
         text-indent: 109px;
         position: relative;
-        top: -27px;
+        top: -29px;
         left: 0;
         width: 100%;
         height: 40px;
@@ -3032,28 +3039,36 @@ a {
 
 .periodInputFN {
     text-indent: 45px;
+    top: -27px;
 }
 
 .periodInputLN {
     text-indent: 70px;
+    top: -28px;
 }
 
 .periodInputFNPhone {
     text-indent: 85px;
+    top: -27px;
+}
+
+.periodLabelMSG {
+    top: 0;
 }
 
 .periodLabelMSG::after {
     top: 55px;
 }
 
-.periodMSG {
-    text-indent: 110px;
-    top: -60px;
-}
 
 .period__text {
     height: 20px;
     margin: 0 0 11px;
+}
+
+#msg.periodMSG {
+    text-indent: 110px;
+    top: -55px;
 }
 
 .periodSend {

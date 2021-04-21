@@ -2356,6 +2356,10 @@ a {
         width: 92.7%;
     }
 
+    .logistic__dirrection.show {
+        align-items: flex-start;
+    }
+
     .logistic__dirrection {
         margin: 0 0 0 0;
     }

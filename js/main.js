@@ -32,13 +32,7 @@ let shch = {
                 shch['.maindirrection' + logisticI] = new shch.RefreshClass('.maindirrection', 'show', logisticI, '.s3__p2');
                 shch['.maindirrection' + logisticI]['.maindirrection' + logisticI].addAct();
             }
-            let logisticI2 = 0;
-            let logisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
-            let logisticSwitcherCount2 = logisticSwitcher2.length;
-            for (logisticI2; logisticI2 < logisticSwitcherCount2; logisticI2++) {
-                shch['.logicInfo' + logisticI2] = new shch.RefreshClass('.logicInfo', 'show', logisticI2, '.logicButton', '.logistic__dirrection');
-                shch['.logicInfo' + logisticI2]['.logicInfo' + logisticI2].addAct();
-            }
+            shch.logistic();
             let ballCollect = document.querySelectorAll('.where .listworks__li');
             let ballCollectMax = ballCollect.length;
             shch.setBall = new shch.PlaceBall('.where .listworks__li')
@@ -67,10 +61,10 @@ let shch = {
             shch['.hf2']['.hidden-form-vacancies2'].addAct();
             shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
             shch['.hf3']['.hidden-form-vacancies3'].addAct();
-           if(window.innerWidth < 1070) {
-               shch['.hf4'] = new shch.RefreshClass('.hidden-form-vacancies4', 'show-form-vacancies', '', '.vacancies-form-button4', '', '.hide-form-vacancies4');
-               shch['.hf4']['.hidden-form-vacancies4'].addAct();
-           }
+            if (window.innerWidth < 1070) {
+                shch['.hf4'] = new shch.RefreshClass('.hidden-form-vacancies4', 'show-form-vacancies', '', '.vacancies-form-button4', '', '.hide-form-vacancies4');
+                shch['.hf4']['.hidden-form-vacancies4'].addAct();
+            }
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();
@@ -78,6 +72,16 @@ let shch = {
         shch['.period']['.period'].addAct();
         // document.querySelector('.hide-form-index').addEventListener('click', shch.tanksButton);
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
+    }
+}
+shch.logistic = function () {
+    shch.logist = {};
+    shch.logist.logisticI2 = 0;
+    shch.logistlogisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
+    shch.logist.logisticSwitcherCount2  = shch.logistlogisticSwitcher2.length;
+    for (shch.logist.logisticI2; shch.logist.logisticI2 < shch.logist.logisticSwitcherCount2 ; shch.logist.logisticI2++) {
+        shch['.logicInfo' + shch.logist.logisticI2] = new shch.RefreshClass('.logicInfo', 'show', shch.logist.logisticI2, '.logicButton', '.logistic__dirrection');
+        shch['.logicInfo' + shch.logist.logisticI2]['.logicInfo' + shch.logist.logisticI2].addAct();
     }
 }
 window.addEventListener('load', shch.burger);
@@ -382,14 +386,14 @@ shch.PlaceBall = function (balls) {
         if (this.initLI === e.target) return;
         e.target.setAttribute('id', 'ballIsPlaced');
         this.initLI.setAttribute('id', '');
-        this.initLI = e.target
+        this.initLI = e.target;
     }
 }
 
 shch.getInfo = {switch: 0};
 
 shch.includeHTML = function (file, idData) {
-    let showIt = document.querySelector('.whereDisplay');
+    let showIt = document.querySelector('.logistic__p5');
     let Json;
     let classes;
     if (file) {
@@ -401,8 +405,9 @@ shch.includeHTML = function (file, idData) {
                     shch.getInfo.switch ? classes = 'whereDisplay0' : classes = 'whereDisplay1';
                     shch.getInfo.switch ? shch.getInfo.switch = 0 : shch.getInfo.switch = 1;
                     Json = JSON.parse(this.responseText);
-                    showIt.setAttribute('class', 'whereDisplay ' + classes)
-                    showIt.innerHTML = '<h3 class="agh1desk fontwhite agtext">' + Json[idData]["header"] + '</h3>' + Json[idData]["contents"];
+                    // showIt.setAttribute('class', 'whereDisplay ' + classes)
+                    showIt.innerHTML = Json[idData]["contents"];
+                    window.addEventListener('DOMNodeInserted', shch.logistic)
                 }
                 if (this.status == 404) {
                     showIt.innerHTML = "Page not found.";

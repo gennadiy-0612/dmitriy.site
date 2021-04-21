@@ -383,6 +383,15 @@ a {
     animation: 2s slow-show1;
 }
 
+.whereDisplay {
+    padding: 0;
+    margin: 50px 0;
+}
+
+.whereDisplay h3 {
+    text-align: center;
+}
+
 /*.back-site finish*/
 /*.vacancies*/
 .uperlinedesktop::after {

@@ -1739,6 +1739,11 @@ a {
         margin: 11px auto 0 93px;
     }
 
+    .vac__input {
+        top: -25px;
+        border-width: 0;
+    }
+
     .hide-form-index__common {
         margin: -15px 32% 0 auto;
     }
@@ -2010,6 +2015,18 @@ a {
 
     .modalJoin__input {
         top: -31px;
+    }
+
+    .periodInputFN {
+        text-indent: 43px;
+    }
+
+    .periodInputLN {
+        text-indent: 64px;
+    }
+
+    .periodInputFNPhone {
+        text-indent: 80px;
     }
 
     /*Vacancies form*/
@@ -2750,6 +2767,11 @@ a {
 
     .vac__pulse {
         margin: 12px 98px 29px auto;
+    }
+
+    .vac__input {
+        top: -30px;
+        border-width: 0;
     }
 
     .modalJoin__input {

@@ -75,6 +75,7 @@ let shch = {
     }
 }
 shch.logistic = function () {
+    alert('load')
     shch.logist = {};
     shch.logist.logisticI2 = 0;
     shch.logistlogisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
@@ -400,8 +401,8 @@ shch.includeHTML = function (file, idData) {
         let nghttp;
         nghttp = new XMLHttpRequest();
         nghttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
+            if (this.readyState === 4) {
+                if (this.status === 200) {
                     shch.getInfo.switch ? classes = 'whereDisplay0' : classes = 'whereDisplay1';
                     shch.getInfo.switch ? shch.getInfo.switch = 0 : shch.getInfo.switch = 1;
                     Json = JSON.parse(this.responseText);
@@ -409,7 +410,7 @@ shch.includeHTML = function (file, idData) {
                     showIt.innerHTML = Json[idData]["contents"];
                     window.addEventListener('DOMNodeInserted', shch.logistic)
                 }
-                if (this.status == 404) {
+                if (this.status === 404) {
                     showIt.innerHTML = "Page not found.";
                 }
             }

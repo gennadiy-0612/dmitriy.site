@@ -840,6 +840,7 @@ a {
 .show {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /*Modal forms*/
@@ -1041,6 +1042,7 @@ a {
     display: block;
     background-color: #000000;
     top: 0;
+    left: 0;
     z-index: -2;
     opacity: .9;
 }
@@ -2407,6 +2409,7 @@ a {
         border-radius: 41px;
         margin: 35px auto 0;
     }
+
     .emotions__ag,
     .emotions__link {
         text-align: center;
@@ -3133,7 +3136,7 @@ a {
         height: 80vmin;
         border-radius: 40vmin;
         top: 0;
-        right: -10%;
+        right: 0;
         bottom: 0;
         left: auto;
         background: radial-gradient(#3a3a3a 0, transparent 70%);

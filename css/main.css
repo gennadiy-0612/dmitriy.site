@@ -1229,6 +1229,18 @@ a {
         height: 1px;
         background-color: #FFFFFF;
         top: -20px;
+        left: 0;
+    }
+
+    .show.maindirrection {
+        align-items: flex-start;
+    }
+
+    .show .keyprinciples-direct::after {
+        left: 0;
+        top: auto;
+        width: 60%;
+        background-color: #1378EF;
     }
 
     .uperlinedesktop::after {

@@ -24,6 +24,7 @@ let shch = {
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if (locAddr === shch.locate.index1 || locAddr === shch.locate.index2) {
+            shch.oberv()
             if (window.innerWidth < 1070) document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
@@ -35,7 +36,7 @@ let shch = {
             shch.logistic();
             let ballCollect = document.querySelectorAll('.where .listworks__li');
             let ballCollectMax = ballCollect.length;
-            shch.setBall = new shch.PlaceBall('.where .listworks__li')
+            shch.setBall = new shch.PlaceBall('.where .listworks__li');
             for (let ballI = 0; ballI < ballCollectMax; ballI++) {
                 ballCollect[ballI].addEventListener('click', shch.setBall.setPlace.bind(shch.setBall), false)
             }
@@ -74,17 +75,19 @@ let shch = {
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }
 }
+
 shch.logistic = function () {
-    alert('load')
+    console.log('load')
     shch.logist = {};
     shch.logist.logisticI2 = 0;
     shch.logistlogisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
-    shch.logist.logisticSwitcherCount2  = shch.logistlogisticSwitcher2.length;
-    for (shch.logist.logisticI2; shch.logist.logisticI2 < shch.logist.logisticSwitcherCount2 ; shch.logist.logisticI2++) {
+    shch.logist.logisticSwitcherCount2 = shch.logistlogisticSwitcher2.length;
+    for (shch.logist.logisticI2; shch.logist.logisticI2 < shch.logist.logisticSwitcherCount2; shch.logist.logisticI2++) {
         shch['.logicInfo' + shch.logist.logisticI2] = new shch.RefreshClass('.logicInfo', 'show', shch.logist.logisticI2, '.logicButton', '.logistic__dirrection');
         shch['.logicInfo' + shch.logist.logisticI2]['.logicInfo' + shch.logist.logisticI2].addAct();
     }
 }
+
 window.addEventListener('load', shch.burger);
 
 shch.foloiButton = function (e) {
@@ -381,10 +384,11 @@ shch.Swipe = function (element) {
 
 shch.PlaceBall = function (balls) {
     this.initLI = document.querySelector(balls);
-    this.initLI.setAttribute('id', 'ballIsPlaced')
+    this.initLI.setAttribute('id', 'ballIsPlaced');
     this.setPlace = function (e) {
-        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'));
         if (this.initLI === e.target) return;
+        document.querySelector('.logistic__p5').innerHTML = '';
+        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'));
         e.target.setAttribute('id', 'ballIsPlaced');
         this.initLI.setAttribute('id', '');
         this.initLI = e.target;
@@ -392,7 +396,6 @@ shch.PlaceBall = function (balls) {
 }
 
 shch.getInfo = {switch: 0};
-
 shch.includeHTML = function (file, idData) {
     let showIt = document.querySelector('.logistic__p5');
     let Json;
@@ -408,7 +411,6 @@ shch.includeHTML = function (file, idData) {
                     Json = JSON.parse(this.responseText);
                     // showIt.setAttribute('class', 'whereDisplay ' + classes)
                     showIt.innerHTML = Json[idData]["contents"];
-                    window.addEventListener('DOMNodeInserted', shch.logistic)
                 }
                 if (this.status === 404) {
                     showIt.innerHTML = "Page not found.";
@@ -420,3 +422,20 @@ shch.includeHTML = function (file, idData) {
         return;
     }
 };
+
+shch.oberv = function () {
+    console.log('obs')
+    const targetNode = document.querySelector(".logistic__p5");
+    const observerOptions = {
+        childList: true,
+        attributes: true,
+
+        // Omit (or set to false) to observe only changes to the parent node
+        subtree: false
+    }
+    shch.obervs = function () {
+        shch.logistic();
+    }
+    const observer = new MutationObserver(shch.obervs);
+    observer.observe(targetNode, observerOptions);
+}

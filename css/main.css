@@ -90,6 +90,10 @@ input:focus {
 a {
     display: block;
 }
+.folio__img,
+.logisticH2 {
+    transition: all 1s;
+}
 
 .show .logisticH2,
 .year-upperline,

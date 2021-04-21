@@ -23,8 +23,8 @@ let shch = {
         document.querySelector('.nav-folio').addEventListener('click', shch.foloiButton);
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
-        if ((locAddr === shch.locate.index1) || (locAddr === shch.locate.index2)) {
-            document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
+        if (locAddr === shch.locate.index1 || locAddr === shch.locate.index2) {
+            if (window.innerWidth < 1070) document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
             let logisticSwitcherCount = logisticSwitcher.length;
@@ -57,7 +57,7 @@ let shch = {
             shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
             window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
         }
-        if (locAddr === shch.locate.contacts) {
+        if (locAddr === shch.locate.contacts && window.innerWidth < 1070) {
             document.querySelector('.write-to-us').addEventListener('click', shch.writeToUs);
         }
         if (locAddr === shch.locate.vacancy) {
@@ -67,8 +67,10 @@ let shch = {
             shch['.hf2']['.hidden-form-vacancies2'].addAct();
             shch['.hf3'] = new shch.RefreshClass('.hidden-form-vacancies3', 'show-form-vacancies', '', '.vacancies-form-button3', '', '.hide-form-vacancies3');
             shch['.hf3']['.hidden-form-vacancies3'].addAct();
-            shch['.hf4'] = new shch.RefreshClass('.hidden-form-vacancies4', 'show-form-vacancies', '', '.vacancies-form-button4', '', '.hide-form-vacancies4');
-            shch['.hf4']['.hidden-form-vacancies4'].addAct();
+           if(window.innerWidth < 1070) {
+               shch['.hf4'] = new shch.RefreshClass('.hidden-form-vacancies4', 'show-form-vacancies', '', '.vacancies-form-button4', '', '.hide-form-vacancies4');
+               shch['.hf4']['.hidden-form-vacancies4'].addAct();
+           }
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
         shch['.hide-form-index']['.hide-form-index'].addAct();

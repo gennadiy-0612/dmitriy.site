@@ -388,7 +388,7 @@ shch.PlaceBall = function (balls) {
     this.setPlace = function (e) {
         if (this.initLI === e.target) return;
         document.querySelector('.logistic__p5').innerHTML = '';
-        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'));
+        shch.includeHTML(shch.locate.index1 + 'nisch/1.json', e.target.getAttribute('data-json-id'), 'logistic__p5');
         e.target.setAttribute('id', 'ballIsPlaced');
         this.initLI.setAttribute('id', '');
         this.initLI = e.target;
@@ -396,8 +396,8 @@ shch.PlaceBall = function (balls) {
 }
 
 shch.getInfo = {switch: 0};
-shch.includeHTML = function (file, idData) {
-    let showIt = document.querySelector('.logistic__p5');
+shch.includeHTML = function (file, idData, showAjax) {
+    let showIt = document.querySelector('.' + showAjax);
     let Json;
     let classes;
     if (file) {
@@ -409,7 +409,7 @@ shch.includeHTML = function (file, idData) {
                     shch.getInfo.switch ? classes = 'whereDisplay0' : classes = 'whereDisplay1';
                     shch.getInfo.switch ? shch.getInfo.switch = 0 : shch.getInfo.switch = 1;
                     Json = JSON.parse(this.responseText);
-                    // showIt.setAttribute('class', 'whereDisplay ' + classes)
+                    showIt.setAttribute('class', showAjax+ ' ' + classes)
                     showIt.innerHTML = Json[idData]["contents"];
                 }
                 if (this.status === 404) {
@@ -429,8 +429,6 @@ shch.oberv = function () {
     const observerOptions = {
         childList: true,
         attributes: true,
-
-        // Omit (or set to false) to observe only changes to the parent node
         subtree: false
     }
     shch.obervs = function () {

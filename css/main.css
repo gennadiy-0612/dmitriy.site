@@ -90,8 +90,10 @@ input:focus {
 a {
     display: block;
 }
+
 .folio__img,
-.logisticH2 {
+.logisticH2,
+.video__go {
     transition: all 1s;
 }
 
@@ -617,7 +619,6 @@ a {
 }
 
 .video__go:hover {
-    transition: all 1s;
     transform: scale(1.1);
     opacity: .8;
 }
@@ -675,10 +676,17 @@ a {
     background: url("../img/index/arrowdown.svg") center center no-repeat;
     border-radius: 5px;
     z-index: -1;
+    transform: rotate(0deg);
 }
 
+.maindirrection::before,
+.logistic__dirrection::before {
+    transition: 1s transform
+}
+
+
 .switcher.show::before {
-    background: url("../img/index/arrowup.svg") center center no-repeat;
+    transform: rotate(-90deg);
 }
 
 /*video test emotions*/
@@ -1008,11 +1016,6 @@ a {
     width: 100%;
     display: block;
     top: 40px;
-}
-
-.periodTA,
-.index-textarea {
-    transition: 1s all;
 }
 
 .modalJoin__input {
@@ -1511,6 +1514,14 @@ a {
         padding: 0 10% 0 0;
     }
 
+    .switcher.show::before {
+        top: 0;
+    }
+
+    .show.maindirrection::before {
+        top: 85px;
+    }
+
     .show .keyprinciples-direct {
         color: #1378EF;
     }
@@ -1528,6 +1539,12 @@ a {
         padding: 0 21% 10px 0;
     }
 
+    .logisticH2,
+    .keyprinciples-direct {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .logisticH2::after {
         right: auto;
         left: 0;
@@ -1542,10 +1559,15 @@ a {
         background-color: #1378EF;
         height: 2px;
         bottom: 10px;
+        margin-bottom: -20px;
     }
 
     .logistic__dirrection {
         padding: 15px 0 6px;
+    }
+
+    .show.logistic__dirrection::before {
+        top: 26px;
     }
 
     .logistic__dirrection.show {
@@ -2111,10 +2133,10 @@ a {
     }
 
     .mainScreen {
-        margin-top: auto;
-        height: 100%;
+        height: 60%;
         display: flex;
         flex-direction: column;
+        margin-top: 223px;
     }
 
     .contacth1,
@@ -2123,7 +2145,7 @@ a {
     #vacancies,
     .TechSupportH1,
     #techsupprt {
-        margin-top: auto;
+        margin-top: 113px;
         margin-bottom: auto;
     }
 
@@ -2378,6 +2400,7 @@ a {
 
     .logistic__p5 {
         display: flex;
+        min-height: 511px;
     }
 
     .logistic__items {
@@ -2401,8 +2424,11 @@ a {
         content: none;
     }
 
+    .maindirrection.switchDeskNone.switcher,
     .switchDeskNone.switcher .extender {
         display: flex;
+        flex-direction: row;
+        align-items: initial;
     }
 
     .keyprinciples__hide {
@@ -2804,12 +2830,14 @@ a {
     }
 
     .index-textarea {
-        text-indent: 109px;
+        text-indent: 0;
         position: relative;
-        top: -29px;
+        top: -26px;
         left: 0;
         width: 100%;
         height: 95px;
+        padding-left: 109px;
+        box-sizing: border-box;
     }
 
     .index-textarea:focus {
@@ -3336,6 +3364,19 @@ a {
 
     .back-site__round-out {
         top: 0;
+    }
+
+    .mainScreen {
+        margin-top: auto;
+    }
+
+    .contacth1,
+    #contacts,
+    .s2__p1-vacancies,
+    #vacancies,
+    .TechSupportH1,
+    #techsupprt {
+        margin-top: auto;
     }
 }
 

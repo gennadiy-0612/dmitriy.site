@@ -1409,7 +1409,7 @@ a {
     }
 
     .s2-vacancies {
-        margin-top: -80px;
+        margin-top: -180px;
     }
 
     .s3__p1 {
@@ -3332,21 +3332,15 @@ a {
     scrollbar-width: none; /* Firefox */
 }
 
-.appear {
-    position: relative;
-    animation: 2s appear;
+.aboutus, .keyprinciples {
+    transition: opacity, transform 2s;
+    opacity: 0;
+    transform: translateY(100px);
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translate(0, 100px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
+.aboutus.appear, .keyprinciples.appear {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes down {

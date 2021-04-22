@@ -341,7 +341,7 @@ shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer
                 if (parentTag) this.parentT.setAttribute('class', this.parentTclass + ' ' + this.newClass);
                 this.initState = 1;
             }
-        }
+        },
     }
 };
 
@@ -476,6 +476,7 @@ shch.periodTAout = function (e) {
     let TAclass = e.target.getAttribute('class');
     shch[TAclass].sibl.setAttribute('class', shch[TAclass].siblOldClass);
 }
+
 shch.autoGrow = function (e) {
     if (this.scrollHeight > this.clientHeight) {
         this.style.height = this.scrollHeight + "px";

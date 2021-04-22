@@ -1569,6 +1569,10 @@ a {
         top: auto;
     }
 
+
+    .logisticH2::after {
+        transition: all 2s
+    }
     .show .logisticH2::after {
         top: auto;
         width: 62%;
@@ -1576,6 +1580,7 @@ a {
         height: 2px;
         bottom: 10px;
         margin-bottom: -20px;
+        max-width: 260px;
     }
 
     .logistic__dirrection {
@@ -2187,6 +2192,7 @@ a {
         opacity: 1;
         transform: translateY(0);
     }
+
     /*First Screen*/
 }
 
@@ -3313,8 +3319,6 @@ a {
     }
 
     /*Period*/
-
-
     .aboutus, .keyprinciples {
         transition: all 2s;
         opacity: 0;

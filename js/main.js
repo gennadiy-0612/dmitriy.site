@@ -68,9 +68,16 @@ let shch = {
             }
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
+        ``
         shch['.hide-form-index']['.hide-form-index'].addAct();
         shch['.period'] = new shch.RefreshClass('.period', 'show', '', '.periodCount', '', '.periodClose');
         shch['.period']['.period'].addAct();
+        document.querySelector('.periodTA').addEventListener('focusin', shch.periodTA)
+        document.querySelector('.periodTA').addEventListener('focusout', shch.periodTAout)
+        document.querySelector('.periodTA').addEventListener('keyup', shch.autoGrow)
+        document.querySelector('.index-textarea').addEventListener('focusin', shch.periodTA)
+        document.querySelector('.index-textarea').addEventListener('focusout', shch.periodTAout)
+        document.querySelector('.index-textarea').addEventListener('keyup', shch.autoGrow)
         // document.querySelector('.hide-form-index').addEventListener('click', shch.tanksButton);
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }
@@ -409,7 +416,7 @@ shch.includeHTML = function (file, idData, showAjax) {
                     shch.getInfo.switch ? classes = 'whereDisplay0' : classes = 'whereDisplay1';
                     shch.getInfo.switch ? shch.getInfo.switch = 0 : shch.getInfo.switch = 1;
                     Json = JSON.parse(this.responseText);
-                    showIt.setAttribute('class', showAjax+ ' ' + classes)
+                    showIt.setAttribute('class', showAjax + ' ' + classes)
                     showIt.innerHTML = Json[idData]["contents"];
                 }
                 if (this.status === 404) {
@@ -436,4 +443,27 @@ shch.oberv = function () {
     }
     const observer = new MutationObserver(shch.obervs);
     observer.observe(targetNode, observerOptions);
+}
+
+shch.periodTA = function (e) {
+    let lab = e.target.previousElementSibling;
+    let labClass = e.target.previousElementSibling.getAttribute('class');
+    let TAclass = e.target.getAttribute('class');
+    if (!shch[TAclass]) {
+        shch[TAclass] = {}
+        shch[TAclass].sibl = lab;
+        shch[TAclass].siblOldClass = labClass;
+        shch[TAclass].TAclass = TAclass;
+    }
+    lab.setAttribute('class', labClass + ' color-trance');
+}
+
+shch.periodTAout = function (e) {
+    let TAclass = e.target.getAttribute('class');
+    shch[TAclass].sibl.setAttribute('class', shch[TAclass].siblOldClass);
+}
+shch.autoGrow = function (e) {
+    if (this.scrollHeight > this.clientHeight) {
+        this.style.height = this.scrollHeight + "px";
+    }
 }

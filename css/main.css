@@ -236,6 +236,7 @@ a {
     cursor: pointer;
 }
 
+
 /*.buttons finish*/
 /*.back-site start*/
 .back-site {
@@ -388,9 +389,11 @@ a {
 .whereDisplay1 {
     animation: 2s slow-show1;
 }
-.logistic__p5{
+
+.logistic__p5 {
     min-height: 372px;
 }
+
 .whereDisplay {
     padding: 0;
     margin: 50px 0;
@@ -2832,14 +2835,14 @@ a {
     }
 
     .index-textarea {
-        text-indent: 0;
         position: relative;
         top: -26px;
         left: 0;
         width: 100%;
         height: 95px;
-        padding-left: 109px;
+        text-indent: 109px;
         box-sizing: border-box;
+        overflow: hidden;
     }
 
     .index-textarea:focus {
@@ -2875,10 +2878,6 @@ a {
     .index-textarea:focus-visible {
         border: 0;
         height: 100px;
-    }
-
-    .periodTA:focus {
-        height: 54px;
     }
 
     .periodTA {
@@ -3261,7 +3260,7 @@ a {
     }
 
     .periodLabelMSG::after {
-        top: 55px;
+        content: none;
     }
 
 
@@ -3270,9 +3269,24 @@ a {
         margin: 0 0 11px;
     }
 
+    .color-trance {
+        color: transparent;
+    }
+
+    .color-trance::after {
+        background-color: transparent;
+    }
+
     #msg.periodMSG {
         text-indent: 110px;
         top: -55px;
+    }
+
+    .periodTA {
+        height: 50px;
+        padding: 0 5px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #fff;
     }
 
     .periodSend {
@@ -3293,6 +3307,7 @@ a {
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
+
 .listworks::-webkit-scrollbar,
 .video__list::-webkit-scrollbar {
     display: none;

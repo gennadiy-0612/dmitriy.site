@@ -388,7 +388,9 @@ a {
 .whereDisplay1 {
     animation: 2s slow-show1;
 }
-
+.logistic__p5{
+    min-height: 372px;
+}
 .whereDisplay {
     padding: 0;
     margin: 50px 0;
@@ -3176,7 +3178,7 @@ a {
     }
 
     .hide-form-index__i {
-        top: -17px;
+        top: -28px;
     }
 
     .hide-form-index__button {
@@ -3370,13 +3372,18 @@ a {
         margin-top: auto;
     }
 
+    .firstScreen {
+        height: auto;
+        margin-top: 30vmin;
+    }
+
     .contacth1,
     #contacts,
     .s2__p1-vacancies,
     #vacancies,
     .TechSupportH1,
     #techsupprt {
-        margin-top: auto;
+        margin-top: 25vmin;
     }
 }
 

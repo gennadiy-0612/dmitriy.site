@@ -3387,7 +3387,7 @@ a {
     }
 
     .mainScreen {
-        margin-top: auto;
+        margin-top: -8vmin;
     }
 
     .firstScreen {

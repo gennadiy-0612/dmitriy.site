@@ -74,7 +74,7 @@ let shch = {
         if (window.innerWidth < 1070) {
             shch['.period'] = new shch.RefreshClass('.period', 'show', '', '.periodCount', '', '.periodClose');
             shch['.period']['.period'].addAct();
-            shch['.hide-form-tanks'] = new shch.RefreshClass('.hide-form-tanks', 'show', '', '.period', '', '.hide-form-tanks__close');
+            shch['.hide-form-tanks'] = new shch.RefreshClass('.hide-form-tanks', 'show', '', '.connect__period', '', '.hide-form-tanks__close');
             shch['.hide-form-tanks']['.hide-form-tanks'].addAct();
         }
         if (window.innerWidth > 1069) {
@@ -331,7 +331,7 @@ shch.RefreshClass = function (whatChange, newClass, I, button, parentTag, closer
             }
         },
         changeIt: function (e) {
-            e.stopPropagation()
+            e.stopPropagation();
             if (this.initState) {
                 this.infoTag.setAttribute('class', this.infoTagClass);
                 if (parentTag) this.parentT.setAttribute('class', this.parentTclass);

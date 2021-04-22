@@ -24,7 +24,9 @@ let shch = {
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if (locAddr === shch.locate.index1 || locAddr === shch.locate.index2) {
-            shch.oberv()
+            shch.oberv();
+            shch.ScrollDetectFirst('.aboutus');
+            shch.ScrollDetectFirst('.keyprinciples');
             if (window.innerWidth < 1070) document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
@@ -151,6 +153,14 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
         }
         shch.startChanges = 0;
     }
+}
+shch.ScrollDetectFirst = function (el) {
+    let elem = document.querySelector(el);
+    let elemOldClass = elem.getAttribute('class');
+    if ((elem.offsetTop + 100) > Math.floor(window.scrollY) && Math.floor(window.scrollY) > (elem.offsetTop - elem.windowH)){
+        elem.setAttribute('class', elemOldClass + ' appear');
+    }
+    console.log(elem.elPositonY )
 }
 
 shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {

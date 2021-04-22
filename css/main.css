@@ -1264,6 +1264,7 @@ a {
         left: 0;
         top: auto;
         width: 60%;
+        max-width: 325px;
         background-color: #1378EF;
     }
 
@@ -1573,6 +1574,7 @@ a {
     .logisticH2::after {
         transition: all 2s
     }
+
     .show .logisticH2::after {
         top: auto;
         width: 62%;

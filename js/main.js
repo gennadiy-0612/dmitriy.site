@@ -70,17 +70,23 @@ let shch = {
             }
         }
         shch['.hide-form-index'] = new shch.RefreshClass('.hide-form-index', 'show', '', '.JOIN', '', '.callBackCloser');
-        ``
         shch['.hide-form-index']['.hide-form-index'].addAct();
-        shch['.period'] = new shch.RefreshClass('.period', 'show', '', '.periodCount', '', '.periodClose');
-        shch['.period']['.period'].addAct();
-        document.querySelector('.periodTA').addEventListener('focusin', shch.periodTA)
-        document.querySelector('.periodTA').addEventListener('focusout', shch.periodTAout)
-        document.querySelector('.periodTA').addEventListener('keyup', shch.autoGrow)
-        document.querySelector('.index-textarea').addEventListener('focusin', shch.periodTA)
-        document.querySelector('.index-textarea').addEventListener('focusout', shch.periodTAout)
-        document.querySelector('.index-textarea').addEventListener('keyup', shch.autoGrow)
-        // document.querySelector('.hide-form-index').addEventListener('click', shch.tanksButton);
+        if (window.innerWidth < 1070) {
+            shch['.period'] = new shch.RefreshClass('.period', 'show', '', '.periodCount', '', '.periodClose');
+            shch['.period']['.period'].addAct();
+            shch['.hide-form-tanks'] = new shch.RefreshClass('.hide-form-tanks', 'show', '', '.period', '', '.hide-form-tanks__close');
+            shch['.hide-form-tanks']['.hide-form-tanks'].addAct();
+        }
+        if (window.innerWidth > 1069) {
+            shch['.hide-form-tanks'] = new shch.RefreshClass('.hide-form-tanks', 'show', '', '.periodCount', '', '.hide-form-tanks__close');
+            shch['.hide-form-tanks']['.hide-form-tanks'].addAct();
+        }
+        document.querySelector('.periodTA').addEventListener('focusin', shch.periodTA);
+        document.querySelector('.periodTA').addEventListener('focusout', shch.periodTAout);
+        document.querySelector('.periodTA').addEventListener('keyup', shch.autoGrow);
+        document.querySelector('.index-textarea').addEventListener('focusin', shch.periodTA);
+        document.querySelector('.index-textarea').addEventListener('focusout', shch.periodTAout);
+        document.querySelector('.index-textarea').addEventListener('keyup', shch.autoGrow);
         if (window.msCrypto) document.querySelector('body').setAttribute('style', 'cursor:auto;');
     }
 }
@@ -153,6 +159,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
         shch.startChanges = 0;
     }
 }
+
 shch.ScrollDetectFirst = function (el) {
     let elem = document.querySelector(el);
     let elemOldClass = elem.getAttribute('class');

@@ -163,7 +163,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
 shch.ScrollDetectFirst = function (el) {
     let elem = document.querySelector(el);
     let elemOldClass = elem.getAttribute('class');
-    if (Math.floor(window.scrollY) > elem.offsetHeight) {
+    if (window.scrollY < elem.offsetHeight) {
         elem.setAttribute('class', elemOldClass + ' appear');
     }
 }

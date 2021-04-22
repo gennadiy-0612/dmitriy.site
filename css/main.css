@@ -3259,11 +3259,6 @@ a {
         top: 0;
     }
 
-    .periodLabelMSG::after {
-        content: none;
-    }
-
-
     .period__text {
         height: 20px;
         margin: 0 0 11px;
@@ -3294,6 +3289,14 @@ a {
     }
 
     /*Period*/
+}
+
+.periodLabelMSG::after {
+    content: none;
+}
+
+.periodTA {
+    border-bottom: 1px solid #fff;
 }
 
 /*scroll animation*/

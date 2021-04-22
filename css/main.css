@@ -1408,10 +1408,6 @@ a {
         margin: 100px 0 0;
     }
 
-    .s2-vacancies {
-        margin-top: -180px;
-    }
-
     .s3__p1 {
         margin: 93px 0 0;
     }
@@ -1425,7 +1421,7 @@ a {
     }
 
     .s3-techsupport {
-        margin-top: -180px;
+        margin-top: 0;
     }
 
     .s2, .s3, .s4, .footer {
@@ -1513,7 +1509,11 @@ a {
         top: 10px;
         right: 10px;
     }
-    .logistic__dirrection.switcher::before{top: 20px;} 
+
+    .logistic__dirrection.switcher::before {
+        top: 20px;
+    }
+
     .year-upperline::after {
         top: -10px;
         left: 0;
@@ -1881,6 +1881,10 @@ a {
         margin: 90px auto 50px;
     }
 
+    .s2-vacancies {
+        margin-top: 0;
+    }
+
     .uperlinedesktop::after {
         top: -18px;
         left: auto;
@@ -1893,7 +1897,7 @@ a {
     /*.vacancies*/
     /*contacts*/
     .s2-contactMob {
-        margin-top: -80px;
+        margin-top: 0;
         margin-bottom: 0;
     }
 
@@ -2173,6 +2177,16 @@ a {
         margin-top: auto;
     }
 
+    .aboutus, .keyprinciples {
+        transition: all 2s;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    .aboutus.appear, .keyprinciples.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
     /*First Screen*/
 }
 
@@ -3299,6 +3313,18 @@ a {
     }
 
     /*Period*/
+
+
+    .aboutus, .keyprinciples {
+        transition: all 2s;
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    .aboutus.appear, .keyprinciples.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .periodLabelMSG::after {
@@ -3330,17 +3356,6 @@ a {
 .listworks, .video__list {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-}
-
-.aboutus, .keyprinciples {
-    transition: opacity, transform 2s;
-    opacity: 0;
-    transform: translateY(100px);
-}
-
-.aboutus.appear, .keyprinciples.appear {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 @keyframes down {

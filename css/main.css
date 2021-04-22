@@ -1175,7 +1175,6 @@ a {
     display: none;
 }
 
-
 /* Video Show */
 @media (max-width: 1070px) {
     .back-site__round-in {
@@ -1409,6 +1408,10 @@ a {
         margin: 100px 0 0;
     }
 
+    .s2-vacancies {
+        margin-top: -80px;
+    }
+
     .s3__p1 {
         margin: 93px 0 0;
     }
@@ -1419,6 +1422,10 @@ a {
 
     .s3 {
         margin: 10px 0 0;
+    }
+
+    .s3-techsupport {
+        margin-top: -180px;
     }
 
     .s2, .s3, .s4, .footer {
@@ -1885,8 +1892,8 @@ a {
 
     /*.vacancies*/
     /*contacts*/
-    .s2-contactdesk {
-        margin-top: 144px;
+    .s2-contactMob {
+        margin-top: -80px;
         margin-bottom: 0;
     }
 
@@ -2154,7 +2161,6 @@ a {
     #vacancies,
     .TechSupportH1,
     #techsupprt {
-        margin-top: 113px;
         margin-bottom: auto;
     }
 

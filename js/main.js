@@ -86,7 +86,6 @@ let shch = {
 }
 
 shch.logistic = function () {
-    console.log('load')
     shch.logist = {};
     shch.logist.logisticI2 = 0;
     shch.logistlogisticSwitcher2 = document.querySelectorAll('.logistic__dirrection');
@@ -157,10 +156,11 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
 shch.ScrollDetectFirst = function (el) {
     let elem = document.querySelector(el);
     let elemOldClass = elem.getAttribute('class');
-    if ((elem.offsetTop + 100) > Math.floor(window.scrollY) && Math.floor(window.scrollY) > (elem.offsetTop - elem.windowH)){
+    if (elem.offsetTop > Math.floor(window.scrollY) && Math.floor(window.scrollY) > elem.offsetHeight){
         elem.setAttribute('class', elemOldClass + ' appear');
+        console.log(elem.offsetTop)
+        console.log(window.pageYOffset)
     }
-    console.log(elem.elPositonY )
 }
 
 shch.Slider = function (selectorSlide, activeForward, activeBack, setSons) {
@@ -441,7 +441,6 @@ shch.includeHTML = function (file, idData, showAjax) {
 };
 
 shch.oberv = function () {
-    console.log('obs')
     const targetNode = document.querySelector(".logistic__p5");
     const observerOptions = {
         childList: true,

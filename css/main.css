@@ -1510,10 +1510,10 @@ a {
     }
 
     .switcher::before {
-        top: 25px;
+        top: 10px;
         right: 10px;
     }
-
+    .logistic__dirrection.switcher::before{top: 20px;} 
     .year-upperline::after {
         top: -10px;
         left: 0;
@@ -1535,7 +1535,7 @@ a {
     }
 
     .show.maindirrection::before {
-        top: 85px;
+        top: 70px;
     }
 
     .show .keyprinciples-direct {
@@ -1583,7 +1583,7 @@ a {
     }
 
     .show.logistic__dirrection::before {
-        top: 26px;
+        top: 20px;
     }
 
     .logistic__dirrection.show {

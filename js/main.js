@@ -126,9 +126,9 @@ shch.HeaderTracer = function (tracer) {
         this.heightPap = this.traceEl.parentElement.parentElement.offsetHeight;
         this.heightWind = window.innerHeight;
         this.heightHide = this.heightPap - this.heightWind;
-        if (Math.floor(window.scrollY) > Math.floor(this.topPap)) {
+        if (window.scrollY > this.topPap) {
             this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
-            if (Math.floor(window.scrollY) > (Math.floor(this.topPap) + this.heightHide + this.heightWind * .9)) {
+            if (window.scrollY > (this.topPap + this.heightHide + this.heightWind * .9)) {
                 this.traceEl.setAttribute('class', this.traceElOldClass);
                 return true;
             }

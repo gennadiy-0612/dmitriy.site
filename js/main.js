@@ -162,7 +162,7 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
     };
     this.scrolling = function () {
         this.initProps();
-        if ((this.elPositonY + 100) > Math.floor(window.scrollY) && Math.floor(window.scrollY) > (this.elPositonY - this.windowH) && startChanges) {
+        if ((this.elPositonY + 100) > window.scrollY && window.scrollY > (this.elPositonY - this.windowH) && startChanges) {
             this.elementWork.setAttribute('class', this.initClass + ' ' + this.animateClass);
             startChanges = 0;
         } else {

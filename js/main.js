@@ -139,7 +139,19 @@ shch.HeaderTracer = function (tracer) {
     }
 }
 
+
+shch.ScrollDetectFirst = function (el) {
+    shch.ScrollDetectFirst.doIt = 0;
+    if (shch.ScrollDetectFirst.doIt) return;
+    let elem = document.querySelector(el);
+    let elemOldClass = elem.getAttribute('class');
+    if (window.scrollY > elem.offsetHeight) {
+        elem.setAttribute('class', elemOldClass + ' appear');
+    }
+}
+
 shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
+    shch.ScrollDetectFirst.doIt = 1;
     this.elementTarget = whoIsAnimate;
     this.animateClass = whatKindAnimate;
     this.windowH = window.innerHeight;
@@ -157,14 +169,6 @@ shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
             this.elementWork.setAttribute('class', this.initClass);
         }
         shch.startChanges = 0;
-    }
-}
-
-shch.ScrollDetectFirst = function (el) {
-    let elem = document.querySelector(el);
-    let elemOldClass = elem.getAttribute('class');
-    if (window.scrollY < elem.offsetHeight) {
-        elem.setAttribute('class', elemOldClass + ' appear');
     }
 }
 

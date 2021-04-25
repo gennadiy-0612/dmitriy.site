@@ -392,6 +392,7 @@ a {
 
 .logistic__p5 {
     min-height: 372px;
+    position: relative;
 }
 
 .whereDisplay {

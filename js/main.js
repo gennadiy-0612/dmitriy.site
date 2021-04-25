@@ -460,10 +460,7 @@ shch.observeIt = function () {
         attributes: true,
         subtree: false
     }
-    shch.obervs = function () {
-        shch.logistic();
-    }
-    const observer = new MutationObserver(shch.obervs);
+    const observer = new MutationObserver(shch.logistic);
     observer.observe(targetNode, observerOptions);
 }
 

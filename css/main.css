@@ -2447,6 +2447,7 @@ a {
     .logistic__p5 {
         display: flex;
         min-height: 511px;
+        position: relative;
     }
 
     .logistic__items {
@@ -3462,6 +3463,11 @@ a {
     animation: spin 2s linear infinite;
     position: absolute;
     z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
 }
 
 @keyframes spin {

@@ -24,9 +24,9 @@ let shch = {
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if (locAddr === shch.locate.index1 || locAddr === shch.locate.index2) {
-            shch.oberv();
-            shch.ScrollDetectFirst('.aboutus');
-            shch.ScrollDetectFirst('.keyprinciples');
+            shch.observeIt();
+            // shch.ScrollDetectFirst('.aboutus');
+            // shch.ScrollDetectFirst('.keyprinciples');
             if (window.innerWidth < 1070) document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
@@ -47,11 +47,17 @@ let shch = {
             shch['#vS']['#videoSlider'].addAct();
             shch.getReq(shch.locate.index1 + 'emotions/static/1.json', '.emotions__set', 'div', 'emotions__item backgray', shch.staticSlider, '.emotions__item', 'activeForward', 'activeBack', '.staticSlidePlus', '.staticSlideMinus', 'slideStatic');
             shch.getReq(shch.locate.index1 + 'emotions/video/1.json', '.videoEmotionSet', 'div', 'video__item', shch.staticSlider, '.video__item', 'activeForward', 'activeBack', '.videoSlidePlus', '.videoSlideMinus', 'slideVideo', 'videoData');
-            shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.aboutus', 'appear', 1);
-            window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
-            shch.ScrollDetect.firstEffect = new shch.ScrollDetect('.keyprinciples', 'appear', 1);
-            window.addEventListener('scroll', shch.ScrollDetect.firstEffect.scrolling.bind(shch.ScrollDetect.firstEffect), false);
             shch.traceIt = new shch.HeaderTracer('.keyprinciples__trace');
+            window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
+
+            shch.traceItSecond = new shch.ActionWindow('.keyprinciples', ' appearSecond ');
+            shch.traceItSecond.tracingHeader();
+            shch.traceItSecond = new shch.ActionWindow('.aboutus', ' appearSecond ');
+            shch.traceItSecond.tracingHeader();
+
+            shch.traceIt = new shch.ActionWindow('.keyprinciples', 'appear');
+            window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
+            shch.traceIt = new shch.ActionWindow('.aboutus', 'appear');
             window.addEventListener('scroll', shch.traceIt.tracingHeader.bind(shch.traceIt));
         }
         if (locAddr === shch.locate.contacts && window.innerWidth < 1070) {
@@ -138,7 +144,29 @@ shch.HeaderTracer = function (tracer) {
         }
     }
 }
-
+shch.ActionWindow = function (whoIs, whoIsNew) {
+    this.traceEl = document.querySelector(whoIs);
+    this.traceElOldClass = this.traceEl.getAttribute('class');
+    this.actClass = whoIsNew;
+    this.traceSel = this.traceEl.getAttribute('class');
+    this.tracingHeader = function () {
+        this.topPap = this.traceEl.offsetTop;
+        this.heightPap = this.traceEl.offsetHeight;
+        this.heightHide = this.topPap + this.heightPap;
+        if (window.scrollY > this.topPap - window.innerHeight * .9) {
+            console.clear()
+            console.log(window.scrollY + ' ' + this.topPap + ' ' + this.heightHide + ' window.scrollY  this.topPap this.heightHide')
+            this.traceEl.setAttribute('class', this.actClass + ' ' + this.traceElOldClass);
+            if (window.scrollY > this.heightHide) {
+                this.traceEl.setAttribute('class', this.traceElOldClass);
+                return true;
+            }
+        } else {
+            this.traceEl.setAttribute('class', this.traceElOldClass);
+            return true;
+        }
+    }
+}
 
 shch.ScrollDetectFirst = function (el) {
     shch.ScrollDetectFirst.doIt = 0;
@@ -147,28 +175,6 @@ shch.ScrollDetectFirst = function (el) {
     let elemOldClass = elem.getAttribute('class');
     if (window.scrollY > elem.offsetHeight) {
         elem.setAttribute('class', elemOldClass + ' appear');
-    }
-}
-
-shch.ScrollDetect = function (whoIsAnimate, whatKindAnimate, startChanges) {
-    shch.ScrollDetectFirst.doIt = 1;
-    this.elementTarget = whoIsAnimate;
-    this.animateClass = whatKindAnimate;
-    this.windowH = window.innerHeight;
-    this.initProps = function () {
-        this.elementWork = document.querySelector(this.elementTarget);
-        this.initClass = this.elementWork.getAttribute('class');
-        this.elPositonY = this.elementWork.offsetTop;
-    };
-    this.scrolling = function () {
-        this.initProps();
-        if ((this.elPositonY + 100) > window.scrollY && window.scrollY > (this.elPositonY - this.windowH) && startChanges) {
-            this.elementWork.setAttribute('class', this.initClass + ' ' + this.animateClass);
-            startChanges = 0;
-        } else {
-            this.elementWork.setAttribute('class', this.initClass);
-        }
-        shch.startChanges = 0;
     }
 }
 
@@ -449,7 +455,7 @@ shch.includeHTML = function (file, idData, showAjax) {
     }
 };
 
-shch.oberv = function () {
+shch.observeIt = function () {
     const targetNode = document.querySelector(".logistic__p5");
     const observerOptions = {
         childList: true,

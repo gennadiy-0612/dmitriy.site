@@ -2199,6 +2199,11 @@ a {
         transform: translateY(0);
     }
 
+    .aboutus.appearSecond, .keyprinciples.appearSecond {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     /*First Screen*/
 }
 

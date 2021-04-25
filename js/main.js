@@ -25,8 +25,6 @@ let shch = {
         let locAddr = window.location.pathname;
         if (locAddr === shch.locate.index1 || locAddr === shch.locate.index2) {
             shch.observeIt();
-            // shch.ScrollDetectFirst('.aboutus');
-            // shch.ScrollDetectFirst('.keyprinciples');
             if (window.innerWidth < 1070) document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
@@ -451,7 +449,7 @@ shch.includeHTML = function (file, idData, showAjax) {
         }
         nghttp.open("GET", file, true);
         nghttp.send();
-        return;
+        return true;
     }
 };
 

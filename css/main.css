@@ -3239,7 +3239,7 @@ a {
         height: 80vmin;
         border-radius: 40vmin;
         top: 0;
-        right: 0;
+        right: 5%;
         bottom: 0;
         left: auto;
         background: radial-gradient(#3a3a3a 0, transparent 70%);

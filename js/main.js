@@ -33,6 +33,7 @@ let shch = {
                 shch['.maindirrection' + logisticI] = new shch.RefreshClass('.maindirrection', 'show', logisticI, '.s3__p2');
                 shch['.maindirrection' + logisticI]['.maindirrection' + logisticI].addAct();
             }
+            shch.includeHTML(shch.locate.index1 + 'nisch/1.json', 0, 'logistic__p5');
             shch.logistic();
             let ballCollect = document.querySelectorAll('.where .listworks__li');
             let ballCollectMax = ballCollect.length;

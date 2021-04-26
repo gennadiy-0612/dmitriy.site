@@ -2970,7 +2970,7 @@ a {
     }
 
     .footer__p4 {
-        margin: 16px 5% -14px 0;
+        margin: 16px 40px -14px 0;
     }
 
     /* form */
@@ -3027,7 +3027,7 @@ a {
     }
 
     .s3contactinfo__2desk-pulse {
-        flex: 2 2 23%;
+        flex: 0 0 400px;
         margin: 50px 0 0;
         padding: 80px 0 20px 2%;
     }

@@ -24,7 +24,7 @@ let shch = {
         document.querySelector('.JOIN').addEventListener('click', shch.foloiButton);
         let locAddr = window.location.pathname;
         if (locAddr === shch.locate.index1 || locAddr === shch.locate.index2) {
-            shch.observeIt();
+            shch.observeIt('.logistic__p5');
             if (window.innerWidth < 1070) document.querySelector('.talk-about-project').addEventListener('click', shch.talkAboutProject);
             let logisticI = 0;
             let logisticSwitcher = document.querySelectorAll('.maindirrection.switcher');
@@ -454,8 +454,8 @@ shch.includeHTML = function (file, idData, showAjax) {
     }
 };
 
-shch.observeIt = function () {
-    const targetNode = document.querySelector(".logistic__p5");
+shch.observeIt = function (selector) {
+    const targetNode = document.querySelector(selector);
     const observerOptions = {
         childList: true,
         attributes: true,

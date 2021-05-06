@@ -46,6 +46,7 @@ html {
 body {
     background-color: #1F1F1F;
     margin: 0;
+    height: 100%;
 }
 
 a {
@@ -2346,7 +2347,7 @@ a {
     }
 
     .firstScreen {
-        height: 100vh;
+        height: 100%;
         position: relative;
         overflow: hidden;
     }

@@ -49,11 +49,9 @@ if (shchs.mob) {
     if ((window.location.pathname === shch1.locate.index1) || (window.location.pathname === shch1.locate.index2)) {
         camera.position.y = 15;
         camera.position.z = 22;
-        console.log('mob sphere')
     } else {
         camera.position.y = 28;
         camera.position.z = 42;
-        console.log('cube mob')
     }
 }
 if (shchs.desk) {

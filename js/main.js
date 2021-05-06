@@ -2,6 +2,14 @@
 let shch = {
     burger: function () {
         shch.locate = {};
+        if (window.location.origin === 'http://newsite.gk-turan.ru') {
+            shch.locate = {
+                index1: '/',
+                index2: '/index.html',
+                vacancy: '/vacancy.html',
+                contacts: '/contacts.html'
+            };
+        }
         if (window.location.origin === 'https://p.cx.ua') {
             shch.locate = {
                 index1: '/pf/dmitriy.site/',

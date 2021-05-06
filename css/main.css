@@ -33,9 +33,7 @@
     src: local('Druk Text Wide'), local('Druk Text Wide'),
     url('./font/DrukTextWide-Medium.ttf') format('truetype');
 }
-.firstScreen, .s1, .s2, .s3, .s4, .s5, .s6, .s7, .s8 {
-    content-visibility: auto;
-}
+
 canvas {
     visibility: hidden;
 }

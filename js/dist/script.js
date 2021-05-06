@@ -1,7 +1,7 @@
 shch1 = {};
 if (window.location.origin === 'http://newsite.gk-turan.ru') {
     shch1.locate = {
-        index1: '/dmitriy.site/',
+        index1: '/',
         index2: '/index.html'
     };
 }

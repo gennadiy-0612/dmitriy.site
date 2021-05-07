@@ -47,8 +47,8 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(25, 1, 1, 10000);
 if (shchs.mob) {
     if ((window.location.pathname === shch1.locate.index1) || (window.location.pathname === shch1.locate.index2)) {
-        camera.position.y = 15;
-        camera.position.z = 22;
+        camera.position.y = 14;
+        camera.position.z = 21;
     } else {
         camera.position.y = 28;
         camera.position.z = 42;
